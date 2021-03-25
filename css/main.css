@@ -46,4 +46,60 @@
 }
 
 
+/* Seção Categorias */
+
+
+
+
+
+/* Seção Produtos Recentes  */
+
+
+
+
+
+/* Seção Produtos em oferta */
+
+
+
+
+
+
+/* Seção Marketing */
+.marketing{ 
+    width: 100%; 
+    height: 500px; 
+    position: relative;
+}
+
+.marketing__conteudo{
+    flex-direction: column;
+    color: white;
+}
+
+.mkt-produtos,
+.mkt-ilustrativo{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mkt-produtos{     background-image: url("https://www.w3schools.com/w3images/photographer.jpg");  }
+.mkt-ilustrativo{  background-image: url("https://www.w3schools.com/w3images/workbench.jpg");  }
+
+
+
+
+/* Seção Mapa */
+.mapa{
+    width: 100%;
+}
+
+
+
+/* Rodapé */
+.rodape{
+    background-color: rgb(30,30,30);
+}
+
 
