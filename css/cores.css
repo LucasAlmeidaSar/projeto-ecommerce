@@ -15,6 +15,7 @@
     --cor-btn-nav-principal-hover-scroll: rgba(0, 0, 0, .3);
 
     --cor-icone-hover-nav-principal: rgba(255,255,255,.2) ;
+    --cor-icone-hover-nav-principal-scroll: rgba(0, 0, 0, .3);
 
 
     
@@ -23,7 +24,7 @@
     --cor-btn-cabecalho-principal: rgba(0, 0, 0, .8);
     --cor-btn-cabecalho-principal-hover: rgba(255,255,255,.3);
 
-    
+
 
     /* Rodapé */
     --cor-fundo-rodape : rgb(30,30,30);

@@ -1,6 +1,6 @@
 /* Navegação */
 
-.nav-principal{
+.nav-principal{    
     background: var(--cor-cabecalho-principal);    
     position: fixed;
     top: 0;
@@ -12,22 +12,46 @@
 
 .nav-principal__menu-topo{
     justify-content: space-between;   
-    padding: 10px 25px;
+    padding: 40px 25px;
     height: 60px;
-    transition: background .3s ease, height .5s ease;
+    transition: all .5s ease;
 }
 
-.nav-principal__menu-topo.on-scroll{  
+.nav-principal__menu-topo.on-scroll{ 
+    padding: 0;
+    box-shadow: 0 0 5px gray; 
     background: var(--cor-clara) ;
     height: 45px;
 }
 
+.icone-nav::before{
+    content: '';
+    z-index: 9999;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;  
+    transition: all .3s ease;
+}
+
+.icone-nav:hover::before{  background-color: var(--cor-icone-hover-nav-principal);  }
+
 .icone-nav.on-scroll,
-.btn-nav.on-scroll,
-.logo.on-scroll {  color: var(--cor-escura);  }
+.btn-nav.on-scroll{  color: var(--cor-escura);  }
+
+.icone-nav.on-scroll:hover::before{  background-color: var(--cor-icone-hover-nav-principal-scroll);  }
+          .btn-nav.on-scroll:hover{  background-color: var(--cor-icone-hover-nav-principal-scroll);  }
 
 
-.btn-nav.on-scroll:hover{  background: var(--cor-btn-nav-principal-hover-scroll);  }
+
+
+
+
 
 
 

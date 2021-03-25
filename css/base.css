@@ -74,7 +74,7 @@ li{  list-style-type: none;  }
 .btn-opaco:hover{   }
 
 
-.btn-nav{  /*background: ;*/   }
+.btn-nav{  font-size: 1.1rem;   }
 
 .btn-nav:hover{  background: var(--cor-btn-nav-principal-hover);  }
 
@@ -130,14 +130,17 @@ li{  list-style-type: none;  }
 
 /* Ícones */
 .icone{
-    font-size: .8rem;
+    font-size: 1rem;
     color: var(--cor-clara);
-    margin: 0 10px;   
+    margin: 0 20px;   
     transition: all .3s ease;
 }
 
 .icone:hover{  /*color: ;*/  }
 
-.icone-nav{  /*color: ;*/  }
+.icone-nav{  
+    position: relative;  
+    font-size: .8rem;
+}
 
 .icone-nav:hover{ /*color: ;*/ }
