@@ -4,7 +4,15 @@
     --cor-escura : rgb(10,10,10);
 
     /* Página */
-    --cor-fundo-princnipal : #ddd;
+    --cor-fundo-principal : #ddd;
+
+    /* Navegação */
+    --cor-btn-nav-principal-hover: rgba(255, 255, 255, .15);
+
+    /* Cabeçalho */
+    --cor-cabecalho-principal: transparent;
+    --cor-btn-cabecalho-principal: rgba(0, 0, 0, .8);
+    --cor-btn-cabecalho-principal-hover: rgba(255,255,255,.3);
 
     /* Rodapé */
     --cor-fundo-rodape : rgb(30,30,30);
