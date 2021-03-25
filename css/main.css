@@ -1,18 +1,21 @@
 /* Navegação */
 
 .nav-principal{
-    background: var(--cor-escura);
+    background: var(--cor-cabecalho-principal);    
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
 }
 
-.nav-principal__menu-sticky,
-.nav-principal__menu-celular{
-    display: none;
-}
+.nav-principal__menu-celular{  display: none;  }
 
-.nav-principal__topo{
+.nav-principal__menu-topo{
     justify-content: space-between;   
     padding: 10px 25px;
 }
+
+
 
 
 
@@ -30,11 +33,28 @@
 
 .cabecalho-principal__conteudo{
     flex-direction: column;
-    width: 30%;
+    width: 80%;
     height: 30%;
     margin: auto;
     color: var(--cor-clara);   
 }
+
+.cabecalho-principal__titulo{
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+}
+
+.cabecalho-principal__subtitulo{  font-size: 1.2rem;  }
+
+.cabecalho-principal__btn{
+    letter-spacing: 1.5px;
+    margin: 40px 0 0 0;
+    background: var(--cor-btn-cabecalho-principal);
+    padding: 15px 30px;
+    border-radius: 5px;
+}
+
+.cabecalho-principal__btn:hover{  background: var(--cor-btn-cabecalho-principal-hover);  }
 
 
 
