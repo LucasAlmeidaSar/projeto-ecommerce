@@ -1,13 +1,17 @@
 /* Navegação */
 
+.nav-principal{
+    background: rgb(10, 10, 10);
+}
+
 .nav-principal__menu-sticky,
 .nav-principal__menu-celular{
     display: none;
 }
 
-
 .nav-principal__topo{
-    justify-content: space-between;
+    justify-content: space-between;   
+    padding: 10px 25px;
 }
 
 
@@ -32,6 +36,14 @@
     color: white;    
 }
 
+
+
+
+/* Conteúdo Principal */
+.conteudo-principal__secao{
+    width: 70%;
+    margin: auto;
+}
 
 
 
