@@ -1,0 +1,16 @@
+/* Navegação */
+
+.nav-principal__menu-sticky,
+.nav-principal__menu-celular{
+    display: none;
+}
+
+
+.nav-principal__topo{
+    justify-content: space-between;
+}
+
+
+
+
+
