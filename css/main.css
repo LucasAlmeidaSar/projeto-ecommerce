@@ -13,4 +13,25 @@
 
 
 
+/* Cabeçalho */
+.cabecalho-principal{
+    width: 100%;
+    height: 700px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("https://www.w3schools.com/w3images/jane.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    position: relative;
+}
+
+.cabecalho-principal__conteudo{
+    flex-direction: column;
+    width: 30%;
+    height: 30%;
+    margin: auto;
+    color: white;    
+}
+
+
+
 
