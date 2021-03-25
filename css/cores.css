@@ -1,0 +1,11 @@
+:root{
+    /* Cores gerais */
+    --cor-clara  : white;
+    --cor-escura : rgb(10,10,10);
+
+    /* Página */
+    --cor-fundo-princnipal : #ddd;
+
+    /* Rodapé */
+    --cor-fundo-rodape : rgb(30,30,30);
+}
