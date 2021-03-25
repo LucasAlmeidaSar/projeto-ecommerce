@@ -1,7 +1,7 @@
 /* Navegação */
 
 .nav-principal{
-    background: rgb(10, 10, 10);
+    background: var(--cor-escura);
 }
 
 .nav-principal__menu-sticky,
@@ -21,7 +21,7 @@
 .cabecalho-principal{
     width: 100%;
     height: 700px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("https://www.w3schools.com/w3images/jane.jpg");
+    background-image: url("https://www.w3schools.com/w3images/jane.jpg");
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -33,7 +33,7 @@
     width: 30%;
     height: 30%;
     margin: auto;
-    color: white;    
+    color: var(--cor-clara);   
 }
 
 
@@ -74,7 +74,7 @@
 
 .marketing__conteudo{
     flex-direction: column;
-    color: white;
+    color: var(--cor-clara);
 }
 
 .mkt-produtos,
@@ -99,7 +99,7 @@
 
 /* Rodapé */
 .rodape{
-    background-color: rgb(30,30,30);
+    background-color: var(--cor-fundo-rodape);
 }
 
 
