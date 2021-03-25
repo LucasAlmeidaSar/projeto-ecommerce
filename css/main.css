@@ -13,9 +13,21 @@
 .nav-principal__menu-topo{
     justify-content: space-between;   
     padding: 10px 25px;
+    height: 60px;
+    transition: background .3s ease, height .5s ease;
 }
 
+.nav-principal__menu-topo.on-scroll{  
+    background: var(--cor-clara) ;
+    height: 45px;
+}
 
+.icone-nav.on-scroll,
+.btn-nav.on-scroll,
+.logo.on-scroll {  color: var(--cor-escura);  }
+
+
+.btn-nav.on-scroll:hover{  background: var(--cor-btn-nav-principal-hover-scroll);  }
 
 
 
