@@ -48,8 +48,25 @@
           .btn-nav.on-scroll:hover{  background-color: var(--cor-icone-hover-nav-principal-scroll);  }
 
 
+.dropdown{  position: relative; border:  }
 
 
+.dropdown:hover .dropdown-conteudo{  display: flex;  }
+
+.dropdown-conteudo{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+}
+
+.dropdown-alternador,
+       .dropdown-btn{  margin: 0;  }
+
+
+.dropdown-conteudo.on-scroll{
+    background-color: var(--cor-clara);
+    border-radius: 5px;
+}
 
 
 

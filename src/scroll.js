@@ -1,6 +1,7 @@
 let menuTopo = document.querySelector('.nav-principal__menu-topo')
 let btnTopo = document.getElementsByClassName('btn-nav')
 let iconeTopo = document.getElementsByClassName('icone-nav')
+let dropdownConteudo = document.querySelector('.dropdown-conteudo')
 
 
 window.onscroll = () => scrollPagina()
@@ -9,10 +10,12 @@ function scrollPagina() {
     
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
         scrollElementoUnico(true, menuTopo)       
+        scrollElementoUnico(true, dropdownConteudo)       
         scrollVariosElementos(true, btnTopo)
         scrollVariosElementos(true, iconeTopo)
     }else{
         scrollElementoUnico(false, menuTopo)        
+        scrollElementoUnico(false, dropdownConteudo)        
         scrollVariosElementos(false, btnTopo)
         scrollVariosElementos(false, iconeTopo)
     }

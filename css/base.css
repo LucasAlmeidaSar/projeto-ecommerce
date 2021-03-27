@@ -26,6 +26,8 @@ li{  list-style-type: none;  }
 
 
 
+
+
 /* Flex para reuso */
 .flex{
     display: flex;
@@ -74,7 +76,10 @@ li{  list-style-type: none;  }
 .btn-opaco:hover{   }
 
 
-.btn-nav{  font-size: 1.1rem;   }
+.btn-nav{  
+    font-size: 1.1rem;
+    width: 120px;
+}
 
 .btn-nav:hover{  background: var(--cor-btn-nav-principal-hover);  }
 
