@@ -9,44 +9,53 @@ window.onscroll = () => scrollPagina()
 function scrollPagina() {
     
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        scrollElementoUnico(true, menuTopo)       
-        scrollElementoUnico(true, dropdownConteudo)       
-        scrollVariosElementos(true, btnTopo)
-        scrollVariosElementos(true, iconeTopo)
+        scrollarElementos(true, menuTopo, dropdownConteudo)                 
+        scrollarColecaoDeElementos(true, btnTopo, iconeTopo )        
     }else{
-        scrollElementoUnico(false, menuTopo)        
-        scrollElementoUnico(false, dropdownConteudo)        
-        scrollVariosElementos(false, btnTopo)
-        scrollVariosElementos(false, iconeTopo)
+        scrollarElementos(false, menuTopo, dropdownConteudo)                     
+        scrollarColecaoDeElementos(false, btnTopo, iconeTopo)        
     }
 }
 
 
 
-function scrollVariosElementos(boll, elementos){
 
-    if(boll){
-        for (const elemento of elementos) {
+
+function scrollarElementos(bool, ...elementos){
+
+    if(bool){
+        for (elemento of elementos) {
             elemento.classList.add('on-scroll')
         }
     }else{
-        for (const elemento of elementos) {
+        for (elemento of elementos) {
             elemento.classList.remove('on-scroll')
         }
-    }    
+    }
+}
+
+
+
+
+function scrollarColecaoDeElementos(boll, ...elementos){
+
+    for ( elemento of elementos) {
+        varrerColecaoEncontrada(boll, elemento)
+    }
+    
 }  
 
 
 
-function scrollElementoUnico(bool, ...elements){
 
+function varrerColecaoEncontrada(bool, elementos){
     if(bool){
-        for (element of elements) {
-            element.classList.add('on-scroll')
+        for (elemento of elementos) {
+            elemento.classList.add('on-scroll')
         }
     }else{
-        for (element of elements) {
-            element.classList.remove('on-scroll')
+        for (elemento of elementos) {
+            elemento.classList.remove('on-scroll')
         }
-    }
+    } 
 }
