@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <style>
+        .login-container {
+            box-sizing: border-box;
+            width: 600px;
+            padding: 64px 36px;
+            box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+
+            /* temporario */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .login-control__input {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <form id="login-form">
+            <label class="login-control">
+                <span class="login-control__span">Digite seu email</span>
+                <input class="login-control__input" type="text" name="email" id="ipt_email">
+                <div class="login-control__border"></div>
+            </label>
+            <label class="login-control">
+                <span class="login-control__span">Digite sua senha</span>
+                <input class="login-control__input" type="text" name="senha" id="ipt_senha">
+                <div class="login-control__border"></div>
+            </label>
+
+            <button type="submit" class="login-form__btn">Entrar</button>
+        </form>
+    </div>
+    
+</body>
+</html>
