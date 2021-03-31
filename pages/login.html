@@ -8,12 +8,29 @@
 
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/cores.css">
     <style>
+        @keyframes autofill {
+            0%,100% {
+                color: #666;
+                background: transparent;
+            }
+        }
+
+        input:-webkit-autofill,
+        textarea:-webkit-autofill,
+        select:-webkit-autofill {
+            -webkit-text-fill-color: #000;
+            -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+            box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+        }
+
         .login-container {
             box-sizing: border-box;
-            width: 600px;
-            padding: 64px 36px;
-            box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+            width: 500px;
+            padding: 60px 80px;
+            box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
+            background-color: white;
 
             /* temporario */
             position: absolute;
@@ -22,28 +39,162 @@
             transform: translate(-50%, -50%);
         }
 
-        .login-control__input {
-            width: 100%;
+        .login-input {
+            margin-top: 14px;
+            margin-bottom: 20px;
         }
+
+        .login-input, .login-input__label {
+            position: relative;
+        }
+
+        .login-input__campo, .login-input__campo:hover, 
+        .login-control__btn {
+            border: none;
+            outline: none;
+        }
+
+        .login-input__campo {
+            width: 100%;
+            background-color: transparent;
+            user-select: none;
+            font-size: 20px;
+            height: 40px;
+        }
+
+        .login-input__span {
+            position: absolute;
+            top: 0;
+            white-space: nowrap;
+            cursor: text;
+            font-size: 20px;
+            transition: font-size 0.15s ease-out, transform 0.15s ease-out;
+            opacity: 0.8;
+        }
+
+        .login-control__buttons {
+            margin-top: 40px;
+        }
+
+        .login-btn__entrar, .login-btn__senha {
+            display: block;
+            width: 100%;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .login-btn__entrar {
+            background-color: rgba(0, 0, 0, 0.863);
+            color: white;
+            height: 50px;
+        }
+
+        .login-btn__senha {
+            color: black;
+            height: 30px;
+            margin-top: 12px;
+            text-decoration: none;
+        }
+
+        .login-titulo {
+            margin-bottom: 30px;
+        }
+
+        .login-input__border {
+            position: relative;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.39);
+        }
+
+        .login-input__border::after {
+            position: absolute;
+            content: '';
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.767);
+            transition: transform 0.3s ease-out;
+            transform: scaleX(0);
+        }
+
+        .login-input--focus .login-input__span {
+            font-size: 0.7em;
+            transform: translateY(-22px);
+        }
+
+        .login-input--focus .login-input__border::after {
+            transform: scaleX(1);
+        }
+
+        .login-input__label:hover .login-input__border::after {
+            transform: scaleX(1);
+        }
+
     </style>
 </head>
 <body>
     <div class="login-container">
-        <form id="login-form">
-            <label class="login-control">
-                <span class="login-control__span">Digite seu email</span>
-                <input class="login-control__input" type="text" name="email" id="ipt_email">
-                <div class="login-control__border"></div>
-            </label>
-            <label class="login-control">
-                <span class="login-control__span">Digite sua senha</span>
-                <input class="login-control__input" type="text" name="senha" id="ipt_senha">
-                <div class="login-control__border"></div>
-            </label>
-
-            <button type="submit" class="login-form__btn">Entrar</button>
+        <form id="login-form" class="login-form">
+            <h2 class="login-titulo">Entre na sua conta</h2>
+            <div class="login-input">
+                <label class="login-input__label">
+                    <span class="login-input__span">Email</span>
+                    <input class="login-input__campo" type="email" name="email" id="ipt_email" required>
+                    <div class="login-input__border"></div>
+                </label>
+            </div>
+            <div class="login-input">
+                <label class="login-input__label">
+                    <span class="login-input__span">Senha</span>
+                    <input class="login-input__campo" type="password" name="senha" id="ipt_senha" required>
+                    <div class="login-input__border"></div>
+                </label>
+            </div>
+            <div class="login-control__buttons">
+                <button type="submit" class="login-btn__entrar">Entrar</button>
+                <a href="#" class="login-btn__senha">Esqueceu sua senha?</a>
+            </div>
         </form>
     </div>
+
+    <script>
+        let inputSelecionado;
+
+        let camposLogin = buscarCampos();
+
+        console.log(camposLogin);
+
+        function buscarCampos() {
+            let listaCampos = [];
+            document.querySelectorAll('div.login-input').forEach(function (element) {
+                let campo = element.querySelector('.login-input__campo');
+
+                listaCampos.push({
+                    div: element,
+                    input: campo
+                })
+            });
+
+            return listaCampos;
+        }
+
+        camposLogin.forEach(element => {
+            element.input.addEventListener('focus', function() {
+                    element.div.classList.add('login-input--focus');
+            });
+
+            element.input.addEventListener('focusout', function() {
+                if (element.input.value != '') {
+                    return;
+                }
+                element.div.classList.remove('login-input--focus');
+                
+            });
+        });
+    </script>
     
 </body>
 </html>
