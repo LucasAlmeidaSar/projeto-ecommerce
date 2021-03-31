@@ -8,29 +8,30 @@ const dropdownConteudo = document.querySelector('.dropdown-conteudo')
 export default function scrollPagina() {
     
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        scrollElementos(true, menuTopo, dropdownConteudo, btnTopo, iconeTopo)        
+        scrollElementos('ativar', menuTopo, dropdownConteudo, btnTopo, iconeTopo)
     }else{
-        scrollElementos(false, menuTopo, dropdownConteudo, btnTopo, iconeTopo)        
+        scrollElementos('desativar', menuTopo, dropdownConteudo, btnTopo, iconeTopo)        
     }
 }
 
-function scrollElementos (bool, ...elementos) {
+function scrollElementos (operacao, ...elementos) {
    for (const elemento of elementos) {
 
         if (elemento.length !== undefined) {    
-            varrerColecaoEncontrada(bool, elemento)
+            varrerColecaoEncontrada(operacao, elemento)
         }else{
-             bool == true ? elemento.classList.add('on-scroll') : elemento.classList.remove('on-scroll')
+            operacao === 'ativar' ? elemento.classList.add('on-scroll') : elemento.classList.remove('on-scroll')
         }
    }
 }
 
-function varrerColecaoEncontrada(bool, elementos){
-    if(bool){
+function varrerColecaoEncontrada(operacao, elementos){
+    if(operacao === 'ativar'){
         for (const elemento of elementos) {
             elemento.classList.add('on-scroll')
         }
-    }else{
+    }
+    else if(operacao === 'desativar'){
         for (const elemento of elementos) {
             elemento.classList.remove('on-scroll')
         }
