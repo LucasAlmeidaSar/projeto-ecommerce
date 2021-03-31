@@ -39,22 +39,26 @@
             transform: translate(-50%, -50%);
         }
 
-        .login-input {
-            margin-top: 14px;
+        .login-campos {
+            margin: 50px 0;
+        }
+
+        .login-campo {
+            margin-top: 16px;
             margin-bottom: 20px;
         }
 
-        .login-input, .login-input__label {
+        .login-campo, .login-campo__label {
             position: relative;
         }
 
-        .login-input__campo, .login-input__campo:hover, 
+        .login-campo__input, .login-campo__input:hover, 
         .login-control__btn {
             border: none;
             outline: none;
         }
 
-        .login-input__campo {
+        .login-campo__input {
             width: 100%;
             background-color: transparent;
             user-select: none;
@@ -62,7 +66,7 @@
             height: 40px;
         }
 
-        .login-input__span {
+        .login-campo__span {
             position: absolute;
             top: 0;
             white-space: nowrap;
@@ -70,10 +74,6 @@
             font-size: 20px;
             transition: font-size 0.15s ease-out, transform 0.15s ease-out;
             opacity: 0.8;
-        }
-
-        .login-control__buttons {
-            margin-top: 40px;
         }
 
         .login-btn__entrar, .login-btn__senha {
@@ -96,20 +96,20 @@
         .login-btn__senha {
             color: black;
             height: 30px;
-            margin-top: 12px;
+            margin-top: 16px;
             text-decoration: none;
         }
 
         .login-titulo {
-            margin-bottom: 30px;
+            text-align: center;
         }
 
-        .login-input__border {
+        .login-campo__border {
             position: relative;
             border-bottom: 1px solid rgba(0, 0, 0, 0.39);
         }
 
-        .login-input__border::after {
+        .login-campo__border::after {
             position: absolute;
             content: '';
             display: block;
@@ -120,16 +120,16 @@
             transform: scaleX(0);
         }
 
-        .login-input--focus .login-input__span {
+        .login-campo--focus .login-campo__span {
             font-size: 0.7em;
             transform: translateY(-22px);
         }
 
-        .login-input--focus .login-input__border::after {
+        .login-campo--focus .login-campo__border::after {
             transform: scaleX(1);
         }
 
-        .login-input__label:hover .login-input__border::after {
+        .login-campo__label:hover .login-campo__border::after {
             transform: scaleX(1);
         }
 
@@ -139,19 +139,21 @@
     <div class="login-container">
         <form id="login-form" class="login-form">
             <h2 class="login-titulo">Entre na sua conta</h2>
-            <div class="login-input">
-                <label class="login-input__label">
-                    <span class="login-input__span">Email</span>
-                    <input class="login-input__campo" type="email" name="email" id="ipt_email" required>
-                    <div class="login-input__border"></div>
-                </label>
-            </div>
-            <div class="login-input">
-                <label class="login-input__label">
-                    <span class="login-input__span">Senha</span>
-                    <input class="login-input__campo" type="password" name="senha" id="ipt_senha" required>
-                    <div class="login-input__border"></div>
-                </label>
+            <div class="login-campos">
+                <div class="login-campo">
+                    <label class="login-campo__label">
+                        <span class="login-campo__span">Email</span>
+                        <input class="login-campo__input" type="email" name="email" id="ipt_email" required>
+                        <div class="login-campo__border"></div>
+                    </label>
+                </div>
+                <div class="login-campo">
+                    <label class="login-campo__label">
+                        <span class="login-campo__span">Senha</span>
+                        <input class="login-campo__input" type="password" name="senha" id="ipt_senha" required>
+                        <div class="login-campo__border"></div>
+                    </label>
+                </div>
             </div>
             <div class="login-control__buttons">
                 <button type="submit" class="login-btn__entrar">Entrar</button>
@@ -169,8 +171,8 @@
 
         function buscarCampos() {
             let listaCampos = [];
-            document.querySelectorAll('div.login-input').forEach(function (element) {
-                let campo = element.querySelector('.login-input__campo');
+            document.querySelectorAll('div.login-campo').forEach(function (element) {
+                let campo = element.querySelector('.login-campo__input');
 
                 listaCampos.push({
                     div: element,
@@ -183,14 +185,14 @@
 
         camposLogin.forEach(element => {
             element.input.addEventListener('focus', function() {
-                    element.div.classList.add('login-input--focus');
+                    element.div.classList.add('login-campo--focus');
             });
 
             element.input.addEventListener('focusout', function() {
                 if (element.input.value != '') {
                     return;
                 }
-                element.div.classList.remove('login-input--focus');
+                element.div.classList.remove('login-campo--focus');
                 
             });
         });
