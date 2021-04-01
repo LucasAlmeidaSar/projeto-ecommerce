@@ -23,7 +23,9 @@
     letter-spacing: 5px;
 }
 
-.cabecalho-principal__subtitulo {  font-size: 1.2rem;  }
+.cabecalho-principal__subtitulo {
+    font-size: 1.2rem;
+}
 
 .cabecalho-principal__btn {
     letter-spacing: 1.5px;
@@ -33,10 +35,9 @@
     border-radius: 5px;
 }
 
-.cabecalho-principal__btn:hover {  background: var(--cor-btn-cabecalho-principal-hover);  }
-
-
-
+.cabecalho-principal__btn:hover {
+    background: var(--cor-btn-cabecalho-principal-hover);
+}
 
 
 /* Conteúdo Principal */
@@ -45,9 +46,6 @@
     width: 70%;
     margin: auto;
 }
-
-
-
 
 
 /* Seção Categorias */
@@ -79,11 +77,13 @@
     background-size: cover;
 }
 
-.mkt-ilustrativo {  background-image: url("https://www.w3schools.com/w3images/workbench.jpg");  }
-   .mkt-produtos {  background-image: url("https://www.w3schools.com/w3images/photographer.jpg");  }
+.mkt-ilustrativo {
+    background-image: url("https://www.w3schools.com/w3images/workbench.jpg");
+}
 
-
-
+.mkt-produtos {
+    background-image: url("https://www.w3schools.com/w3images/photographer.jpg");
+}
 
 
 /* Seção Mapa */
@@ -127,11 +127,12 @@
 
 .rodape {
     background-color: var(--cor-fundo-rodape);
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 30px;
 }
 
 .cartao {
-    margin-right: 10px;
+    margin-right: 5px;
     max-width: 40px;
     max-height: 50px;
     width: auto;
@@ -158,8 +159,4 @@
     text-decoration: none;
     font-family: 'Merriweather', serif;
     font-size: 18px;
-}
-
-.icon-rodape {
-    margin-bottom: 10px;
 }
