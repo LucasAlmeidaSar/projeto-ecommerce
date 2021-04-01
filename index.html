@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
     <title>E-commerce</title>
 </head>
@@ -49,16 +50,15 @@
                 <li>
                     <a class="icone icone-nav" href="#"> <i class="far fa-user"></i> </a>
                 </li>
-                <li>
-                    <a class="icone icone-nav" href="#"> <i class="fas fa-shopping-cart"></i> </a>
+                <li> 
+                    <a class="icone icone-nav btnCart" href="#"> <i class="fas fa-shopping-cart"></i> </a>
+                    <script src="src/cart.js"></script>
                 </li>
             </ul>
 
         </div>
 
     </nav>
-
-
 
 
 <!-- Menu Celular -->       
@@ -113,7 +113,51 @@
     </header>
 
 
-
+        <!--Carrinho-->
+        <div class="cart-conteudo flex">
+            <div id="cart-titulo">
+                <strong>2 item(ns) </strong> no seu carrinho
+            </div>
+            <div id="cart-produto__lista">
+                    <div class="cart-produto__container">
+                        <div class = "cart-produto__img">
+                            <img src="imagens/blackshirt.jpg">
+                        </div>
+                            <span class="cart-produto__desc">Camisa Masculina</span>
+                            <span class="cart-produto__detalhes">Preta | G</span>
+                            <span class="cart-produto__qtd">Qtd.: </span>
+                            <span class="cart-produto__valor">R$ 130,00</span>                                                      
+                    </div>
+    
+                    <div class="input-group">
+                        <input type="button" value="-" class="button-minus" data-field="quantity">
+                        <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                        <input type="button" value="+" class="button-plus" data-field="quantity">
+                      </div>
+    
+                    <div class="cart-produto__container">
+                        <div class = "cart-produto__img">
+                            <img src="imagens/blackshirt.jpg">
+                        </div>
+                            <span class="cart-produto__desc">Camisa Masculina</span>
+                            <span class="cart-produto__detalhes">Preta | G</span>
+                            <span class="cart-produto__qtd">Qtd.: </span>
+                            <span class="cart-produto__valor">R$ 130,00</span>                                                      
+                    </div>
+    
+                    <div class="input-group">
+                        <input type="button" value="-" class="button-minus" data-field="quantity">
+                        <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                        <input type="button" value="+" class="button-plus" data-field="quantity">
+                    </div>
+            </div>
+        <div id="cart-produto__subtotal" class="flex">
+            <span id="cart-subtotal"><strong>Subtotal:</strong></span>                 
+            <span id="cart-subvalor"><strong>R$ 260,00</strong></span>
+        </div>
+        <button id="btnCartExpandido">Ir para o carrinho</button>
+        <button id="btnCheckout"> Checkout</button>  
+    </div>
 
 
     <!-- Conteúdo Principal -->
