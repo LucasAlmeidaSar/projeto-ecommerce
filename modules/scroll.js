@@ -1,7 +1,7 @@
 const menuTopo = document.querySelector('.nav-principal__menu-topo')
-const btnTopo = document.getElementsByClassName('btn-nav')
-const iconeTopo = document.getElementsByClassName('icone-nav')
 const dropdownConteudo = document.querySelector('.dropdown-conteudo')
+const btnTopo = document.querySelectorAll('.btn-nav')
+const iconeTopo = document.querySelectorAll('.icone-nav')
 
 
 
@@ -14,6 +14,7 @@ export default function scrollPagina() {
     }
 }
 
+
 function scrollElementos (operacao, ...elementos) {
    for (const elemento of elementos) {
 
@@ -24,6 +25,7 @@ function scrollElementos (operacao, ...elementos) {
         }
    }
 }
+
 
 function varrerColecaoEncontrada(operacao, elementos){
     if(operacao === 'ativar'){
