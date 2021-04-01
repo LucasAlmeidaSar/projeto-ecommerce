@@ -5,7 +5,7 @@ const iconeTopo = document.querySelectorAll('.icone-nav')
 
 
 
-export default function scrollPagina() {
+export default function ativarEfeitosDeScroll() {
     
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
         scrollElementos('ativar', menuTopo, dropdownConteudo, btnTopo, iconeTopo)
