@@ -40,21 +40,61 @@
 }
 
 
+
+
+
 /* Conteúdo Principal */
 
 .conteudo-principal__secao {
-    width: 70%;
+    width: 75%;
     margin: auto;
 }
 
 
-/* Seção Categorias */
 
 
-/* Seção Produtos Recentes  */
+
+/* Seção Lançamentos  */
+
 
 
 /* Seção Produtos em oferta */
+.produtos-oferta__title{
+    text-align: center;
+    margin: 65px;
+    letter-spacing: 2.5px;
+    font-size: 1.7rem;
+    position: relative;
+}
+
+.produtos-oferta__title::after {
+    content: '';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    width: 70px;
+    height: 2.5px;
+    border-radius: 2px;
+    background: var(--cor-escura);
+}
+
+.produtos-oferta__btn{
+    background-color: var(--cor-btn-oferta);
+    width: 100px;
+    margin: 50px auto;
+}
+
+.produtos-oferta__btn:hover{  background-color: var(--cor-escura);}
+
+
+
+
+/* Seção Categorias */
+.categorias_grid{
+    width: 100%;
+}
+
 
 
 /* Seção Marketing */
@@ -84,6 +124,9 @@
 .mkt-produtos {
     background-image: url("https://www.w3schools.com/w3images/photographer.jpg");
 }
+
+
+
 
 
 /* Seção Mapa */
@@ -121,6 +164,9 @@
 .informação-contato__btn:hover {
     background-color: rgba(0, 0, 0, 0.713);
 }
+
+
+
 
 
 /* Rodapé */
