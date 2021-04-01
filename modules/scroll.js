@@ -18,7 +18,7 @@ export default function scrollPagina() {
 function scrollElementos (operacao, ...elementos) {
    for (const elemento of elementos) {
 
-        if (elemento.length !== undefined) {    
+        if (elemento.length) {    
             varrerColecaoEncontrada(operacao, elemento)
         }else{
             operacao === 'ativar' ? elemento.classList.add('on-scroll') : elemento.classList.remove('on-scroll')
