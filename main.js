@@ -1,7 +1,10 @@
-import scrollPagina from './modules/scroll.js'
-import colapsar from './modules/menu.js'
+import ativarEfeitosDeScroll from './modules/scroll.js'
+import ativarMenuColapsado from './modules/menu.js'
+
 
 //Ao scrollar a página
-window.onscroll = () => scrollPagina()
+window.onscroll = () => ativarEfeitosDeScroll()
 
-colapsar()
+
+//Menu p/ Celular
+ativarMenuColapsado()

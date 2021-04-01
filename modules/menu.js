@@ -3,7 +3,7 @@ const containerColapsado = document.querySelector('.container-colapsado');
 const itemListaColapsado = document.querySelector('.conteudo__item-lista-colapsado')
 
 
-export default function colapsar(){    
+export default function ativarMenuColapsado(){    
 
     btnColapsado.addEventListener('click', () => {
         itemListaColapsado.classList.toggle('ativo')
