@@ -61,8 +61,7 @@
                     <a class="icone icone-nav" href="#"> <i class="far fa-user"></i> </a>
                 </li>
                 <li>
-                    <a class="icone icone-nav btnCart" href="#"> <i class="fas fa-shopping-cart"></i> </a>
-                    <script src="src/cart.js"></script>
+                    <a class="icone icone-nav btnCart" href="#"> <i class="fas fa-shopping-cart"></i> </a>                  
                 </li>
             </ul>
 
@@ -462,7 +461,13 @@
 
 
     <!-- Script -->
-    <script type="module" src="./main.js"></script>
+    <script type="module">
+
+        import { iniciarApp } from './src/main.js'
+
+        iniciarApp()
+
+    </script>
 
 </body>
 

@@ -1,4 +1,5 @@
-var btn = document.querySelector(".btnCart");
+export default function ativarCarrinho() {
+  var btn = document.querySelector(".btnCart");
 btn.addEventListener('click', showHide);
 
 function showHide(){
@@ -40,3 +41,4 @@ function incrementValue(e) {
     decrementValue(e);
   });
   
+}
