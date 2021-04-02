@@ -15,7 +15,7 @@ body{
     width: 100%;
     height: 100%;
     background-color: var(--cor-fundo-principal) ;
-    /* font-family: ; */
+    font-family: Roboto, sans-serif;
 }
 
 
