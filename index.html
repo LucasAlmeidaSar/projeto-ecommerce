@@ -9,15 +9,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/2454d969d0.js" crossorigin="anonymous"></script>
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/cores.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css//menu.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/main.css">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
     <title>E-commerce</title>
 </head>
@@ -35,9 +37,9 @@
             <a class="logo  btn btn-nav" href="#">Logo</a>
 
             <ul class="flex">
-                <li> <a class="btn btn-nav" href="#">Home</a> </li>
+                <li> <a class="btn btn-nav" href="#">Início</a> </li>
                 <li class="dropdown">
-                    <a class="btn btn-nav dropdown-alternador" href="#">Produtos</a>
+                    <a class="btn btn-nav dropdown-alternador" href="javascript:void(0)">Produtos</a>
                     <div class="dropdown-conteudo flex">
                         <a class="btn btn-nav dropdown-btn" href="#">Todos</a>
                         <a class="btn btn-nav dropdown-btn" href="#">Masculinos</a>
@@ -55,19 +57,58 @@
                     <a class="icone icone-nav" href="#"> <i class="far fa-user"></i> </a>
                 </li>
                 <li>
-                    <a class="icone icone-nav" href="#"> <i class="fas fa-shopping-cart"></i> </a>
+                    <a class="icone icone-nav btnCart" href="#"> <i class="fas fa-shopping-cart"></i> </a>
+                    <script src="src/cart.js"></script>
                 </li>
             </ul>
 
         </div>
 
-        <!-- Menu Off Canvas -->
-        <div class="nav-principal__menu-celular">
-
-
-        </div>
-
     </nav>
+
+
+    <!-- Menu Celular -->
+    <div class="nav-principal__menu-celular  inativo">
+        <div class="menu-celular__cabecalho">
+            <a class="cabecalho__link link" href="#">&times;</a>
+            <!-- <a class="cabecalho__link link" href="#">&#9776; </a>  -->
+        </div>
+        <div class="menu-celular__conteudo">
+            <ul class="conteudo__lista flex">
+                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">Início</a> </li>
+                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">Sobre</a> </li>
+
+                <li class="conteudo__item-lista  conteudo__item-lista-colapsado ">
+                    <a class="conteudo__btn conteudo__btn-colapsado btn" href="javascript:void(0)">Produtos</a>
+
+                    <div class="container-colapsado flex">
+                        <a class="container-colapsado__btn btn" href="#">Todos</a>
+                        <a class="container-colapsado__btn btn" href="#">Masculino</a>
+                        <a class="container-colapsado__btn btn" href="#">Feminino</a>
+                        <a class="container-colapsado__btn btn" href="#">Unissex</a>
+                    </div>
+
+                </li>
+
+                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">FAQ</a> </li>
+                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">Contato</a> </li>
+            </ul>
+        </div>
+        <div class="menu-celular__rodape">
+            <ul class="rodape__lista flex">
+                <li>
+                    <a class="rodape__btn btn" href="#"> <i class="fab fa-facebook-square "></i> </a>
+                </li>
+                <li>
+                    <a class="rodape__btn btn" href="#"> <i class="fab fa-twitter-square "></i> </a>
+                </li>
+                <li>
+                    <a class="rodape__btn btn" href="#"> <i class="fab fa-instagram "></i> </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 
 
 
@@ -84,7 +125,51 @@
     </header>
 
 
+    <!--Carrinho-->
+    <div class="cart-conteudo flex">
+        <div id="cart-titulo">
+            <strong>2 item(ns) </strong> no seu carrinho
+        </div>
+        <div id="cart-produto__lista">
+            <div class="cart-produto__container">
+                <div class="cart-produto__img">
+                    <img src="imagens/blackshirt.jpg">
+                </div>
+                <span class="cart-produto__desc">Camisa Masculina</span>
+                <span class="cart-produto__detalhes">Preta | G</span>
+                <span class="cart-produto__qtd">Qtd.: </span>
+                <span class="cart-produto__valor">R$ 130,00</span>
+            </div>
 
+            <div class="input-group">
+                <input type="button" value="-" class="button-minus" data-field="quantity">
+                <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                <input type="button" value="+" class="button-plus" data-field="quantity">
+            </div>
+
+            <div class="cart-produto__container">
+                <div class="cart-produto__img">
+                    <img src="imagens/blackshirt.jpg">
+                </div>
+                <span class="cart-produto__desc">Camisa Masculina</span>
+                <span class="cart-produto__detalhes">Preta | G</span>
+                <span class="cart-produto__qtd">Qtd.: </span>
+                <span class="cart-produto__valor">R$ 130,00</span>
+            </div>
+
+            <div class="input-group">
+                <input type="button" value="-" class="button-minus" data-field="quantity">
+                <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                <input type="button" value="+" class="button-plus" data-field="quantity">
+            </div>
+        </div>
+        <div id="cart-produto__subtotal" class="flex">
+            <span id="cart-subtotal"><strong>Subtotal:</strong></span>
+            <span id="cart-subvalor"><strong>R$ 260,00</strong></span>
+        </div>
+        <button id="btnCartExpandido">Ir para o carrinho</button>
+        <button id="btnCheckout"> Checkout</button>
+    </div>
 
 
     <!-- Conteúdo Principal -->
@@ -129,79 +214,127 @@
         <!-- Seção Produtos em oferta -->
         <section class="conteudo-principal__secao  produtos-oferta">
 
-            <h2>Produtos em oferta</h2>
+            <h2 class="produtos-oferta__title">Produtos em oferta</h2>
 
             <div class="produtos-oferta__grid grid">
 
                 <div class="card">
-                    <img class="card__imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
-                    <h3 class="card__titulo">Legenda</h3>
-                    <p class="card__subtitulo">R$ 129,90</p>
-                    <ul class="card__lista flex">
-                        <li><a href="#">cor 1</a> </li>
-                        <li><a href="#">cor 2</a> </li>
-                        <li><a href="#">cor 3</a> </li>
-                    </ul>
+                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
+                    <div class="card__descricao">
+                        <h3 class="card__titulo">Legenda</h3>
+                        <p class="card__subtitulo">R$ 129,90</p>
+                        <ul class="card__lista flex">
+                            <li>
+                                <a class="card__cor cor-1" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-2" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-3" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
-                    <h3 class="card__titulo">Legenda</h3>
-                    <p class="card__subtitulo">R$ 129,90</p>
-                    <ul class="card__lista flex">
-                        <li><a href="#">cor 1</a> </li>
-                        <li><a href="#">cor 2</a> </li>
-                        <li><a href="#">cor 3</a> </li>
-                    </ul>
+                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
+                    <div class="card__descricao">
+                        <h3 class="card__titulo">Legenda</h3>
+                        <p class="card__subtitulo">R$ 129,90</p>
+                        <ul class="card__lista flex">
+                            <li>
+                                <a class="card__cor cor-1" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-2" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-3" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
-                    <h3 class="card__titulo">Legenda</h3>
-                    <p class="card__subtitulo">R$ 129,90</p>
-                    <ul class="card__lista flex">
-                        <li><a href="#">cor 1</a> </li>
-                        <li><a href="#">cor 2</a> </li>
-                        <li><a href="#">cor 3</a> </li>
-                    </ul>
+                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
+                    <div class="card__descricao">
+                        <h3 class="card__titulo">Legenda</h3>
+                        <p class="card__subtitulo">R$ 129,90</p>
+                        <ul class="card__lista flex">
+                            <li>
+                                <a class="card__cor cor-1" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-2" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-3" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
-                    <h3 class="card__titulo">Legenda</h3>
-                    <p class="card__subtitulo">R$ 129,90</p>
-                    <ul class="card__lista flex">
-                        <li><a href="#">cor 1</a> </li>
-                        <li><a href="#">cor 2</a> </li>
-                        <li><a href="#">cor 3</a> </li>
-                    </ul>
+                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
+                    <div class="card__descricao">
+                        <h3 class="card__titulo">Legenda</h3>
+                        <p class="card__subtitulo">R$ 129,90</p>
+                        <ul class="card__lista flex">
+                            <li>
+                                <a class="card__cor cor-1" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-2" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-3" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
-                    <h3 class="card__titulo">Legenda</h3>
-                    <p class="card__subtitulo">R$ 129,90</p>
-                    <ul class="card__lista flex">
-                        <li><a href="#">cor 1</a> </li>
-                        <li><a href="#">cor 2</a> </li>
-                        <li><a href="#">cor 3</a> </li>
-                    </ul>
+                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
+                    <div class="card__descricao">
+                        <h3 class="card__titulo">Legenda</h3>
+                        <p class="card__subtitulo">R$ 129,90</p>
+                        <ul class="card__lista flex">
+                            <li>
+                                <a class="card__cor cor-1" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-2" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-3" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
-                    <h3 class="card__titulo">Legenda</h3>
-                    <p class="card__subtitulo">R$ 129,90</p>
-                    <ul class="card__lista flex">
-                        <li><a href="#">cor 1</a> </li>
-                        <li><a href="#">cor 2</a> </li>
-                        <li><a href="#">cor 3</a> </li>
-                    </ul>
+                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
+                    <div class="card__descricao">
+                        <h3 class="card__titulo">Legenda</h3>
+                        <p class="card__subtitulo">R$ 129,90</p>
+                        <ul class="card__lista flex">
+                            <li>
+                                <a class="card__cor cor-1" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-2" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-3" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
             </div>
 
-            <a class="btn" href="#">Ver mais</a>
+            <a class="produtos-oferta__btn btn" href="#">Ver mais</a>
 
         </section>
 
@@ -227,19 +360,19 @@
 
             <h2>Categorias</h2>
 
-            <div class="categorias grid">
+            <div class="categorias_grid grid">
                 <div class="card">
-                    <img class="card__imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
+                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
                     <h3 class="card__titulo">Categoria Masculina</h3>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
+                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
                     <h3 class="card__titulo">Categoria Feminina</h3>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
+                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
                     <h3 class="card__titulo">Categoria Unissex</h3>
                 </div>
             </div>
@@ -251,11 +384,19 @@
 
         <!-- Seção Mapa -->
         <section class="conteudo-principal__secao  mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14980.276844700637!2d-40.26132927337219!3d-20.17284358348979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb81e5bc2f36b61%3A0x9322478fc04f4f92!2sBarcelona%2C%20Serra%20-%20ES!5e0!3m2!1spt-BR!2sbr!4v1616628095610!5m2!1spt-BR!2sbr"
-                width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <div class="informação-contato">
+                <h1>Nossa loja</h1>
+                <p>Barcelona, Espírito Santo</p>
+                <p>Seg - Sex, 9h às 21h </p>
+                <p>Sábado, 9h às 15h</p>
+                <p>Domingo, 9h às 12h</p>
+                <a class="informação-contato__btn btn" href="https://goo.gl/maps/BbgC1G8KQRDkavSWA" target="_blank">Como chegar</a>
+            </div>
+            <iframe src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14980.276844700637!2d-40.26132927337219!3d-20.17284358348979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb81e5bc2f36b61%3A0x9322478fc04f4f92!2sBarcelona%2C%20Serra%20-%20ES!5e0!3m2!1spt-BR!2sbr!4v1616628095610!5m2!1spt-BR!2sbr "
+                width="100% " height="600 " style="border:0; " allowfullscreen=" " loading="lazy "></iframe>
 
         </section>
-
 
     </main>
 
@@ -265,38 +406,37 @@
 
 
     <!-- Rodapé -->
-    <footer class="rodape">
+    <footer class="rodape flex">
 
         <div>
-            <ul>
-                <li><a href="#">Faq</a></li>
-                <li><a href="#">Sobre nós</a></li>
-                <li><a href="#">Contato</a></li>
+            <ul class="rodape-link">
+                <li><a href="# ">FAQ</a></li>
+                <li><a href="# ">Sobre nós</a></li>
+                <li><a href="# ">Contato</a></li>
+
             </ul>
         </div>
 
         <div>
-            <h3>Siga-nos</h3>
-            <ul class="flex">
+            <h3 class="flex rodape-fonte">Siga-nos</h3>
+            <ul class="flex icon-rodape ">
                 <li>
-                    <a class="icone" href="#"> <i class="fab fa-instagram"></i> </a>
+                    <a class="icone " title="Instagram" href="# "> <i class="fab fa-instagram "></i> </a>
                 </li>
                 <li>
-                    <a class="icone" href="#"> <i class="fab fa-facebook-square"></i> </a>
+                    <a class="icone " title="Facebook" href="# "> <i class="fab fa-facebook-square "></i> </a>
                 </li>
                 <li>
-                    <a class="icone" href="#"> <i class="fab fa-twitter-square"></i> </a>
+                    <a class="icone " title="Twitter" href="# "> <i class="fab fa-twitter-square "></i> </a>
                 </li>
             </ul>
         </div>
 
         <div>
-            <ul class="flex">
-                <li> <a href="#">Pagamento</a> </li>
-                <li> <a href="#">Pagamento</a> </li>
-                <li> <a href="#">Pagamento</a> </li>
-                <li> <a href="#">Pagamento</a> </li>
-                <li> <a href="#">Pagamento</a> </li>
+            <ul class="flex ">
+                <li><img class="cartao " title="Visa" src="imagens/visa.png"></li>
+                <li><img class="cartao " title="Mastercard" src="imagens/mastercard.png"></li>
+                <li><img class="cartao " title="Maestro" src="imagens/maestro.png"></li>
             </ul>
         </div>
 
@@ -304,8 +444,9 @@
     </footer>
 
 
-    <script src="src/scroll.js"></script>
+
     <script src="src/carrossel.js"></script>
+    <script type="module" src="./main.js"></script>
 </body>
 
 </html>
