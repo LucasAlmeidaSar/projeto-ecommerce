@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.min.js'></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+    
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/cores.css">
     <style>
-        @keyframes autofill {
-            0%,100% {
-                color: #666;
-                background: transparent;
-            }
-        }
 
         input:-webkit-autofill,
         textarea:-webkit-autofill,
@@ -43,40 +41,17 @@
             margin: 50px 0;
         }
 
-        .login-campo {
-            margin-top: 16px;
-            margin-bottom: 20px;
+        .campo {
+            padding-top: 18px;
         }
 
-        .login-campo, .login-campo__label {
-            position: relative;
-        }
-
-        .login-campo__input, .login-campo__input:hover, 
         .login-control__btn {
             border: none;
             outline: none;
         }
 
-        .login-campo__input {
-            width: 100%;
-            background-color: transparent;
-            user-select: none;
-            font-size: 20px;
-            height: 40px;
-        }
-
-        .login-campo__span {
-            position: absolute;
-            top: 0;
-            white-space: nowrap;
-            cursor: text;
-            font-size: 20px;
-            transition: font-size 0.15s ease-out, transform 0.15s ease-out;
-            opacity: 0.8;
-        }
-
-        .login-btn__entrar, .login-btn__senha {
+        .login-btn__entrar,
+        .login-btn__senha {
             display: block;
             width: 100%;
             font-size: 18px;
@@ -103,57 +78,16 @@
         .login-titulo {
             text-align: center;
         }
-
-        .login-campo__border {
-            position: relative;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.39);
-        }
-
-        .login-campo__border::after {
-            position: absolute;
-            content: '';
-            display: block;
-            height: 2px;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.767);
-            transition: transform 0.3s ease-out;
-            transform: scaleX(0);
-        }
-
-        .login-campo--focus .login-campo__span {
-            font-size: 0.7em;
-            transform: translateY(-22px);
-        }
-
-        .login-campo--focus .login-campo__border::after {
-            transform: scaleX(1);
-        }
-
-        .login-campo__label:hover .login-campo__border::after {
-            transform: scaleX(1);
-        }
-
     </style>
 </head>
+
 <body>
-    <div class="login-container">
+    <div id="login" class="login-container">
         <form id="login-form" class="login-form">
             <h2 class="login-titulo">Entre na sua conta</h2>
             <div class="login-campos">
-                <div class="login-campo">
-                    <label class="login-campo__label">
-                        <span class="login-campo__span">Email</span>
-                        <input class="login-campo__input" type="email" name="email" id="ipt_email" required>
-                        <div class="login-campo__border"></div>
-                    </label>
-                </div>
-                <div class="login-campo">
-                    <label class="login-campo__label">
-                        <span class="login-campo__span">Senha</span>
-                        <input class="login-campo__input" type="password" name="senha" id="ipt_senha" required>
-                        <div class="login-campo__border"></div>
-                    </label>
-                </div>
+                <input-layout id="email" v-model="email" type="email" preencher>Email</input-layout>
+                <input-layout id="senha" v-model="senha" type="password" preencher>Senha</input-layout>
             </div>
             <div class="login-control__buttons">
                 <button type="submit" class="login-btn__entrar">Entrar</button>
@@ -162,41 +96,19 @@
         </form>
     </div>
 
-    <script>
-        let inputSelecionado;
-
-        let camposLogin = buscarCampos();
-
-        console.log(camposLogin);
-
-        function buscarCampos() {
-            let listaCampos = [];
-            document.querySelectorAll('div.login-campo').forEach(function (element) {
-                let campo = element.querySelector('.login-campo__input');
-
-                listaCampos.push({
-                    div: element,
-                    input: campo
-                })
-            });
-
-            return listaCampos;
-        }
-
-        camposLogin.forEach(element => {
-            element.input.addEventListener('focus', function() {
-                    element.div.classList.add('login-campo--focus');
-            });
-
-            element.input.addEventListener('focusout', function() {
-                if (element.input.value != '') {
-                    return;
-                }
-                element.div.classList.remove('login-campo--focus');
-                
-            });
+    <script type="module">
+        let vapp = new Vue({
+            el: '#login',
+            data: {
+                email: '',
+                senha: ''
+            },
+            components: {
+                'input-layout': httpVueLoader('../components/InputLayout.vue')
+            }
         });
     </script>
-    
+
 </body>
+
 </html>
