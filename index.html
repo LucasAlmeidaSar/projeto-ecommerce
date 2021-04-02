@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/cores.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css//menu.css">
+    <link rel="stylesheet" href="css/carrinho.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/main.css">
 
@@ -61,7 +62,7 @@
                     <a class="icone icone-nav" href="#"> <i class="far fa-user"></i> </a>
                 </li>
                 <li>
-                    <a class="icone icone-nav btnCart" href="#"> <i class="fas fa-shopping-cart"></i> </a>                  
+                    <a class="icone icone-nav btnCart" href="javascript:void(0)"> <i class="fas fa-shopping-cart"></i> </a>                  
                 </li>
             </ul>
 
@@ -99,15 +100,15 @@
             </ul>
         </div>
         <div class="menu-celular__rodape">
-            <ul class="rodape__lista flex">
+            <ul class="menu-celular__rodape__lista flex">
                 <li>
-                    <a class="rodape__btn btn" href="#"> <i class="fab fa-facebook-square "></i> </a>
+                    <a class="menu-celular__rodape__btn btn" href="#"> <i class="fab fa-facebook-square "></i> </a>
                 </li>
                 <li>
-                    <a class="rodape__btn btn" href="#"> <i class="fab fa-twitter-square "></i> </a>
+                    <a class="menu-celular__rodape__btn btn" href="#"> <i class="fab fa-twitter-square "></i> </a>
                 </li>
                 <li>
-                    <a class="rodape__btn btn" href="#"> <i class="fab fa-instagram "></i> </a>
+                    <a class="menu-celular__rodape__btn btn" href="#"> <i class="fab fa-instagram "></i> </a>
                 </li>
             </ul>
         </div>
@@ -187,21 +188,19 @@
 
 
         <!-- Seção Lançamentos -->
-        <section class="conteudo-principal__secao  produtos-recentes">
-
-            <div class="lancamentos">
-                <h2>Lançamentos</h2>
+        <section class="conteudo-principal__secao  lancamentos">
+           
+                <h2 class="conteudo-principal__title">Lançamentos</h2>
                 <div class="carrossel">
 
                     <!-- Precisa de estilização -->
-                    <div class="img-carrossel"><img src="https://i.pinimg.com/474x/16/dc/84/16dc8475e9392e7fe94aa008a4a1461b.jpg" alt="Alrora boreal "></div>
-                    <div class="img-carrossel"><img src="https://mhmcdn.ynvolve.net/?w=750&h=450&quality=90&clipping=landscape&url=//manualdohomemmoderno.com.br/files/2021/03/nike-quer-destruir-versao-satanica-do-air-max-97-com-sangue-humano-nike-quer-destruir-versao-satanica-do-air-max-97-com-sangue-humano-3.jpg&format=webp&hash=5cfb87d08b8e00826852e14fa1e53ed79e8f0b4e7983bd2b329cbbaaa4839172"></div>
-                    <div class="img-carrossel"><img src="https://www.amigosdoforum.com.br/wp-content/uploads/2018/06/supremeprodutos.jpg" alt="Moletom Gucci"></div>
-                    <div class="img-carrossel"><img src="https://images-americanas.b2w.io/produtos/1230246022/imagens/high-quality-casual-sports-define-mangas-longas-tops-calcas-lazer-roupa-mulher-conjuntos-para-jogging-caminhadas-camping/1230246022_1_large.jpg" alt=""> </div>
-
+                    <div class="carrossel__container-img"><img class="carrossel__img" src="https://i.pinimg.com/474x/16/dc/84/16dc8475e9392e7fe94aa008a4a1461b.jpg" alt="Alrora boreal "></div>
+                    <div class="carrossel__container-img"><img class="carrossel__img" src="https://mhmcdn.ynvolve.net/?w=750&h=450&quality=90&clipping=landscape&url=//manualdohomemmoderno.com.br/files/2021/03/nike-quer-destruir-versao-satanica-do-air-max-97-com-sangue-humano-nike-quer-destruir-versao-satanica-do-air-max-97-com-sangue-humano-3.jpg&format=webp&hash=5cfb87d08b8e00826852e14fa1e53ed79e8f0b4e7983bd2b329cbbaaa4839172"></div>
+                    <div class="carrossel__container-img"><img class="carrossel__img" src="https://www.amigosdoforum.com.br/wp-content/uploads/2018/06/supremeprodutos.jpg" alt="Moletom Gucci"></div>
+                    <div class="carrossel__container-img"><img class="carrossel__img" src="https://images-americanas.b2w.io/produtos/1230246022/imagens/high-quality-casual-sports-define-mangas-longas-tops-calcas-lazer-roupa-mulher-conjuntos-para-jogging-caminhadas-camping/1230246022_1_large.jpg" alt=""> </div>
+              
                 </div>
-                <a href="#">Ver todos</a>
-            </div>
+                <a class="lancamentos_btn btn" href="#">Ver todos</a>           
 
         </section>
 
@@ -227,7 +226,7 @@
         <!-- Seção Produtos em oferta -->
         <section class="conteudo-principal__secao  produtos-oferta">
 
-            <h2 class="produtos-oferta__title">Produtos em oferta</h2>
+            <h2 class="produtos-oferta__title   conteudo-principal__title">Produtos em oferta</h2>
 
             <div class="produtos-oferta__grid grid">
 
@@ -370,24 +369,24 @@
 
 
         <!-- Seção categoria -->
-        <section class="conteudo-principal__secao  categoria">
+        <section class="conteudo-principal__secao  categorias">
 
-            <h2 class="categorias-produto__title">Categorias</h2>
+            <h2 class="conteudo-principal__title">Categorias</h2>
 
             <div class="categorias_grid grid">
                 <div class="card">
                     <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
-                    <h3 class="card__titulo2">Masculino</h3>
+                    <h3 class="card__titulo">Masculino</h3>
                 </div>
 
                 <div class="card">
                     <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
-                    <h3 class="card__titulo2">Feminino</h3>
+                    <h3 class="card__titulo">Feminino</h3>
                 </div>
 
                 <div class="card">
                     <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
-                    <h3 class="card__titulo2">Unissex</h3>
+                    <h3 class="card__titulo ">Unissex</h3>
                 </div>
             </div>
 
@@ -425,34 +424,34 @@
     <footer class="rodape flex">
 
         <div>
-            <ul class="rodape-link">
-                <li><a href="# ">FAQ</a></li>
-                <li><a href="# ">Sobre nós</a></li>
-                <li><a href="# ">Contato</a></li>
+            <ul class="rodape__lista">
+                <li><a class="rodape__link" href="# ">FAQ</a></li>
+                <li><a class="rodape__link" href="# ">Sobre nós</a></li>
+                <li><a class="rodape__link" href="# ">Contato</a></li>
 
             </ul>
         </div>
 
         <div>
-            <h3 class="flex rodape-fonte">Siga-nos</h3>
-            <ul class="flex icon-rodape ">
+            <h3 class="rodape__titulo">Siga-nos</h3>
+            <ul class="flex">
                 <li>
-                    <a class="icone " title="Instagram" href="# "> <i class="fab fa-instagram "></i> </a>
+                    <a class="rodape__icone icone" title="Instagram" href="# "> <i class="fab fa-instagram "></i> </a>
                 </li>
                 <li>
-                    <a class="icone " title="Facebook" href="# "> <i class="fab fa-facebook-square "></i> </a>
+                    <a class="rodape__icone icone" title="Facebook" href="# "> <i class="fab fa-facebook-square "></i> </a>
                 </li>
                 <li>
-                    <a class="icone " title="Twitter" href="# "> <i class="fab fa-twitter-square "></i> </a>
+                    <a class="rodape__icone icone" title="Twitter" href="# "> <i class="fab fa-twitter-square "></i> </a>
                 </li>
             </ul>
         </div>
 
         <div>
-            <ul class="flex ">
-                <li><img class="cartao " title="Visa" src="img/visa.png"></li>
-                <li><img class="cartao " title="Mastercard" src="img/mastercard.png"></li>
-                <li><img class="cartao " title="Maestro" src="img/maestro.png"></li>
+            <ul class="flex">
+                <li><img class="rodape__cartao" title="Visa" src="img/visa.png"></li>
+                <li><img class="rodape__cartao" title="Mastercard" src="img/mastercard.png"></li>
+                <li><img class="rodape__cartao" title="Maestro" src="img/maestro.png"></li>
             </ul>
         </div>
 

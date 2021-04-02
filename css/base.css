@@ -65,27 +65,26 @@ li {
 .btn {
     display: block;
     padding: 10px 20px;
+    width: 150px;
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
     color: var(--cor-clara);
     margin: 0 10px;
     transition: all .3s ease;
-    /* background: ;   */
+    background-color: var(--cor-btn);
 }
 
-.btn:hover {
-    /*background: ;*/
-}
+.btn:hover {  background-color: var(--cor-escura);  }
 
 .btn-nav {
+    background-color: var(--cor-btn-nav);
     font-size: 1.1rem;
     width: 120px;
 }
 
-.btn-nav:hover {
-    background: var(--cor-btn-nav-principal-hover);
-}
+.btn-nav:hover {  background: var(--cor-btn-nav-principal-hover);  }
+
 
 
 
@@ -97,7 +96,7 @@ li {
     height: 450px;
     border-radius: 10px;
     background: var(--cor-clara);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 10px var(--cor-box-shadow-cards);
 }
 
 .card__imagem {
@@ -119,16 +118,7 @@ li {
     margin-bottom: 5px;
 }
 
-.card__titulo2 {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.card__subtitulo {
-    text-align: center;
-}
-
-.card__lista {}
+.card__subtitulo {  text-align: center;  }
 
 .card__cor {
     display: block;
@@ -136,7 +126,7 @@ li {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: black;
+    background-color: var(--cor-escura);
     position: relative;
     box-shadow: 0 0 0 3px var(--cor-clara), 0 0 0 3.5px rgb(105, 105, 105);
 }
@@ -161,11 +151,6 @@ li {
     display: block;
     text-decoration: none;
     color: var(--cor-clara);
-    /* transition: ; */
-}
-
-.link:hover {
-    /*color: ;*/
 }
 
 
@@ -180,15 +165,9 @@ li {
     transition: all .3s ease;
 }
 
-.icone:hover {
-    /*color: ;*/
-}
+
 
 .icone-nav {
     position: relative;
     font-size: .8rem;
-}
-
-.icone-nav:hover {
-    /*color: ;*/
 }
