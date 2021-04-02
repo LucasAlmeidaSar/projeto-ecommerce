@@ -110,15 +110,15 @@
     margin: 0;
 }
 
-.rodape__lista{  border-top: 1px solid var(--cor-bordas-gerais-menu-celular);  }
+.menu-celular__rodape__lista{  border-top: 1px solid var(--cor-bordas-gerais-menu-celular);  }
 
-.rodape__btn{
+.menu-celular__rodape__btn{
     font-size: 1.5rem;
     margin-top: 10px;
     color: var(--cor-btn-rodape-menu-celular);
 }
 
-.rodape__btn:hover{  color: var(--cor-clara);  }
+.menu-celular__rodape__btn:hover{  color: var(--cor-clara);  }
 
 
 .nav-principal__menu-topo {

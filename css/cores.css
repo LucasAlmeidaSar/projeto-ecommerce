@@ -6,12 +6,14 @@
 
 
 
-    /* Página */
+    /* Elementos gerais */
     --cor-fundo-principal : white;
-
+    --cor-btn: rgb(0, 0, 0,.7);
+    
 
 
     /* Navegação Principal */
+    --cor-btn-nav: transparent;
     --cor-btn-nav-principal-hover: rgba(255, 255, 255, .15);
     --cor-btn-nav-principal-hover-scroll: rgba(0, 0, 0, .3);
 
@@ -28,11 +30,13 @@
     
     /* Cabeçalho */
     --cor-cabecalho-principal: transparent;
+    --cor-imagem-cabecalho-principal: rgba(0,0,0,.5);
     --cor-btn-cabecalho-principal: rgba(0, 0, 0, .8);
     --cor-btn-cabecalho-principal-hover: rgba(255,255,255,.3);
 
-    /* Seção Produtos em Oferta */
-    --cor-btn-oferta: rgb(0, 0, 0,.7);
+    /* Cards */
+    --cor-box-shadow-cards: rgba(0, 0, 0, .3);
+    
 
 
     /* Rodapé */
