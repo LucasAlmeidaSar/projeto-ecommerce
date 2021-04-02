@@ -1,7 +1,9 @@
 /* Cabeçalho */
-*{
+
+* {
     font-family: Roboto, sans-serif;
 }
+
 .cabecalho-principal {
     width: 100%;
     height: 700px;
@@ -42,8 +44,9 @@
 }
 
 
-/* Seção Carrinho */    
-.cart-conteudo{
+/* Seção Carrinho */
+
+.cart-conteudo {
     font-family: Roboto, sans-serif;
     width: 300px;
     height: 350px;
@@ -57,14 +60,13 @@
     box-shadow: 1px 0.5;
     overflow-y: none;
     display: none;
-
 }
 
-.cart-conteudo.ativo{
+.cart-conteudo.ativo {
     display: block;
 }
 
-#cart-titulo{
+#cart-titulo {
     padding: 5px;
     text-align: center;
     font-weight: 300;
@@ -72,16 +74,14 @@
     box-shadow: 0 0 2px 0 0.4;
 }
 
-.cart-produto__container{
+.cart-produto__container {
     display: flex;
     width: 100%;
     border-top: 1px solid rgba(192, 191, 191, 0.575);
-
     height: 80px;
-
 }
 
-.cart-produto__img img{
+.cart-produto__img img {
     position: absolute;
     height: 70px;
     width: 70px;
@@ -89,13 +89,14 @@
     margin-top: 15px;
 }
 
-.cart-produto__desc, .cart-produto__detalhes, .cart-produto__qtd{
+.cart-produto__desc,
+.cart-produto__detalhes,
+.cart-produto__qtd {
     position: relative;
     padding-left: 10px;
 }
 
-
-.cart-produto__desc{
+.cart-produto__desc {
     position: relative;
     font-weight: 300 bold;
     font-size: 14px;
@@ -103,10 +104,9 @@
     padding-bottom: 5px;
     left: 60px;
     top: 15px;
-
 }
 
-.cart-produto__detalhes{
+.cart-produto__detalhes {
     font-weight: 300;
     position: relative;
     font-size: 12px;
@@ -116,17 +116,17 @@
     right: 59px;
 }
 
-.cart-produto__qtd{
+.cart-produto__qtd {
     font-weight: 200 bold;
     font-size: 11px;
     position: relative;
     display: inline-block;
-    padding: 5px;  
+    padding: 5px;
     top: 67px;
     right: 113px;
 }
 
-.cart-produto__valor{
+.cart-produto__valor {
     font-weight: bold;
     font-size: 13px;
     position: relative;
@@ -134,7 +134,7 @@
     top: 70px;
 }
 
-#cart-produto__subtotal{
+#cart-produto__subtotal {
     position: absolute;
     font-weight: 300;
     font-size: 16px;
@@ -147,82 +147,80 @@
     top: 10px;
 }
 
-#cart-subvalor{
+#cart-subvalor {
     position: relative;
     font-weight: 400;
     left: 140px;
-
 }
 
-.cart-conteudo button{
+.cart-conteudo button {
     position: relative;
-    bottom: -28px; 
+    bottom: -28px;
     margin-right: 10px;
     margin-left: 15px;
 }
 
 .cart-conteudo input,
 textarea {
-  border: 1px solid #eeeeee;
-  box-sizing: border-box;
-  margin: 0;
-  outline: none;
-  padding: 10px;
+    border: 1px solid #eeeeee;
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    padding: 10px;
 }
 
 input[type="button"] {
-  -webkit-appearance: button;
-  cursor: pointer;
+    -webkit-appearance: button;
+    cursor: pointer;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 .input-group {
-  clear: both;
-  position: relative;
-  left: 105px;
-  bottom: 15px;
+    clear: both;
+    position: relative;
+    left: 105px;
+    bottom: 15px;
 }
 
 .input-group input[type='button'] {
-  background-color: #eeeeee;
-  min-width: 15px;
-  width: auto;
-  transition: all 300ms ease;
+    background-color: #eeeeee;
+    min-width: 15px;
+    width: auto;
+    transition: all 300ms ease;
 }
 
 .input-group .button-minus,
 .input-group .button-plus {
-  font-weight: bold;
-  height: 20px;
-  padding: 0;
-  width: 15px;
-  position: relative;
+    font-weight: bold;
+    height: 20px;
+    padding: 0;
+    width: 15px;
+    position: relative;
 }
 
 .input-group .quantity-field {
-  position: relative;
-  height: 20px;
-  left: -7px;
-  text-align: center;
-  width: 28px;
-  display: inline-block;
-  font-size: 13px;
-  resize: vertical;
+    position: relative;
+    height: 20px;
+    left: -7px;
+    text-align: center;
+    width: 28px;
+    display: inline-block;
+    font-size: 13px;
+    resize: vertical;
 }
 
 .button-plus {
-  left: -13px;
+    left: -13px;
 }
 
 input[type="number"] {
-  -moz-appearance: textfield;
-  -webkit-appearance: none;
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
 }
-
 
 
 /* Conteúdo Principal */
@@ -233,50 +231,81 @@ input[type="number"] {
 }
 
 
-
-
-
 /* Seção Lançamentos  */
 
+.lancamentos {
+    /* background-color: black; */
+}
 
-
-/* Seção Produtos em oferta */
-.produtos-oferta__title{
-    text-align: center;
-    margin: 65px;
-    letter-spacing: 2.5px;
-    font-size: 1.7rem;
+.carrossel {
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 
-.produtos-oferta__title::after {
-    content: '';
+.slick-prev,
+.slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-    width: 70px;
-    height: 2.5px;
-    border-radius: 2px;
-    background: var(--cor-escura);
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
 }
 
-.produtos-oferta__btn{
-    background-color: var(--cor-btn-oferta);
-    width: 100px;
-    margin: 50px auto;
+.slick-prev:before,
+.slick-next:before {
+    color: rgb(39, 41, 44);
+    opacity: 0.8;
 }
 
-.produtos-oferta__btn:hover{  background-color: var(--cor-escura);}
+.slick-next:focus:before,
+.slick-prev:focus:before {
+    opacity: 0.8;
+}
+
+.slick-prev {
+    left: 100px;
+    z-index: 999;
+}
+
+.slick-next {
+    right: 100px;
+    z-index: 999;
+}
+
+.img-carrossel {
+    outline: none;
+    display: flex !important;
+    justify-content: center;
+}
+
+.produtos-oferta__btn:hover {
+    background-color: var(--cor-escura);
+}
 
 
+/* Seção Produtos Recentes  */
 
 
 /* Seção Categorias */
-.categorias_grid{
+
+.categorias_grid {
     width: 100%;
 }
 
+
+/* Seção Produtos em oferta */
 
 
 /* Seção Marketing */
@@ -307,8 +336,9 @@ input[type="number"] {
     background-image: url("https://www.w3schools.com/w3images/photographer.jpg");
 }
 
-
-
+.mkt-ilustrativo {
+    background-image: url("https://www.w3schools.com/w3images/workbench.jpg");
+}
 
 
 /* Seção Mapa */
@@ -346,9 +376,6 @@ input[type="number"] {
 .informação-contato__btn:hover {
     background-color: rgba(0, 0, 0, 0.713);
 }
-
-
-
 
 
 /* Rodapé */

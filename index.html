@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/2454d969d0.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/cores.css">
     <link rel="stylesheet" href="css/base.css">
@@ -50,7 +56,7 @@
                 <li>
                     <a class="icone icone-nav" href="#"> <i class="far fa-user"></i> </a>
                 </li>
-                <li> 
+                <li>
                     <a class="icone icone-nav btnCart" href="#"> <i class="fas fa-shopping-cart"></i> </a>
                     <script src="src/cart.js"></script>
                 </li>
@@ -61,38 +67,44 @@
     </nav>
 
 
-<!-- Menu Celular -->       
-     <div class="nav-principal__menu-celular  inativo">        
-        <div class="menu-celular__cabecalho"> 
-            <a class="cabecalho__link link" href="#">&times;</a> 
+    <!-- Menu Celular -->
+    <div class="nav-principal__menu-celular  inativo">
+        <div class="menu-celular__cabecalho">
+            <a class="cabecalho__link link" href="#">&times;</a>
             <!-- <a class="cabecalho__link link" href="#">&#9776; </a>  -->
         </div>
         <div class="menu-celular__conteudo">
             <ul class="conteudo__lista flex">
-                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">Início</a>     </li>
-                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">Sobre</a>      </li>
-                
+                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">Início</a> </li>
+                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">Sobre</a> </li>
+
                 <li class="conteudo__item-lista  conteudo__item-lista-colapsado ">
-                    <a class="conteudo__btn conteudo__btn-colapsado btn" href="javascript:void(0)">Produtos</a>        
+                    <a class="conteudo__btn conteudo__btn-colapsado btn" href="javascript:void(0)">Produtos</a>
 
                     <div class="container-colapsado flex">
                         <a class="container-colapsado__btn btn" href="#">Todos</a>
                         <a class="container-colapsado__btn btn" href="#">Masculino</a>
                         <a class="container-colapsado__btn btn" href="#">Feminino</a>
                         <a class="container-colapsado__btn btn" href="#">Unissex</a>
-                    </div>   
-                    
+                    </div>
+
                 </li>
 
-                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">FAQ</a>        </li>
-                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">Contato</a>    </li>
+                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">FAQ</a> </li>
+                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">Contato</a> </li>
             </ul>
         </div>
         <div class="menu-celular__rodape">
             <ul class="rodape__lista flex">
-                <li><a class="rodape__btn btn" href="#"> <i class="fab fa-facebook-square "></i> </a> </li>
-                <li><a class="rodape__btn btn" href="#"> <i class="fab fa-twitter-square "></i>  </a> </li>
-                <li><a class="rodape__btn btn" href="#"> <i class="fab fa-instagram "></i>       </a> </li>
+                <li>
+                    <a class="rodape__btn btn" href="#"> <i class="fab fa-facebook-square "></i> </a>
+                </li>
+                <li>
+                    <a class="rodape__btn btn" href="#"> <i class="fab fa-twitter-square "></i> </a>
+                </li>
+                <li>
+                    <a class="rodape__btn btn" href="#"> <i class="fab fa-instagram "></i> </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -113,50 +125,50 @@
     </header>
 
 
-        <!--Carrinho-->
-        <div class="cart-conteudo flex">
-            <div id="cart-titulo">
-                <strong>2 item(ns) </strong> no seu carrinho
+    <!--Carrinho-->
+    <div class="cart-conteudo flex">
+        <div id="cart-titulo">
+            <strong>2 item(ns) </strong> no seu carrinho
+        </div>
+        <div id="cart-produto__lista">
+            <div class="cart-produto__container">
+                <div class="cart-produto__img">
+                    <img src="imagens/blackshirt.jpg">
+                </div>
+                <span class="cart-produto__desc">Camisa Masculina</span>
+                <span class="cart-produto__detalhes">Preta | G</span>
+                <span class="cart-produto__qtd">Qtd.: </span>
+                <span class="cart-produto__valor">R$ 130,00</span>
             </div>
-            <div id="cart-produto__lista">
-                    <div class="cart-produto__container">
-                        <div class = "cart-produto__img">
-                            <img src="imagens/blackshirt.jpg">
-                        </div>
-                            <span class="cart-produto__desc">Camisa Masculina</span>
-                            <span class="cart-produto__detalhes">Preta | G</span>
-                            <span class="cart-produto__qtd">Qtd.: </span>
-                            <span class="cart-produto__valor">R$ 130,00</span>                                                      
-                    </div>
-    
-                    <div class="input-group">
-                        <input type="button" value="-" class="button-minus" data-field="quantity">
-                        <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
-                        <input type="button" value="+" class="button-plus" data-field="quantity">
-                      </div>
-    
-                    <div class="cart-produto__container">
-                        <div class = "cart-produto__img">
-                            <img src="imagens/blackshirt.jpg">
-                        </div>
-                            <span class="cart-produto__desc">Camisa Masculina</span>
-                            <span class="cart-produto__detalhes">Preta | G</span>
-                            <span class="cart-produto__qtd">Qtd.: </span>
-                            <span class="cart-produto__valor">R$ 130,00</span>                                                      
-                    </div>
-    
-                    <div class="input-group">
-                        <input type="button" value="-" class="button-minus" data-field="quantity">
-                        <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
-                        <input type="button" value="+" class="button-plus" data-field="quantity">
-                    </div>
+
+            <div class="input-group">
+                <input type="button" value="-" class="button-minus" data-field="quantity">
+                <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                <input type="button" value="+" class="button-plus" data-field="quantity">
             </div>
+
+            <div class="cart-produto__container">
+                <div class="cart-produto__img">
+                    <img src="imagens/blackshirt.jpg">
+                </div>
+                <span class="cart-produto__desc">Camisa Masculina</span>
+                <span class="cart-produto__detalhes">Preta | G</span>
+                <span class="cart-produto__qtd">Qtd.: </span>
+                <span class="cart-produto__valor">R$ 130,00</span>
+            </div>
+
+            <div class="input-group">
+                <input type="button" value="-" class="button-minus" data-field="quantity">
+                <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
+                <input type="button" value="+" class="button-plus" data-field="quantity">
+            </div>
+        </div>
         <div id="cart-produto__subtotal" class="flex">
-            <span id="cart-subtotal"><strong>Subtotal:</strong></span>                 
+            <span id="cart-subtotal"><strong>Subtotal:</strong></span>
             <span id="cart-subvalor"><strong>R$ 260,00</strong></span>
         </div>
         <button id="btnCartExpandido">Ir para o carrinho</button>
-        <button id="btnCheckout"> Checkout</button>  
+        <button id="btnCheckout"> Checkout</button>
     </div>
 
 
@@ -167,22 +179,22 @@
 
         <!-- Seção Lançamentos -->
         <section class="conteudo-principal__secao  produtos-recentes">
-            <h2>Lançamentos</h2>
 
-            <div class="carrossel">
-                CARROSEL AQUI!
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="lancamentos">
+                <h2>Lançamentos</h2>
+                <div class="carrossel">
+
+                    <!-- Precisa de estilização -->
+                    <div class="img-carrossel"><img src="https://i.pinimg.com/474x/16/dc/84/16dc8475e9392e7fe94aa008a4a1461b.jpg" alt="Alrora boreal "></div>
+                    <div class="img-carrossel"><img src="https://mhmcdn.ynvolve.net/?w=750&h=450&quality=90&clipping=landscape&url=//manualdohomemmoderno.com.br/files/2021/03/nike-quer-destruir-versao-satanica-do-air-max-97-com-sangue-humano-nike-quer-destruir-versao-satanica-do-air-max-97-com-sangue-humano-3.jpg&format=webp&hash=5cfb87d08b8e00826852e14fa1e53ed79e8f0b4e7983bd2b329cbbaaa4839172"></div>
+                    <div class="img-carrossel"><img src="https://www.amigosdoforum.com.br/wp-content/uploads/2018/06/supremeprodutos.jpg" alt="Moletom Gucci"></div>
+                    <div class="img-carrossel"><img src="https://images-americanas.b2w.io/produtos/1230246022/imagens/high-quality-casual-sports-define-mangas-longas-tops-calcas-lazer-roupa-mulher-conjuntos-para-jogging-caminhadas-camping/1230246022_1_large.jpg" alt=""> </div>
+
+                </div>
+                <a href="#">Ver todos</a>
             </div>
 
-            <a href="#">Ver todos</a>
-
         </section>
-
-
-
-
 
         <!-- Seção Marketing -->
         <section class="conteudo-principal__secao  marketing mkt-produtos">
@@ -212,11 +224,17 @@
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
                         <ul class="card__lista flex">
-                            <li><a class="card__cor cor-1" href="#"></a> </li>
-                            <li><a class="card__cor cor-2" href="#"></a> </li>
-                            <li><a class="card__cor cor-3" href="#"></a> </li>
+                            <li>
+                                <a class="card__cor cor-1" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-2" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-3" href="#"></a>
+                            </li>
                         </ul>
-                    </div>                    
+                    </div>
                 </div>
 
                 <div class="card">
@@ -225,11 +243,17 @@
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
                         <ul class="card__lista flex">
-                            <li><a class="card__cor cor-1" href="#"></a> </li>
-                            <li><a class="card__cor cor-2" href="#"></a> </li>
-                            <li><a class="card__cor cor-3" href="#"></a> </li>
+                            <li>
+                                <a class="card__cor cor-1" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-2" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-3" href="#"></a>
+                            </li>
                         </ul>
-                    </div>           
+                    </div>
                 </div>
 
                 <div class="card">
@@ -238,11 +262,17 @@
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
                         <ul class="card__lista flex">
-                            <li><a class="card__cor cor-1" href="#"></a> </li>
-                            <li><a class="card__cor cor-2" href="#"></a> </li>
-                            <li><a class="card__cor cor-3" href="#"></a> </li>
+                            <li>
+                                <a class="card__cor cor-1" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-2" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-3" href="#"></a>
+                            </li>
                         </ul>
-                    </div>           
+                    </div>
                 </div>
 
                 <div class="card">
@@ -251,11 +281,17 @@
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
                         <ul class="card__lista flex">
-                            <li><a class="card__cor cor-1" href="#"></a> </li>
-                            <li><a class="card__cor cor-2" href="#"></a> </li>
-                            <li><a class="card__cor cor-3" href="#"></a> </li>
+                            <li>
+                                <a class="card__cor cor-1" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-2" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-3" href="#"></a>
+                            </li>
                         </ul>
-                    </div>           
+                    </div>
                 </div>
 
                 <div class="card">
@@ -264,11 +300,17 @@
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
                         <ul class="card__lista flex">
-                            <li><a class="card__cor cor-1" href="#"></a> </li>
-                            <li><a class="card__cor cor-2" href="#"></a> </li>
-                            <li><a class="card__cor cor-3" href="#"></a> </li>
+                            <li>
+                                <a class="card__cor cor-1" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-2" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-3" href="#"></a>
+                            </li>
                         </ul>
-                    </div>           
+                    </div>
                 </div>
 
                 <div class="card">
@@ -277,11 +319,17 @@
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
                         <ul class="card__lista flex">
-                            <li><a class="card__cor cor-1" href="#"></a> </li>
-                            <li><a class="card__cor cor-2" href="#"></a> </li>
-                            <li><a class="card__cor cor-3" href="#"></a> </li>
+                            <li>
+                                <a class="card__cor cor-1" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-2" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="card__cor cor-3" href="#"></a>
+                            </li>
                         </ul>
-                    </div>           
+                    </div>
                 </div>
 
             </div>
@@ -396,6 +444,8 @@
     </footer>
 
 
+
+    <script src="src/carrossel.js"></script>
     <script type="module" src="./main.js"></script>
 </body>
 
