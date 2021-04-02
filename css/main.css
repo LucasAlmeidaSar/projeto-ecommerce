@@ -40,8 +40,6 @@
 }
 
 
-
-
 /* Seção Carrinho */
 
 .cart-conteudo {
@@ -221,14 +219,12 @@ input[type="number"] {
 }
 
 
-
 /* Conteúdo Principal */
 
 .conteudo-principal__secao {
     width: 75%;
     margin: auto;
 }
-
 
 
 /* Seção Lançamentos  */
@@ -291,10 +287,9 @@ input[type="number"] {
 }
 
 
-
-
 /* Seção Produtos em oferta */
-.produtos-oferta__title{
+
+.produtos-oferta__title {
     text-align: center;
     margin: 65px;
     letter-spacing: 2.5px;
@@ -314,15 +309,15 @@ input[type="number"] {
     background: var(--cor-escura);
 }
 
-.produtos-oferta__btn{
+.produtos-oferta__btn {
     background-color: var(--cor-btn-oferta);
     width: 150px;
     margin: 50px auto;
 }
 
-.produtos-oferta__btn:hover{  background-color: var(--cor-escura);  }
-
-
+.produtos-oferta__btn:hover {
+    background-color: var(--cor-escura);
+}
 
 
 /* Seção Categorias */
@@ -331,8 +326,30 @@ input[type="number"] {
     width: 100%;
 }
 
+.categorias_grid {
+    width: 100%;
+    padding: 50px;
+}
 
+.categorias-produto__title {
+    padding-top: 40px;
+    text-align: center;
+    letter-spacing: 2.5px;
+    font-size: 1.7rem;
+    position: relative
+}
 
+.categorias-produto__title::after {
+    content: '';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    width: 70px;
+    height: 2.5px;
+    border-radius: 2px;
+    background: var(--cor-escura);
+}
 
 
 /* Seção Marketing */
@@ -366,8 +383,6 @@ input[type="number"] {
 .mkt-ilustrativo {
     background-image: url("https://www.w3schools.com/w3images/workbench.jpg");
 }
-
-
 
 
 /* Seção Mapa */
@@ -405,8 +420,6 @@ input[type="number"] {
 .informação-contato__btn:hover {
     background-color: rgba(0, 0, 0, 0.713);
 }
-
-
 
 
 /* Rodapé */
