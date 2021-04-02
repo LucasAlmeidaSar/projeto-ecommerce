@@ -7,13 +7,13 @@ let dropdownConteudo = document.querySelector('.dropdown-conteudo')
 window.onscroll = () => scrollPagina()
 
 function scrollPagina() {
-    
+
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        scrollarElementos(true, menuTopo, dropdownConteudo)                 
-        scrollarColecaoDeElementos(true, btnTopo, iconeTopo )        
-    }else{
-        scrollarElementos(false, menuTopo, dropdownConteudo)                     
-        scrollarColecaoDeElementos(false, btnTopo, iconeTopo)        
+        scrollarElementos(true, menuTopo, dropdownConteudo)
+        scrollarColecaoDeElementos(true, btnTopo, iconeTopo)
+    } else {
+        scrollarElementos(false, menuTopo, dropdownConteudo)
+        scrollarColecaoDeElementos(false, btnTopo, iconeTopo)
     }
 }
 
@@ -21,13 +21,13 @@ function scrollPagina() {
 
 
 
-function scrollarElementos(bool, ...elementos){
+function scrollarElementos(bool, ...elementos) {
 
-    if(bool){
+    if (bool) {
         for (elemento of elementos) {
             elemento.classList.add('on-scroll')
         }
-    }else{
+    } else {
         for (elemento of elementos) {
             elemento.classList.remove('on-scroll')
         }
@@ -37,25 +37,25 @@ function scrollarElementos(bool, ...elementos){
 
 
 
-function scrollarColecaoDeElementos(boll, ...elementos){
+function scrollarColecaoDeElementos(boll, ...elementos) {
 
-    for ( elemento of elementos) {
+    for (elemento of elementos) {
         varrerColecaoEncontrada(boll, elemento)
     }
-    
-}  
+
+}
 
 
 
 
-function varrerColecaoEncontrada(bool, elementos){
-    if(bool){
+function varrerColecaoEncontrada(bool, elementos) {
+    if (bool) {
         for (elemento of elementos) {
             elemento.classList.add('on-scroll')
         }
-    }else{
+    } else {
         for (elemento of elementos) {
             elemento.classList.remove('on-scroll')
         }
-    } 
+    }
 }

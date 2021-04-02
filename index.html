@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">   
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/2454d969d0.js" crossorigin="anonymous"></script>  
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2454d969d0.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/cores.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/main.css">
+
+
     <title>E-commerce</title>
 </head>
 
@@ -16,7 +26,7 @@
 <body>
 
     <!-- Navegação -->
-    
+
     <nav class="nav-principal">
 
         <!-- Menu Topo -->
@@ -25,9 +35,9 @@
             <a class="logo  btn btn-nav" href="#">Logo</a>
 
             <ul class="flex">
-                <li> <a class="btn btn-nav" href="#">Home</a>     </li>
+                <li> <a class="btn btn-nav" href="#">Home</a> </li>
                 <li class="dropdown">
-                    <a class="btn btn-nav dropdown-alternador" href="#">Produtos</a> 
+                    <a class="btn btn-nav dropdown-alternador" href="#">Produtos</a>
                     <div class="dropdown-conteudo flex">
                         <a class="btn btn-nav dropdown-btn" href="#">Todos</a>
                         <a class="btn btn-nav dropdown-btn" href="#">Masculinos</a>
@@ -35,14 +45,18 @@
                         <a class="btn btn-nav dropdown-btn" href="#">Unissex</a>
                     </div>
                 </li>
-                <li> <a class="btn btn-nav" href="#">Sobre</a>    </li>
-                <li> <a class="btn btn-nav" href="#">FAQ</a>      </li>
-                <li> <a class="btn btn-nav" href="#">Contato</a>  </li>
+                <li> <a class="btn btn-nav" href="#">Sobre</a> </li>
+                <li> <a class="btn btn-nav" href="#">FAQ</a> </li>
+                <li> <a class="btn btn-nav" href="#">Contato</a> </li>
             </ul>
 
             <ul class="flex">
-                <li> <a class="icone icone-nav" href="#"> <i class="far fa-user"></i>          </a> </li>
-                <li> <a class="icone icone-nav" href="#"> <i class="fas fa-shopping-cart"></i> </a> </li>
+                <li>
+                    <a class="icone icone-nav" href="#"> <i class="far fa-user"></i> </a>
+                </li>
+                <li>
+                    <a class="icone icone-nav" href="#"> <i class="fas fa-shopping-cart"></i> </a>
+                </li>
             </ul>
 
         </div>
@@ -80,25 +94,25 @@
 
         <!-- Seção Lançamentos -->
         <section class="conteudo-principal__secao  produtos-recentes">
-            <h2>Lançamentos</h2>
 
-            <div class="carrossel">
-                CARROSEL AQUI!
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="lancamentos">
+                <h2>Lançamentos</h2>
+                <div class="carrossel">
+
+                    <!-- Precisa de estilização -->
+                    <div class="img-carrossel"><img src="https://i.pinimg.com/474x/16/dc/84/16dc8475e9392e7fe94aa008a4a1461b.jpg" alt="Alrora boreal "></div>
+                    <div class="img-carrossel"><img src="https://mhmcdn.ynvolve.net/?w=750&h=450&quality=90&clipping=landscape&url=//manualdohomemmoderno.com.br/files/2021/03/nike-quer-destruir-versao-satanica-do-air-max-97-com-sangue-humano-nike-quer-destruir-versao-satanica-do-air-max-97-com-sangue-humano-3.jpg&format=webp&hash=5cfb87d08b8e00826852e14fa1e53ed79e8f0b4e7983bd2b329cbbaaa4839172"></div>
+                    <div class="img-carrossel"><img src="https://www.amigosdoforum.com.br/wp-content/uploads/2018/06/supremeprodutos.jpg" alt="Moletom Gucci"></div>
+                    <div class="img-carrossel"><img src="https://images-americanas.b2w.io/produtos/1230246022/imagens/high-quality-casual-sports-define-mangas-longas-tops-calcas-lazer-roupa-mulher-conjuntos-para-jogging-caminhadas-camping/1230246022_1_large.jpg" alt=""> </div>
+
+                </div>
+                <a href="#">Ver todos</a>
             </div>
-
-            <a href="#">Ver todos</a>
 
         </section>
 
-
-
-
-
-         <!-- Seção Marketing -->
-         <section class="conteudo-principal__secao  marketing mkt-produtos">
+        <!-- Seção Marketing -->
+        <section class="conteudo-principal__secao  marketing mkt-produtos">
 
             <div class="marketing__conteudo   flex  center">
                 <p class="marketing__titulo">Blá blá blá</p>
@@ -112,8 +126,8 @@
 
 
 
-         <!-- Seção Produtos em oferta -->
-         <section class="conteudo-principal__secao  produtos-oferta">
+        <!-- Seção Produtos em oferta -->
+        <section class="conteudo-principal__secao  produtos-oferta">
 
             <h2>Produtos em oferta</h2>
 
@@ -188,19 +202,19 @@
             </div>
 
             <a class="btn" href="#">Ver mais</a>
-            
-        </section>        
-       
+
+        </section>
 
 
 
 
-         <!-- Seção Marketing -->
-         <section class="conteudo-principal__secao  marketing mkt-ilustrativo">
+
+        <!-- Seção Marketing -->
+        <section class="conteudo-principal__secao  marketing mkt-ilustrativo">
 
             <div class="marketing__conteudo  flex  center">
                 <p class="marketing__titulo">Blá blá blá</p>
-                <p class="marketing__subtitulo">lerere</p>                
+                <p class="marketing__subtitulo">lerere</p>
             </div>
 
         </section>
@@ -216,19 +230,19 @@
             <div class="categorias grid">
                 <div class="card">
                     <img class="card__imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
-                    <h3 class="card__titulo">Categoria Masculina</h3>                    
+                    <h3 class="card__titulo">Categoria Masculina</h3>
                 </div>
 
                 <div class="card">
                     <img class="card__imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
-                    <h3 class="card__titulo">Categoria Feminina</h3>                    
+                    <h3 class="card__titulo">Categoria Feminina</h3>
                 </div>
 
                 <div class="card">
                     <img class="card__imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
-                    <h3 class="card__titulo">Categoria Unissex</h3>                    
-                </div>               
-            </div>              
+                    <h3 class="card__titulo">Categoria Unissex</h3>
+                </div>
+            </div>
 
         </section>
 
@@ -237,38 +251,45 @@
 
         <!-- Seção Mapa -->
         <section class="conteudo-principal__secao  mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14980.276844700637!2d-40.26132927337219!3d-20.17284358348979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb81e5bc2f36b61%3A0x9322478fc04f4f92!2sBarcelona%2C%20Serra%20-%20ES!5e0!3m2!1spt-BR!2sbr!4v1616628095610!5m2!1spt-BR!2sbr" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14980.276844700637!2d-40.26132927337219!3d-20.17284358348979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb81e5bc2f36b61%3A0x9322478fc04f4f92!2sBarcelona%2C%20Serra%20-%20ES!5e0!3m2!1spt-BR!2sbr!4v1616628095610!5m2!1spt-BR!2sbr"
+                width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
         </section>
 
 
-    </main>    
+    </main>
 
 
 
 
 
 
-      <!-- Rodapé -->
-      <footer class="rodape">
+    <!-- Rodapé -->
+    <footer class="rodape">
 
         <div>
             <ul>
                 <li><a href="#">Faq</a></li>
-                <li><a href="#">Sobre nós</a></li>                
-                <li><a href="#">Contato</a></li>                
-            </ul>    
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
         </div>
-       
+
         <div>
             <h3>Siga-nos</h3>
-            <ul class="flex">            
-                <li> <a class="icone" href="#"> <i class="fab fa-instagram"></i>       </a> </li>
-                <li> <a class="icone" href="#"> <i class="fab fa-facebook-square"></i> </a> </li>
-                <li> <a class="icone" href="#"> <i class="fab fa-twitter-square"></i>  </a> </li>
+            <ul class="flex">
+                <li>
+                    <a class="icone" href="#"> <i class="fab fa-instagram"></i> </a>
+                </li>
+                <li>
+                    <a class="icone" href="#"> <i class="fab fa-facebook-square"></i> </a>
+                </li>
+                <li>
+                    <a class="icone" href="#"> <i class="fab fa-twitter-square"></i> </a>
+                </li>
             </ul>
-        </div>            
-        
+        </div>
+
         <div>
             <ul class="flex">
                 <li> <a href="#">Pagamento</a> </li>
@@ -278,11 +299,13 @@
                 <li> <a href="#">Pagamento</a> </li>
             </ul>
         </div>
-        
+
 
     </footer>
 
 
     <script src="src/scroll.js"></script>
+    <script src="src/carrossel.js"></script>
 </body>
+
 </html>
