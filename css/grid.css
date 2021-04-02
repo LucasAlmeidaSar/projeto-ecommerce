@@ -3,13 +3,12 @@
     display: grid;   
     grid-template-columns: repeat(3, 1fr);   
     gap: 50px; 
-  }
+}
 
 
 
 
 /* --------- Responsividade --------- */
-
 
 
 /* ---------- Breakpoint 1 ---------- */
@@ -21,33 +20,21 @@
 
 
 /* ---------- Breakpoint 2 ---------- */
-@media only screen and (max-width:1440px){
-
-    /* Caso tenha alguma alteração a fazer */
-
-}
-
-/* ---------- Breakpoint 3 ---------- */
-@media only screen and (max-width:1024px){
-
-    /* Caso tenha alguma alteração a fazer */
-
-}
-
-
-/* ---------- Breakpoint 4 ---------- */
-@media only screen and (max-width:768px){
+@media only screen and (max-width:1200px){
 
     .grid{  grid-template-columns: repeat(2, 1fr);  }
 
 }
 
 
-/* ---------- Breakpoint 5 ---------- */
-@media only screen and (max-width:425px){
+/* ---------- Breakpoint 3 ---------- */
+@media only screen and (max-width:765px){
 
-    .grid{  grid-template-columns: 1fr;  }
-    
+    .grid{  grid-template-columns:  1fr ;  }
+
 }
+
+
+
 
 

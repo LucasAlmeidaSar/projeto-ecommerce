@@ -26,6 +26,7 @@
     --cor-menu-celular: #1C1B1B; 
     --cor-menu-celular-after: rgba(0,0,0,.5); 
     --cor-bordas-gerais-menu-celular: #555454;
+    --cor-btn-menu-celular: transparent;
     --cor-btn-rodape-menu-celular: #8E8D8D;
     
     /* Cabeçalho */
@@ -34,10 +35,10 @@
     --cor-btn-cabecalho-principal: rgba(0, 0, 0, .8);
     --cor-btn-cabecalho-principal-hover: rgba(255,255,255,.3);
 
+
     /* Cards */
     --cor-box-shadow-cards: rgba(0, 0, 0, .3);
     
-
 
     /* Rodapé */
     --cor-fundo-rodape : rgb(30,30,30);
