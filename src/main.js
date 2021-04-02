@@ -1,5 +1,5 @@
 import ativarEfeitosDeScroll from '../modules/scroll.js'
-import ativarMenuColapsado from '../modules/menu.js'
+import ativarEfeitosDoMenuCelular from '../modules/menu.js'
 import ativarCarrossel from '../modules/carrossel.js'
 import ativarCarrinho from '../modules/cart.js'
 
@@ -10,7 +10,7 @@ function iniciarApp() {
     window.onscroll = () => ativarEfeitosDeScroll()
 
     // Menu p/ Celular
-    ativarMenuColapsado()
+    ativarEfeitosDoMenuCelular()
 
     // Carrossel de imagens
     ativarCarrossel()
