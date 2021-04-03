@@ -1,0 +1,70 @@
+@media only screen and (max-width: 880px){
+
+    .card{  height: 400px;  }
+
+}
+
+
+@media only screen and (max-width: 770px){
+
+    .card{
+        width: 80%;
+        margin: auto;
+    }
+
+}
+
+
+@media only screen and (max-width: 700px){
+
+    .cabecalho-principal{  height: 700px;  }
+
+}
+
+
+@media only screen and (max-width: 550px){
+
+    .card{  width: 100%;  }
+    
+    .conteudo-principal__title{  font-size: 1.35rem;  }
+
+    .informação-contato{  display: none;  }
+
+    .mapa__iframe{  height: 300px;  }
+
+    .rodape__link{  font-size: .85rem;  }
+    .rodape__titulo{  font-size: 1.2rem;  }
+
+}
+
+
+@media only screen and (max-width: 445px){
+        
+    .cabecalho-principal__titulo{
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .cabecalho-principal__subtitulo{
+        font-size: 1rem;
+        width: 350px;
+    }
+
+    .card{  height: 350px;  }
+
+    .card__descricao{  padding: 5px 10px;  }
+
+    .card__subtitulo{  font-size: .9rem;  }
+       .card__titulo{  font-size: 1rem;  }
+
+    .conteudo-principal__title{  margin: 65px auto;  }
+
+}
+
+
+@media only screen and (max-width: 350px){
+
+    .cabecalho-principal__subtitulo{  width: 250px;  }
+    .cabecalho-principal__titulo{  font-size: 1.5rem;  }
+
+}

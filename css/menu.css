@@ -201,7 +201,19 @@
 
 /* Responsividade */
 
-@media only screen and (max-width: 425px){
+@media only screen and (max-width: 985px){
+
+    .nav-principal__menu-topo .btn-nav,
+    .nav-principal__menu-topo .btn-nav.on-scroll{
+        font-size: 1rem;
+        padding: 10px;
+        margin: 5px;
+        width: 80px;
+    }
+
+}
+
+@media only screen and (max-width: 700px){
 
     .nav-principal__menu-topo{ display: none;  }
 
