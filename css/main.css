@@ -129,8 +129,6 @@
 
 .categorias_grid {  width: 100%;  }
 
-.categorias_grid .card{  height: 450px;  }
-
 .categorias_grid .card__imagem{  height: 85%;  }
 
 .categorias_grid .card__titulo{  margin-top: 15px;  }
@@ -206,6 +204,7 @@
     background-color: rgba(0, 0, 0, 0.713);
 }
 
+.mapa__iframe{  height: 600px  }
 
 
 
@@ -215,6 +214,7 @@
     background-color: var(--cor-fundo-rodape);
     justify-content: space-between;
     padding: 30px;
+    flex-wrap: wrap;
 }
 
 .rodape__cartao {
