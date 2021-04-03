@@ -8,6 +8,7 @@
     background-position: top right;
     background-size: cover;
     position: relative;
+    transition: filter .6s ease-in-out;
 }
 
 .cabecalho-principal__conteudo {
@@ -40,6 +41,8 @@
 
 
 /* Conteúdo Principal */
+
+.conteudo-principal{  transition: filter .6s ease-in-out;  }
 
 .conteudo-principal__secao {
     width: 75%;
@@ -215,6 +218,7 @@
     justify-content: space-between;
     padding: 30px;
     flex-wrap: wrap;
+    transition: filter .6s ease-in-out;
 }
 
 .rodape__cartao {
