@@ -12,8 +12,9 @@
 .nav-principal__menu-topo-sm.inativo{  display: none;  }
 
 
-/* Menu Celular */
 
+
+/* Menu Celular */
 
 .nav-principal__menu-celular.inativo{  transform: translateX(-300vw);  }
 
@@ -196,6 +197,7 @@
     background-color: var(--cor-clara);
     border-radius: 5px;
 }
+
 
 
 
