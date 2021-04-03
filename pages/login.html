@@ -11,10 +11,10 @@
     <script src="https://unpkg.com/http-vue-loader"></script>
     
     <link rel="stylesheet" href="/css/normalize.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' integrity='sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==' crossorigin='anonymous'/>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/cores.css">
     <style>
-
         input:-webkit-autofill,
         textarea:-webkit-autofill,
         select:-webkit-autofill {
@@ -50,8 +50,7 @@
             outline: none;
         }
 
-        .login-btn__entrar,
-        .login-btn__senha {
+        .login-btn__entrar {
             display: block;
             width: 100%;
             font-size: 18px;
@@ -68,15 +67,45 @@
             height: 50px;
         }
 
-        .login-btn__senha {
+        .login-btn__entrar:hover {
+            opacity: 0.9;
+        }
+
+        .login-btn__cadastro {
             color: black;
             height: 30px;
             margin-top: 16px;
             text-decoration: none;
+            display: block;
+            text-align: center;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .login-btn__cadastro a:hover {
+            color: rgb(90, 90, 90);
         }
 
         .login-titulo {
             text-align: center;
+        }
+
+        .opacidade {
+            opacity: 0.7;
+        }
+
+        .login-campos__recuperar-senha {
+            font-size: 14px;
+            text-align: end;
+            margin-top: 8px;
+        }
+
+        .login-campos__recuperar-senha a {
+            opacity: 0.7;
+        }
+
+        .login-campos__recuperar-senha a:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -86,12 +115,13 @@
         <form id="login-form" class="login-form">
             <h2 class="login-titulo">Entre na sua conta</h2>
             <div class="login-campos">
-                <input-layout id="email" v-model="email" type="email" preencher>Email</input-layout>
-                <input-layout id="senha" v-model="senha" type="password" preencher>Senha</input-layout>
+                <input-layout id="email" v-model="email" type="email" icone="fas fa-envelope" preencher>Email</input-layout>
+                <input-layout id="senha" v-model="senha" type="password" icone="fas fa-lock" preencher>Senha</input-layout>
+                <div id="recuperar-senha" class="login-campos__recuperar-senha"><a href="#">Esqueci minha senha</a></div>
             </div>
             <div class="login-control__buttons">
-                <button type="submit" class="login-btn__entrar">Entrar</button>
-                <a href="#" class="login-btn__senha">Esqueceu sua senha?</a>
+                <input type="submit" class="login-btn__entrar" value="ENTRAR">
+                <span class="login-btn__cadastro"><span class="opacidade">Não possui uma conta? </span><a href="#">Crie uma agora</a></span>
             </div>
         </form>
     </div>

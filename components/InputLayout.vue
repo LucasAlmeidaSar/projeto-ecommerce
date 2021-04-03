@@ -1,7 +1,9 @@
 <template>
     <div :id="id" class="campo">
         <label class="campo__label">
-            <span class="campo__span"><slot></slot></span>
+            <span class="campo__span"
+                ><i v-if="classeIcone" :class="icone"></i><slot></slot
+            ></span>
             <input
                 :type="type"
                 class="campo__input"
@@ -18,26 +20,37 @@
 module.exports = {
     props: {
         type: {
-          type: String,
-          required: false,
-          default: "text"
+            type: String,
+            required: false,
+            default: "text",
         },
 
         id: {
-          type: String,
-          required: true
+            type: String,
+            required: true,
         },
 
         preencher: {
-          type: Boolean,
-          required: false,
-          default: false
+            type: Boolean,
+            required: false,
+            default: false,
         },
 
-        value: String
+        value: String,
+
+        icone: String,
+    },
+
+    data: function () {
+        return {
+            classeIcone: false,
+        };
     },
 
     mounted: function () {
+        if (this.icone) {
+            this.classeIcone = true;
+        }
         let div = document.getElementById(this.id);
         let input = div.querySelector(".campo__input");
 
@@ -116,5 +129,14 @@ module.exports = {
 
 .campo__label:hover .campo__border::after {
     transform: scaleX(1);
+}
+
+i {
+    margin-right: 10px;
+    transition: margin-right 0.3s ease;
+}
+
+.campo--focus i {
+    margin-right: 4px;
 }
 </style>
