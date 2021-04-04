@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastre-se</title>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.min.js'></script>
     <script src="https://unpkg.com/http-vue-loader"></script>
@@ -18,28 +18,29 @@
 </head>
 
 <body>
-    <div id="login" class="form-container">
-        <form id="form-login" class="form">
-            <h2 class="form-titulo">Entre na sua conta</h2>
+    <div id="cadastro" class="form-container">
+        <form id="form-cadastro" class="form">
+            <h2 class="form-titulo">Crie sua conta</h2>
             <div class="form-campos">
-                <input-layout id="email" v-model="email" type="email" icone="fas fa-envelope" preencher>Email</input-layout>
-                <input-layout id="senha" v-model="senha" type="password" icone="fas fa-lock" preencher>Senha</input-layout>
-                <div id="recuperar-senha" class="form-campos__recuperar-senha"><a href="#">Esqueci minha senha</a></div>
+                <input-layout id="nome" type="text" preencher>Nome completo</input-layout>
+                <input-layout id="cpf" type="text" preencher>CPF</input-layout>
+                <input-layout id="telefone" type="tel" pattern="[0-9]{11}" preencher>Telefone (DDD + número)</input-layout>
+                <input-layout id="nascimento" type="date" preencher>Data de nascimento</input-layout>
+                <input-layout id="email" type="email" icone="fas fa-envelope" preencher>Email</input-layout>
+                <input-layout id="senha" type="password" icone="fas fa-lock" preencher>Senha</input-layout>
+            </div>
+            <div class="form-campos__termos">
+                <input type="checkbox" id="termos" required> <span>Li e aceito as Politicas de Privacidade e Termos de Uso.</span>
             </div>
             <div class="form-control__buttons">
-                <input type="submit" class="form-btn__entrar" value="ENTRAR">
-                <span class="form-btn__cadastro"><span class="opacidade">Não possui uma conta? </span><a href="#">Crie uma agora</a></span>
+                <input type="submit" class="form-btn__entrar" value="CONFIRMAR">
             </div>
         </form>
     </div>
 
     <script type="module">
         let vapp = new Vue({
-            el: '#login',
-            data: {
-                email: '',
-                senha: ''
-            },
+            el: '#cadastro',
             components: {
                 'input-layout': httpVueLoader('../components/InputLayout.vue')
             }
