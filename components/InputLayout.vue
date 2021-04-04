@@ -10,6 +10,7 @@
                 :value="value"
                 v-on:input="$emit('input', $event.target.value)"
                 :required="preencher"
+                :pattern="pattern"
             />
             <div class="campo__border"></div>
         </label>
@@ -39,6 +40,8 @@ module.exports = {
         value: String,
 
         icone: String,
+
+        pattern: String
     },
 
     data: function () {
@@ -48,11 +51,18 @@ module.exports = {
     },
 
     mounted: function () {
+        const types = ['date'];
+
         if (this.icone) {
             this.classeIcone = true;
         }
         let div = document.getElementById(this.id);
         let input = div.querySelector(".campo__input");
+
+        if (types.includes(input.type)) {
+            div.classList.add("campo--focus-2");
+            return;
+        }
 
         input.addEventListener("focus", function () {
             div.classList.add("campo--focus");
@@ -71,6 +81,7 @@ module.exports = {
 <style scoped>
 .campo {
     padding-top: 18px;
+    width: 100%;
 }
 
 .campo,
@@ -125,6 +136,11 @@ module.exports = {
 
 .campo--focus .campo__border::after {
     transform: scaleX(1);
+}
+
+.campo--focus-2 .campo__span {
+    font-size: 0.7em;
+    transform: translateY(-22px);
 }
 
 .campo__label:hover .campo__border::after {
