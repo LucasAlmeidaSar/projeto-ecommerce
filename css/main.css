@@ -146,6 +146,26 @@
 
 /* Seção Marketing */
 
+.marketing__titulo {
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    /* font-family: ; verificar com o grupo qual fonte padrão vamos usar no projeto */
+    line-height: 1.2em;
+    letter-spacing: 3px;
+    word-spacing: 1px;
+}
+
+.marketing__subtitulo {
+    font-size: large;
+    font-weight: normal;
+    font-family: 'Andale Mono', monospace;
+    /* font-family: ; verificar com o grupo qual fonte padrão vamos usar no projeto */
+    line-height: 1.6em;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
 .marketing {
     width: 100%;
     height: 500px;
@@ -164,16 +184,12 @@
     background-size: cover;
 }
 
-.mkt-ilustrativo {
-    background-image: url("https://www.w3schools.com/w3images/workbench.jpg");
-}
-
 .mkt-produtos {
-    background-image: url("https://www.w3schools.com/w3images/photographer.jpg");
+    background-image: url("../img/mkt_s1.jpg");
 }
 
 .mkt-ilustrativo {
-    background-image: url("https://www.w3schools.com/w3images/workbench.jpg");
+    background-image: url("../img/mkt_s2.jpg");
 }
 
 
