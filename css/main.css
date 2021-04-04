@@ -126,11 +126,20 @@
 
 .categorias{  margin-bottom: 100px;  }
 
-.categorias_grid {  width: 100%;  }
+.categorias_flex {  
+    width: 100%;  
+    flex-wrap: wrap;
+}
 
-.categorias_grid .card__imagem{  height: 85%;  }
+.categorias_flex .card{
+    flex: 1 1 620px;
+    flex: 0 1 620px;
+    margin: 10px;
+}
 
-.categorias_grid .card__titulo{  margin-top: 15px;  }
+.categorias_flex .card__imagem{  height: 85%;  }
+
+.categorias_flex .card__titulo{  margin-top: 15px;  }
 
 
 
