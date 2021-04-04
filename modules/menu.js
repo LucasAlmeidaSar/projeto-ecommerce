@@ -4,10 +4,12 @@ const containerColapsado = document.querySelector('.container-colapsado');
 const itemListaColapsado = document.querySelector('.conteudo__item-lista-colapsado')
 const btnCelular = document.querySelector('.menu-topo-sm__btn')
 const menuCelular = document.querySelector('.nav-principal__menu-celular')
+const menuCelularAfter = document.styleSheets[10].rules[17]
 const btnFecharMenuCelular= document.querySelector('.menu-celular__btn-fechar')
 const cabecalho = document.querySelector('.cabecalho-principal')
 const main = document.querySelector('.conteudo-principal')
 const rodape = document.querySelector('.rodape')
+
 
 
 export default function ativarEfeitosDoMenuCelular() {    
@@ -24,6 +26,7 @@ function exibirMenuCelular() {
         cabecalho.classList.toggle('blur')
         main.classList.toggle('blur')
         rodape.classList.toggle('blur')
+        menuCelularAfter.style.transitionDelay = "0.4s"
     })
 
     btnFecharMenuCelular.addEventListener('click', () => {
@@ -31,6 +34,7 @@ function exibirMenuCelular() {
         cabecalho.classList.toggle('blur')
         main.classList.toggle('blur')
         rodape.classList.toggle('blur')
+        menuCelularAfter.style.transitionDelay = "0s"
     })
 
 }

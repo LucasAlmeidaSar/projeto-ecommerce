@@ -1,7 +1,7 @@
-@media only screen and (max-width: 1150px){
+@media only screen and (max-width: 1200px){
 
     .slick-prev {  left: 0px;  }
-    .slick-next {  right: 0px;  }
+    .slick-next {  right: 0px;  }    
 
 }
 
