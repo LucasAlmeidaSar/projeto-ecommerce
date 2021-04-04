@@ -5,7 +5,7 @@
     background: var(--cor-cabecalho-principal);
     position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: 9999;
     width: 100%;
     transition: all .5s ease;
 }
@@ -77,9 +77,16 @@
 
 .nav-principal__menu-topo-sm.inativo{  display: none;  }
 
+.menu-topo-sm__btn{  
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 1.7rem;
+    color: var(--cor-clara);
+    transition: all .5s ease;
+}
+
 .menu-topo-sm__btn.on-scroll{  
-    color: var(--cor-escura);  
-    margin: 0 15px;
+    color: var(--cor-escura);
     transition: all .5s ease;
 }
 
@@ -94,12 +101,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 9999;
     width: 70%;
     height: 100vh;
     background-color: var(--cor-menu-celular);
     transform: translateX(0vw); 
-    transition: all .5s ease-in-out;
+    transition: transform .5s ease-in-out;
     
 }
 
@@ -113,8 +120,8 @@
     height: 100%;
     opacity: 1;
     transition-property: opacity;
-    transition-timing-function: cubic-bezier(0, 3.55, 0.12, -1.42);
-    transition-delay: .4s;
+    transition-timing-function: ease-out;
+    transition-delay: .42s;
 }
 
 .nav-principal__menu-celular.inativo::after{  opacity: 0; }

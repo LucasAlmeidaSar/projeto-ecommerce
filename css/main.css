@@ -124,7 +124,10 @@
 
 /* Seção Categorias */
 
-.categorias{  margin-bottom: 100px;  }
+.categorias{  
+    margin-bottom: 100px;  
+    width: 85%;
+}
 
 .categorias_flex {  
     width: 100%;  
@@ -132,8 +135,8 @@
 }
 
 .categorias_flex .card{
-    flex: 1 1 620px;
-    flex: 0 1 620px;
+    flex: 1 1 340px;
+    flex: 0 1 340px;
     margin: 10px;
 }
 
@@ -147,21 +150,16 @@
 /* Seção Marketing */
 
 .marketing__titulo {
-    font-size: xx-large;
+    font-size: 2rem;
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    /* font-family: ; verificar com o grupo qual fonte padrão vamos usar no projeto */
-    line-height: 1.2em;
+    line-height: 1.2;
     letter-spacing: 3px;
     word-spacing: 1px;
 }
 
 .marketing__subtitulo {
-    font-size: large;
-    font-weight: normal;
-    font-family: 'Andale Mono', monospace;
-    /* font-family: ; verificar com o grupo qual fonte padrão vamos usar no projeto */
-    line-height: 1.6em;
+    font-size: 1.2rem;
+    line-height: 1.6;
     letter-spacing: 1px;
     word-spacing: 2px;
 }
@@ -184,13 +182,10 @@
     background-size: cover;
 }
 
-.mkt-produtos {
-    background-image: url("../img/mkt_s1.jpg");
-}
+.mkt-ilustrativo {  background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)) , url("../img/mkt_s2.jpg");  }
+   .mkt-produtos {  background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)) , url("../img/mkt_s1.jpg");  }
 
-.mkt-ilustrativo {
-    background-image: url("../img/mkt_s2.jpg");
-}
+.marketing .btn{  margin-top: 40px;  }
 
 
 
@@ -227,9 +222,7 @@
     margin-left: 65px;
 }
 
-.informação-contato__btn:hover {
-    background-color: rgba(0, 0, 0, 0.713);
-}
+.informação-contato__btn:hover {  background-color: rgba(0, 0, 0, 0.713);  }
 
 .mapa__iframe{  height: 600px  }
 

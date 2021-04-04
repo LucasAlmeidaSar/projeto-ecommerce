@@ -24,7 +24,7 @@
 
     /* Menu Celular */
     --cor-menu-celular: #1C1B1B; 
-    --cor-menu-celular-after: rgba(0,0,0,.5); 
+    --cor-menu-celular-after: transparent; 
     --cor-bordas-gerais-menu-celular: #555454;
     --cor-btn-menu-celular: transparent;
     --cor-btn-rodape-menu-celular: #8E8D8D;
