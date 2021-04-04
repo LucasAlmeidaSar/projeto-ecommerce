@@ -54,6 +54,12 @@ a {
 
 
 
+/* Blur geral */
+
+.blur{  filter:  blur(3px);  }
+
+
+
 /* Imagens em geral */
 
 .imagem {
