@@ -1,4 +1,4 @@
-import alterarClassesDosElementos from './util.js'
+import classesDosElementos from './util.js'
 
 
 // Elementos
@@ -13,9 +13,9 @@ const btnNacCelular = document.querySelector('.menu-topo-sm__btn')
 export default function ativarEfeitosDeScroll() {
     
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        alterarClassesDosElementos('adicionar', 'on-scroll', menuTopo, dropdownConteudo, btnTopo, iconeTopo, navCelular, btnNacCelular)
+        classesDosElementos.adicionar('on-scroll', menuTopo, dropdownConteudo, btnTopo, iconeTopo, navCelular, btnNacCelular)
     }else{
-        alterarClassesDosElementos('remover', 'on-scroll', menuTopo, dropdownConteudo, btnTopo, iconeTopo, navCelular, btnNacCelular) 
+        classesDosElementos.remover('on-scroll', menuTopo, dropdownConteudo, btnTopo, iconeTopo, navCelular, btnNacCelular) 
     }
 
 }
