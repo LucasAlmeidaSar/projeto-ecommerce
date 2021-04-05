@@ -21,7 +21,6 @@ const classesDosElementos = {
     }
 }
 
-
  
  function varrerColecaoEncontrada(operacao, classe, elementos){
      if (operacao === 'adicionar'){
@@ -29,19 +28,17 @@ const classesDosElementos = {
              elemento.classList.add(classe)
          }
      }
-     else if (operacao === 'remover'){
+     if (operacao === 'remover'){
          for (const elemento of elementos) {
              elemento.classList.remove(classe)
          }
      } 
-     else if (operacao === 'alternar') {
+     if (operacao === 'alternar') {
          for (const elemento of elementos){
             elemento.classList.toggle(classe)
          }
      }
  }
-
- 
 
 
  export default classesDosElementos
