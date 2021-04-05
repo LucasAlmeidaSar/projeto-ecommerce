@@ -1,8 +1,10 @@
+import classesDosElementos from './util.js'
+
 // Elementos
 const btnColapsado = document.querySelector('.conteudo__btn-colapsado');
 const containerColapsado = document.querySelector('.container-colapsado');  
 const itemListaColapsado = document.querySelector('.conteudo__item-lista-colapsado')
-const btnCelular = document.querySelector('.menu-topo-sm__btn')
+const btnAbrirMenuCelular = document.querySelector('.menu-topo-sm__btn')
 const menuCelular = document.querySelector('.nav-principal__menu-celular')
 const btnFecharMenuCelular= document.querySelector('.menu-celular__btn-fechar')
 const cabecalho = document.querySelector('.cabecalho-principal')
@@ -11,43 +13,29 @@ const rodape = document.querySelector('.rodape')
 
 
 
-export default function ativarEfeitosDoMenuCelular() {  
-    exibirMenuCelular()
-    ativarMenuColapsado()
+export default function ativarEfeitosDoMenuCelular() { 
+
+    btnColapsado.addEventListener('click' , exibirOcultarMenuColapsado)
+    btnAbrirMenuCelular.addEventListener('click', exibirOcultarMenuCelular)
+    btnFecharMenuCelular.addEventListener('click', exibirOcultarMenuCelular)
+    
 }
 
 
-// Ainda precisa refatorar esse .js !
+function exibirOcultarMenuColapsado(){  
 
-function exibirMenuCelular() {
-    btnCelular.addEventListener('click', () => {
-        menuCelular.classList.toggle('inativo')
-        cabecalho.classList.toggle('blur')
-        main.classList.toggle('blur')
-        rodape.classList.toggle('blur')
-    })
-
-    btnFecharMenuCelular.addEventListener('click', () => {
-        menuCelular.classList.toggle('inativo')
-        cabecalho.classList.toggle('blur')
-        main.classList.toggle('blur')
-        rodape.classList.toggle('blur')
-    })
-
+    classesDosElementos.alternar('ativo' , itemListaColapsado, btnColapsado)
+    var altura = containerColapsado.style.height
+    altura === '140px' ? altura = '0px' : altura = '140px'
+    containerColapsado.style.height = altura    
+    
 }
 
-function ativarMenuColapsado(){    
 
-    btnColapsado.addEventListener('click', () => {
-        itemListaColapsado.classList.toggle('ativo')
-        btnColapsado.classList.toggle('ativo')
+function exibirOcultarMenuCelular() {
 
-        if(containerColapsado.style.height === '130px'){
-            containerColapsado.style.height = '0px'
-        }else{
-            containerColapsado.style.height = '130px'
-        }
-
-    })
+    classesDosElementos.alternar('inativo', menuCelular)
+    classesDosElementos.alternar('blur', cabecalho, main, rodape)   
+    
 }
 
