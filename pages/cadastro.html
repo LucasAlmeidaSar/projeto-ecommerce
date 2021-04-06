@@ -20,14 +20,22 @@
 <body>
     <div id="cadastro" class="form-container">
         <form id="form-cadastro" class="form">
+            <img class="logo center-x" src="../img/logo.png" alt="Logo">
             <h2 class="form-titulo">Crie sua conta</h2>
             <div class="form-campos">
                 <input-layout id="nome" type="text" preencher>Nome completo</input-layout>
                 <input-layout id="cpf" type="text" preencher>CPF</input-layout>
                 <input-layout id="telefone" type="tel" pattern="[0-9]{11}" preencher>Telefone (DDD + número)</input-layout>
+                <select id="genero" class="form-campos__genero" required>
+                    <option value="" selected disabled hidden>Selecione o gênero</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
                 <input-layout id="nascimento" type="date" preencher>Data de nascimento</input-layout>
                 <input-layout id="email" type="email" icone="fas fa-envelope" preencher>Email</input-layout>
                 <input-layout id="senha" type="password" icone="fas fa-lock" preencher>Senha</input-layout>
+                <input-layout id="senha-confirmar" type="password" icone="fas fa-lock" preencher>Confirme sua senha</input-layout>
             </div>
             <div class="form-campos__termos">
                 <input type="checkbox" id="termos" required> <span>Li e aceito as Politicas de Privacidade e Termos de Uso.</span>
