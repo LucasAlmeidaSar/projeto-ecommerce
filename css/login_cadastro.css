@@ -5,9 +5,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 }
 
 .form-container {
-    display: flex;
-    justify-content: center;
-    padding: 64px;
+    padding: 32px;
 }
 
 .form {
@@ -15,10 +13,19 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     padding: 60px 80px;
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
     background-color: white;
+    margin: 0 auto;
 }
 
 #form-login.form {
     width: 500px;
+}
+
+.logo {
+    text-align: center;
+    width: 60px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 28px;
 }
 
 .form-campos {
@@ -110,7 +117,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
     .form {
         box-shadow: none;
-        padding: 64px 32px
+        padding: 46px 32px
     }
 
     #cadastro .form-campos {
