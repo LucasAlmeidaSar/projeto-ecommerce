@@ -13,7 +13,6 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     padding: 60px 80px;
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
     background-color: white;
-    margin: 0 auto;
 }
 
 #form-login.form {
@@ -21,9 +20,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 }
 
 .logo {
-    text-align: center;
     width: 60px;
-    margin: 0 auto;
     display: block;
     margin-bottom: 28px;
 }
