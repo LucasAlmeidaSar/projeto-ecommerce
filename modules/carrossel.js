@@ -1,10 +1,12 @@
 export default function ativarCarrossel() {
     $('.carrossel').slick({
-        dots: true,
         infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: true,
         speed: 1000,
-        fade: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
+
+        // autoplay: true,
+        // autoplaySpeed: 3000,
     });
 }
