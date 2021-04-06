@@ -147,4 +147,8 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
         margin-bottom: 12px;
     }
 
+    .campo {
+        margin-bottom: 8px;
+    }
+
 }
