@@ -206,7 +206,6 @@
     left: 30px;
     width: 350px;
     text-align: center;
-    font-family: 'Merriweather', serif;
     line-height: 30px;
     font-size: 14px;
 }
@@ -225,7 +224,6 @@
 .informação-contato__btn:hover {  background-color: rgba(0, 0, 0, 0.713);  }
 
 .mapa__iframe{  height: 600px  }
-
 
 
 
@@ -255,7 +253,6 @@
     margin-bottom: 10px;
     text-decoration: none;
     padding: 10px;
-    /* font-family: 'Merriweather', serif; */
 }
 
 .rodape__lista {
@@ -267,7 +264,6 @@
     color: white;
     text-decoration: none;
     font-size: 1rem;
-    /* font-family: 'Merriweather', serif; */
 }
 
 .rodape__icone{  font-size: 1.2rem;  }
