@@ -5,19 +5,19 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 }
 
 .form-container {
+    display: flex;
+    justify-content: center;
+    padding: 64px;
+}
+
+.form {
     box-sizing: border-box;
     padding: 60px 80px;
     box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
     background-color: white;
-
-    /* temporario */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
-#login.form-container {
+#form-login.form {
     width: 500px;
 }
 
@@ -96,4 +96,24 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
 .form-campos__termos {
     margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 800px) {
+    
+    .form-container {
+        padding: 0;
+    }
+
+    .form, #form-login.form {
+        width: 100%;
+    }
+
+    .form {
+        box-shadow: none;
+        padding: 64px 32px
+    }
+
+    #cadastro .form-campos {
+        display: block;
+    }
 }
