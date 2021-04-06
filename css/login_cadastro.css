@@ -109,21 +109,17 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     margin-bottom: 16px;
 }
 
-.genero {
-    background-color: rgb(231, 231, 231);
-    padding: 12px;
-    border-radius: 5px;
-}
-
-.genero__titulo {
+.form-campos__genero {
+    font-size: 18px;
     display: block;
-    margin-bottom: 8px;
-    font-weight: 700;
+    height: 45px;
+    margin-top: auto;
+    outline: none;
+    color: rgba(0,0,0,0.8);
 }
 
-.radio-grupo {
-    display: flex;
-    justify-content: space-between;
+.form-campos__genero:hover {
+    border: 1px solid black;
 }
 
 @media only screen and (max-width: 800px) {
@@ -145,22 +141,10 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
         display: block;
     }
 
-    .genero {
-        background-color: rgb(231, 231, 231);
-        padding: 16px;
-        margin: 22px 0;
-    }
-    
-    .genero__titulo {
-        margin-bottom: 16px;
-    }
-    
-    .radio-grupo {
-        display: block;
+    .form-campos__genero {
+        width: 100%;
+        margin-top: 22px;
+        margin-bottom: 12px;
     }
 
-    .radio-container {
-        margin-bottom: 8px;
-        margin-right: 8px;
-    }
 }

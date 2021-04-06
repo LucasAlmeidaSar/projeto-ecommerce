@@ -26,23 +26,12 @@
                 <input-layout id="nome" type="text" preencher>Nome completo</input-layout>
                 <input-layout id="cpf" type="text" preencher>CPF</input-layout>
                 <input-layout id="telefone" type="tel" pattern="[0-9]{11}" preencher>Telefone (DDD + número)</input-layout>
-                <div class="genero">
-                    <span class="genero__titulo">Gênero</span>
-                    <div class="radio-grupo">
-                        <div class="radio-container">
-                            <input type="radio" name="genero" id="masc">
-                            <label for="masc">Masculino</label>
-                        </div>
-                        <div class="radio-container">
-                            <input type="radio" name="genero" id="fem">
-                            <label for="fem">Feminino</label>
-                        </div>
-                        <div class="radio-container">
-                            <input type="radio" name="genero" id="outro">
-                            <label for="outro">Outro</label>
-                        </div>
-                    </div>
-                </div>
+                <select id="genero" class="form-campos__genero" required>
+                    <option value="" selected disabled hidden>Selecione o gênero</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
                 <input-layout id="nascimento" type="date" preencher>Data de nascimento</input-layout>
                 <input-layout id="email" type="email" icone="fas fa-envelope" preencher>Email</input-layout>
                 <input-layout id="senha" type="password" icone="fas fa-lock" preencher>Senha</input-layout>
