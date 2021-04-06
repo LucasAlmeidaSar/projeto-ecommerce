@@ -5,6 +5,8 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 }
 
 .form-container {
+    display: flex;
+    justify-content: center;
     padding: 32px;
 }
 
@@ -19,6 +21,10 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     width: 500px;
 }
 
+#form-cadastro.form {
+    padding: 44px 80px;
+}
+
 .logo {
     width: 60px;
     display: block;
@@ -26,7 +32,8 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 }
 
 .form-campos {
-    margin: 50px 0;
+    margin-top: 40px;
+    margin-bottom: 50px;
 }
 
 #cadastro .form-campos {
@@ -102,6 +109,23 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     margin-bottom: 16px;
 }
 
+.genero {
+    background-color: rgb(231, 231, 231);
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.genero__titulo {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.radio-grupo {
+    display: flex;
+    justify-content: space-between;
+}
+
 @media only screen and (max-width: 800px) {
     
     .form-container {
@@ -112,12 +136,31 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
         width: 100%;
     }
 
-    .form {
+    .form, #form-cadastro.form {
         box-shadow: none;
         padding: 46px 32px
     }
 
     #cadastro .form-campos {
         display: block;
+    }
+
+    .genero {
+        background-color: rgb(231, 231, 231);
+        padding: 16px;
+        margin: 22px 0;
+    }
+    
+    .genero__titulo {
+        margin-bottom: 16px;
+    }
+    
+    .radio-grupo {
+        display: block;
+    }
+
+    .radio-container {
+        margin-bottom: 8px;
+        margin-right: 8px;
     }
 }
