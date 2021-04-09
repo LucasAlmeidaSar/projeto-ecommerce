@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/faq.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/cores.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+</head>
+
+<body>
+    <h1 class="titulo">Perguntas Frequentes</h1>
+    <div class="menu">
+        <div class="tab">
+            <ul>
+                <li><button class="tablinks" onclick="abas(event, 'faqproduto')"><i class="fas fa-tshirt"></i>Produto</button></li>
+                <li><button class="tablinks" onclick="abas(event, 'faqpedido')"><i class="fas fa-shopping-bag"></i>Pedidos</button></li>
+                <li><button class="tablinks" onclick="abas(event, 'faqpagamento')"><i class="far fa-credit-card"></i>Pagamento</button></li>
+                <li><button class="tablinks" onclick="abas(event, 'faqentrega')"><i class="fas fa-shipping-fast"></i>Entrega</button></li>
+                <li><button class="tablinks" onclick="abas(event, 'faqtroca')"><i class="fas fa-exchange-alt"></i>Trocas e Devoluções</button></li>
+                <li><button class="tablinks" onclick="abas(event, 'faqconta')"><i class="fas fa-user"></i>Conta</button></li>
+            </ul>
+        </div>
+
+        <div id="faqproduto" class="tabcontent">
+            <button class="accordion"><b>Como adiciono um produto na minha lista de desejos?</b></button>
+            <div class="panel">
+                <p>Para adicionar um produto em sua lista de desejos, clique sobre o produto que deseja incluir e escolha a opção incluir na minha de desejos.</p>
+            </div>
+            <button class="accordion"><b>Como faço para comprar mais de um exemplar do mesmo produto?</b></button>
+            <div class="panel">
+                <p>Você acessa o carrinho de compras e altera a quantidade itens de seu pedido antes de finalizar a compra.</p>
+            </div>
+            <button class="accordion"><b>Gostei de um produto, mas não encontro mais ele no site, o que aconteceu?</b></button>
+            <div class="panel">
+                <p>Quando o produto que você gostou não estiver mais disponível no site, significa que ele não está mais disponível em estoque.</p>
+            </div>
+            <button class="accordion"><b>Como solicitar que um produto seja embalado para presente?</b></button>
+            <div class="panel">
+                <p>Hoje, nossa loja online não conta com o serviço de embrulho para presente.</p>
+            </div>
+            <button class="accordion"><b>Qual o prazo para disponibilizar o produto no site?</b></button>
+            <div class="panel">
+                <p>No momento não conseguimos estimar o prazo para disponibilidade do produto, mas oferecemos itens similares e de alta qualidade.</p>
+            </div>
+        </div>
+
+        <div id="faqpedido" class="tabcontent">
+            <button class="accordion"><b>Porque meu pedido veio incompleto?</b></button>
+            <div class="panel">
+                <p>Seu pedido pode ser separado em mais de uma entrega. Isso acontece para que possamos agilizar a entrega dos produtos escolhidos que estão mais próximos de você.</p>
+            </div>
+            <button class="accordion"><b>Por onde recebo minha nota fiscal?</b></button>
+            <div class="panel">
+                <p>Você deverá receber junto com o seu produto no momento da entrega.</p>
+            </div>
+            <button class="accordion"><b>Como acompanho o meu pedido?</b></button>
+            <div class="panel">
+                <p>Para acompanhar seu pedido faça o login na sua conta e acesse a página de “Meus pedidos”.</p>
+            </div>
+            <button class="accordion"><b>Posso retirar meu pedido na loja?</b></button>
+            <div class="panel">
+                <p>Sim, você pode optar por retirar seu pedido na loja no momento da finalização do pedido</p>
+            </div>
+            <button class="accordion"><b>Não recebi o meu pedido, o que devo fazer?</b></button>
+            <div class="panel">
+                <p>Você pode acessar seus pedidos em “Minha Conta” e verificar o status do seu pedido.</p>
+            </div>
+        </div>
+
+        <div id="faqpagamento" class="tabcontent">
+            <button class="accordion"><b>Posso cancelar o meu pedido após a confirmação do pagamento?</b></button>
+            <div class="panel">
+                <p>Não. Após a confirmação do pagamento, não é mais possível realizarmos o cancelamento do pedido. Caso não exista mais interesse em receber o pedido, você deve rejeitar a entrega ou aceitá-la e realizar o processo de devolução junto aos
+                    nossos canais de Atendimento ao Cliente.</p>
+            </div>
+            <button class="accordion"><b> Posso alterar a forma de pagamento de um pedido que já fiz?</b></button>
+            <div class="panel">
+                <p>Após finalização do seu pedido, não será permitido alterar a forma de pagamento.</p>
+            </div>
+            <button class="accordion"><b>Quais formas de pagamento posso usar?</b></button>
+            <div class="panel">
+                <p>Você poderá escolher por pagar suas compras por Cartões de Crédito Visa e Mastercard ou Cartão de Débito Maestro.</p>
+            </div>
+            <button class="accordion"><b>Posso fazer o pagamento com um cartão emitido no exterior?</b></button>
+            <div class="panel">
+                <p>Não aceitamos como forma de pagamento cartões emitidos fora do Brasil.</p>
+            </div>
+            <button class="accordion"><b>Recebi a informação de que meu pedido não foi aprovado. Como devo proceder?</b></button>
+            <div class="panel">
+                <p>Para sua segurança, os pedidos finalizados em nosso site passam por um processo de segurança de validação de dados. Se seu pedido não foi aprovado, sugerimos que entre em contato com a administradora do seu cartão para saber o motivo.</p>
+            </div>
+        </div>
+
+        <div id="faqentrega" class="tabcontent">
+            <button class="accordion"><b>Quais são os meios de entrega do pedido?</b></button>
+            <div class="panel">
+                <p>As entregas são realizadas através de Transportadoras ou pelos Correios.</p>
+            </div>
+            <button class="accordion"><b>Posso agendar a entrega do meu pedido?</b></button>
+            <div class="panel">
+                <p>No momento não estamos agendando a entrega.</p>
+            </div>
+            <button class="accordion"><b> A loja trabalha com entrega internacional?</b></button>
+            <div class="panel">
+                <p>Ainda não trabalhamos com essa opção de envio, porém fazemos entregas em todas as regiões do Brasil.</p>
+            </div>
+            <button class="accordion"><b>Posso alterar meu endereço de entrega?</b></button>
+            <div class="panel">
+                <p>Não é possível realizar alterações em seu pedido após a finalização.</p>
+            </div>
+            <button class="accordion"><b>Quais são os horários de entrega?</b></button>
+            <div class="panel">
+                <p>As entregas são realizadas de Segunda a Sexta-feira em horário comercial. Em algumas regiões, poderá ocorrer aos sábados.</p>
+            </div>
+        </div>
+
+        <div id="faqtroca" class="tabcontent">
+            <button class="accordion"><b>Quais são as formas de devolução?</b></button>
+            <div class="panel">
+                <p>A devolução ocorrerá por meio de Postagem nos Correios e o custo referente à devolução do produto é de responsabilidade da nossa loja, você receberá um código em um dos nossos canais de atendimento e deverá se dirigir a qualquer agência
+                    credenciada dos Correios.</p>
+            </div>
+            <button class="accordion"><b>Como faço para trocar um produto com defeito, danificado ou recebido com a embalagem violada?</b></button>
+            <div class="panel">
+                <p>Em qualquer das hipóteses abaixo recuse o produto:</p>
+                <p>• Embalagem aberta ou avariada;</p>
+                <p>• Produto avariado;</p>
+                <p>• Produto em desacordo com o pedido;</p>
+                <p>• Falta de acessórios.</p>
+                <p>Se, ainda assim, você receber o produto, por favor, entre em contato com a nossa Central de Atendimento ao Cliente e informe ao atendente o motivo da troca. É importante que você confira sempre sua mercadoria no ato da entrega realizada
+                    pelo transportador.</p>
+            </div>
+            <button class="accordion"><b>Porque recebi um e-mail dos correios?</b></button>
+            <div class="panel">
+                <p>Os Correios são responsáveis pelo processo de troca ou devolução. Por isso, ao finalizar essas solicitações pelo site, você recebe esse e-mail para prosseguir com o envio do produto para trocar ou devolver.</p>
+            </div>
+            <button class="accordion"><b>Eu sou cobrada pelo frete para realizar troca ou devolução?</b></button>
+            <div class="panel">
+                <p>Caso você realize a troca/devolução dentro dos prazos estipulados na nossa política, você não será cobrado para fazer a postagem do pedido na agência dos Correios. Basta informar o código de postagem que você receberá dos Correios após
+                    a concluir a solicitação de troca ou devolução.</p>
+            </div>
+            <button class="accordion"><b>Posso trocar o meu produto por outro modelo/cor?</b></button>
+            <div class="panel">
+                <p>A troca poderá ser realizada por qualquer outro produto respeitando o valor pago. Se o produto desejado for de valor superior será enviado um vale troca e poderá optar por uma de nossas formas de pagamento para pagar a diferença da compra.</p>
+            </div>
+        </div>
+
+        <div id="faqconta" class="tabcontent">
+            <button class="accordion"><b>Como faço para me cadastrar?</b></button>
+            <div class="panel">
+                <p>Você pode se cadastrar clicando em “login/criar conta” no canto superior direito do site.</p>
+            </div>
+            <button class="accordion"><b>Esqueci a senha de acesso, o que faço?</b></button>
+            <div class="panel">
+                <p>Se você acessa o site com a opção "Entrar com e-mail e senha" e tenha esquecido a senha cadastrada, basta clicar neste campo que aparecerá a opção Esqueci minha senha.</p>
+            </div>
+            <button class="accordion"><b> Como altero meus dados cadastrais?</b></button>
+            <div class="panel">
+                <p>1. Vá para a página de login</p>
+                <p>2. Acesse a página do seu perfil</p>
+                <p>3. Você pode alterar sua senha, e-mail e dados no seu perfil.</p>
+            </div>
+            <button class="accordion"><b>Cadastrei o CEP errado, como alterar?</b></button>
+            <div class="panel">
+                <p>Se a compra ainda não foi realizada a alteração do CEP pode ser realizada no momento da compra no campo "Alterar dados da entrega".</p>
+            </div>
+            <button class="accordion"><b>Meu cadastro da loja virtual é o mesmo da loja física?</b></button>
+            <div class="panel">
+                <p>Seu cadastro na loja virtual não possui relação junto ao cadastro na loja física.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contato">
+        <h2>Não encontrou o que procurava?</h2>
+        <p>Encontre aqui o assunto que deseja resolver e envie-nos sua dúvida ou solicitação</p>
+        <a class="btn " href="#">Contate-nos</a>
+    </div>
+
+    <script>
+        function abas(evt, itemaba) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(itemaba).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("activemenu");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
