@@ -9,8 +9,7 @@
     top: 60px;
     background: var(--cor-clara);
     border-radius: 7px;
-    box-shadow: 0 0 5px gray;
-    overflow-y: none;
+    box-shadow: 0 0 5px var(--cor-media);
     display: none;
 }
 
@@ -19,9 +18,8 @@
 #cart-titulo {
     padding: 5px;
     text-align: center;
-    font-weight: 300;
     margin-bottom: 10px;
-    box-shadow: 0 0 2px 0 0.4;
+    /* box-shadow: 0 0 2px 0 0.4; */
 }
 
 .cart-produto__container {
@@ -43,14 +41,12 @@
 .cart-produto__detalhes,
 .cart-produto__qtd {
     position: relative;
+    display: inline-block;
     padding-left: 10px;
 }
 
 .cart-produto__desc {
-    position: relative;
-    font-weight: 300 bold;
     font-size: 14px;
-    display: inline-block;
     padding-bottom: 5px;
     left: 60px;
     top: 15px;
@@ -58,9 +54,7 @@
 
 .cart-produto__detalhes {
     font-weight: 300;
-    position: relative;
     font-size: 12px;
-    display: inline-block;
     padding: 5px;
     top: 35px;
     right: 59px;
@@ -69,8 +63,6 @@
 .cart-produto__qtd {
     font-weight: 200 bold;
     font-size: 11px;
-    position: relative;
-    display: inline-block;
     padding: 5px;
     top: 67px;
     right: 113px;
@@ -108,11 +100,15 @@
     bottom: -28px;
     margin-right: 10px;
     margin-left: 15px;
-    background-color: #ddd;
+    background-color: rgb(233, 233, 233);
     padding: 5px 8px;
     border-radius: 5px;
     border: none;
+    outline: none;
+    cursor: pointer;
 }
+
+.cart-conteudo button:hover{ background-color: rgb(209, 207, 207);}
 
 .cart-conteudo input,
 textarea {
@@ -167,9 +163,7 @@ input::-webkit-inner-spin-button {
     resize: vertical;
 }
 
-.button-plus {
-    left: -13px;
-}
+.button-plus {  left: -13px;  }
 
 input[type="number"] {
     -moz-appearance: textfield;

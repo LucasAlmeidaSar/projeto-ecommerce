@@ -5,21 +5,17 @@
     --cor-media : gray;
 
 
-
     /* Elementos gerais */
     --cor-fundo-principal : white;
     --cor-btn: rgb(0, 0, 0,.7);
     
 
-
     /* Navegação Principal */
     --cor-btn-nav: transparent;
     --cor-btn-nav-principal-hover: rgba(255, 255, 255, .15);
     --cor-btn-nav-principal-hover-scroll: rgba(0, 0, 0, .3);
-
     --cor-icone-hover-nav-principal: rgba(255,255,255,.2) ;
     --cor-icone-hover-nav-principal-scroll: rgba(0, 0, 0, .3);
-
 
 
     /* Menu Celular */
@@ -29,11 +25,23 @@
     --cor-btn-menu-celular: transparent;
     --cor-btn-rodape-menu-celular: #8E8D8D;
     
+    
     /* Cabeçalho */
     --cor-cabecalho-principal: transparent;
     --cor-imagem-cabecalho-principal: rgba(0,0,0,.5);
     --cor-btn-cabecalho-principal: rgba(0, 0, 0, .8);
     --cor-btn-cabecalho-principal-hover: rgba(255,255,255,.3);
+
+    /* Seção Lançamentos */
+    --cor-btn-prev-next-carrossel: rgb(39, 41, 44);
+
+    /* Seção Categorias */
+    --cor-btn-categorias: transparent;
+    --cor-btn-categorias-hover: rgba(255,255,255,.3);
+    --cor-categorias-card-before: rgba(0,0,0,.5);
+
+    /* Seção Marketing */
+    --cor-gradiente-imagem-mkt: rgba(0, 0, 0, .3);
 
 
     /* Cards */

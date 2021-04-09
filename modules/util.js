@@ -1,4 +1,5 @@
 const classesDosElementos = {
+
     adicionar(classe, ...elementos){
        for(const elemento of elementos){
            const verificador = elemento.length
@@ -23,16 +24,19 @@ const classesDosElementos = {
 
 
  const varrerColecaoEncontrada = {
+
      adicionar(classe, elementos){
         for (const elemento of elementos) {
             elemento.classList.add(classe)
         }
      },
+
      remover(classe, elementos){
         for (const elemento of elementos) {
             elemento.classList.remove(classe)
         }
      },
+     
      alternar(classe, elementos){
         for (const elemento of elementos){
             elemento.classList.toggle(classe)

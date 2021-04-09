@@ -6,7 +6,7 @@ const containerColapsado = document.querySelector('.container-colapsado');
 const itemListaColapsado = document.querySelector('.conteudo__item-lista-colapsado')
 const menuCelular = document.querySelector('.nav-principal__menu-celular')
 const botoesMenuCelular = document.querySelectorAll('.js-btnMenuCelular')
-const mainHeaderFooter = document.querySelectorAll('.js-conteudoPai')
+const mainHeaderFooter = document.querySelectorAll('.js-conteudosPrincipais')
 
 
 export default function ativarEfeitosDoMenuCelular() { 

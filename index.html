@@ -10,11 +10,12 @@
     <script src="https://kit.fontawesome.com/2454d969d0.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">    
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/cores.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css//menu.css">
+    <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/carrinho.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/main.css">
@@ -31,7 +32,7 @@
 
     <!-- Navegação -->
 
-    <nav class="nav-principal">
+    <nav class="nav-principal pre-load">
 
 
         <!-- Menu Topo LG -->
@@ -56,21 +57,22 @@
             </ul>
 
             <ul class="flex">
-                <li>
-                    <a class="[ icone icone-nav ]  js-itensMenuTopo" href="./pages/login.html"> <i class="far fa-user"></i> </a>
-                </li>
-                <li>
-                    <a class="[ icone icone-nav btnCart ]  js-itensMenuTopo" href="javascript:void(0)"> <i class="fas fa-shopping-cart"></i> </a>
-                </li>
+                <li> <a class="[ icone icone-nav ]  js-itensMenuTopo" href="./pages/login.html"> <i class="far fa-user"></i> </a> </li>
+                <li> <a class="[ icone icone-nav btnCart ]  js-itensMenuTopo" href="javascript:void(0)"> <i class="fas fa-shopping-cart"></i> </a> </li>
             </ul>
 
         </div>
 
 
         <!-- Menu Topo SM -->
-        <div class="[ nav-principal__menu-topo-sm  inativo ]   js-itensMenuTopo">
+        <div class="[ nav-principal__menu-topo-sm ]   js-itensMenuTopo">
             <a class="[ menu-topo-sm__btn ]  js-btnMenuCelular  js-itensMenuTopo" href="javascript:void(0)">&#9776; </a>
+            <ul class="flex">
+                <li> <a class="[ icone icone-nav ]  js-itensMenuTopo" href="./pages/login.html"> <i class="far fa-user"></i> </a> </li>
+                <li> <a class="[ icone icone-nav ]  js-itensMenuTopo" href="javascript:void(0)"> <i class="fas fa-shopping-cart"></i> </a> </li>
+            </ul>
         </div>
+        
 
     </nav>
 
@@ -85,8 +87,8 @@
 
         <div class="menu-celular__conteudo">
             <ul class="conteudo__lista flex">
-                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">Início</a> </li>
-                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">Sobre</a> </li>
+                <li class="conteudo__item-lista"> <a class="[ conteudo__btn btn ]  js-btnMenuCelular" href="#">Início</a> </li>
+                <li class="conteudo__item-lista"> <a class="[ conteudo__btn btn ]  js-btnMenuCelular" href="#">Sobre</a> </li>
 
                 <li class="conteudo__item-lista  conteudo__item-lista-colapsado ">
                     <a class="conteudo__btn conteudo__btn-colapsado btn" href="javascript:void(0)">Produtos</a>
@@ -100,22 +102,16 @@
 
                 </li>
 
-                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">FAQ</a> </li>
-                <li class="conteudo__item-lista"> <a class="conteudo__btn btn" href="#">Contato</a> </li>
+                <li class="conteudo__item-lista"> <a class="[ conteudo__btn btn ]  js-btnMenuCelular" href="#">FAQ</a> </li>
+                <li class="conteudo__item-lista"> <a class="[ conteudo__btn btn ]  js-btnMenuCelular" href="#">Contato</a> </li>
             </ul>
         </div>
 
         <div class="menu-celular__rodape">
             <ul class="menu-celular__rodape__lista flex">
-                <li>
-                    <a class="menu-celular__rodape__btn btn" href="#"> <i class="fab fa-facebook-square "></i> </a>
-                </li>
-                <li>
-                    <a class="menu-celular__rodape__btn btn" href="#"> <i class="fab fa-twitter-square "></i> </a>
-                </li>
-                <li>
-                    <a class="menu-celular__rodape__btn btn" href="#"> <i class="fab fa-instagram "></i> </a>
-                </li>
+                <li> <a class="menu-celular__rodape__btn btn" href="#"> <i class="fab fa-facebook-square "></i> </a> </li>
+                <li> <a class="menu-celular__rodape__btn btn" href="#"> <i class="fab fa-twitter-square "></i> </a> </li>
+                <li> <a class="menu-celular__rodape__btn btn" href="#"> <i class="fab fa-instagram "></i> </a> </li>
             </ul>
         </div>
     </div>
@@ -125,17 +121,17 @@
 
 
     <!-- Cabeçalho -->
-    <header class="[ cabecalho-principal ]  js-conteudoPai">
+    <header class=" [ cabecalho-principal ]  js-conteudosPrincipais">
 
         <div class="cabecalho-principal__conteudo  center  flex">
-            <h1 class="cabecalho-principal__titulo">Título Principal</h1>
-            <p class="cabecalho-principal__subtitulo">Frase qualquer, imagens meramente ilustrativas. Bla bla bla bla.</p>
-            <a class="cabecalho-principal__btn btn" href="#">Comprar</a>
+            <h1 class="cabecalho-principal__titulo  pre-load   js-itensCabecalho">Título Principal</h1>
+            <p class="cabecalho-principal__subtitulo  pre-load   js-itensCabecalho">Frase qualquer, imagens meramente ilustrativas. Bla bla bla bla.</p>
+            <a class="cabecalho-principal__btn btn  pre-load   js-itensCabecalho" href="#">Comprar</a>
         </div>
 
     </header>
 
-
+    
 
 
 
@@ -190,82 +186,88 @@
 
 
     <!-- Conteúdo Principal -->
-    <main class="[ conteudo-principal ]  js-conteudoPai">
+    <main class="[ conteudo-principal ]  js-conteudosPrincipais">
 
 
         <!-- Seção Lançamentos -->
         <section class="conteudo-principal__secao  lancamentos">
 
             <h2 class="conteudo-principal__title">Lançamentos</h2>
-            <div class="carrossel">
 
-                <!-- Precisa de estilização -->
-
-                <div class="carrossel__container-img">
-                    <a href="">
-                        <img class="carrossel__img" src="https://i.pinimg.com/originals/e0/8b/a8/e08ba864c9c76914b1b1b84e8f54003d.jpg" alt="Moletom Gucci">
-                    </a>
-                    <h3 class="card__titulo">Legenda</h3>
-                    <p class="card__subtitulo">R$ 129,90</p>
-                </div>
-                <div class="carrossel__container-img">
-                    <a href="">
-                        <img class="carrossel__img" src="https://i.shafacdn.net/images/170660-65-auto-auto-oyqy9IFDM5Q.jpg">
-                    </a>
-                    <h3 class="card__titulo">Legenda</h3>
-                    <p class="card__subtitulo">R$ 129,90</p>
-                </div>
-                <div class="carrossel__container-img">
-                    <a href="">
-                        <img class="carrossel__img" src="https://i.pinimg.com/originals/00/1c/d6/001cd63afe5d1cb60c5067556b688a7f.jpg" alt="">
+            <div class="carrossel">                    
+                
+                <div class="card">
+                    <a href="javascript:void(0)">
+                        <img class="card__imagem imagem" src="https://i.pinimg.com/originals/e0/8b/a8/e08ba864c9c76914b1b1b84e8f54003d.jpg" alt="Moletom Gucci">
                     </a>
                     <h3 class="card__titulo">Legenda</h3>
                     <p class="card__subtitulo">R$ 129,90</p>
                 </div>
 
-                <div class="carrossel__container-img">
-                    <a href="">
-                        <img class="carrossel__img" src="https://i.pinimg.com/originals/c3/4f/f3/c34ff33f572939bc77d156b157c4f809.png" alt="Alrora boreal ">
-                    </a>
-                    <h3 class="card__titulo">Legenda</h3>
-                    <p class="card__subtitulo">R$ 129,90</p>
-                </div>
-                <div class="carrossel__container-img">
-                    <a href="">
-                        <img class="carrossel__img" src="https://images.tcdn.com.br/img/img_prod/830568/short_feminino_jeans_com_suspensorio_71_1_20201001183651.jpg" alt="">
-                    </a>
-                    <h3 class="card__titulo">Legenda</h3>
-                    <p class="card__subtitulo">R$ 129,90</p>
-                </div>
-                <div class="carrossel__container-img">
-                    <a href="">
-                        <img class="carrossel__img" src="https://loja.donnamodelli.com.br/resources/img/como-inovar-nos-looks.jpg" alt="">
+                <div class="card">
+                    <a href="javascript:void(0)">
+                        <img class="card__imagem imagem" src="https://i.shafacdn.net/images/170660-65-auto-auto-oyqy9IFDM5Q.jpg">
                     </a>
                     <h3 class="card__titulo">Legenda</h3>
                     <p class="card__subtitulo">R$ 129,90</p>
                 </div>
 
-                <div class="carrossel__container-img">
-                    <a href="">
-                        <img class="carrossel__img" src="https://cdn.awsli.com.br/600x700/242/242508/produto/43811695/48a07e4181.jpg" alt="Alrora boreal ">
+                <div class="card">
+                    <a href="javascript:void(0)">
+                        <img class="card__imagem imagem" src="https://i.pinimg.com/originals/00/1c/d6/001cd63afe5d1cb60c5067556b688a7f.jpg" alt="">
                     </a>
                     <h3 class="card__titulo">Legenda</h3>
                     <p class="card__subtitulo">R$ 129,90</p>
                 </div>
-                <div class="carrossel__container-img">
-                    <a href="">
-                        <img class="carrossel__img" src="https://i.pinimg.com/736x/09/72/2c/09722cdad97c0d37f623c757a29cfe36.jpg" alt="">
+
+                <div class="card">
+                    <a href="javascript:void(0)">
+                        <img class="card__imagem imagem" src="https://i.pinimg.com/originals/c3/4f/f3/c34ff33f572939bc77d156b157c4f809.png" alt="Alrora boreal ">
                     </a>
                     <h3 class="card__titulo">Legenda</h3>
                     <p class="card__subtitulo">R$ 129,90</p>
                 </div>
-                <div class="carrossel__container-img">
-                    <a href="">
-                        <img class="carrossel__img" src="https://www.oolhaisso.com/wp-content/uploads/2019/03/como-usar-shorts-de-linho-bege-em-conjuntinho.jpg" alt="">
+
+                <div class="card">
+                    <a href="javascript:void(0)">
+                        <img class="card__imagem imagem" src="https://images.tcdn.com.br/img/img_prod/830568/short_feminino_jeans_com_suspensorio_71_1_20201001183651.jpg" alt="">
                     </a>
                     <h3 class="card__titulo">Legenda</h3>
                     <p class="card__subtitulo">R$ 129,90</p>
                 </div>
+
+                <div class="card">
+                    <a href="javascript:void(0)">
+                        <img class="card__imagem imagem" src="https://loja.donnamodelli.com.br/resources/img/como-inovar-nos-looks.jpg" alt="">
+                    </a>
+                    <h3 class="card__titulo">Legenda</h3>
+                    <p class="card__subtitulo">R$ 129,90</p>
+                </div>
+
+                <div class="card">
+                    <a href="javascript:void(0)">
+                        <img class="card__imagem imagem" src="https://cdn.awsli.com.br/600x700/242/242508/produto/43811695/48a07e4181.jpg" alt="Alrora boreal ">
+                    </a>
+                    <h3 class="card__titulo">Legenda</h3>
+                    <p class="card__subtitulo">R$ 129,90</p>
+                </div>
+
+                <div class="card">
+                    <a href="javascript:void(0)">
+                        <img class="card__imagem imagem" src="https://i.pinimg.com/736x/09/72/2c/09722cdad97c0d37f623c757a29cfe36.jpg" alt="">
+                    </a>
+                    <h3 class="card__titulo">Legenda</h3>
+                    <p class="card__subtitulo">R$ 129,90</p>
+                </div>
+
+                <div class="card">
+                    <a href="javascript:void(0)">
+                        <img class="card__imagem imagem" src="https://www.oolhaisso.com/wp-content/uploads/2019/03/como-usar-shorts-de-linho-bege-em-conjuntinho.jpg" alt="">
+                    </a>
+                    <h3 class="card__titulo">Legenda</h3>
+                    <p class="card__subtitulo">R$ 129,90</p>
+                </div>
+
             </div>
 
             <a class="lancamentos_btn btn" href="#">Ver todos</a>
@@ -295,115 +297,79 @@
             <div class="produtos-oferta__grid grid">
 
                 <div class="card">
-                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
+                    <div class="card__imagem  imagem-1  js-imagensOfertas"></div>
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
                         <ul class="card__lista flex">
-                            <li>
-                                <a class="card__cor cor-1" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="card__cor cor-2" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="card__cor cor-3" href="#"></a>
-                            </li>
+                            <li> <a class="card__cor cor-1" href="#"></a> </li>
+                            <li> <a class="card__cor cor-2" href="#"></a> </li>
+                            <li> <a class="card__cor cor-3" href="#"></a> </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
+                    <div class="card__imagem  imagem-2  js-imagensOfertas"></div>  
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
                         <ul class="card__lista flex">
-                            <li>
-                                <a class="card__cor cor-1" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="card__cor cor-2" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="card__cor cor-3" href="#"></a>
-                            </li>
+                            <li> <a class="card__cor cor-1" href="#"></a> </li>
+                            <li> <a class="card__cor cor-2" href="#"></a> </li>
+                            <li> <a class="card__cor cor-3" href="#"></a> </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
+                    <a href="javascript:void(0)"><div class="card__imagem  imagem-3-diferente"></div></a>                    
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
                         <ul class="card__lista flex">
-                            <li>
-                                <a class="card__cor cor-1" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="card__cor cor-2" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="card__cor cor-3" href="#"></a>
-                            </li>
+                            <li> <a class="card__cor cor-1" href="#"></a> </li>
+                            <li> <a class="card__cor cor-2" href="#"></a> </li>
+                            <li> <a class="card__cor cor-3" href="#"></a> </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
+                    <div class="card__imagem  imagem-4  js-imagensOfertas"></div>
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
                         <ul class="card__lista flex">
-                            <li>
-                                <a class="card__cor cor-1" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="card__cor cor-2" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="card__cor cor-3" href="#"></a>
-                            </li>
+                            <li> <a class="card__cor cor-1" href="#"></a> </li>
+                            <li> <a class="card__cor cor-2" href="#"></a> </li>
+                            <li> <a class="card__cor cor-3" href="#"></a> </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
+                    <div class="card__imagem  imagem-5  js-imagensOfertas"></div>
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
                         <ul class="card__lista flex">
-                            <li>
-                                <a class="card__cor cor-1" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="card__cor cor-2" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="card__cor cor-3" href="#"></a>
-                            </li>
+                            <li> <a class="card__cor cor-1" href="#"></a> </li>
+                            <li> <a class="card__cor cor-2" href="#"></a> </li>
+                            <li> <a class="card__cor cor-3" href="#"></a> </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl_mountain.jpg" alt="">
+                    <div class="card__imagem  imagem-6  js-imagensOfertas"></div>
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
                         <ul class="card__lista flex">
-                            <li>
-                                <a class="card__cor cor-1" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="card__cor cor-2" href="#"></a>
-                            </li>
-                            <li>
-                                <a class="card__cor cor-3" href="#"></a>
-                            </li>
+                            <li> <a class="card__cor cor-1" href="#"></a> </li>
+                            <li> <a class="card__cor cor-2" href="#"></a> </li>
+                            <li> <a class="card__cor cor-3" href="#"></a> </li>
                         </ul>
                     </div>
                 </div>
@@ -424,7 +390,6 @@
             <div class="marketing__conteudo  flex  center">
                 <p class="marketing__titulo">Um novo dia merece um novo look</p>
                 <p class="marketing__subtitulo">Confie no que você veste!</p>
-                <a class="btn" href="#">Ver coleção</a>
             </div>
 
         </section>
@@ -438,20 +403,23 @@
 
             <h2 class="conteudo-principal__title">Categorias</h2>
 
-            <div class="categorias_flex flex">
+            <div class="categorias__flex flex">
                 <div class="card">
-                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
+                    <img class="card__imagem imagem" src="./img/categoriaMasculina.jpg" alt="">
                     <h3 class="card__titulo">Masculino</h3>
+                    <a class="categorias__btn btn center" href="javascript:void(0)">Explorar</a>
                 </div>
 
                 <div class="card">
-                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
+                    <img class="card__imagem imagem" src="./img/categoriaFeminina.jpg" alt="">
                     <h3 class="card__titulo">Feminino</h3>
+                    <a class="categorias__btn btn center" href="javascript:void(0)">Explorar</a>
                 </div>
 
-                <div class="card ">
-                    <img class="card__imagem imagem" src="https://www.w3schools.com/w3images/girl.jpg" alt="">
+                <div class="card">
+                    <img class="card__imagem imagem" src="./img/categoriaUnissex.jpeg" alt="">
                     <h3 class="card__titulo ">Unissex</h3>
+                    <a class="categorias__btn btn center" href="javascript:void(0)">Explorar</a>
                 </div>
             </div>
 
@@ -465,13 +433,13 @@
         <!-- Seção Mapa -->
         <section class="conteudo-principal__secao  mapa">
 
-            <div class="informação-contato">
-                <h1>Nossa loja</h1>
+            <div class="informacao-contato">
+                <h1 class="mapa__title">Nossa loja</h1>
                 <p>Barcelona, Espírito Santo</p>
                 <p>Seg - Sex, 9h às 21h </p>
                 <p>Sábado, 9h às 15h</p>
                 <p>Domingo, 9h às 12h</p>
-                <a class="informação-contato__btn btn" href="https://goo.gl/maps/BbgC1G8KQRDkavSWA" target="_blank">Como chegar</a>
+                <a class="informacao-contato__btn btn" href="https://goo.gl/maps/BbgC1G8KQRDkavSWA" target="_blank">Como chegar</a>
             </div>
             <iframe class="mapa__iframe" src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14980.276844700637!2d-40.26132927337219!3d-20.17284358348979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb81e5bc2f36b61%3A0x9322478fc04f4f92!2sBarcelona%2C%20Serra%20-%20ES!5e0!3m2!1spt-BR!2sbr!4v1616628095610!5m2!1spt-BR!2sbr "
                 width="100% " style="border:0; " allowfullscreen=" " loading="lazy "></iframe>
@@ -486,7 +454,7 @@
 
 
     <!-- Rodapé -->
-    <footer class="[ rodape flex ]  js-conteudoPai">
+    <footer class="[ rodape flex ]  js-conteudosPrincipais">
 
         <div>
             <ul class="rodape__lista">
@@ -500,15 +468,9 @@
         <div>
             <h3 class="rodape__titulo">Siga-nos</h3>
             <ul class="flex">
-                <li>
-                    <a class="rodape__icone icone" title="Instagram" href="# "> <i class="fab fa-instagram "></i> </a>
-                </li>
-                <li>
-                    <a class="rodape__icone icone" title="Facebook" href="# "> <i class="fab fa-facebook-square "></i> </a>
-                </li>
-                <li>
-                    <a class="rodape__icone icone" title="Twitter" href="# "> <i class="fab fa-twitter-square "></i> </a>
-                </li>
+                <li> <a class="rodape__icone icone" title="Instagram" href="# "> <i class="fab fa-instagram "></i> </a>      </li>
+                <li> <a class="rodape__icone icone" title="Facebook" href="# "> <i class="fab fa-facebook-square "></i> </a> </li>
+                <li> <a class="rodape__icone icone" title="Twitter" href="# "> <i class="fab fa-twitter-square "></i> </a>   </li>
             </ul>
         </div>
 
@@ -520,13 +482,16 @@
             </ul>
         </div>
 
-
     </footer>
+
+
 
 
     <!-- Script -->
     <script type="module">
-        import { App } from './src/main.js'; App.iniciar()
+        import { App } from './src/main.js'
+        
+        App.iniciar()
 
     </script>
 
