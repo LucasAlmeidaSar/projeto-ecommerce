@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/faq.css">
+    
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/cores.css">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/cores.css">
+    <link rel="stylesheet" href="../css/faq.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
 </head>
@@ -188,6 +190,7 @@
         function abas(evt, itemaba) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");
+            
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
@@ -195,6 +198,8 @@
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
+            
+
             document.getElementById(itemaba).style.display = "block";
             evt.currentTarget.className += " active";
         }
