@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha conta</title>
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/cores.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/conta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+</head>
+
+<body>
+
+    <div class="menu">
+        <div class="tab">
+            <ul>
+                <h2 class="titulo">Minha conta</h2>
+
+                <li><button class="tabOp" onclick="alterarInfo(event, 'infoConta')"><i class="fas fa-user"></i>Informações da conta<i class="fas fa-arrow-right"></i></button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'compras')"><i class="fas fa-shopping-bag"></i>Compras realizadas<i class="fas fa-arrow-right"></i></button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'faqpagamento')"><i class="far fa-credit-card"></i>Pagamento<i class="fas fa-arrow-right"></i></button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'faqentrega')"><i class="fas fa-shipping-fast"></i>Entrega<i class="fas fa-arrow-right"></i></button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'faqtroca')"><i class="fas fa-exchange-alt"></i>Configurações<i class="fas fa-arrow-right"></i></button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'faqconta')"><i class="fas fa-sign-out-alt"></i>Sair<i class="fas fa-arrow-right"></i></button></li>
+            </ul>
+        </div>
+        <div id="infoConta" class="tab tabConfig">
+            <ul>
+                <h2 class="titulo">Informações da Conta</h2>
+            </ul>
+        </div>
+        <div id="compras" class="tab tabConfig">
+            <ul>
+                <h2 class="titulo">Compras realizadas</h2>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function alterarInfo(evt, item) {
+
+            var i, tabconfig, tablinks;
+            tabconfig = document.getElementsByClassName("tabConfig");
+
+            for (i = 0; i < tabconfig.length; i++) {
+                tabconfig[i].style.display = "none";
+            }
+            a = document.getElementById(item);
+            a.style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

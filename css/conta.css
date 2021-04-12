@@ -1,0 +1,64 @@
+.menu {
+    float: left;
+    display: flex;
+    width: 98%;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.tab {
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 300px;
+    height: 600px;
+}
+
+.tab button {
+    background-color: inherit;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    min-width: 300px;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabConfig {
+    float: left;
+    display: none;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    width: 300px;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/* ICONES */
+
+.fa-arrow-right {
+    float: right;
+}
+
+.fas {
+    margin-right: 5px;
+}
+
+.far {
+    margin-right: 5px;
+}
