@@ -34,18 +34,61 @@
 }
 
 .tabConfig {
-    float: left;
     display: none;
+    float: left;
     border: 1px solid #ccc;
-    padding: 6px 12px;
-    width: 300px;
+    width: 600px;
 }
 
-.titulo {
-    display: flex;
-    justify-content: center;
+
+/* GRID */
+
+.header {
+    border: 1px solid black;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    font-size: 20px;
+    background-color: rgba(177, 177, 177, 0.8);
+}
+
+.numeroP {
+    background-color: rgba(255, 255, 255, 0.8);
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.data {
+    background-color: rgba(255, 255, 255, 0.8);
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.status {
+    background-color: rgba(255, 255, 255, 0.8);
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.detalhes {
+    background-color: rgba(255, 255, 255, 0.8);
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.grid-container {
+    border: 1px solid black;
+    display: grid;
+    grid-template-areas: auto auto auto;
+}
+
+.grid-container>div {
+    border: 1px solid black;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.dados {
     margin-top: 10px;
-    padding-bottom: 10px;
 }
 
 
