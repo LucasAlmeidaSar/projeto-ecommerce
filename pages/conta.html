@@ -17,29 +17,38 @@
 </head>
 
 <body>
-
+    <!-- Div Principal que engloba toda a tela -->
     <div class="menu">
+        <!-- Div da aba principal contendo as opções -->
         <div class="tab">
             <ul>
-                <h2 class="titulo">Minha conta</h2>
+                <h2 class="header">Minha conta</h2>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'infoConta')"><i class="fas fa-user"></i>Informações da conta</button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'compras')"><i class="fas fa-shopping-bag"></i>Compras realizadas</button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'faqpagamento')"><i class="far fa-credit-card"></i>Pagamento</button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'faqentrega')"><i class="fas fa-shipping-fast"></i>Entrega</button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'faqtroca')"><i class="fas fa-exchange-alt"></i>Configurações</button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'faqconta')"><i class="fas fa-sign-out-alt"></i>Sair</button></li>
+            </ul>
+        </div>
 
-                <li><button class="tabOp" onclick="alterarInfo(event, 'infoConta')"><i class="fas fa-user"></i>Informações da conta<i class="fas fa-arrow-right"></i></button></li>
-                <li><button class="tabOp" onclick="alterarInfo(event, 'compras')"><i class="fas fa-shopping-bag"></i>Compras realizadas<i class="fas fa-arrow-right"></i></button></li>
-                <li><button class="tabOp" onclick="alterarInfo(event, 'faqpagamento')"><i class="far fa-credit-card"></i>Pagamento<i class="fas fa-arrow-right"></i></button></li>
-                <li><button class="tabOp" onclick="alterarInfo(event, 'faqentrega')"><i class="fas fa-shipping-fast"></i>Entrega<i class="fas fa-arrow-right"></i></button></li>
-                <li><button class="tabOp" onclick="alterarInfo(event, 'faqtroca')"><i class="fas fa-exchange-alt"></i>Configurações<i class="fas fa-arrow-right"></i></button></li>
-                <li><button class="tabOp" onclick="alterarInfo(event, 'faqconta')"><i class="fas fa-sign-out-alt"></i>Sair<i class="fas fa-arrow-right"></i></button></li>
-            </ul>
-        </div>
-        <div id="infoConta" class="tab tabConfig">
+        <!-- Div que mostra as informações da conta -->
+        <div id="infoConta" class="tabConfig">
             <ul>
-                <h2 class="grid">Informações da Conta</h2>
-                <h6 class="dados">Nome: Mateus Daniel</h6>
-                <h6 class="dados">E-mail: mateus.daniel@gmail.com</h6>
-                <h6 class="dados">Endereço: Rua tchurusbango tchurosbago</h6>
+                <label class="header"><b>Informações da Conta</b></label>
+                <label class="dados">Nome: </label>
+                <label class="dados">CPF: </label>
+                <label class="dados">Telefone: </label>
+                <label class="dados">Gênero: </label>
+                <label class="dados">Data de nascimento: </label>
+                <label class="dados">E-mail: </label>
+                <label class="dados">Endereço: </label>
+
             </ul>
         </div>
-        <div id="compras" class="tab tabConfig">
+
+        <!-- Div que mostra as compras realizadas -->
+        <div id="compras" class="tabConfig">
 
             <div class="grid-container">
                 <div class="header"><b>Compras realizadas</b></div>
@@ -62,6 +71,10 @@
     </div>
 
     <script>
+        infoConta = document.getElementById("infoConta"); //Pega o id da div infoConta e atribui a uma variável js
+        infoConta.style.display = "block"; // comando para ativar a div infoConta quando a pagina carregar
+
+        //Função responsável por mudar as divs quando clicar em uma das opções principais 
         function alterarInfo(evt, item) {
 
             var i, tabconfig, tablinks;
