@@ -106,3 +106,21 @@
  .far {
      margin-right: 5px;
  }
+/* Formatação básica. Trabalho com input.*/
+/*Dificuldades até então: tamanho dos inputs adaptável ao conteúdo.*/
+ #infoConta input {
+    font-weight: bold;
+    border: none;
+    background-color: white;
+    border-bottom: 2px solid rgb(168, 168, 168);
+    width: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: grid;
+    gap: 16px 24px;
+ }
+/* Não tá divindo o conteúdo em duas colunas. Vou verificar...*/
+ #infoConta {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+ }
