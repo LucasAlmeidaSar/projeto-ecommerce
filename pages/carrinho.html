@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2454d969d0.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">    
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/cores.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/carrinho.css">
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsividade.css">
+
+    <title>E-commerce</title>
+
+</head>
+
+<body>
+        <div class="carrinho-externo__Main flex">
+            <div class="carrinho-externo__wrapper">
+                <!--início da lista-->
+                <div class="carrinho-externo__lista flex">
+                    <!--início do container-->
+                    <div class="carrinho-externo__container flex">
+                            <div class="carrinho-externo__img flex"> 
+                                <img src="../img/blackshirt.jpg"></img>
+                                    <div class="carrinho-externo__info">
+                                        <span class="carrinho-externo__prodDesc">Camisa Masculina</span>
+                                        <span class="carrinho-externo__prodCor">Cor: Preta</span>
+                                        <span class="carrinho-externo__prodTam">Tam.: G</span>  
+                                    </div>
+                            </div>
+                            <div class="carrinho-externo__prodInput flex">                        
+                                <div class="input-group-ext">
+                                    <input type="button" value="-" class="button-minus" data-field="quantity">
+                                    <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field-ext">
+                                    <input type="button" value="+" class="button-plus" data-field="quantity">
+                                </div>  
+                                    <span class="carrinho-externo__prodPreco">R$ 130,00</span>
+                            </div>
+                    </div> 
+                    <!-- fim do container -->
+
+                    <!--início do container-->
+                    <div class="carrinho-externo__container flex">
+                        <div class="carrinho-externo__img flex">
+                            <img src="../img/blackshirt.jpg"></img>
+                                <div class="carrinho-externo__info">
+                                    <span class="carrinho-externo__prodDesc">Camisa Masculina</span>
+                                    <span class="carrinho-externo__prodCor">Cor: Preta</span>
+                                    <span class="carrinho-externo__prodTam">Tam.: G</span>  
+                                </div>
+                        </div>
+                        <div class="carrinho-externo__prodInput flex">                        
+                            <div class="input-group-ext">
+                                <input type="button" value="-" class="button-minus" data-field="quantity">
+                                <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field-ext">
+                                <input type="button" value="+" class="button-plus" data-field="quantity">
+                            </div>  
+                                <span class="carrinho-externo__prodPreco">R$ 130,00</span>
+                        </div>
+                    </div> 
+                    <!-- fim do container -->
+
+                    <!--início do container-->
+                    <div class="carrinho-externo__container flex">
+                        <div class="carrinho-externo__img flex">
+                            <img src="../img/blackshirt.jpg"></img>
+                                <div class="carrinho-externo__info">
+                                    <span class="carrinho-externo__prodDesc">Camisa Masculina</span>
+                                    <span class="carrinho-externo__prodCor">Cor: Preta</span>
+                                    <span class="carrinho-externo__prodTam">Tam.: G</span>  
+                                </div>
+                        </div>
+                        <div class="carrinho-externo__prodInput flex">                        
+                            <div class="input-group-ext">
+                                <input type="button" value="-" class="button-minus" data-field="quantity">
+                                <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field-ext">
+                                <input type="button" value="+" class="button-plus" data-field="quantity">
+                            </div>  
+                                <span class="carrinho-externo__prodPreco">R$ 130,00</span>
+                        </div>
+                    </div> 
+                    <!-- fim do container -->                
+                </div> 
+                <!-- fim da lista -->
+            
+                <div class="carrinho-externo__freteWrapper flex">
+                    <span class="carrinho-externo__cepLabel">Calcular frete e prazos</span>
+                    <input type="tel" class="carrinho-externo__cepInput" placeholder="00000-000" maxlength="8" pattern="[0-9]{5}-[0-9]{3}">
+                    <button id="procuraCEP">OK</button>
+                </div>
+            </div>
+        <div class="carrinho-externo__summaryWrapper flex">
+            <h3 class="carrinho-externo__resumo">Resumo do pedido</h3>
+            <div class="carrinho-externo__summaryDetails">
+                    <span class="prod">3 produtos
+                    </span><span class="preco">R$ 390,00
+                    </span> 
+                    <span class="frete">Frete</span><span class="freteValor">Grátis</span>
+            </div>
+            <div class="carrinho-externo__totalWrapper flex">
+                    <div class="carrinho-externo_totalDetails flex">
+                        <span class="total">Total</span>
+                        <span class="carrinho-externo__total"> R$ 390,00</span>
+                    </div>
+                    <span class="parcelamento"> em até 6x no cartão</span>                
+            </div>
+            <button id="goToCheckout">Continuar</button>
+        </div>
+ <!---->
+    </div>
+        <!-- Rodapé -->
+        <footer class="[ rodape flex ]  js-conteudosPrincipais">
+
+            <div>
+                <ul class="rodape__lista">
+                    <li><a class="rodape__link" href="./pages/faq.html">FAQ</a></li>
+                    <li><a class="rodape__link" href="# ">Sobre nós</a></li>
+                    <li><a class="rodape__link" href="# ">Contato</a></li>
+    
+                </ul>
+            </div>
+    
+            <div>
+                <h3 class="rodape__titulo">Siga-nos</h3>
+                <ul class="flex">
+                    <li> <a class="rodape__icone icone" title="Instagram" href="# "> <i class="fab fa-instagram "></i> </a>      </li>
+                    <li> <a class="rodape__icone icone" title="Facebook" href="# "> <i class="fab fa-facebook-square "></i> </a> </li>
+                    <li> <a class="rodape__icone icone" title="Twitter" href="# "> <i class="fab fa-twitter-square "></i> </a>   </li>
+                </ul>
+            </div>
+    
+            <div>
+                <ul class="flex">
+                    <li> <img class="rodape__cartao" title="Visa" src="../img/visa.png"> </li>
+                    <li> <img class="rodape__cartao" title="Mastercard" src="../img/mastercard.png"> </li>
+                    <li> <img class="rodape__cartao" title="Maestro" src="../img/maestro.png"> </li>
+                </ul>
+            </div>
+    
+        </footer>
+       
+    
+        <!-- Script -->
+        <script type="module">
+            import { App } from './src/main.js'
+            
+            App.iniciar()
+    
+        </script>
+    
+    </body>
+    
+    </html>
