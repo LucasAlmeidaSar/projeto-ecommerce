@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha conta</title>
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/cores.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/conta.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+</head>
+
+<body>
+    <!-- Div Principal que engloba toda a tela -->
+    <div class="menu">
+        <!-- Div da aba principal contendo as opções -->
+        <div class="tab">
+            <ul>
+                <h2 class="header">Minha conta</h2>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'infoConta')"><i class="fas fa-user"></i>Informações da conta</button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'compras')"><i class="fas fa-shopping-bag"></i>Compras realizadas</button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'faqpagamento')"><i class="far fa-credit-card"></i>Pagamento</button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'faqentrega')"><i class="fas fa-shipping-fast"></i>Entrega</button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'faqtroca')"><i class="fas fa-exchange-alt"></i>Configurações</button></li>
+                <li><button class="tabOp" onclick="alterarInfo(event, 'faqconta')"><i class="fas fa-sign-out-alt"></i>Sair</button></li>
+            </ul>
+        </div>
+
+        <!-- Div que mostra as informações da conta -->
+        <div id="infoConta" class="tabConfig">
+            <ul>
+                <label class="header"><b>Informações da Conta</b></label>
+                <label class="dados">Nome: </label>
+                <label class="dados">CPF: </label>
+                <label class="dados">Telefone: </label>
+                <label class="dados">Gênero: </label>
+                <label class="dados">Data de nascimento: </label>
+                <label class="dados">E-mail: </label>
+                <label class="dados">Endereço: </label>
+
+            </ul>
+        </div>
+
+        <!-- Div que mostra as compras realizadas -->
+        <div id="compras" class="tabConfig">
+
+            <div class="grid-container">
+                <div class="header"><b>Compras realizadas</b></div>
+                <div class="numeroP"><b>Numero do Pedido</b></div>
+                <div class="data"><b>Data</b></div>
+                <div class="status"><b>Status</b></div>
+                <div class="detalhes"><b>Detalhes</b></div>
+
+                <div class="numeroP">55824156</div>
+                <div class="data">13/04/2021</div>
+                <div class="status">Em andamento</div>
+                <div class="detalhes"><a href="#">Mais detalhes</a></div>
+
+                <div class="numeroP">55472637</div>
+                <div class="data">24/02/2021</div>
+                <div class="status">Concluído</div>
+                <div class="detalhes"><a href="#">Mais detalhes</a></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        infoConta = document.getElementById("infoConta"); //Pega o id da div infoConta e atribui a uma variável js
+        infoConta.style.display = "block"; // comando para ativar a div infoConta quando a pagina carregar
+
+        //Função responsável por mudar as divs quando clicar em uma das opções principais 
+        function alterarInfo(evt, item) {
+
+            var i, tabconfig, tablinks;
+            tabconfig = document.getElementsByClassName("tabConfig");
+
+            for (i = 0; i < tabconfig.length; i++) {
+                tabconfig[i].style.display = "none";
+            }
+            a = document.getElementById(item);
+            a.style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
