@@ -1,4 +1,7 @@
 
+
+/* Carrinho interno ("dropdown") */
+
 .cart-conteudo {
     width: 300px;
     height: 350px;
@@ -108,9 +111,9 @@
     cursor: pointer;
 }
 
-.cart-conteudo button:hover{ background-color: rgb(209, 207, 207);}
+.cart-conteudo, .carrinho-externo__container button:hover{ background-color: rgb(209, 207, 207);}
 
-.cart-conteudo input,
+.cart-conteudo, .carrinho-externo__container input,
 textarea {
     border: 1px solid #eeeeee;
     box-sizing: border-box;
@@ -146,8 +149,8 @@ input::-webkit-inner-spin-button {
 .input-group .button-minus,
 .input-group .button-plus {
     font-weight: bold;
-    height: 20px;
-    padding: 0;
+    height: 26px;
+    padding: 0px;
     width: 15px;
     position: relative;
 }
@@ -168,4 +171,208 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
     -webkit-appearance: none;
+}
+
+/*Carrinho externo - carrinho.html*/
+
+.carrinho-externo__Main{
+    padding: 20px;
+    margin: auto;
+}
+
+.carrinho-externo__lista{
+    position: relative;
+    padding: 15px;
+    box-shadow: 2px 2px 3px 1px rgba(192, 191, 191, 0.3);
+    border: 1px solid rgba(192, 191, 191, 0.575);
+    flex-flow: column wrap;
+    width: 1080px;
+}
+
+
+.carrinho-externo__qtd{
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    font-size: 20px;
+}
+.carrinho-externo__container{
+    padding: 10px 0px 10px;
+    border-bottom: 1px solid rgba(192, 191, 191, 0.8); 
+    justify-content: space-between;
+    width: 100%;
+}
+
+.carrinho-externo__container:hover{
+    background: #f8f8f8;
+}
+
+.carrinho-externo__container:last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.carrinho-externo__img img{
+    width: 120px;
+    height: 120px;
+}
+
+.carrinho-externo__prodDesc, .carrinho-externo__prodCor, .carrinho-externo__prodTam, .carrinho-externo__prodQtd{
+    display: block;
+    padding-left: 10px;
+    padding:10px;
+}
+
+.carrinho-externo__prodDesc{
+    font-size: 22px;
+    font-weight: 300;
+ 
+}
+.carrinho-externo__prodTam,.carrinho-externo__prodCor {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.carrinho-externo__prodPreco{
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.input-group-ext {
+    clear: both;
+    position: relative;
+}
+
+.input-group-ext .quantity-field-ext {
+    position: relative;
+    height: 40px;
+    text-align: center;
+    width: 28px;
+    display: inline-block;
+    font-size: 13px;
+    resize: vertical;
+}
+
+.carrinho-externo__summaryWrapper{
+    align-self: baseline;
+    align-items: flex-start;
+    padding: 1px 16px 24px;
+    box-shadow: 2px 2px 3px 1px rgba(192, 191, 191, 0.3);
+    border: 1px solid rgba(192, 191, 191, 0.3);
+    height: 100%; 
+    margin: 0px 20px;
+    flex-flow: column nowrap;
+    width: 20%;
+    background: #f8f8f8;
+}
+
+.carrinho-externo__resumo{
+    margin: 24px 0px;
+    font-size: 24px;
+}
+
+.carrinho-externo__prodInput{
+    flex-flow: column nowrap;
+}
+
+.carrinho-externo__freteWrapper{
+    justify-content: left;
+    padding: 10px;
+    margin: 15px 0px 0px 7px;
+    font-weight: 300;
+    font-size: 20px;
+    width: 38%;
+}
+
+#procuraCEP{
+    margin-left: 5px;
+    height: 35px;
+    cursor: pointer;
+    background: rgb(12, 172, 184);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: 50px;
+}
+
+#procuraCEP:hover{
+    background: rgb(4, 187, 211);
+}
+
+.carrinho-externo__cepInput{
+    width: 30%;
+    height: 30px;
+    padding: 3px 0px 0px 7px;
+    border-radius: 5px;
+    margin-left: 12px;
+    font-size: 18px;
+    border: 1px solid rgba(109, 109, 109, 0.8);
+}
+.carrinho-externo__summaryDetails{
+    padding: 10px 0px;
+    width: 100%;
+    color: #666666;
+    border-bottom: 1px solid rgba(192, 191, 191, 0.8);
+    flex-wrap: nowrap; 
+}
+
+.carrinho-externo__summaryWrapper span{
+    display: inline-block;
+}
+
+.carrinho-externo__summaryWrapper h3{
+    font-weight: 400;
+}
+
+.prod, .preco, .frete, .freteValor{
+    padding: 7px;
+    width: 50%;
+}
+
+.preco, .freteValor{
+    text-align: right;
+}
+
+.carrinho-externo__totalWrapper{
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 100px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.total{
+    font-weight: 600;
+    font-size: 18px;
+}
+.carrinho-externo_totalDetails{
+    padding: 5px 0 5px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.parcelamento{
+
+    text-align: right;
+    justify-content: flex-end;
+    width: 100%;
+    display: inline-block;
+}
+
+#goToCheckout{
+    margin-top: 20px;
+    padding: 10px 0px;
+    width: 100%;
+    background: rgb(42, 173, 42);
+    color: white;
+    border: none;   
+}
+
+#goToCheckout:hover{
+    background: green;
+    cursor: pointer;
 }
