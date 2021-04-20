@@ -1,0 +1,319 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+input{
+    border-radius: 5px;
+    border: 1.5px solid lightgray;
+    outline: none;
+    padding: 5px;
+}
+
+input:focus{  border: 1.5px solid rgb(114, 114, 114);  }
+
+.conteudo-principal{
+    display: grid;
+    grid-template-columns: 1000px 250px;
+    gap: 10px;
+    padding: 40px;
+}
+
+
+.container-formulario{
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px gray;
+}
+
+.container-formulario__cabecalho{
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.barra-progresso{  
+    padding: 0 20px;
+    justify-content: space-between;  
+}
+
+.passos{
+    position: relative;
+    text-align: center;
+}
+
+.passos__titulo{
+    font-size: .9rem;
+    transition: .3s ease;
+    margin-bottom: 15px;
+    color: lightgray;
+}
+
+.passos.finalizado .passos__titulo{  color: #222;  }
+
+.passos.atual .passos__titulo{  
+    transform: scale(1.5);  
+    color: #222;
+}
+
+.numerador{
+    position: relative;
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 50%;
+    transition: .3s ease;
+}
+
+.passos.finalizado .numerador{
+    background-color: #222;
+    border: 1px solid #222;
+}
+
+.passos.atual .numerador{
+    background-color: white;
+    border: 1px solid #222;
+}
+
+.numero{
+    color: lightgray;
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);            
+}
+
+.passos.finalizado .numero{  color: #222;  }
+.passos.atual .numero{  color: #222;  }
+
+.check{
+    position: absolute;
+    z-index: 999;
+    top: 78%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    transition: .3s ease;
+}
+
+.passos.finalizado .check{
+    display: block;
+    color: white;
+}
+
+.passos:last-child .numero:before,
+.passos:last-child .numero::after{  display: none;  }
+
+.numero::before,
+.numero::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(6%) scale(1);
+    width: 267px;
+    height: 2px;
+    background-color: white;
+    
+}
+
+.passos.finalizado .numero::after{
+    background-color: #222;
+    transform-origin: left; 
+    transform: scaleX(0);
+    animation: animate .3s linear forwards;
+    transition: all .5s ease;
+}
+
+@keyframes animate {
+    100% {
+        transform: translateX(6%) scaleX(1);
+    }
+}
+
+
+.formulario{
+    width: 100%;
+    overflow: hidden;
+}
+
+.form-geral{
+    width: 500%;
+    transition: margin-left .3s ease-in-out;
+    margin-left: 0;
+}
+
+.pagina{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    align-self: flex-start;
+    padding: 0 60px;
+}
+
+.pagina__titulo{
+    font-size: 1.8rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.btn-avancar, 
+.btn-voltar{
+    padding: 10px 15px;
+    background-color: #222;
+    color: white;
+    border-radius: 10px;
+    margin: 10px 0 0 0;
+}
+
+.btn-avancar:hover, 
+.btn-voltar:hover{
+    background-color: #444;
+}
+
+
+.card-wrapper{  margin: 20px;  }
+
+.card-form{
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 5px;
+}
+
+.container-produtos{
+    background-color: white;
+    box-shadow: 2px 2px 10px gray;
+    width: 420px;
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.contato input,
+.entrega input[type=text]{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.entrega label{
+    display: block;
+    margin-top: 10px;
+}
+
+.btn-home{
+    width: 180px;
+    margin-top: 25px;
+}
+
+.pagamento__cartao,
+.pagamento__boleto{  display: none;}
+
+.containerCartao,
+.containerBoleto{  
+    display: block;
+}
+
+.pagamento__cartao.ativo,
+.pagamento__boleto.ativo{
+    display: block;
+}
+
+.lista-botoes{
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.lista-botoes .btn{  margin: 25px 10px 0 0;  }
+
+
+
+
+/* Página Entrega */
+.select-entrega{
+    border-radius: 5px;
+    border: 1.5px solid lightgray;
+    outline: none;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+
+
+/* Página Destinatário */
+.pagina__titulo-destinatario{  font-size: 1.2rem;  }
+
+.destinatario-dados input,
+.destinatario-endereco input,
+.destinatario-cobranca input{
+    border-radius: 5px;
+    border: 1.5px solid lightgray;
+    outline: none;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.destinatario-endereco{
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 2px;
+	padding-inline-start: 0;
+}
+
+label #cobranca{  margin-bottom: 10px;  }
+
+.dados__cobranca,
+.termo__compra{  margin-top: 10px;  }
+
+
+
+/* Pagamento */
+.select-pagamento,
+#pagamento__cpf,
+.pagamento__boleto input,
+.card-form input{
+    border-radius: 5px;
+    border: 1.5px solid lightgray;
+    outline: none;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#pagamento__cpf,
+#pagamento__nome{  margin-top: 10px;  }
+
+.btn__cartao,
+.btn__boleto{
+    padding: 10px 15px;
+    display: block;
+    background-color: rgb(245, 245, 245);
+    font-size: 1.1rem;
+}
+
+.btn__cartao::after,
+.btn__boleto:after {
+    content: '+'; 
+    font-size: 1rem;
+    float: right;
+    margin-left: 5px;
+}
+
+.btn__cartao.ativo::after,
+.btn__boleto.ativo:after {  content: "-";  } 
