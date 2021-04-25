@@ -364,6 +364,7 @@ input[type="number"] {
 }
 
 #goToCheckout{
+    text-align: center;
     margin-top: 20px;
     padding: 10px 0px;
     width: 100%;

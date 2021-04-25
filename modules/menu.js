@@ -11,9 +11,8 @@ const mainHeaderFooter = document.querySelectorAll('.js-conteudosPrincipais')
 
 export default function ativarEfeitosDoMenuCelular() { 
     btnColapsado.addEventListener('click' , exibirOcultarMenuColapsado)
-    for (const botao of botoesMenuCelular){
-        botao.addEventListener('click' , exibirOcultarMenuCelular)
-    }    
+    
+    botoesMenuCelular.forEach( botao => botao.addEventListener('click' , exibirOcultarMenuCelular))
 }
 
 
