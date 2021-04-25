@@ -182,7 +182,9 @@ body {
     width: 120px;
 }
 
-.btn-nav-geral:hover{  background-color: var(--cor-icone-hover-nav-principal-scroll);  }
+.btn-nav-geral:hover{  
+    background-color: var(--cor-icone-hover-nav-principal-scroll);  
+}
 
 
 .icone-nav-geral{
@@ -206,4 +208,6 @@ body {
     transition: all .3s ease;
 }
 
-.icone-nav-geral:hover::before {  background-color: var(--cor-icone-hover-nav-principal-scroll);  }
+.icone-nav-geral:hover::before {  
+    background-color: var(--cor-icone-hover-nav-principal-scroll);  
+}

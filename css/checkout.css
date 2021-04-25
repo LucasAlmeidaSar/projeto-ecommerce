@@ -16,7 +16,8 @@ input{
     padding: 5px;
 }
 
-input:focus{  border: 1.5px solid rgb(114, 114, 114);  }
+input:focus,
+input:hover{  border: 1.5px solid rgb(114, 114, 114);  }    
 
 .conteudo-principal{
     display: grid;
