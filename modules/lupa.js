@@ -2,9 +2,8 @@ export default function ativarLupa() {
 
     const imgs = document.querySelectorAll('.js-imagensOfertas')
 
-    for (const img of imgs) {
-
-        img.addEventListener('mousemove', (mouse) =>{
+    imgs.forEach( img => {
+        img.addEventListener('mousemove' , mouse => {
             const larguraImg = img.offsetWidth
             const alturaImg = img.offsetHeight
         
@@ -14,11 +13,8 @@ export default function ativarLupa() {
             let backgroundPositionX = (posicaoMouseX / larguraImg * 100)
             let backgroundPositionY = (posicaoMouseY / alturaImg * 100)
         
-            img.style.backgroundPosition = `${backgroundPositionX}% ${backgroundPositionY}%`
-        
+            img.style.backgroundPosition = `${backgroundPositionX}% ${backgroundPositionY}%`        
         })
-    
-        img.addEventListener( 'mouseleave', () => img.style.backgroundPosition = 'center' )
-        
-    }    
+        img.addEventListener('mouseleave' , () => img.style.backgroundPosition = 'center')
+    })    
 }

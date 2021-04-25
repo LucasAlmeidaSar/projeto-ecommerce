@@ -6,7 +6,6 @@ function ativarEfeitosAoCarregar() {
     const itensCabecalho = document.querySelectorAll('.js-itensCabecalho')
 
     classesDosElementos.remover('pre-load', nav, itensCabecalho)
-
 }
 
 export default ativarEfeitosAoCarregar
