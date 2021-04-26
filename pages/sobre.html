@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,55 +8,60 @@
     <link rel="stylesheet" href="../css/sobre.css">
     <title>Document</title>
 </head>
+
 <body>
     <!--LINK REFERÊNCIA - https://www.marisa.com.br/institucional/sobre-->
-    <nav class="">
-        <div class="">
+    <nav class="nav-sobre">
 
-            <a class="" href="#">Logo</a>
-
-            <ul class="flex">
+        <ul class="navbar">
+            <a class="sobre-logo" href="#">Logo</a>
+            <div class="menu-sobre" id="menu-sobre-principal">
                 <li> <a class="" href="#">Início</a> </li>
-                <li class="">
-                    <a class="" href="">Produtos</a>
-                    <div class="">
-                        <a class="" href="#">Todos</a>
-                        <a class="" href="#">Masculinos</a>
-                        <a class="" href="#">Femininos</a>
-                        <a class="" href="#">Unissex</a>
-                    </div>
-                </li>
-                <li> <a class="" href="#">Sobre</a> </li>
-                <li> <a class="" href="./pages/faq.html">FAQ</a> </li>
-                <li> <a class="" href="#">Contato</a> </li>
-            </ul>
-            <div id="divBusca">
-                <input type="text" id="txtBusca" placeholder="Buscar..." />
-                <img src="" id="btnBusca" alt="Buscar" />
+                <div class="sobre-produtos">
+                    <li> <a class="" href="">Produtos</a> </li>
+                    <select>
+                        <option>Todos</option>
+                        <option>Masculinos</option>
+                        <option>Femininos</option>
+                        <option>Unissex</option>
+                    </select>
+                </div>
+                <li> <a href="#">Sobre</a> </li>
+                <li> <a href="./pages/faq.html">FAQ</a> </li>
+                <li> <a href="#">Contato</a> </li>
             </div>
+            <div class="carrinho-perfil">
+                <li><a href="">Perfil</a></li>
+                <li><a href="">Carrinho</a></li>
+            </div>
+        </ul>
+        <div id="divBusca">
+            <input type="text" id="txtBusca" placeholder="Buscar..." />
+            <img src="" id="btnBusca" alt="Buscar" />
         </div>
     </nav>
 
     <div class="principal-sobre">
-        <div class="historia-sobre">            
+        <div class="historia-sobre">
             <h1>O começo</h1>
             <p>
                 História + fundadores.
             </p>
-            <img class="img-historia"src="../img/sobre-img1.jpg" alt="">
+            <img class="img-historia" src="../img/sobre-img1.jpg" alt="">
         </div>
         <div class="desafios-sobre">
             <h2>Desafios!</h2>
             <p>Os desafios!</p>
-            <img class="img-desafios"src="../img/sobre-img1.jpg" alt="">
+            <img class="img-desafios" src="../img/sobre-img1.jpg" alt="">
         </div>
         <div class="inovacao-sobre">
             <h2>Inovação</h2>
             <p>
                 Texto inovação!
             </p>
-            <img class="img-inovacao"src="../img/sobre-img1.jpg" alt="">
+            <img class="img-inovacao" src="../img/sobre-img1.jpg" alt="">
         </div>
     </div>
 </body>
+
 </html>

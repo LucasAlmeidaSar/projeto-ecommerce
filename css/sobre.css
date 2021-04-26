@@ -1,7 +1,53 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
 .img-historia, .img-desafios, .img-inovacao {
     width: 500px;
     height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.nav-sobre {
+    padding: 0 32px;
+    background-color: hotpink;
+
+}
+
+.navbar, .carrinho-perfil {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+}
+
+.menu-sobre {
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    height: 80px;
+}
+
+#menu-sobre-principal div {
+    justify-content: center;
+}
+.nav-sobre a {
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    width: 0 32px;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.nav-sobre a:hover {
+    background-color: grey;
+    opacity: 0.6;
 }
