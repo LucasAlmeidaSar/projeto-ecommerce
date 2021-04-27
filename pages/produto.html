@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/cores.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/detalheProduto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="catalogo">
+            <div>
+                <ul class="catalogolist">
+                    <li> <button class="botao" tabindex="0" onclick="alterarImagem('vitrine', '../img/vestidoproduto.jpg');"><img class="foto" src="../img/vestidoproduto.jpg"></button> </li>
+                    <li> <button class="botao" tabindex="1" onclick="alterarImagem('vitrine', '../img/foto1-catalogolist.jpg');"><img class="foto" src="../img/foto1-catalogolist.jpg"></button> </li>
+                    <li> <button class="botao" tabindex="2" onclick="alterarImagem('vitrine', '../img/foto2-catalogolist.jpg');"><img class="foto" src="../img/foto2-catalogolist.jpg"></button> </li>
+                    <li> <button class="botao" tabindex="3" onclick="alterarImagem('vitrine', '../img/foto3-catalogolist.jpg');"><img class="foto" src="../img/foto3-catalogolist.jpg"></button> </li>
+                </ul>
+            </div>
+            <div>
+                <img id="vitrine" src=''>
+            </div>
+        </div>
+        <div class="infoproduto">
+            <h1>VESTIDO MIDI ESTAMPADO
+                <a href="#">
+                    <button class="btn-favorito" onclick="alterarIcon()"> <i id="favorito" class="far fa-bookmark" title="Salvar"></i></a></button> </h1>
+            <h2 class="preco">R$ 89,99</h2>
+            <hr>
+            <p class="conteudo">Escolha a cor</p>
+            <ul class="flex">
+                <li>
+                    <a class="botao__escolha cor-1" href="#"></a>
+                </li>
+                <li>
+                    <a class="botao__escolha cor-2" href="#"></a>
+                </li>
+                <li>
+                    <a class="botao__escolha cor-3" href="#"></a>
+                </li>
+            </ul>
+            <hr>
+            <p class="conteudo">Escolha o tamanho</p>
+            <ul class="flex">
+                <li> <a class="botao__escolha " href="#">PP</a> </li>
+                <li> <a class="botao__escolha " href="#">P</a> </li>
+                <li> <a class="botao__escolha " href="#">M</a> </li>
+                <li> <a class="botao__escolha " href="#">G</a> </li>
+                <li> <a class="botao__escolha " href="#">GG</a> </li>
+            </ul>
+            <hr>
+
+            <p class="conteudo">Calcule o frete</p>
+            <div class="frete flex">
+                <input class="numfrete" type="text" id="cep">
+                <a class="btnfrete" href="#" onclick="calcFrete()" ;><i class="fas fa-arrow-right"></i></a>
+                <div id="precoFrete" style="display: none;">
+                    <table id="tipo-frete">
+                        <tr>
+                            <td>Normal</td>
+                            <td>8 dias úteis</td>
+                            <td>R$ 7,92</td>
+                        </tr>
+                        <tr>
+                            <td>SEDEX</td>
+                            <td>3 dias úteis</td>
+                            <td>R$ 18,92</td>
+                        </tr>
+                        <tr>
+                            <td>Retire na loja</td>
+                            <td>4 dias úteis</td>
+                            <td>Grátis</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+            <a class="btnadd" href="#">Adicionar ao carrinho</a>
+
+            <button class="accordion">Detalhes</button>
+            <div class="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <button class="accordion">Mais informações</button>
+            <div class="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var primeiraimg = '../img/vestidoproduto.jpg';
+        document.getElementById("vitrine").src = primeiraimg;
+
+        function alterarImagem(vitrine, caminhoNovaImagem) {
+            document.getElementById(vitrine).src = caminhoNovaImagem;
+        }
+    </script>
+
+
+
+
+
+
+
+    <script>
+        function alterarIcon() {
+
+            var x = document.getElementById("favorito");
+
+            if (x.classList.contains("far")) {
+                x.classList.remove("far");
+                x.classList.add("fas");
+            } else {
+                x.classList.remove("fas");
+                x.classList.add("far");
+            }
+        }
+    </script>
+    <script>
+        var visibilidade = true;
+
+        function calcFrete() {
+
+            if (visibilidade) {
+                document.getElementById("precoFrete").style.display = "block";
+                visibilidade = false;
+            } else {
+                document.getElementById("precoFrete").style.display = "none";
+                visibilidade = true;
+            }
+
+        }
+    </script>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("activemenu");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
