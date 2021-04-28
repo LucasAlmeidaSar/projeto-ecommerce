@@ -318,6 +318,7 @@
 }
 
 .mapa__title{  
+    padding: 12px 0;
     font-size: 1.5rem;
     margin-bottom: 5px;
 }
