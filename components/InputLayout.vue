@@ -1,5 +1,5 @@
 <template>
-    <div :id="id" class="campo">
+    <div class="campo" ref="div">
         <label class="campo__label">
             <span class="campo__span"
                 ><i v-if="classeIcone" :class="icone"></i><slot></slot
@@ -11,6 +11,7 @@
                 v-on:input="$emit('input', $event.target.value)"
                 :required="preencher"
                 :pattern="pattern"
+                ref="input"
             />
             <div class="campo__border"></div>
         </label>
@@ -56,23 +57,23 @@ module.exports = {
         if (this.icone) {
             this.classeIcone = true;
         }
-        let div = document.getElementById(this.id);
-        let input = div.querySelector(".campo__input");
+        let div = this.$refs.div;
+        let input = this.$refs.input;
 
         if (types.includes(input.type)) {
-            div.classList.add("campo--focus-2");
+            div.classList.add('campo--focus-2');
             return;
         }
 
-        input.addEventListener("focus", function () {
-            div.classList.add("campo--focus");
+        input.addEventListener('focus', function () {
+            div.classList.add('campo--focus');
         });
 
-        input.addEventListener("focusout", function () {
-            if (input.value != "") {
+        input.addEventListener('focusout', function () {
+            if (input.value != '') {
                 return;
             }
-            div.classList.remove("campo--focus");
+            div.classList.remove('campo--focus');
         });
     },
 };
