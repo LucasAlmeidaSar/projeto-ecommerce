@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS</title>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.min.js'></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'/>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 280px auto;
+            height: 100%;
+        }
+            
+        .sidebar {
+            background-color: #171B1F;
+            color: #CDD0D6;
+        }
+
+        .sidebar__cabecalho {
+            justify-content: space-between;
+            padding: 32px;
+        }
+
+        .sidebar__titulo {
+            font-size: 40px;
+            color: #E0DEE6;
+        }
+
+        .sidebar__btn {
+            font-size: 18px;
+            border: 1px solid #A1A6AF;
+            padding: 8px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: background 0.3s ease-in, opacity 0.3s ease-in;
+        }
+
+        .sidebar__btn:hover {
+            background-color: #a1a6af1c;
+            opacity: 1;
+        }
+
+        .sidebar-menu__item {
+            border-bottom: 1px solid #a1a6af21;
+            font-size: 14px;
+            color: white;
+            transition: background 0.3s ease-in;
+        }
+
+        .sidebar-menu__item a {
+            display: block;
+            padding: 16px 20px;
+            opacity: 0.6;
+            transition: opacity 0.3s ease-in;
+        }
+
+        .sidebar-menu__item i {
+            width: 26px;
+            text-align: center;
+        }
+
+        .sidebar-menu__item:hover {
+            background-color: #a1a6af1c;
+        }
+
+        .sidebar-menu__item:hover a {
+            opacity: 1;
+        }
+
+        .area-conteudo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="sidebar">
+            <div class="sidebar__cabecalho flex">
+                <h1 class="sidebar__titulo">LOGO</h1>
+                <div class="sidebar__btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu__item">
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu__item">
+                    <a href="#">
+                        <i class="fas fa-tags"></i>
+                        <span>Produtos</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu__item">
+                    <a href="#">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Vendas</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu__item">
+                    <a href="#">
+                        <i class="fas fa-percent"></i>
+                        <span>Ofertas</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu__item">
+                    <a href="#">
+                        <i class="fas fa-list"></i>
+                        <span>Categorias</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu__item">
+                    <a href="#">
+                        <i class="fas fa-users"></i>
+                        <span>Usuários</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="area-conteudo">
+            <span>Área de conteúdo</span>
+        </div>
+    </div>
+</body>
+</html>

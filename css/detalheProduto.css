@@ -1,0 +1,265 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.catalogo {
+    display: flex;
+}
+
+#vitrine {
+    margin: 50px 50px 0 5px;
+    width: 450px;
+    height: 550px;
+}
+
+.catalogolist {
+    margin-top: 50px;
+}
+
+.foto {
+    margin: 0 0 5px 0px;
+    width: 70px;
+    height: 90px;
+}
+
+.foto1 {
+    border: solid 12px black;
+}
+
+.infoproduto {
+    margin-top: 50px;
+    width: 400px;
+}
+
+.fa-bookmark {
+    margin: 0px 0px 0px 10px;
+    font-size: 20px;
+}
+
+.btn-favorito {
+    padding: 1px 1px 1px 1px;
+    border: none;
+    background-color: white;
+}
+
+.preco {
+    margin: 20px 0 20px 0;
+}
+
+.conteudo {
+    font-size: 14px;
+    margin-right: 7px;
+}
+
+hr {
+    margin: 20px 0 20px 0;
+}
+
+.botao__escolha {
+    display: block;
+    margin: 15px 15px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    position: relative;
+    box-shadow: 0 0 0 3px var(--cor-clara), 0 0 0 3.5px rgb(105, 105, 105);
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+/* Temporário */
+
+.cor-1 {
+    background-color: black;
+}
+
+.cor-2 {
+    background-color: tomato;
+}
+
+.cor-3 {
+    background-color: #ddd
+}
+
+.frete {
+    justify-content: left;
+}
+
+.numfrete {
+    width: 100px;
+    height: 20px;
+    border: solid 1px black;
+    margin-top: 10px;
+}
+
+.precoFrete {
+    display: none;
+}
+
+.tipo-frete {
+    display: none;
+}
+
+.fa-arrow-right {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btnfrete {
+    display: block;
+    padding: 3px 5px;
+    width: 30px;
+    height: 25px;
+    text-align: center;
+    margin-left: 1px;
+    color: var(--cor-clara);
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: all .3s ease;
+    background-color: var(--cor-escura);
+    user-select: none;
+}
+
+.btnfrete:hover {
+    background-color: var(--cor-btn);
+}
+
+#tipo-frete {
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: 5px;
+}
+
+#tipo-frete td {
+    border: 1px solid #ddd;
+    padding: 5px 2px 2px 5px;
+}
+
+#tipo-frete tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.btnadd {
+    display: block;
+    padding: 10px 20px;
+    width: auto;
+    text-align: center;
+    border-radius: 5px;
+    color: var(--cor-clara);
+    transition: all .3s ease;
+    background-color: var(--cor-escura);
+    user-select: none;
+    margin-top: 30px;
+}
+
+.btnadd:hover {
+    background-color: var(--cor-btn);
+}
+
+.accordion {
+    background-color: white;
+    color: rgb(29, 29, 29);
+    margin-right: 7px;
+    border-bottom: solid 1px black;
+    cursor: pointer;
+    padding: 18px 0px;
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: left;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.accordion:after {
+    content: '\002B';
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.activemenu:after {
+    content: '\2212';
+}
+
+.panel {
+    padding: 0 15px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.2s ease-out;
+}
+
+.panel p {
+    margin: 5px 0 10px 0;
+}
+
+.botao {
+    cursor: pointer;
+    padding: 1px 1px 0 1px;
+    border: 2px solid white;
+    background-color: white;
+    padding: 0;
+    height: 94px;
+}
+
+.botao:focus {
+    border-color: black;
+}
+
+#product .radio label input+img {
+    border: 1px solid white;
+}
+
+.boato .radio label input:checked+img {
+    border: 1px solid red;
+    width: 30px;
+    height: 30px;
+}
+
+.trabalheSubEsqTitulo {
+    border: 2px solid white;
+    border-width: 0px;
+}
+
+.botao:focus {
+    border-color: black;
+}
+
+.img-thumbnail {
+    margin: 0 0 5px 0px;
+    width: 70px;
+    height: 90px;
+}
+
+#produto .amostra {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.amostra input[type=radio] {
+    opacity: 0;
+}
+
+#produto .amostra label {
+    display: block;
+    background: none;
+    color: #111111;
+    text-align: center;
+    border: none;
+    padding: 0;
+    font-size: 0;
+}
+
+#produto .amostra label input+img {
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+#produto .amostra label input:checked+img {
+    border: 2px solid black;
+}
