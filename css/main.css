@@ -386,12 +386,3 @@
     text-decoration: none;
     padding: 10px;
 }
-
-.rodape__lista {  color: var(--cor-clara);  }
-
-.rodape__link {
-    color: var(--cor-clara);
-    font-size: 1rem;
-}
-
-.rodape__icone {  font-size: 1.2rem;  }
