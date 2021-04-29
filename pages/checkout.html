@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/cabide.ico">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css'/>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/cores.css">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/checkout.css">
     <title>Checkout</title>
 </head>
 <body> 
 
+    <nav class="nav-padrao flex">
+        <a class="btn btn-nav-padrao" href="../index.html">Logo</a>
+        <div class="flex">
+            <img class="img-nav" src="/img/safe-shopping.svg" alt="Compra Segura">
+            <div>
+                <p class="compra-segura-titulo">Compra Segura</p>
+                <p class="compra-segura-subtitulo">100% Protegido</p>
+            </div>
+        </div>
+    </nav>
 
     <main class="conteudo-principal">
         
@@ -221,11 +233,76 @@
 
 
         <div class="container-produtos">
-           Em construção
+
+           <ul class="lista-produto"> 
+               <li class="item-produto flex">                   
+                   <div class="flex">
+                        <img class="imagem-produto" src="/img/camisaMasculina.jpg">
+                        <div class="info-produto-container">
+                            <p class="info-produto">Camisa Masculina</p>
+                            <p class="info-produto">Bege | M</p>
+                            <p class="quantidade-produto">Qtd: 1</p>
+                        </div>
+                   </div>
+                   <p class="valor-produto">R$99,90</p>
+               </li>
+               <li class="item-produto flex">                   
+                <div class="flex">
+                     <img class="imagem-produto" src="/img/blusaFeminina2.png">
+                     <div class="info-produto-container">
+                        <p class="info-produto">Camisa Feminina</p>
+                        <p class="info-produto">Verde | P</p>
+                        <p class="quantidade-produto">Qtd: 2</p>
+                     </div>
+                </div>
+                <p class="valor-produto">R$119,80</p>
+            </li>
+            <li class="item-produto flex">                   
+                <div class="flex">
+                     <img class="imagem-produto" src="/img/camisaMasculina2.jpg">
+                     <div class="info-produto-container">
+                        <p class="info-produto">Camisa Masculina</p>
+                        <p class="info-produto">Mostarda | G</p>
+                        <p class="quantidade-produto">Qtd: 1</p>
+                     </div>
+                </div>
+                <p class="valor-produto">R$69,90</p>
+            </li>
+           </ul>
+
+           <ul class="valores-produto-container">
+               <li class="valores-item flex">
+                   <p>Subtotal</p>
+                   <p>R$ 289,60</p>
+               </li>
+
+               <li class="valores-item flex">
+                   <p>Custo de frete</p>
+                   <p>R$ 19,45</p>
+               </li>
+
+               <li class="valores-item total-container flex">
+                    <p>Total</p>
+                    <p class="valor-total">R$ 309,05</p>
+                </li>
+           </ul>
+
+           <div class="cupom-container">
+                <a class="pergunta-cupom" href="javascript:void(0)"><i class="fas fa-tag"></i> Possui cupom de desconto?</a>
+                <input id="cupom-input" class="inativo" type="text" placeholder="Insira o cupom de desconto">
+                <button class="aplicar-cupom inativo" data-js="aplicar-cupom"><i class="fas fa-play-circle"></i></button>
+            </div>
+
+           
 
         </div>
 
     </main>
+
+
+    <footer class="rodape-padrao">
+        <h2 class="rodape-padrao__direitos">Todos os direitos reservados a My E-commerce !</h2>
+    </footer>
 
     <script src="../modules/card.js"></script>
     <script>
