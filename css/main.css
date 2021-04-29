@@ -156,10 +156,30 @@
 
 .imagem-1{  background-image: url(../img/camisaMasculina.jpg);  }
 .imagem-2{  background-image: url(../img/blusaFeminina.jpg);  }
+.imagem-3{  background-image: url(../img/camisaMasculina2.jpg);  }
 .imagem-4{  background-image: url(../img/blusaFeminina2.png);  }
 .imagem-5{  background-image: url(../img/camisaMasculina3.jpg);  }
 .imagem-6{  background-image: url(../img/blusaFeminina3.png);  }
 
+
+.imagem-1,
+.imagem-2,
+.imagem-3,
+.imagem-4,
+.imagem-5,
+.imagem-6{     
+    transition: all .5s ease;
+}
+
+.imagem-1:hover,
+.imagem-2:hover,
+.imagem-3:hover,
+.imagem-4:hover,
+.imagem-5:hover,
+.imagem-6:hover{  background-size: 130%; }
+
+/* 
+** Lupa
 .imagem-1:hover,
 .imagem-2:hover,
 .imagem-4:hover,
@@ -167,15 +187,7 @@
 .imagem-6:hover{
     cursor: url(../img/foco.cur) , default;
     background-size: 150%;
-}
-
-/* Demonstrativo */
-.imagem-3-diferente{  
-    background-image: url(../img/camisaMasculina2.jpg);  
-    transition: all .5s ease;
-}
-
-.imagem-3-diferente:hover{  background-size: 130%; }
+} */
 
 .produtos-oferta__btn {  margin: 50px auto;  }
 
@@ -306,6 +318,7 @@
 }
 
 .mapa__title{  
+    padding: 12px 0;
     font-size: 1.5rem;
     margin-bottom: 5px;
 }

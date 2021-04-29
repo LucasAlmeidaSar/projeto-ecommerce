@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css'/>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <title>Checkout</title>
+</head>
+<body> 
+
+
+    <main class="conteudo-principal">
+        
+
+        <div class="container-formulario">
+
+            <header class="container-formulario__cabecalho">
+
+                <div class="barra-progresso flex">                   
+    
+                    <div class="passos atual">                        
+                        <h2 class="passos__titulo">Contato</h2>
+                        <div class="numerador">
+                            <span class="numero">1</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+
+                    <div class="passos">                        
+                        <h2 class="passos__titulo">Entrega</h2>
+                        <div class="numerador">
+                            <span class="numero">2</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+    
+                    <div class="passos">                        
+                        <h2 class="passos__titulo">Destinatário</h2>
+                        <div class="numerador">
+                            <span class="numero">3</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>                     
+                    
+                    <div class="passos">                        
+                        <h2 class="passos__titulo">Pagamento</h2>
+                        <div class="numerador">
+                            <span class="numero ">4</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>  
+                    
+                </div>
+                
+            </header>
+
+
+
+
+            <div class="formulario">
+
+                <form action="#" class="form-geral flex">
+
+
+                    <div class="pagina contato">
+                
+                        <h2 class="pagina__titulo ">Dados de Contato</h2>
+
+                        <input type="text" name="nome" id="nome" placeholder="Nome completo">
+
+                        <input type="email" name="email" id="email" placeholder="E-mail">
+
+                        <input type="tel" name="telefone" id="telefone" placeholder="Tel (DDD + Número)">
+
+                        <a class="btn btn-avancar">Avançar</a>
+                    
+                    </div>
+
+
+
+
+
+                    <div class="pagina entrega">
+                
+                        <h2 class="pagina__titulo">Dados da Entrega</h2>
+
+                       
+                        <input type="text" name="cep" id="cep" placeholder="CEP">
+
+                        <select name="entregas" id="entregas" class="select-entrega">
+                            <option value="0">Escolha o tipo de entrega</option>
+                            <option value="1">Correios - PAC</option>
+                            <option value="2">Correios - SEDEX</option>
+                            <option value="3">JADLOG</option>
+                        </select>    
+                        
+                        <ul class="lista-botoes flex">
+                            <li> <a class="btn btn-voltar">Voltar</a>   </li>
+                            <li> <a class="btn btn-avancar">Avançar</a> </li>
+                        </ul>                   
+                    </div>
+
+
+
+
+
+                    <div class="pagina destinatario">
+                
+                        <h2 class="pagina__titulo   pagina__titulo-destinatario">Dados do Destinatário</h2>
+                        <div class="destinatario-dados">                        
+                            <input type="text" name="nomeDestinatario" id="nomeDestinatario" placeholder="Nome completo">                        
+                            <input type="tel" name="telDestinatario" id="telDestinatario" placeholder="Tel (DDD + Número)">
+                        </div>
+
+
+                        <h2 class="pagina__titulo  pagina__titulo-destinatario">Endereço do Destinatário</h2>
+                        <div class="destinatario-endereco">                      
+                            <input type="text" name="logradouro" id="logradouro" placeholder="Logradouro">
+                            <input type="number" name="numero" id="numero" placeholder="Número">
+                            <input type="text" name="complemento" id="complemento" placeholder="Complemento">
+                            <input type="text" name="bairro" id="bairro" placeholder="Bairro">
+                            <input type="text" name="cidade" id="cidade" placeholder="Cidade">
+                            <input type="text" name="cepDestinatário" id="cepDestinatário" placeholder="CEP">
+                            <input type="text" name="estado" id="estado" placeholder="Estado">
+                        </div>  
+
+
+                        <h2 class="pagina__titulo  pagina__titulo-destinatario dados__cobranca">Dados do Cobrança</h2>   
+                        <!-- <div class="destinatario-cobranca">                  
+                            <input type="text" name="pais" id="pais" placeholder="País">
+                            <input type="text" name="cpfCobranca" id="cpfCobranca" placeholder="CPF">
+                        </div> -->
+                        <label for="">
+                            <input type="checkbox" name="cobranca" id="cobranca">
+                            Minhas info de entrega e cobrança são as mesmas                             
+                        </label>
+
+
+                        <h2 class="pagina__titulo  pagina__titulo-destinatario  termo__compra">Termo de compra</h2>
+                        <label for="termo">
+                            <input type="checkbox" name="termo" id="termo">
+                            Li e aceito os termos e informações                             
+                        </label>
+
+                        <ul class="lista-botoes flex">
+                            <li>  <a class="btn btn-voltar">Voltar</a> </li>
+                            <li>  <a class="btn btn-avancar">Avançar</a> </li>
+                        </ul>           
+                    </div>
+                    
+
+
+
+                    <div class="pagina pagamento">
+                
+                        <h2 class="pagina__titulo">Forma de pagamento</h2>
+
+                        <div class="containerCartao">
+                            <!-- <input type="radio" id="rdCartao" name="entrega">                             -->
+                            <a class="btn__cartao">Cartão de crédito</a>
+                            <div class="pagamento__cartao">
+
+                                <input type="text" name="pagamento__cpf" id="pagamento__cpf" placeholder="CPF">
+                                
+                                <select name="parcelas" id="parcelas" class="select-pagamento">
+                                    <option value="0">Parcelas</option>
+                                    <option value="1x">1x de ..</option>
+                                    <option value="2x">2x de ..</option>
+                                    <option value="3x">3x de ..</option>
+                                    <option value="4x">4x de ..</option>
+                                </select>
+
+                                <div class="card-form">
+                                    <input type="text" name="number" placeholder="Número do Cartão">
+                                    <input type="text" name="full-name" placeholder="Nome impresso no cartão"/>
+                                    <input type="text" name="expiry" placeholder="Data de validade (MM/AA)"/>
+                                    <input type="text" name="cvc" placeholder="CVV"/>
+                                </div>
+                                <div class='card-wrapper'></div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="containerBoleto">
+                            <!-- <input type="radio" id="rdBoleto" name="entrega">                             -->
+                            
+                            <a class="btn__boleto">Boleto bancário</a>
+                            <div class="pagamento__boleto">
+                                <input type="text" name="pagamento__nome" id="pagamento__nome" placeholder="Nome completo">
+                                <input type="text" name="pagamento__cpf-boleto" id="pagamento__cpf-boleto" placeholder="CPF">
+                            </div>
+                        </div>
+
+                        <ul class="lista-botoes flex">
+                            <li> <a class="btn btn-voltar">Voltar</a> </li>
+                            <li> <a class="btn btn-finalizar-compra btn-avancar" href="#">Finalizar compra</a> </li>
+                        </ul>
+                    </div>
+
+
+
+
+                    <div class="pagina final">
+                        <h2 class="pagina__titulo">Obrigado por comprar conosco, volte sempre!</h2>
+
+                        <a class="btn btn-home btn-avancar" href="../index.html">Voltar para a Home</a>
+
+                    </div>                    
+
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="container-produtos">
+           Em construção
+
+        </div>
+
+    </main>
+
+    <script src="../modules/card.js"></script>
+    <script>
+        var card = new Card({
+            form: 'form',
+            container: '.card-wrapper',
+        
+            formSelectors: {
+                nameInput: 'input[name="full-name"]'
+            },
+            placeholders: {
+                number: '•••• •••• •••• ••••',
+                name: 'Nome Completo',
+                expiry: '••/••',
+                cvc: '•••'
+            },
+            messages: {
+            validDate: 'Validade',
+            monthYear: 'mm/aa'
+            },
+            width: 400,
+        });
+        </script> 
+    <script src="../modules/checkout.js"></script>
+    
+</body>
+</html>

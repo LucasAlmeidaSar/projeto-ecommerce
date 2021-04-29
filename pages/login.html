@@ -24,8 +24,8 @@
             <img class="logo center-x" src="../img/logo.png" alt="Logo">
             <h2 class="form-titulo">Entre na sua conta</h2>
             <div class="form-campos">
-                <input-layout id="email" v-model="email" type="email" icone="fas fa-envelope" preencher>Email</input-layout>
-                <input-layout id="senha" v-model="senha" type="password" icone="fas fa-lock" preencher>Senha</input-layout>
+                <input-layout v-model="email" type="email" icone="fas fa-envelope" preencher>Email</input-layout>
+                <input-layout v-model="senha" type="password" icone="fas fa-lock" preencher>Senha</input-layout>
                 <div id="recuperar-senha" class="form-campos__recuperar-senha"><a href="#">Esqueci minha senha</a></div>
             </div>
             <div class="form-control__buttons">
@@ -34,6 +34,10 @@
             </div>
         </form>
     </div>
+
+    <footer class="rodape">
+        <h2 class="rodape__direitos">Todos os direitos reservados LOJA QUE NAO TEM NOME</h2>
+    </footer>
 
     <script type="module">
         let vapp = new Vue({

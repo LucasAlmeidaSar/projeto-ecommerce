@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/2454d969d0.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+    <script src="https://kit.fontawesome.com/2454d969d0.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">    
@@ -51,14 +51,22 @@
                         <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" href="#">Unissex</a>
                     </div>
                 </li>
-                <li> <a class="[ btn btn-nav ]  js-itensMenuTopo" href="#">Sobre</a> </li>
+                <li> <a class="[ btn btn-nav ]  js-itensMenuTopo" href="./pages/sobre.html">Sobre</a> </li>
                 <li> <a class="[ btn btn-nav ]  js-itensMenuTopo" href="./pages/faq.html">FAQ</a> </li>
-                <li> <a class="[ btn btn-nav ]  js-itensMenuTopo" href="#">Contato</a> </li>
+                <li> <a class="[ btn btn-nav ]  js-itensMenuTopo" href="./pages/contato.html">Contato</a> </li>
             </ul>
 
             <ul class="flex">
-                <li> <a class="[ icone icone-nav ]  js-itensMenuTopo" href="./pages/login.html"> <i class="far fa-user"></i> </a> </li>
-                <li> <a class="[ icone icone-nav btnCart ]  js-itensMenuTopo" href="javascript:void(0)"> <i class="fas fa-shopping-cart"></i> </a> </li>
+                <li> 
+                    <a class="[ icone icone-nav ]  js-itensMenuTopo" href="./pages/login.html"> 
+                        <i class="far fa-user"></i> 
+                    </a> 
+                </li>
+                <li> 
+                    <a class="[ icone icone-nav btnCart ]  js-itensMenuTopo" href="javascript:void(0)"> 
+                        <i class="fas fa-shopping-cart"></i> 
+                    </a> 
+                </li>
             </ul>
 
         </div>
@@ -68,8 +76,16 @@
         <div class="[ nav-principal__menu-topo-sm ]   js-itensMenuTopo">
             <a class="[ menu-topo-sm__btn ]  js-btnMenuCelular  js-itensMenuTopo" href="javascript:void(0)">&#9776; </a>
             <ul class="flex">
-                <li> <a class="[ icone icone-nav ]  js-itensMenuTopo" href="./pages/login.html"> <i class="far fa-user"></i> </a> </li>
-                <li> <a class="[ icone icone-nav ]  js-itensMenuTopo" href="javascript:void(0)"> <i class="fas fa-shopping-cart"></i> </a> </li>
+                <li> 
+                    <a class="[ icone icone-nav ]  js-itensMenuTopo" href="./pages/login.html"> 
+                        <i class="far fa-user"></i> 
+                    </a> 
+                </li>
+                <li> 
+                    <a class="[ icone icone-nav ]  js-itensMenuTopo" href="javascript:void(0)"> 
+                        <i class="fas fa-shopping-cart"></i> 
+                    </a> 
+                </li>
             </ul>
         </div>
         
@@ -88,7 +104,7 @@
         <div class="menu-celular__conteudo">
             <ul class="conteudo__lista flex">
                 <li class="conteudo__item-lista"> <a class="[ conteudo__btn btn ]  js-btnMenuCelular" href="#">Início</a> </li>
-                <li class="conteudo__item-lista"> <a class="[ conteudo__btn btn ]  js-btnMenuCelular" href="#">Sobre</a> </li>
+                <li class="conteudo__item-lista"> <a class="[ conteudo__btn btn ]  js-btnMenuCelular" href="./pages/sobre.html">Sobre</a> </li>
 
                 <li class="conteudo__item-lista  conteudo__item-lista-colapsado ">
                     <a class="conteudo__btn conteudo__btn-colapsado btn" href="javascript:void(0)">Produtos</a>
@@ -103,7 +119,7 @@
                 </li>
 
                 <li class="conteudo__item-lista"> <a class="[ conteudo__btn btn ]  js-btnMenuCelular" href="./pages/faq.html">FAQ</a> </li>
-                <li class="conteudo__item-lista"> <a class="[ conteudo__btn btn ]  js-btnMenuCelular" href="#">Contato</a> </li>
+                <li class="conteudo__item-lista"> <a class="[ conteudo__btn btn ]  js-btnMenuCelular" href="./pages/contato.html">Contato</a> </li>
             </ul>
         </div>
 
@@ -177,7 +193,7 @@
             <span id="cart-subtotal"><strong>Subtotal:</strong></span>
             <span id="cart-subvalor"><strong>R$ 260,00</strong></span>
         </div>
-        <button id="btnCartExpandido">Ir para o carrinho</button>
+        <button id="btnCartExpandido"><a href="/pages/carrinho.html">Ver carrinho</a></button>
         <button id="btnCheckout"> Checkout</button>
     </div>
 
@@ -297,7 +313,21 @@
             <div class="produtos-oferta__grid grid">
 
                 <div class="card">
-                    <div class="card__imagem  imagem-1  js-imagensOfertas"></div>
+                     <!-- Lupa -> <div class="card__imagem  imagem-1  js-imagensOfertas"></div>   -->
+                    <a href="javascript:void(0)"><div class="card__imagem  imagem-1"></div></a>   
+                    <div class="card__descricao">
+                        <h3 class="card__titulo">Legenda</h3>
+                        <p class="card__subtitulo">R$ 129,90</p>
+                        <ul class="card__lista flex">
+                            <li> <a class="card__cor cor-1" href="#"></a> </li>
+                            <li> <a class="card__cor cor-2" href="#"></a> </li>
+                            <li> <a class="card__cor cor-3" href="#"></a> </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">                   
+                    <a href="javascript:void(0)"><div class="card__imagem  imagem-2"></div></a>   
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
@@ -310,7 +340,7 @@
                 </div>
 
                 <div class="card">
-                    <div class="card__imagem  imagem-2  js-imagensOfertas"></div>  
+                    <a href="javascript:void(0)"><div class="card__imagem  imagem-3"></div></a>                    
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
@@ -323,7 +353,7 @@
                 </div>
 
                 <div class="card">
-                    <a href="javascript:void(0)"><div class="card__imagem  imagem-3-diferente"></div></a>                    
+                    <a href="javascript:void(0)"><div class="card__imagem  imagem-4"></div></a>   
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
@@ -336,7 +366,7 @@
                 </div>
 
                 <div class="card">
-                    <div class="card__imagem  imagem-4  js-imagensOfertas"></div>
+                    <a href="javascript:void(0)"><div class="card__imagem  imagem-5"></div></a>   
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
@@ -349,20 +379,7 @@
                 </div>
 
                 <div class="card">
-                    <div class="card__imagem  imagem-5  js-imagensOfertas"></div>
-                    <div class="card__descricao">
-                        <h3 class="card__titulo">Legenda</h3>
-                        <p class="card__subtitulo">R$ 129,90</p>
-                        <ul class="card__lista flex">
-                            <li> <a class="card__cor cor-1" href="#"></a> </li>
-                            <li> <a class="card__cor cor-2" href="#"></a> </li>
-                            <li> <a class="card__cor cor-3" href="#"></a> </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card__imagem  imagem-6  js-imagensOfertas"></div>
+                    <a href="javascript:void(0)"><div class="card__imagem  imagem-6"></div></a>   
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
@@ -459,8 +476,8 @@
         <div>
             <ul class="rodape__lista">
                 <li><a class="rodape__link" href="./pages/faq.html">FAQ</a></li>
-                <li><a class="rodape__link" href="# ">Sobre nós</a></li>
-                <li><a class="rodape__link" href="# ">Contato</a></li>
+                <li><a class="rodape__link" href="./pages/sobre.html">Sobre nós</a></li>
+                <li><a class="rodape__link" href="./pages/contato.html">Contato</a></li>
 
             </ul>
         </div>
