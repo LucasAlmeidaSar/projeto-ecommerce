@@ -21,7 +21,7 @@
 
     <div class="body">
         <a href="/index.html">
-            <div class="setaMenu"><img src="/img/left-arrow.png" alt="">
+            <div class="setaMenu"><img src="/projeto-ecommerce/img/left-arrow.png" alt="">
                 <h6> Voltar ao início</h6>
             </div>
         </a>
@@ -38,28 +38,27 @@
                 </ul>
             </div>
 
+            <!-- Div que mostra as informações da conta -->
+            <div id="infoConta" class="tabConfig card">
+                <ul>
+                    <label class="header"><b>Informações da Conta</b></label>
+                    <label class="dadosConta">Nome: </label>
+                    <input type="text" name="" value="Fulano da Silva" id="conta-nome" class="informacoes-conta" disabled>
+                    <label class="dadosConta">CPF: </label>
+                    <input type="text" name="" value="999.999.999-99" id="conta-cpf" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Telefone: </label>
+                    <input type="text" name="" value="(99) 99788-4809" id="conta-telefone" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Gênero: </label>
+                    <input type="text" name="" value="Masculino" id="conta-genero" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Data de nascimento: </label>
+                    <input type="text" name="" value="01/01/1901" id="conta-nascimento" class="informacoes-conta" disabled>
+                    <label class="dadosConta">E-mail: </label>
+                    <input type="text" name="" value="@souunisales.com.br" id="conta-email" class="informacoes-conta" disabled>
+                    <label id="endereco" class="dadosConta">Endereço: </label>
+                    <input type="text" name="" value="Rua X, 17, Aterro, Flamengo - RJ" id="conta-endereco" class="informacoes-conta" disabled>
+                </ul>
+            </div>
 
-          <!-- Div que mostra as informações da conta -->
-          <div id="infoConta" class="tabConfig">
-              <ul>
-                  <label class="header"><b>Informações da Conta</b></label>
-                  <label class="dados">Nome: </label>
-                  <input type="text" name="" value="Fulano da Silva" id="conta-nome" class="informacoes-conta"disabled>
-                  <label class="dados">CPF: </label>
-                  <input type="text" name="" value="999.999.999-99"id="conta-cpf" class="informacoes-conta" disabled>
-                  <label class="dados">Telefone: </label>
-                  <input type="text" name="" value="(99) 99788-4809"id="conta-telefone" class="informacoes-conta" disabled>
-                  <label class="dados">Gênero: </label>
-                  <input type="text" name="" value="Masculino"id="conta-genero" class="informacoes-conta" disabled>
-                  <label class="dados">Data de nascimento: </label>
-                  <input type="text" name="" value="01/01/1901"id="conta-nascimento" class="informacoes-conta" disabled>
-                  <label class="dados">E-mail: </label>
-                  <input type="text" name="" value="@souunisales.com.br"id="conta-email" class="informacoes-conta" disabled>
-                  <label id="endereco"class="dados">Endereço: </label>
-                  <input type="text" name="" value="Rua X, 17, Aterro, Flamengo - RJ"id="conta-endereco" class="informacoes-conta" disabled>                
-              </ul>
-          </div>
-          
             <!-- Div que mostra as compras realizadas -->
             <div id="compras" class="tabConfig card">
 
@@ -72,31 +71,56 @@
 
                     <div class="dados numeroP">55824156</div>
                     <div class="dados data">13/04/2021</div>
-                    <div class="dados status">Em andamento</div>
+                    <div class="dados status amarelo">Em andamento</div>
                     <div class="detalhes">
                         <div class="divDetalhes"><a class="btn">Mais detalhes</a></div>
                     </div>
 
                     <div class="dados numeroP">55472637</div>
                     <div class="dados data">24/02/2021</div>
-                    <div class="dados status">Concluído</div>
+                    <div class="dados status verde">Concluído</div>
                     <div class="detalhes">
-                        <div class="divDetalhes"><a class="btn btnDetalhes">Mais detalhes</a></div>
+                        <div class="divDetalhes"><a class="btn">Mais detalhes</a></div>
                     </div>
                 </div>
             </div>
-
             <!-- Tabela de lista de desejos -->
             <div id="lista" class="card tabConfig">
                 <ul>
                     <label class="header"><b>Lista de desejos</b></label>
-                    <label class="dados">Nome: </label>
-                    <label class="dados">CPF: </label>
-                    <label class="dados">Telefone: </label>
-                    <label class="dados">Gênero: </label>
-                    <label class="dados">Data de nascimento: </label>
-                    <label class="dados">E-mail: </label>
-                    <label class="dados">Endereço: </label>
+                    <label class="dadosConta">Nome: </label>
+                    <input type="text" name="" value="Fulano da Silva" id="conta-nome" class="informacoes-conta" disabled>
+                    <label class="dadosConta">CPF: </label>
+                    <input type="text" name="" value="999.999.999-99" id="conta-cpf" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Telefone: </label>
+                    <input type="text" name="" value="(99) 99788-4809" id="conta-telefone" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Gênero: </label>
+                    <input type="text" name="" value="Masculino" id="conta-genero" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Data de nascimento: </label>
+                    <input type="text" name="" value="01/01/1901" id="conta-nascimento" class="informacoes-conta" disabled>
+                    <label class="dadosConta">E-mail: </label>
+                    <input type="text" name="" value="@souunisales.com.br" id="conta-email" class="informacoes-conta" disabled>
+                    <label id="endereco" class="dadosConta">Endereço: </label>
+                    <input type="text" name="" value="Rua X, 17, Aterro, Flamengo - RJ" id="conta-endereco" class="informacoes-conta" disabled>
+                </ul>
+            </div>
+            <div id="config" class="card tabConfig">
+                <ul>
+                    <label class="header"><b>Configurações</b></label>
+                    <label class="dadosConta">Nome: </label>
+                    <input type="text" name="" value="Fulano da Silva" id="conta-nome" class="informacoes-conta" disabled>
+                    <label class="dadosConta">CPF: </label>
+                    <input type="text" name="" value="999.999.999-99" id="conta-cpf" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Telefone: </label>
+                    <input type="text" name="" value="(99) 99788-4809" id="conta-telefone" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Gênero: </label>
+                    <input type="text" name="" value="Masculino" id="conta-genero" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Data de nascimento: </label>
+                    <input type="text" name="" value="01/01/1901" id="conta-nascimento" class="informacoes-conta" disabled>
+                    <label class="dadosConta">E-mail: </label>
+                    <input type="text" name="" value="@souunisales.com.br" id="conta-email" class="informacoes-conta" disabled>
+                    <label id="endereco" class="dadosConta">Endereço: </label>
+                    <input type="text" name="" value="Rua X, 17, Aterro, Flamengo - RJ" id="conta-endereco" class="informacoes-conta" disabled>
                 </ul>
             </div>
         </div>
