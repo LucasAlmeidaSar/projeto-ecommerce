@@ -165,7 +165,7 @@ body {
 
 
 /* Navegação padrão - (Para as novas páginas) */
-.nav-geral{
+.nav-padrao{
     position: fixed;
     top: 0;
     z-index: 9999;
@@ -178,25 +178,25 @@ body {
     transition: all .5s ease;
 }
 
-.btn-nav-geral{    
+.btn-nav-padrao{    
     background-color: var(--cor-btn-nav);    
     color: var(--cor-escura);
     font-size: 1.1rem;
     width: 120px;
 }
 
-.btn-nav-geral:hover{  
+.btn-nav-padrao:hover{  
     background-color: var(--cor-icone-hover-nav-principal-scroll);  
 }
 
 
-.icone-nav-geral{
+.icone-nav-padrao{
     position: relative;
     font-size: .8rem;
     color: var(--cor-escura);
 }
 
-.icone-nav-geral::before {
+.icone-nav-padrao::before {
     content: '';
     z-index: 999;
     display: block;
@@ -211,6 +211,30 @@ body {
     transition: all .3s ease;
 }
 
-.icone-nav-geral:hover::before {  
+.icone-nav-padrao:hover::before {  
     background-color: var(--cor-icone-hover-nav-principal-scroll);  
 }
+
+/* Footer padrão - (Para as novas páginas) */
+
+.rodape-padrao {
+    width: 100%;
+    background-color: #000;
+    padding: 48px 32px;
+    color: white;
+}
+
+.rodape-padrao__direitos {  text-align: center;  }
+
+.rodape-padrao__link {
+    color: white;
+    font-size: 1rem;
+    transition: all .3s ease;
+}
+
+.rodape-padrao__icone {      
+    font-size: 1.2rem;
+    transition: all .3s ease;  
+}
+.rodape-padrao__icone:hover,
+.rodape-padrao__link:hover {  color: gray; }

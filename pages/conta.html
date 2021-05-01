@@ -18,60 +18,110 @@
 
 <body>
     <!-- Div Principal que engloba toda a tela -->
-    <div class="menu">
+
+    <div class="body">
+        <a href="/index.html">
+            <div class="setaMenu"><img src="/projeto-ecommerce/img/left-arrow.png" alt="">
+                <h6> Voltar ao início</h6>
+            </div>
+        </a>
         <!-- Div da aba principal contendo as opções -->
-        <div class="tab">
-            <ul>
-                <h2 class="header">Minha conta</h2>
-                <li><button class="tabOp" onclick="alterarInfo(event, 'infoConta')"><i class="fas fa-user"></i>Informações da conta</button></li>
-                <li><button class="tabOp" onclick="alterarInfo(event, 'compras')"><i class="fas fa-shopping-bag"></i>Compras realizadas</button></li>
-                <li><button class="tabOp" onclick="alterarInfo(event, 'faqpagamento')"><i class="far fa-credit-card"></i>Pagamento</button></li>
-                <li><button class="tabOp" onclick="alterarInfo(event, 'faqentrega')"><i class="fas fa-shipping-fast"></i>Entrega</button></li>
-                <li><button class="tabOp" onclick="alterarInfo(event, 'faqtroca')"><i class="fas fa-exchange-alt"></i>Configurações</button></li>
-                <li><button class="tabOp" onclick="alterarInfo(event, 'faqconta')"><i class="fas fa-sign-out-alt"></i>Sair</button></li>
-            </ul>
-        </div>
+        <div class="menu">
+            <div class="tab card">
+                <ul>
+                    <h2 class="header">Minha conta</h2>
+                    <li><button class="tabOp" onclick="alterarInfo(event, 'infoConta')"><i class="fas fa-user"></i> Informações da conta</button></li>
+                    <li><button class="tabOp" onclick="alterarInfo(event, 'compras')"><i class="far fa-credit-card"></i> Compras realizadas</button></li>
+                    <li><button class="tabOp" onclick="alterarInfo(event, 'lista')"><i class="fas fa-heart"></i> Lista de desejos</button></li>
+                    <li><button class="tabOp" onclick="alterarInfo(event, 'config')"><i class="fas fa-exchange-alt"></i> Configurações</button></li>
+                    <li><button class="tabOp" onclick="alterarInfo(event, 'sair')"><i class="fas fa-sign-out-alt"></i> Sair</button></li>
+                </ul>
+            </div>
 
-        <!-- Div que mostra as informações da conta -->
-        <div id="infoConta" class="tabConfig">
-            <ul>
-                <label class="header"><b>Informações da Conta</b></label>
-                <label class="dados">Nome: </label>
-                <input type="text" name="" value="Fulano da Silva" id="conta-nome" class="informacoes-conta"disabled>
-                <label class="dados">CPF: </label>
-                <input type="text" name="" value="999.999.999-99"id="conta-cpf" class="informacoes-conta" disabled>
-                <label class="dados">Telefone: </label>
-                <input type="text" name="" value="(99) 99788-4809"id="conta-telefone" class="informacoes-conta" disabled>
-                <label class="dados">Gênero: </label>
-                <input type="text" name="" value="Masculino"id="conta-genero" class="informacoes-conta" disabled>
-                <label class="dados">Data de nascimento: </label>
-                <input type="text" name="" value="01/01/1901"id="conta-nascimento" class="informacoes-conta" disabled>
-                <label class="dados">E-mail: </label>
-                <input type="text" name="" value="@souunisales.com.br"id="conta-email" class="informacoes-conta" disabled>
-                <label id="endereco"class="dados">Endereço: </label>
-                <input type="text" name="" value="Rua X, 17, Aterro, Flamengo - RJ"id="conta-endereco" class="informacoes-conta" disabled>                
-            </ul>
-        </div>
+            <!-- Div que mostra as informações da conta -->
+            <div id="infoConta" class="tabConfig card">
+                <ul>
+                    <label class="header"><b>Informações da Conta</b></label>
+                    <label class="dadosConta">Nome: </label>
+                    <input type="text" name="" value="Fulano da Silva" id="conta-nome" class="informacoes-conta" disabled>
+                    <label class="dadosConta">CPF: </label>
+                    <input type="text" name="" value="999.999.999-99" id="conta-cpf" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Telefone: </label>
+                    <input type="text" name="" value="(99) 99788-4809" id="conta-telefone" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Gênero: </label>
+                    <input type="text" name="" value="Masculino" id="conta-genero" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Data de nascimento: </label>
+                    <input type="text" name="" value="01/01/1901" id="conta-nascimento" class="informacoes-conta" disabled>
+                    <label class="dadosConta">E-mail: </label>
+                    <input type="text" name="" value="@souunisales.com.br" id="conta-email" class="informacoes-conta" disabled>
+                    <label id="endereco" class="dadosConta">Endereço: </label>
+                    <input type="text" name="" value="Rua X, 17, Aterro, Flamengo - RJ" id="conta-endereco" class="informacoes-conta" disabled>
+                </ul>
+            </div>
 
-        <!-- Div que mostra as compras realizadas -->
-        <div id="compras" class="tabConfig">
+            <!-- Div que mostra as compras realizadas -->
+            <div id="compras" class="tabConfig card">
 
-            <div class="grid-container">
-                <div class="header"><b>Compras realizadas</b></div>
-                <div class="numeroP"><b>Numero do Pedido</b></div>
-                <div class="data"><b>Data</b></div>
-                <div class="status"><b>Status</b></div>
-                <div class="detalhes"><b>Detalhes</b></div>
+                <div class="grid-container">
+                    <div class="header"><b>Compras realizadas</b></div>
+                    <div class="numeroP"><b>Numero do Pedido</b></div>
+                    <div class="data"><b>Data</b></div>
+                    <div class="status"><b>Status</b></div>
+                    <div class="detalhes"><b>Detalhes</b></div>
 
-                <div class="numeroP">55824156</div>
-                <div class="data">13/04/2021</div>
-                <div class="status">Em andamento</div>
-                <div class="detalhes"><a href="#">Mais detalhes</a></div>
+                    <div class="dados numeroP">55824156</div>
+                    <div class="dados data">13/04/2021</div>
+                    <div class="dados status amarelo">Em andamento</div>
+                    <div class="detalhes">
+                        <div class="divDetalhes"><a class="btn">Mais detalhes</a></div>
+                    </div>
 
-                <div class="numeroP">55472637</div>
-                <div class="data">24/02/2021</div>
-                <div class="status">Concluído</div>
-                <div class="detalhes"><a href="#">Mais detalhes</a></div>
+                    <div class="dados numeroP">55472637</div>
+                    <div class="dados data">24/02/2021</div>
+                    <div class="dados status verde">Concluído</div>
+                    <div class="detalhes">
+                        <div class="divDetalhes"><a class="btn">Mais detalhes</a></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tabela de lista de desejos -->
+            <div id="lista" class="card tabConfig">
+                <ul>
+                    <label class="header"><b>Lista de desejos</b></label>
+                    <label class="dadosConta">Nome: </label>
+                    <input type="text" name="" value="Fulano da Silva" id="conta-nome" class="informacoes-conta" disabled>
+                    <label class="dadosConta">CPF: </label>
+                    <input type="text" name="" value="999.999.999-99" id="conta-cpf" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Telefone: </label>
+                    <input type="text" name="" value="(99) 99788-4809" id="conta-telefone" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Gênero: </label>
+                    <input type="text" name="" value="Masculino" id="conta-genero" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Data de nascimento: </label>
+                    <input type="text" name="" value="01/01/1901" id="conta-nascimento" class="informacoes-conta" disabled>
+                    <label class="dadosConta">E-mail: </label>
+                    <input type="text" name="" value="@souunisales.com.br" id="conta-email" class="informacoes-conta" disabled>
+                    <label id="endereco" class="dadosConta">Endereço: </label>
+                    <input type="text" name="" value="Rua X, 17, Aterro, Flamengo - RJ" id="conta-endereco" class="informacoes-conta" disabled>
+                </ul>
+            </div>
+            <div id="config" class="card tabConfig">
+                <ul>
+                    <label class="header"><b>Configurações</b></label>
+                    <label class="dadosConta">Nome: </label>
+                    <input type="text" name="" value="Fulano da Silva" id="conta-nome" class="informacoes-conta" disabled>
+                    <label class="dadosConta">CPF: </label>
+                    <input type="text" name="" value="999.999.999-99" id="conta-cpf" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Telefone: </label>
+                    <input type="text" name="" value="(99) 99788-4809" id="conta-telefone" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Gênero: </label>
+                    <input type="text" name="" value="Masculino" id="conta-genero" class="informacoes-conta" disabled>
+                    <label class="dadosConta">Data de nascimento: </label>
+                    <input type="text" name="" value="01/01/1901" id="conta-nascimento" class="informacoes-conta" disabled>
+                    <label class="dadosConta">E-mail: </label>
+                    <input type="text" name="" value="@souunisales.com.br" id="conta-email" class="informacoes-conta" disabled>
+                    <label id="endereco" class="dadosConta">Endereço: </label>
+                    <input type="text" name="" value="Rua X, 17, Aterro, Flamengo - RJ" id="conta-endereco" class="informacoes-conta" disabled>
+                </ul>
             </div>
         </div>
     </div>
@@ -80,17 +130,26 @@
         infoConta = document.getElementById("infoConta"); //Pega o id da div infoConta e atribui a uma variável js
         infoConta.style.display = "block"; // comando para ativar a div infoConta quando a pagina carregar
 
+
         //Função responsável por mudar as divs quando clicar em uma das opções principais 
         function alterarInfo(evt, item) {
+            if (item != "sair") {
+                var i, tabconfig, tablinks;
+                tabconfig = document.getElementsByClassName("tabConfig");
 
-            var i, tabconfig, tablinks;
-            tabconfig = document.getElementsByClassName("tabConfig");
+                for (i = 0; i < tabconfig.length; i++) {
+                    tabconfig[i].style.display = "none";
+                }
+                a = document.getElementById(item);
+                a.style.display = "block";
+            } else {
+                var confirmar;
+                confirmar = confirm("Tem certeza que deseja sair?");
 
-            for (i = 0; i < tabconfig.length; i++) {
-                tabconfig[i].style.display = "none";
+                if (confirmar == true) {
+                    window.location.href = ("/index.html");
+                }
             }
-            a = document.getElementById(item);
-            a.style.display = "block";
         }
     </script>
 

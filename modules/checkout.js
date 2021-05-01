@@ -100,3 +100,14 @@ btnBoleto.addEventListener('click' , () => {
     altura === '110px' ? altura = '0px' : altura = '110px'
     pagamentoBoleto.style.height = altura 
 })
+
+
+const aplicarCupom = document.querySelector('[data-js="aplicar-cupom"]')
+const perguntaCupom = document.querySelector('.pergunta-cupom')
+const cupomInput = document.querySelector('#cupom-input')
+
+perguntaCupom.addEventListener('click' , () => {
+    perguntaCupom.classList.add('inativo')
+    aplicarCupom.classList.remove('inativo')
+    cupomInput.classList.remove('inativo')
+})

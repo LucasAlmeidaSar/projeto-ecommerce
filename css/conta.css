@@ -1,22 +1,47 @@
+ /* Configuração da seta de voltar para o início */
+ 
+ .setaMenu {
+     display: flex;
+     align-items: center;
+     width: 100%;
+     height: 20px;
+     margin-top: 10px;
+     padding-left: 5px;
+ }
+ 
+ .setaMenu img {
+     display: flex;
+     align-items: center;
+     margin-left: 15px;
+     padding-right: 5px;
+ }
+ 
+ .setaMenu h6 {
+     padding-left: 5px;
+     font-size: 20px;
+ }
  /* DIV GERAL */
  
- .menu {
-     float: left;
-     display: flex;
+ .body {
      width: 98%;
-     margin-top: 30px;
+     height: 640px;
+     margin-top: 10px;
      margin-left: 20px;
  }
  
+ .menu {
+     display: flex;
+     justify-content: center;
+     margin-top: 10px;
+ }
+ 
  .tab {
-     border: 1px solid #ccc;
      background-color: #f1f1f1;
      width: 300px;
-     height: 600px;
+     height: 575px;
  }
  
  .tab button {
-     background-color: inherit;
      text-align: left;
      border: none;
      outline: none;
@@ -38,7 +63,6 @@
  .tabConfig {
      display: none;
      float: left;
-     border: 1px solid #ccc;
      width: 600px;
  }
  /* GRID */
@@ -66,17 +90,40 @@
      grid-column-end: 3;
  }
  
- .status {
-     background-color: rgba(255, 255, 255, 1);
-     grid-column-start: 3;
-     grid-column-end: 4;
- }
- 
  .detalhes {
      background-color: rgba(255, 255, 255, 1);
      grid-column-start: 4;
      grid-column-end: 5;
  }
+ 
+ .divDetalhes {
+     display: flex;
+     justify-content: center;
+ }
+ 
+ .status {
+     background-color: rgba(255, 255, 255, 1);
+     grid-column-start: 3;
+     grid-column-end: 4;
+ }
+ /* Cores para o status */
+ 
+ .verde {
+     background-color: rgb(85, 148, 34);
+ }
+ 
+ .amarelo {
+     background-color: rgb(255, 208, 0);
+ }
+ 
+ .laranja {
+     background-color: rgb(195, 100, 21);
+ }
+ 
+ .vermelho {
+     background-color: rgb(212, 23, 23);
+ }
+ /* Formatação da estrutura da tabela de compras */
  
  .grid-container {
      background-color: black;
@@ -89,9 +136,15 @@
      text-align: center;
      padding: 20px 0;
  }
+ /* Estilo dos dados da conta */
  
- .dados {
-     margin-top: 10px;
+ .dadosConta {}
+ /* Estilo dos dados da tabela de compras */
+ 
+ .dadosTabela {
+     display: flex;
+     justify-content: center;
+     align-items: center;
  }
  /* ICONES */
  
@@ -106,21 +159,23 @@
  .far {
      margin-right: 5px;
  }
-/* Formatação básica. Trabalho com input.*/
-/*Dificuldades até então: tamanho dos inputs adaptável ao conteúdo.*/
+ /* Formatação básica. Trabalho com input.*/
+ /*Dificuldades até então: tamanho dos inputs adaptável ao conteúdo.*/
+ 
  #infoConta input {
-    font-weight: bold;
-    border: none;
-    background-color: white;
-    border-bottom: 2px solid rgb(168, 168, 168);
-    width: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    display: grid;
-    gap: 16px 24px;
+     font-weight: bold;
+     border: none;
+     background-color: white;
+     border-bottom: 2px solid rgb(168, 168, 168);
+     width: auto;
+     margin-top: 5px;
+     margin-bottom: 5px;
+     display: grid;
+     gap: 16px 24px;
  }
-/* Não tá divindo o conteúdo em duas colunas. Vou verificar...*/
+ /* Não tá divindo o conteúdo em duas colunas. Vou verificar...*/
+ 
  #infoConta {
-    display: grid;
-    grid-template-columns: repeat(2, 300px);
+     display: grid;
+     grid-template-columns: repeat(2, 300px);
  }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,14 +15,32 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'/>
     <style>
         .container {
-            display: grid;
-            grid-template-columns: 280px auto;
+            display: flex;
             height: 100%;
         }
             
         .sidebar {
             background-color: #171B1F;
             color: #CDD0D6;
+            width: 280px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .sidebar.colapsado {
+            width: 70px;
+        }
+
+        .sidebar.colapsado .sidebar__titulo,
+        .sidebar.colapsado .sidebar-menu__span {
+            display: none;
+            opacity: 0;
+        }
+
+        .sidebar.colapsado .sidebar__cabecalho {
+            width: 100%;
+            justify-content: center;
+            padding: 16px 0;
         }
 
         .sidebar__cabecalho {
@@ -57,11 +75,11 @@
             transition: background 0.3s ease-in;
         }
 
-        .sidebar-menu__item a {
-            display: block;
+        .sidebar-menu__item-container {
             padding: 16px 20px;
             opacity: 0.6;
             transition: opacity 0.3s ease-in;
+            cursor: pointer;
         }
 
         .sidebar-menu__item i {
@@ -69,72 +87,115 @@
             text-align: center;
         }
 
+        .sidebar-menu__span {
+            opacity: 1;
+            transition: opacity 0.4s ease-out;
+        }
+
         .sidebar-menu__item:hover {
             background-color: #a1a6af1c;
         }
 
-        .sidebar-menu__item:hover a {
+        .sidebar-menu__item:hover .sidebar-menu__item-container {
             opacity: 1;
         }
 
         .area-conteudo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .topbar {
+            justify-content: space-between;
+            height: 46px;
+            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+            padding: 0 32px;
         }
     </style>
 </head>
 <body>
     <div id="app" class="container">
-        <div class="sidebar">
+        <div id="menu" class="sidebar">
             <div class="sidebar__cabecalho flex">
                 <h1 class="sidebar__titulo">LOGO</h1>
-                <div class="sidebar__btn">
+                <div class="sidebar__btn" v-on:click="fecharAbrirMenu()">
                     <i class="fas fa-bars"></i>
                 </div>
             </div>
             <ul class="sidebar-menu">
-                <li class="sidebar-menu__item">
-                    <a href="#">
+                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-dashboard')">
+                    <div class="sidebar-menu__item-container">
                         <i class="fas fa-chart-bar"></i>
-                        <span>Dashboard</span>
-                    </a>
+                        <span class="sidebar-menu__span">Dashboard</span>
+                    </div>
                 </li>
-                <li class="sidebar-menu__item">
-                    <a href="#">
+                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-produtos')">
+                    <div class="sidebar-menu__item-container">
                         <i class="fas fa-tags"></i>
-                        <span>Produtos</span>
-                    </a>
+                        <span class="sidebar-menu__span">Produtos</span>
+                    </div>
                 </li>
-                <li class="sidebar-menu__item">
-                    <a href="#">
+                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-vendas')">
+                    <div class="sidebar-menu__item-container">
                         <i class="fas fa-dollar-sign"></i>
-                        <span>Vendas</span>
-                    </a>
+                        <span class="sidebar-menu__span">Vendas</span>
+                    </div>
                 </li>
                 <li class="sidebar-menu__item">
-                    <a href="#">
+                    <div class="sidebar-menu__item-container">
                         <i class="fas fa-percent"></i>
-                        <span>Ofertas</span>
-                    </a>
+                        <span class="sidebar-menu__span">Ofertas</span>
+                    </div>
                 </li>
                 <li class="sidebar-menu__item">
-                    <a href="#">
+                    <div class="sidebar-menu__item-container">
                         <i class="fas fa-list"></i>
-                        <span>Categorias</span>
-                    </a>
+                        <span class="sidebar-menu__span">Categorias</span>
+                    </div>
                 </li>
-                <li class="sidebar-menu__item">
-                    <a href="#">
+                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-usuarios')">
+                    <div class="sidebar-menu__item-container">
                         <i class="fas fa-users"></i>
-                        <span>Usuários</span>
-                    </a>
+                        <span class="sidebar-menu__span">Usuários</span>
+                    </div>
                 </li>
             </ul>
         </div>
-        <div class="area-conteudo">
-            <span>Área de conteúdo</span>
-        </div>
+
+        <main class="area-conteudo">
+            <div class="topbar flex">
+                <span>Admin Silveira</span>
+                <span>Logout</span>
+            </div>
+            <component v-bind:is="componenteAtual"></component>
+        </main>
+
     </div>
+
+    <script type="module">
+        let vapp = new Vue({
+            el: '#app',
+            data: {
+                componenteAtual: 'app-dashboard'
+            },
+            components: {
+                'app-dashboard': httpVueLoader('../components/Dashboard.vue'),
+                'app-produtos': httpVueLoader('../components/Produtos.vue'),
+                'app-vendas': httpVueLoader('../components/Vendas.vue'),
+                'app-usuarios': httpVueLoader('../components/Usuarios.vue'),
+            },
+            methods: {
+                alterarComponente: function(componente) {
+                    this.componenteAtual = componente;
+                },
+                fecharAbrirMenu: function() {
+                    let menu = document.getElementById('menu');
+
+                    menu.classList.toggle('colapsado');
+
+                    console.log(menu);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
