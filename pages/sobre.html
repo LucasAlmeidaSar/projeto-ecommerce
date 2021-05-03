@@ -5,105 +5,115 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/cores.css">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/sobre.css">
+    <link rel="stylesheet" href="../css/menu.css">
     <title>Sobre</title>
 </head>
 
-<body> 
-    <!--LINK REFERÊNCIA - https://www.marisa.com.br/institucional/sobre-->
-    <nav class="nav-sobre">
-        <ul class="navbar">
-            <a class="sobre-logo" href="#">Logo</a>
-            <div class="menu-sobre" id="menu-sobre-principal">
-                <li> <a class="" href="#">Início</a> </li>
-                <div class="sobre-produtos">
-                    <li> <a class="" href="">Produtos</a> </li>
-                    <select>
-                        <option>Todos</option>
-                        <option>Masculinos</option>
-                        <option>Femininos</option>
-                        <option>Unissex</option>
-                    </select>
-                </div>
-                <li> <a href="#">Sobre</a> </li>
-                <li> <a href="./pages/faq.html">FAQ</a> </li>
-                <li> <a href="#">Contato</a> </li>
-            </div>
-            <div class="carrinho-perfil">
-                <li><a href="">Perfil</a></li>
-                <li><a href="">Carrinho</a></li>
-            </div>
-        </ul>
-        <div id="divBusca">
-            <input type="text" id="txtBusca" placeholder="Buscar..." />
-            <img src="" id="btnBusca" alt="Buscar" />
-        </div>
-    </nav>
+<body>
 
-    <!-- <nav class="nav-padrao flex">
+    <!--LINK REFERÊNCIA - https://www.marisa.com.br/institucional/sobre-->
+
+    <nav class="nav-padrao flex">
 
         <a class="sobre-logo btn btn-nav-padrao" href="#">Logo</a>
 
-        <ul class="flex">   
-            <li> <a class="btn btn-nav-padrao" href="#">Início</a> </li>            
-            <li> 
-                <a class="btn btn-nav-padrao" href="">Produtos</a> 
+        <ul class="flex">
+            <li> <a class="btn btn-nav-padrao" href="#">Início</a> </li>
+            <li>
+                <a class="btn btn-nav-padrao" href="">Produtos</a>
                 <ul style="display: none;">
                     <li>Todos</li>
                     <li>Masculinos</li>
                     <li>Femininos</li>
                     <li>Unissex</li>
                 </ul>
-            </li>            
+            </li>
             <li> <a class="btn btn-nav-padrao" href="#">Sobre</a> </li>
             <li> <a class="btn btn-nav-padrao" href="./pages/faq.html">FAQ</a> </li>
-            <li> <a class="btn btn-nav-padrao" href="#">Contato</a> </li>                
-        </ul>
-
-        <ul class="carrinho-perfil flex">
-            <li><a class="btn btn-nav-padrao" href="">Perfil</a></li>
-            <li><a class="btn btn-nav-padrao" href="">Carrinho</a></li>
+            <li> <a class="btn btn-nav-padrao" href="#">Contato</a> </li>
         </ul>
 
         <div id="divBusca">
+            <i class="glyphicon glyphicon-search" id="icon-pesquisa"></i>
             <input type="text" id="txtBusca" placeholder="Buscar..." />
-            <img src="" id="btnBusca" alt="Buscar" />
         </div>
-    </nav> -->
 
-    <div class="principal-sobre">
-        <div class="historia-sobre">
-            <h1>O começo</h1>
-            <p>
-                História + fundadores.
-            </p>
-            <img class="img-historia" src="../img/sobre-img1.jpg" alt="">
-        </div>
-        <div class="desafios-sobre">
-            <h2>Desafios!</h2>
-            <p>Os desafios!</p>
-            <img class="img-desafios" src="../img/sobre-img1.jpg" alt="">
-        </div>
-        <div class="inovacao-sobre">
-            <h2>Inovação</h2>
-            <p>
-                Texto inovação!
-            </p>
-            <img class="img-inovacao" src="../img/sobre-img1.jpg" alt="">
+        <ul class="carrinho-perfil flex">
+            <li><a class="glyphicon glyphicon-user" href="" id="icon-user"></a></li>
+            <li><a class="glyphicon glyphicon-shopping-cart" id="icon-carrinho" href=""></a></li>
+        </ul>
+    </nav> 
+    <div class="princial-sobre">
+        <div class="conteudo-sobre">   
+            <h1 class="titulo">O começo</h1>
+            <div id="historia-sobre" class="ajustar-texto">
+                <p class="quadro-texto">                    
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio reprehenderit ab sint molestiae
+                    velit quam. Vitae nam distinctio quo pariatur! Non reiciendis sit cum quasi molestiae. Esse pariatur
+                    maiores repellendus!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio reprehenderit ab sint molestiae
+                    velit quam. Vitae nam distinctio quo pariatur! Non reiciendis sit cum quasi molestiae. Esse pariatur
+                    maiores repellendus!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio reprehenderit ab sint molestiae
+                    velit quam. Vitae nam distinctio quo pariatur! Non reiciendis sit cum quasi molestiae. Esse pariatur
+                    maiores repellendus!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio reprehenderit ab sint molestiae
+                    velit quam. Vitae nam distinctio quo pariatur! Non reiciendis sit cum quasi molestiae. Esse pariatur
+                    maiores repellendus!
+                </p>
+                <img class="img-historia" src="../img/sobre-img1.jpg" alt="">
+            </div>
+                <h2 class="titulo" >Desafios!</h2>
+            <div id="desafios-sobre" class="ajustar-texto">
+                <p class="quadro-texto">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio reprehenderit ab sint molestiae
+                    velit quam. Vitae nam distinctio quo pariatur! Non reiciendis sit cum quasi molestiae. Esse pariatur
+                    maiores repellendus!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio reprehenderit ab sint molestiae
+                    velit quam. Vitae nam distinctio quo pariatur! Non reiciendis sit cum quasi molestiae. Esse pariatur
+                    maiores repellendus!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio reprehenderit ab sint molestiae
+                    velit quam. Vitae nam distinctio quo pariatur! Non reiciendis sit cum quasi molestiae. Esse pariatur
+                    maiores repellendus!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio reprehenderit ab sint molestiae
+                    velit quam. Vitae nam distinctio quo pariatur! Non reiciendis sit cum quasi molestiae. Esse pariatur
+                    maiores repellendus!</p>
+                <img class="img-desafios" src="../img/sobre-img1.jpg" alt="">
+            </div>
+            <h2 class="titulo" >Inovação</h2>
+            <div id="inovacao-sobre" class="ajustar-texto">
+                <p class="quadro-texto">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio reprehenderit ab sint molestiae
+                    velit quam. Vitae nam distinctio quo pariatur! Non reiciendis sit cum quasi molestiae. Esse pariatur
+                    maiores repellendus!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio reprehenderit ab sint molestiae
+                    velit quam. Vitae nam distinctio quo pariatur! Non reiciendis sit cum quasi molestiae. Esse pariatur
+                    maiores repellendus!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio reprehenderit ab sint molestiae
+                    velit quam. Vitae nam distinctio quo pariatur! Non reiciendis sit cum quasi molestiae. Esse pariatur
+                    maiores repellendus!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio reprehenderit ab sint molestiae
+                    velit quam. Vitae nam distinctio quo pariatur! Non reiciendis sit cum quasi molestiae. Esse pariatur
+                    maiores repellendus!
+                </p>
+                <img class="img-inovacao" src="../img/sobre-img1.jpg" alt="">
+            </div>
         </div>
     </div>
 
-    <!-- <footer class="rodape-padrao">
+    <footer class="rodape-padrao">
         <p class="rodape-padrao__direitos">Todos os direitos ...</p>
         <ul>
             <li><a class="rodape-padrao__link" href="">FAQ</a></li>
             <li><a class="rodape-padrao__link" href="">Sobre</a></li>
             <li><a class="rodape-padrao__link" href="">Contato</a></li>
         </ul>
-    </footer> -->
+    </footer>
 
 </body>
 

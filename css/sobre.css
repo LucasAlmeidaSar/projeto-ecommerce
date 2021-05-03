@@ -3,22 +3,41 @@
     margin: 0px;
 }
 
+.conteudo-sobre {
+    margin: 70px 0 25px 10px;
+}
+
+.conteudo-sobre div {
+    display: flex;
+    justify-content: center;
+}
+
+.titulo {
+    display: flex;
+    justify-content: left;
+}
+
+.quadro-texto {
+    width: 650px;
+    text-align: justify;
+    margin: 5px;
+}
+
 .img-historia, .img-desafios, .img-inovacao {
     width: 500px;
     height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding-left: 10px;
 }
 
+.ajustar-texto {
+    display: flex;
+}
 .nav-sobre {
     padding: 0 32px;
     background-color: hotpink;
-
-}
-
-.navbar, .carrinho-perfil {
-    justify-content: space-between;    
 }
 
 .menu-sobre {
@@ -30,21 +49,45 @@
     height: 80px;
 }
 
-#menu-sobre-principal div {
-    justify-content: center;
-}
-.nav-sobre a {
-    text-decoration: none;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    width: 0 32px;
-    padding: 12px;
-    border-radius: 6px;
+
+#divBusca {
+    background-color: rgb(255, 255, 255);
+    border: solid 1px;
+    border-radius: 15px;
+    width: 500px;
+    height: 32px;
 }
 
-.nav-sobre a:hover {
+#txtBusca {
+    float: left;
+    background-color: transparent;
+    padding-left: 5px;
+    font-size: 18px;
+    border: none;
+    height: 32px;
+    width: 260px;
+}
+
+#icon-pesquisa {
+    font-size: 24px;
+    float: right;
+    padding: 1px;
+    margin-right: 5px;
+}
+
+#icon-user {
+    padding: 10px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#icon-carrinho {
+    padding: 10px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#icon-user:hover, #icon-carrinho:hover {
     background-color: grey;
-    opacity: 0.6;
+    border-radius: 100%;
 }
