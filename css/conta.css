@@ -1,181 +1,306 @@
- /* Configuração da seta de voltar para o início */
- 
- .setaMenu {
-     display: flex;
-     align-items: center;
-     width: 100%;
-     height: 20px;
-     margin-top: 10px;
-     padding-left: 5px;
- }
- 
- .setaMenu img {
-     display: flex;
-     align-items: center;
-     margin-left: 15px;
-     padding-right: 5px;
- }
- 
- .setaMenu h6 {
-     padding-left: 5px;
-     font-size: 20px;
- }
- /* DIV GERAL */
- 
- .body {
-     width: 98%;
-     height: 640px;
-     margin-top: 10px;
-     margin-left: 20px;
- }
- 
- .menu {
-     display: flex;
-     justify-content: center;
-     margin-top: 10px;
- }
- 
- .tab {
-     background-color: #f1f1f1;
-     width: 300px;
-     height: 575px;
- }
- 
- .tab button {
-     text-align: left;
-     border: none;
-     outline: none;
-     cursor: pointer;
-     padding: 14px 16px;
-     font-size: 17px;
-     min-width: 300px;
-     transition: 0.3s;
- }
- 
- .tab button:hover {
-     background-color: #ddd;
- }
- 
- .tab button:focus {
-     background-color: #ddd;
- }
- 
- .tabConfig {
-     display: none;
-     float: left;
-     width: 600px;
- }
- /* GRID */
- 
- .header {
-     grid-column-start: 1;
-     grid-column-end: 5;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     font-size: 20px;
-     height: 60px;
-     background-color: rgba(177, 177, 177, 1);
- }
- 
- .numeroP {
-     background-color: rgba(255, 255, 255, 1);
-     grid-column-start: 1;
-     grid-column-end: 2;
- }
- 
- .data {
-     background-color: rgba(255, 255, 255, 1);
-     grid-column-start: 2;
-     grid-column-end: 3;
- }
- 
- .detalhes {
-     background-color: rgba(255, 255, 255, 1);
-     grid-column-start: 4;
-     grid-column-end: 5;
- }
- 
- .divDetalhes {
-     display: flex;
-     justify-content: center;
- }
- 
- .status {
-     background-color: rgba(255, 255, 255, 1);
-     grid-column-start: 3;
-     grid-column-end: 4;
- }
- /* Cores para o status */
- 
- .verde {
-     background-color: rgb(85, 148, 34);
- }
- 
- .amarelo {
-     background-color: rgb(255, 208, 0);
- }
- 
- .laranja {
-     background-color: rgb(195, 100, 21);
- }
- 
- .vermelho {
-     background-color: rgb(212, 23, 23);
- }
- /* Formatação da estrutura da tabela de compras */
- 
- .grid-container {
-     background-color: black;
-     display: grid;
-     grid-gap: 2px;
-     grid-template-areas: auto auto auto;
- }
- 
- .grid-container>div {
-     text-align: center;
-     padding: 20px 0;
- }
- /* Estilo dos dados da conta */
- 
- .dadosConta {}
- /* Estilo dos dados da tabela de compras */
- 
- .dadosTabela {
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
- /* ICONES */
- 
- .fa-arrow-right {
-     float: right;
- }
- 
- .fas {
-     margin-right: 5px;
- }
- 
- .far {
-     margin-right: 5px;
- }
- /* Formatação básica. Trabalho com input.*/
- /*Dificuldades até então: tamanho dos inputs adaptável ao conteúdo.*/
- 
- #infoConta input {
-     font-weight: bold;
-     border: none;
-     background-color: white;
-     border-bottom: 2px solid rgb(168, 168, 168);
-     width: auto;
-     margin-top: 5px;
-     margin-bottom: 5px;
-     display: grid;
-     gap: 16px 24px;
- }
- /* Não tá divindo o conteúdo em duas colunas. Vou verificar...*/
- 
- #infoConta {
-     display: grid;
-     grid-template-columns: repeat(2, 300px);
- }
+.container {
+    display: flex;
+    height: 100%;
+    /* margin-bottom: 100px; */
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    background-color: #171B1F;
+    color: #CDD0D6;
+    width: 280px;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.sidebar.colapsado {
+    width: 70px;
+}
+
+.sidebar.colapsado .sidebar__titulo,
+.sidebar.colapsado .sidebar-menu__span {
+    display: none;
+    opacity: 0;
+}
+
+.sidebar.colapsado .sidebar__cabecalho {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 0;
+}
+
+.sidebar__cabecalho {
+    justify-content: space-between;
+    padding: 32px;
+}
+
+.sidebar__titulo {
+    font-size: 30px;
+    color: #E0DEE6;
+}
+
+.sidebar__btn {
+    font-size: 18px;
+    padding: 0px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: background 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.sidebar__btn:hover {
+    background-color: #a1a6af1c;
+    opacity: 1;
+}
+
+.sidebar-menu__item {
+    border-bottom: 1px solid #a1a6af21;
+    font-size: 14px;
+    color: white;
+    transition: background 0.3s ease-in;
+}
+
+.sidebar-menu__item-container {
+    padding: 16px 20px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in;
+    cursor: pointer;
+}
+
+.sidebar-menu__item i {
+    width: 26px;
+    text-align: center;
+}
+
+.sidebar-menu__span {
+    opacity: 1;
+    transition: opacity 0.4s ease-out;
+}
+
+.sidebar-menu__item:hover {
+    background-color: #a1a6af1c;
+}
+
+.sidebar-menu__item:hover .sidebar-menu__item-container {
+    opacity: 1;
+}
+
+.topbar {
+    justify-content: space-between;
+    height: 46px;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+    padding: 0 32px;
+}
+
+.btn {
+    display: flex;
+    background-color: #394450;
+    height: 50px;
+    width: 100%;
+    margin: 0px 0px;
+}
+
+.btn p {
+    font-size: 20px;
+}
+
+.area-conteudo {
+    flex-grow: 1;
+}
+
+.area-cabecalho {
+    border: 1px solid black;
+    width: 100%;
+    height: 200px;
+}
+
+
+/* Configuração da seta de voltar para o início */
+
+.setaMenu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+    margin-top: 10px;
+    padding-left: 5px;
+}
+
+.setaMenu img {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    padding-right: 5px;
+}
+
+.setaMenu h6 {
+    padding-left: 5px;
+    font-size: 20px;
+}
+
+
+/* DIV GERAL */
+
+.tab {
+    background-color: #f1f1f1;
+    width: 300px;
+    height: 575px;
+}
+
+.tab button {
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    min-width: 300px;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button:focus {
+    background-color: #ddd;
+}
+
+.tabConta {
+    border: 1px solid red;
+    width: 100%;
+    height: 400px;
+}
+
+.tabConfig {
+    display: none;
+    margin-top: 165px;
+    margin-left: 25px;
+    width: 95%;
+}
+
+
+/* GRID */
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    height: 60px;
+    background-color: #29323b;
+}
+
+.numeroP {
+    background-color: rgba(255, 255, 255, 1);
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.data {
+    background-color: rgba(255, 255, 255, 1);
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.detalhes {
+    background-color: rgba(255, 255, 255, 1);
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.divDetalhes {
+    display: flex;
+    justify-content: center;
+}
+
+.status {
+    background-color: rgba(255, 255, 255, 1);
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+
+/* Cores para o status */
+
+.verde {
+    background-color: rgb(85, 148, 34);
+}
+
+.amarelo {
+    background-color: rgb(255, 208, 0);
+}
+
+.laranja {
+    background-color: rgb(195, 100, 21);
+}
+
+.vermelho {
+    background-color: rgb(212, 23, 23);
+}
+
+
+/* Formatação da estrutura da tabela de compras */
+
+.grid-container {
+    background-color: black;
+    display: grid;
+    grid-gap: 2px;
+    grid-template-areas: auto auto auto;
+}
+
+.grid-container>div {
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/* Estilo dos dados da tabela de compras */
+
+.dadosTabela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rodape-padrao {}
+
+
+/* ICONES */
+
+.sidebar-menu__item .fas,
+.far {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+
+/* Formatação básica. Trabalho com input.*/
+
+
+/*Dificuldades até então: tamanho dos inputs adaptável ao conteúdo.*/
+
+#infoConta input {
+    font-weight: bold;
+    border: none;
+    background-color: white;
+    border-bottom: 2px solid rgb(168, 168, 168);
+    width: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: grid;
+    gap: 16px 24px;
+}
+
+
+/* Não tá divindo o conteúdo em duas colunas. Vou verificar...*/
+
+#infoConta {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+}
