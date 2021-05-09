@@ -14,9 +14,10 @@
 
 .titulo {
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    font-size: 40px;
+    padding: 12px;
 }
-
 .quadro-texto {
     width: 650px;
     text-align: justify;
@@ -29,7 +30,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding-left: 10px;
+    padding: 10px;
 }
 
 .ajustar-texto {
@@ -58,6 +59,12 @@
     height: 32px;
 }
 
+/*
+#divBusca:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
 #txtBusca {
     float: left;
     background-color: transparent;
@@ -67,6 +74,7 @@
     height: 32px;
     width: 260px;
 }
+*/
 
 #icon-pesquisa {
     font-size: 24px;
@@ -90,4 +98,57 @@
 #icon-user:hover, #icon-carrinho:hover {
     background-color: grey;
     border-radius: 100%;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    padding: 20px;
+    background-color: rgb(114, 112, 112);
+}
+
+.entre-em-contato {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.icons-redes-sociais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    height: 90px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+}
+
+.icons-redes-sociais img {
+    width: 40px;
+    height: 40px;
+    margin: 8px;
+}
+
+.input-redes-sociais {
+    width: 250px;
+    padding: 6px;
+    border: solid 1px;
+    margin-left: 5px;
+    border-radius: 3px;
+}
+
+.botao-redes-sociais {
+    margin-left: 5px;
+    padding: 8px;
+    background-color: rgb(0, 0, 0);
+    text-decoration: none;
+    color:white;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.botao-redes-sociais:hover {
+    background-color: rgb(192, 189, 186);
+    text-decoration: none;
 }
