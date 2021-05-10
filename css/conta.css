@@ -161,25 +161,34 @@
     transition: 0.3s;
 }
 
-.tab button:hover {
-    background-color: #ddd;
-}
-
-.tab button:focus {
-    background-color: #ddd;
-}
-
-.tabConta {
-    border: 1px solid red;
-    width: 100%;
-    height: 400px;
-}
-
-.tabConfig {
-    display: none;
-    margin-top: 165px;
+.tab {
+    border: 1px solid #d8d6d6;
+    background-color: transparent;
     margin-left: 25px;
+    margin-top: 5px;
     width: 95%;
+    height: 400px;
+    box-shadow: 2px 5px 5px #f1f1f1;
+}
+
+.produto {
+    display: flex;
+    justify-content: left;
+    border-bottom: 1px solid #b2b4b6a2;
+    margin: 10px;
+}
+
+.prodImg img {
+    width: 120px;
+    height: 120px;
+}
+
+.prodConteudo {
+    border: 1px solid black;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: left;
 }
 
 
