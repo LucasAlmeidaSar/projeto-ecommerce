@@ -11,6 +11,7 @@ const formulario = document.querySelector('.form-geral')
 
 // Botões Pagamento
 const pagamentoCartao = document.querySelector('.pagamento__cartao')
+const pagamentoCartaoCelular = document.querySelector('.pagamento__cartao-celular')
 const pagamentoBoleto = document.querySelector('.pagamento__boleto')
 const btnCartao = document.querySelector('.btn__cartao')
 const btnBoleto = document.querySelector('.btn__boleto')
@@ -36,6 +37,7 @@ btnAvancar[2].addEventListener('click', () => {
     passo[2].classList.remove('atual')  
     passo[3].classList.add('atual')   
     formulario.style.marginLeft = "-300%"
+    window.scrollTo(top)
 })  
 
 
@@ -51,6 +53,7 @@ btnVoltar[1].addEventListener('click', () => {
     passo[1].classList.add('atual')   
     passo[2].classList.remove('atual')    
     formulario.style.marginLeft = "-100%"
+    window.scrollTo(top)
 })
 
 btnVoltar[2].addEventListener('click', () => {
@@ -60,6 +63,7 @@ btnVoltar[2].addEventListener('click', () => {
     formulario.style.marginLeft = "-200%"
 
     pagamentoCartao.classList.remove('ativo')
+    pagamentoCartaoCelular.classList.remove('ativo')
     btnCartao.classList.remove('ativo')
     pagamentoBoleto.classList.remove('ativo')
     btnBoleto.classList.remove('ativo')
@@ -73,6 +77,7 @@ btnComprar.addEventListener('click', () => {
     formulario.style.marginLeft = "-400%"
 
     pagamentoCartao.classList.remove('ativo')
+    pagamentoCartaoCelular.classList.remove('ativo')
     btnCartao.classList.remove('ativo')
     pagamentoBoleto.classList.remove('ativo')
     btnBoleto.classList.remove('ativo')
@@ -84,12 +89,14 @@ btnComprar.addEventListener('click', () => {
 
 
 btnCartao.addEventListener('click' , () => {
-    pagamentoCartao.classList.toggle('ativo')
-    btnCartao.classList.toggle('ativo')
+  const larguraTela = window.innerWidth
 
-    var altura = pagamentoCartao.style.height
-    altura === '480px' ? altura = '0px' : altura = '480px'
-    pagamentoCartao.style.height = altura 
+  larguraTela < 1024 ? pagamentoCartaoCelular.classList.toggle('ativo') : pagamentoCartao.classList.toggle('ativo')
+    
+  btnCartao.classList.toggle('ativo')
+  var altura = pagamentoCartao.style.height
+  altura === '480px' ? altura = '0px' : altura = '480px'
+  pagamentoCartao.style.height = altura 
 })
 
 btnBoleto.addEventListener('click' , () => {
@@ -110,4 +117,16 @@ perguntaCupom.addEventListener('click' , () => {
     perguntaCupom.classList.add('inativo')
     aplicarCupom.classList.remove('inativo')
     cupomInput.classList.remove('inativo')
+})
+
+
+const detalhesBtn = document.querySelector('.resumo-pedido-btn')
+const iconeResumoPedido = document.querySelector('.icone-resumo-pedido')
+const titulosResumoPedido = document.querySelectorAll('.titulos-resumo')
+const conteudoResumoPedido = document.querySelector('.conteudo-resumo-pedido')
+
+detalhesBtn.addEventListener('click', () => {
+  iconeResumoPedido.classList.toggle('fa-arrow-circle-up')
+  titulosResumoPedido.forEach(titulo => titulo.classList.toggle('inativo'))
+  conteudoResumoPedido.classList.toggle('inativo')
 })
