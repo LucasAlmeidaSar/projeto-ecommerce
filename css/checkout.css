@@ -1,3 +1,9 @@
+/* 
+** TODO
+** Responsividade para telas acima de 1440px
+** Refatorar código
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -232,15 +238,17 @@ input:hover{  border: 1.5px solid rgb(114, 114, 114);  }
 }
 
 .pagamento__cartao,
-.pagamento__boleto{  display: none;}
+.pagamento__boleto,
+.pagamento__cartao-celular{  display: none;}
 
-.containerCartao,
-.containerBoleto{  
+.pagamento__cartao.ativo,
+.pagamento__boleto.ativo,
+.pagamento__cartao-celular.ativo{
     display: block;
 }
 
-.pagamento__cartao.ativo,
-.pagamento__boleto.ativo{
+.containerCartao,
+.containerBoleto{  
     display: block;
 }
 
@@ -294,11 +302,12 @@ label #cobranca{  margin-bottom: 10px;  }
 
 
 
-/* Pagamento */
+/* Seção Pagamento */
 .select-pagamento,
 #pagamento__cpf,
 .pagamento__boleto input,
-.card-form input{
+.card-form input,
+.pagamento__cartao-celular input{
     border-radius: 5px;
     border: 1.5px solid lightgray;
     outline: none;
@@ -341,6 +350,7 @@ label #cobranca{  margin-bottom: 10px;  }
     border-radius: 10px;
     color: #666;
     max-height: 700px;
+    /* display: none; */
 }
 
 .item-produto{
@@ -453,3 +463,113 @@ label #cobranca{  margin-bottom: 10px;  }
 .aplicar-cupom .fa-play-circle:hover{  color: #0679fd;  }
 
 .aplicar-cupom.inativo{  transform: translateY(-50%) scale(0);  }
+
+
+/* Seção Resumo do Pedido */
+.resumo-pedido{
+  position: fixed;
+  z-index: 9999;
+  top: 60px;
+  width: 100%;
+  background-color: #f5f5f5;
+  height: 35px;
+  display: none;
+}
+
+.barra-resumo-pedido{
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid lightgray ;
+}
+
+.titulo-modo-aberto,
+.titulo-modo-fechado{
+  font-size: .9rem;
+}
+
+.titulo-modo-aberto.inativo,
+.titulo-modo-fechado.inativo{  display: none;  }
+
+.icone-resumo-pedido{  margin-right: 10px;  }
+
+.valor-pedido-resumo{
+  padding: 4px 4px;
+  background-color: #222;
+  color: white;
+  border-radius: 5px;
+  font-size: .9rem;
+}
+
+.conteudo-resumo-pedido.inativo{  display: none;  }
+
+.conteudo-resumo-pedido{
+  display: block;
+  width: 100%;
+  background-color: white;
+  box-shadow: 2px 2px 10px lightgray;
+  padding: 10px;
+  max-height: 425px;
+  overflow-y: scroll;
+}
+
+.conteudo-resumo-pedido .lista-produto{
+  max-height: 230px;
+  overflow-y: scroll;
+}
+
+.conteudo-resumo-pedido .aplicar-cupom{  right: 30px;  } 
+
+
+
+
+
+
+/* Responsividade */
+
+@media only screen and (max-width: 1480px) {
+  .numero::before, .numero::after {  width: 250px;  }  
+  .conteudo-principal {  grid-template-columns: 930px 1fr;  }
+}
+
+
+
+@media only screen and (max-width: 1400px) {
+  .conteudo-principal {  
+    margin-top: 70px;
+    display: block;  
+  }
+
+  .numero::before, .numero::after {  display: none;  }
+  .container-produtos {  display: none;  }
+  .resumo-pedido{  display: block;  }
+  .conteudo-resumo-pedido .aplicar-cupom{  right: 50px;  }
+}
+
+
+
+@media only screen and (max-width: 1020px) {
+  .pagina {  padding: 0;  }
+  .barra-progresso {  display: none;  }
+  .container-formulario__cabecalho {  display: none;  }
+  .btn-avancar, .btn-voltar, .btn-home{  width: 100%;  }
+  .conteudo-resumo-pedido .aplicar-cupom{  right: 30px;  }
+
+  .lista-botoes{
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;  
+    margin-top: 10px;
+  }
+
+  .lista-botoes li{  
+    width: 100%;
+    margin: 10px 0 0 0;  
+  }
+
+  .lista-botoes .btn{  margin: 0;  }
+
+  .pagina__titulo {  font-size: 1.3rem;  }
+
+  .pagina__titulo-destinatario {  font-size: 1.2rem;  } 
+}
