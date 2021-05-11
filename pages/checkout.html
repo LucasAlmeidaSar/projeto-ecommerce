@@ -25,13 +25,96 @@
         </div>
     </nav>
 
-    <main class="conteudo-principal">
-        
+
+
+
+    <div class="resumo-pedido">
+
+      <a class="resumo-pedido-btn" href="javascript:void(0)">
+        <div class="barra-resumo-pedido flex">
+          <div class="flex">
+            <i class="icone-resumo-pedido fas fa-arrow-circle-down"></i>
+            <p class="titulo-modo-fechado titulos-resumo ">Ver detalhes do pedido</p>
+            <p class="titulo-modo-aberto  titulos-resumo inativo">Ocultar detalhes do pedido</p>
+          </div>
+          <p class="valor-pedido-resumo">R$309,05</p>        
+        </div>
+      </a>
+  
+
+
+      <div class="conteudo-resumo-pedido inativo">
+        <ul class="lista-produto"> 
+          <li class="item-produto flex">                   
+            <div class="flex">
+              <img class="imagem-produto" src="/img/camisaMasculina.jpg">
+              <div class="info-produto-container">
+                <p class="info-produto">Camisa Masculina</p>
+                <p class="info-produto">Bege | M</p>
+                <p class="quantidade-produto">Qtd: 1</p>
+              </div>
+            </div>
+            <p class="valor-produto">R$99,90</p>
+          </li>
+          <li class="item-produto flex">                   
+            <div class="flex">
+              <img class="imagem-produto" src="/img/blusaFeminina2.png">
+              <div class="info-produto-container">
+                <p class="info-produto">Camisa Feminina</p>
+                <p class="info-produto">Verde | P</p>
+                <p class="quantidade-produto">Qtd: 2</p>
+              </div>
+            </div>
+            <p class="valor-produto">R$119,80</p>
+          </li>
+          <li class="item-produto flex">                   
+            <div class="flex">
+              <img class="imagem-produto" src="/img/camisaMasculina2.jpg">
+              <div class="info-produto-container">
+                <p class="info-produto">Camisa Masculina</p>
+                <p class="info-produto">Mostarda | G</p>
+                <p class="quantidade-produto">Qtd: 1</p>
+              </div>
+            </div>
+            <p class="valor-produto">R$69,90</p>
+          </li>         
+        </ul>  
+
+
+
+        <ul class="valores-produto-container">
+          <li class="valores-item flex">
+            <p>Subtotal</p>
+            <p>R$ 289,60</p>
+          </li>
+          <li class="valores-item flex">
+            <p>Custo de frete</p>
+            <p>R$ 19,45</p>
+          </li>        
+          <li class="valores-item total-container flex">
+            <p>Total</p>
+            <p class="valor-total">R$ 309,05</p>
+            </li>
+        </ul>
+
+
+
+        <div class="cupom-container">
+          <a class="pergunta-cupom" href="javascript:void(0)"><i class="fas fa-tag"></i> Possui cupom de desconto?</a>
+          <input id="cupom-input" class="inativo" type="text" placeholder="Insira o cupom de desconto">
+          <button class="aplicar-cupom inativo" data-js="aplicar-cupom"><i class="fas fa-play-circle"></i></button>
+        </div>
+         
+      </div>
+    </div>
+    
+    
+
+    <main class="conteudo-principal">     
 
         <div class="container-formulario">
 
             <header class="container-formulario__cabecalho">
-
                 <div class="barra-progresso flex">                   
     
                     <div class="passos atual">                        
@@ -64,22 +147,17 @@
                             <span class="numero ">4</span>
                         </div>
                         <div class="check fas fa-check"></div>
-                    </div>  
-                    
-                </div>
-                
+                    </div>                      
+                </div>                
             </header>
 
 
 
 
             <div class="formulario">
-
                 <form action="#" class="form-geral flex">
 
-
-                    <div class="pagina contato">
-                
+                    <div class="pagina contato">                
                         <h2 class="pagina__titulo ">Dados de Contato</h2>
 
                         <input type="text" name="nome" id="nome" placeholder="Nome completo">
@@ -93,14 +171,8 @@
                     </div>
 
 
-
-
-
-                    <div class="pagina entrega">
-                
-                        <h2 class="pagina__titulo">Dados da Entrega</h2>
-
-                       
+                    <div class="pagina entrega">                
+                        <h2 class="pagina__titulo">Dados da Entrega</h2>                       
                         <input type="text" name="cep" id="cep" placeholder="CEP">
 
                         <select name="entregas" id="entregas" class="select-entrega">
@@ -117,11 +189,7 @@
                     </div>
 
 
-
-
-
-                    <div class="pagina destinatario">
-                
+                    <div class="pagina destinatario">                
                         <h2 class="pagina__titulo   pagina__titulo-destinatario">Dados do Destinatário</h2>
                         <div class="destinatario-dados">                        
                             <input type="text" name="nomeDestinatario" id="nomeDestinatario" placeholder="Nome completo">                        
@@ -129,7 +197,7 @@
                         </div>
 
 
-                        <h2 class="pagina__titulo  pagina__titulo-destinatario">Endereço do Destinatário</h2>
+                        <h2 class="pagina__titulo  pagina__titulo-destinatario">End. do Destinatário</h2>
                         <div class="destinatario-endereco">                      
                             <input type="text" name="logradouro" id="logradouro" placeholder="Logradouro">
                             <input type="number" name="numero" id="numero" placeholder="Número">
@@ -142,15 +210,11 @@
 
 
                         <h2 class="pagina__titulo  pagina__titulo-destinatario dados__cobranca">Dados do Cobrança</h2>   
-                        <!-- <div class="destinatario-cobranca">                  
-                            <input type="text" name="pais" id="pais" placeholder="País">
-                            <input type="text" name="cpfCobranca" id="cpfCobranca" placeholder="CPF">
-                        </div> -->
+                        
                         <label for="">
                             <input type="checkbox" name="cobranca" id="cobranca">
                             Minhas info de entrega e cobrança são as mesmas                             
                         </label>
-
 
                         <h2 class="pagina__titulo  pagina__titulo-destinatario  termo__compra">Termo de compra</h2>
                         <label for="termo">
@@ -163,16 +227,12 @@
                             <li>  <a class="btn btn-avancar">Avançar</a> </li>
                         </ul>           
                     </div>
-                    
 
 
-
-                    <div class="pagina pagamento">
-                
+                    <div class="pagina pagamento">                
                         <h2 class="pagina__titulo">Forma de pagamento</h2>
 
-                        <div class="containerCartao">
-                            <!-- <input type="radio" id="rdCartao" name="entrega">                             -->
+                        <div class="containerCartao">                         
                             <a class="btn__cartao">Cartão de crédito</a>
                             <div class="pagamento__cartao">
 
@@ -194,9 +254,25 @@
                                 </div>
                                 <div class='card-wrapper'></div>
                             </div>
+
+                            <div class="pagamento__cartao-celular">
+
+                              <input type="text" name="pagamento__cpf" id="pagamento__cpf" placeholder="CPF">
+                              
+                              <select name="parcelas" id="parcelas" class="select-pagamento">
+                                  <option value="0">Parcelas</option>
+                                  <option value="1x">1x de ..</option>
+                                  <option value="2x">2x de ..</option>
+                                  <option value="3x">3x de ..</option>
+                                  <option value="4x">4x de ..</option>
+                              </select>                             
+                              <input type="text" name="numeroCartao" id="numCartao" placeholder="Número do Cartão">
+                              <input type="text" name="nomeCartao" placeholder="Nome impresso no cartão"/>
+                              <input type="text" name="validadeCartao" placeholder="Data de validade (MM/AA)"/>
+                              <input type="text" name="cvvCartao" placeholder="CVV"/>                            
+                             
+                          </div>
                         </div>
-
-
 
                         <div class="containerBoleto">
                             <!-- <input type="radio" id="rdBoleto" name="entrega">                             -->
@@ -215,13 +291,9 @@
                     </div>
 
 
-
-
                     <div class="pagina final">
                         <h2 class="pagina__titulo">Obrigado por comprar conosco, volte sempre!</h2>
-
                         <a class="btn btn-home btn-avancar" href="../index.html">Voltar para a Home</a>
-
                     </div>                    
 
                 </form>
@@ -231,7 +303,7 @@
 
 
 
-
+        <!-- Seção Produtos -->
         <div class="container-produtos">
 
            <ul class="lista-produto"> 
@@ -291,12 +363,10 @@
                 <a class="pergunta-cupom" href="javascript:void(0)"><i class="fas fa-tag"></i> Possui cupom de desconto?</a>
                 <input id="cupom-input" class="inativo" type="text" placeholder="Insira o cupom de desconto">
                 <button class="aplicar-cupom inativo" data-js="aplicar-cupom"><i class="fas fa-play-circle"></i></button>
-            </div>
-
-           
+            </div>        
 
         </div>
-
+        
     </main>
 
 
