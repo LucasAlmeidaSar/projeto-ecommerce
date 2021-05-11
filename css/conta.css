@@ -8,12 +8,13 @@
 /* Sidebar */
 
 .sidebar {
-    background-color: #171B1F;
+    background-color: rgb(30, 30, 30);
     color: #CDD0D6;
     width: 280px;
     height: 100%;
     overflow: hidden;
     white-space: nowrap;
+    border-radius: 0px 0px 10px 0px;
 }
 
 .sidebar.colapsado {
@@ -108,6 +109,7 @@
 }
 
 .area-conteudo {
+    border: 1px solid red;
     flex-grow: 1;
 }
 
@@ -144,12 +146,6 @@
 
 /* DIV GERAL */
 
-.tab {
-    background-color: #f1f1f1;
-    width: 300px;
-    height: 575px;
-}
-
 .tab button {
     text-align: left;
     border: none;
@@ -167,13 +163,15 @@
     margin-left: 25px;
     margin-top: 5px;
     width: 95%;
-    height: 400px;
-    box-shadow: 2px 5px 5px #f1f1f1;
+    height: 450px;
+    box-shadow: 2px 5px 5px 5px #f1f1f1;
+    overflow-y: auto;
 }
 
 .produto {
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
+    align-items: center;
     border-bottom: 1px solid #b2b4b6a2;
     margin: 10px;
 }
@@ -184,11 +182,16 @@
 }
 
 .prodConteudo {
-    border: 1px solid black;
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 140px;
     display: flex;
-    justify-content: left;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.produto:hover {
+    background-color: #f8f8f8;
 }
 
 
@@ -277,7 +280,9 @@
     align-items: center;
 }
 
-.rodape-padrao {}
+.rodape {
+    margin-top: 50px;
+}
 
 
 /* ICONES */
