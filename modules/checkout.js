@@ -23,6 +23,7 @@ btnAvancar[0].addEventListener('click', () => {
     passo[0].classList.remove('atual')   
     passo[1].classList.add('atual')  
     formulario.style.marginLeft = "-100%"
+    window.scrollTo(top)
 })
 
 btnAvancar[1].addEventListener('click', () => {
@@ -30,6 +31,7 @@ btnAvancar[1].addEventListener('click', () => {
     passo[1].classList.remove('atual')  
     passo[2].classList.add('atual')  
     formulario.style.marginLeft = "-200%"
+    window.scrollTo(top)
 })
 
 btnAvancar[2].addEventListener('click', () => {
@@ -46,6 +48,7 @@ btnVoltar[0].addEventListener('click', () => {
     passo[0].classList.add('atual')   
     passo[1].classList.remove('atual')   
     formulario.style.marginLeft = "0%"
+    window.scrollTo(top)
 })
 
 btnVoltar[1].addEventListener('click', () => {
@@ -69,6 +72,7 @@ btnVoltar[2].addEventListener('click', () => {
     btnBoleto.classList.remove('ativo')
     pagamentoCartao.style.height = '0px'
     pagamentoBoleto.style.height = '0px'
+    window.scrollTo(top)
 })
 
 btnComprar.addEventListener('click', () => {
@@ -83,6 +87,7 @@ btnComprar.addEventListener('click', () => {
     btnBoleto.classList.remove('ativo')
     pagamentoCartao.style.height = '0px'
     pagamentoBoleto.style.height = '0px'
+    window.scrollTo(top)
 })
 
 
@@ -109,17 +114,29 @@ btnBoleto.addEventListener('click' , () => {
 })
 
 
-const aplicarCupom = document.querySelector('[data-js="aplicar-cupom"]')
-const perguntaCupom = document.querySelector('.pergunta-cupom')
-const cupomInput = document.querySelector('#cupom-input')
+// CUPOM
+const aplicarCupomLG = document.querySelector('[data-js="aplicar-cupom-lg"]')
+const perguntaCupomLG = document.querySelector('[data-js="pergunta-cupom-lg"]')
+const cupomInputLG = document.querySelector('[data-js="cupom-input-lg"]')
+const aplicarCupomSM = document.querySelector('[data-js="aplicar-cupom-sm"]')
+const perguntaCupomSM = document.querySelector('[data-js="pergunta-cupom-sm"]')
+const cupomInputSM = document.querySelector('[data-js="cupom-input-sm"]')
 
-perguntaCupom.addEventListener('click' , () => {
-    perguntaCupom.classList.add('inativo')
-    aplicarCupom.classList.remove('inativo')
-    cupomInput.classList.remove('inativo')
+perguntaCupomLG.addEventListener('click' , () => {
+  perguntaCupomLG.classList.add('inativo')
+    aplicarCupomLG.classList.remove('inativo')
+    cupomInputLG.classList.remove('inativo')
+})
+
+perguntaCupomSM.addEventListener('click' , () => {
+  perguntaCupomSM.classList.add('inativo')
+    aplicarCupomSM.classList.remove('inativo')
+    cupomInputSM.classList.remove('inativo')
 })
 
 
+
+// DETALHES DO PEDIDO
 const detalhesBtn = document.querySelector('.resumo-pedido-btn')
 const iconeResumoPedido = document.querySelector('.icone-resumo-pedido')
 const titulosResumoPedido = document.querySelectorAll('.titulos-resumo')

@@ -127,6 +127,7 @@ module.exports = {};
 </script>
 
 <style scoped>
+
 .modal {
   position: fixed;
   top: 0;
@@ -170,10 +171,7 @@ module.exports = {};
   border-radius: 50%;
   font-size: 30px;
   color: #171b1f;
-}
-</style>
 
-<style scoped>
 .container {
   background: #fff;
   padding: 25px 30px;
@@ -253,3 +251,4 @@ form .button input {
   background: #171b1f;
 }
 </style>
+
