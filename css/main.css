@@ -161,7 +161,6 @@
 .imagem-5{  background-image: url(../img/camisaMasculina3.jpg);  }
 .imagem-6{  background-image: url(../img/blusaFeminina3.png);  }
 
-
 .imagem-1,
 .imagem-2,
 .imagem-3,
@@ -178,15 +177,15 @@
 .imagem-5:hover,
 .imagem-6:hover{  background-size: 130%; }
 
-/* 
-** Lupa
-.imagem-1:hover,
-.imagem-2:hover,
+
+/* ** Lupa */
+/* .imagem-2:hover,
 .imagem-4:hover,
 .imagem-5:hover,
-.imagem-6:hover{
+.imagem-6:hover,
+.imagem-1:hover{
     cursor: url(../img/foco.cur) , default;
-    background-size: 150%;
+    background-size: 130%;
 } */
 
 .produtos-oferta__btn {  margin: 50px auto;  }
