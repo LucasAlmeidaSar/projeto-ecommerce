@@ -10,7 +10,7 @@
         <div class="container">
           <form action="#">
             <a href="#fechar" title="Fechar" class="fechar">x</a>
-            <div class="title">REGISTRO DE GERENCIAMENTO CMS</div>
+            <div class="title">REGISTRO DE USUÁRIO</div>
             <div class="user-details">
               <div class="input-box">
                 <span class="details">Nome</span>
@@ -127,98 +127,7 @@ module.exports = {};
 </script>
 
 <style scoped>
-/* estilização do componente aqui, é só colocar as classes nos elementos dentro da tag template */
 
-.toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
-.area-tabela {
-  padding: 0 10px;
-}
-
-.pesquisa {
-  display: flex;
-}
-
-.txt-pesquisa {
-  width: 450px;
-  padding: 12px;
-  border: 2px solid #cecece;
-  border-right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.btn-pesquisa {
-  padding: 12px;
-  background-color: #171b1f;
-  border: solid 2px #171b1f;
-  color: #ffffff;
-  border-radius: 0 3px 3px 0;
-}
-
-.btn-novo {
-  padding: 12px;
-  background-color: #15b156;
-  border: none;
-  border-radius: 3px;
-  color: #ffffff;
-}
-
-.tabela {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.tabela th {
-  background-color: #171b1f;
-  color: #ffffff;
-}
-
-.tabela th,
-td {
-  border: solid 1px #ffffff;
-  padding: 15px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.tabela tr:nth-child(even) {
-  background-color: #f1f1f1;
-}
-
-.tabela tr:hover {
-  background-color: #c4c4c4;
-}
-
-.td-acoes {
-  width: 100px;
-}
-
-.btn-acoes {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.visualizar {
-  color: #15b156;
-}
-
-.editar {
-  color: #f1a922;
-}
-
-.remover {
-  color: #e72828;
-}
-</style>
-
-<style scoped>
 .modal {
   position: fixed;
   top: 0;
@@ -263,9 +172,7 @@ td {
   font-size: 30px;
   color: #171b1f;
 }
-</style>
 
-<style scoped>
 .container {
   background: #fff;
   padding: 25px 30px;
@@ -345,3 +252,4 @@ form .button input {
   background: #171b1f;
 }
 </style>
+
