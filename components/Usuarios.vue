@@ -1,166 +1,347 @@
 <template>
-    <!-- Estrutura da página aqui, é necessário manter essa div como pai dos outros elementos -->
-    <div class="form_users">
-        <div class="container">  
-            <form action="#">
-                <div class="title">REGISTRO</div>
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details">Nome</span>
-                        <input type="text" placeholder="Nome completo" required>
-                    </div>
+  <!-- Estrutura da página aqui, é necessário manter essa div como pai dos outros elementos -->
+  <div class="">
+    <div class="toolbar">
+      <a href="#abrirModal" class="btn-novo"
+        ><i class="fas fa-plus-circle"></i> Adicionar</a
+      >
 
-                    <div class="input-box">
-                        <span class="details">Cargo</span>
-                        <input type="text" placeholder="Cargo ocupado" required>
-                    </div>
+      <div id="abrirModal" class="modal">
+        <div class="container">
+          <form action="#">
+            <a href="#fechar" title="Fechar" class="fechar">x</a>
+            <div class="title">REGISTRO DE GERENCIAMENTO CMS</div>
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Nome</span>
+                <input type="text" placeholder="Nome completo" required />
+              </div>
 
-                    <div class="input-box">
-                        <span class="details">Email</span>
-                        <input type="text" placeholder="example@email.com" required>
-                    </div>
+              <div class="input-box">
+                <span class="details">Cargo</span>
+                <input type="text" placeholder="Cargo ocupado" required />
+              </div>
 
-                    <div class="input-box">
-                        <span class="details">Número de telefone</span>
-                        <input type="text" placeholder="Telefone (DDD + número)" required>
-                    </div>
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="text" placeholder="example@email.com" required />
+              </div>
 
-                    <div class="input-box">
-                        <span class="details">Senha</span>
-                        <input type="text" placeholder="Senha" required>
-                    </div>
+              <div class="input-box">
+                <span class="details">Número de telefone</span>
+                <input
+                  type="text"
+                  placeholder="Telefone (DDD + número)"
+                  required
+                />
+              </div>
 
-                    <div class="input-box">
-                        <span class="details">Confirme a senha</span>
-                        <input type="text" placeholder="Confirme a senha" required>
-                    </div>
+              <div class="input-box">
+                <span class="details">Senha</span>
+                <input type="text" placeholder="Senha" required />
+              </div>
 
-                </div>
-                <div class="button">
-                <input type="submit" value="REGISTRAR">
-                </div>
-            </form>
+              <div class="input-box">
+                <span class="details">Confirme a senha</span>
+                <input type="text" placeholder="Confirme a senha" required />
+              </div>
+            </div>
+            <div class="button">
+              <input type="submit" value="REGISTRAR" />
+            </div>
+          </form>
         </div>
+      </div>
 
+      <div class="pesquisa">
+        <input class="txt-pesquisa" type="text" placeholder="Buscar..." />
+        <button class="btn-pesquisa"><i class="fas fa-search"></i></button>
+      </div>
     </div>
+    <div class="area-tabela">
+      <table class="tabela">
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Cargo</th>
+          <th>Telefone</th>
+          <th>Ações</th>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Silvera Junior</td>
+          <td>silvera@email.com</td>
+          <td>Manager</td>
+          <td>(27) 99203-2171</td>
+          <td class="td-acoes">
+            <button class="btn-acoes visualizar">
+              <i class="fas fa-eye"></i>
+            </button>
+            <button class="btn-acoes editar"><i class="fas fa-pen"></i></button>
+            <button class="btn-acoes remover">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Silvera Junior</td>
+          <td>silvera@email.com</td>
+          <td>Manager</td>
+          <td>(27) 99203-2171</td>
+          <td class="td-acoes">
+            <button class="btn-acoes visualizar">
+              <i class="fas fa-eye"></i>
+            </button>
+            <button class="btn-acoes editar"><i class="fas fa-pen"></i></button>
+            <button class="btn-acoes remover">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Silvera Junior</td>
+          <td>silvera@email.com</td>
+          <td>Manager</td>
+          <td>(27) 99203-2171</td>
+          <td class="td-acoes">
+            <button class="btn-acoes visualizar">
+              <i class="fas fa-eye"></i>
+            </button>
+            <button class="btn-acoes editar"><i class="fas fa-pen"></i></button>
+            <button class="btn-acoes remover">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </template>
 
 <script>
-//código JavaScript vem aqui, com a estrutura do Vue, não é necessário mexer
-module.exports = {
-
-}
+module.exports = {};
 </script>
 
 <style scoped>
+/* estilização do componente aqui, é só colocar as classes nos elementos dentro da tag template */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
-.form_users{
-    display: flex;
-    height: 100vh;
-    justify-content:center;
-    align-items: center;
-    padding: 10px;
-    background:  #fff;
+.area-tabela {
+  padding: 0 10px;
 }
 
-.container{
-    max-width: 700px;
-    width: 100%;
-    height:75%;
-    background: #fff;
-    padding: 25px 30px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
+.pesquisa {
+  display: flex;
 }
 
-.container .title{
+.txt-pesquisa {
+  width: 450px;
+  padding: 12px;
+  border: 2px solid #cecece;
+  border-right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.btn-pesquisa {
+  padding: 12px;
+  background-color: #171b1f;
+  border: solid 2px #171b1f;
+  color: #ffffff;
+  border-radius: 0 3px 3px 0;
+}
+
+.btn-novo {
+  padding: 12px;
+  background-color: #15b156;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela th {
+  background-color: #171b1f;
+  color: #ffffff;
+}
+
+.tabela th,
+td {
+  border: solid 1px #ffffff;
+  padding: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tabela tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.tabela tr:hover {
+  background-color: #c4c4c4;
+}
+
+.td-acoes {
+  width: 100px;
+}
+
+.btn-acoes {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.visualizar {
+  color: #15b156;
+}
+
+.editar {
+  color: #f1a922;
+}
+
+.remover {
+  color: #e72828;
+}
+</style>
+
+<style scoped>
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal > div {
+  max-width: 700px;
+  width: 100%;
+  height: 75%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  background: #fff;
+}
+
+.fechar {
+  position: absolute;
+  width: 30px;
+  right: 5px;
+  top: -10px;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #171b1f;
+}
+</style>
+
+<style scoped>
+.container {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+.container .title {
   font-size: 25px;
   font-weight: 500;
-  padding: 10px;
+  padding: 5px;
   align-items: center;
   position: relative;
 }
-.container .title::before{
-  content: " ";
+
+.container .title::before {
+  content: "";
   position: absolute;
   bottom: 0;
   height: 3px;
   width: 30px;
   border-radius: 5px;
-  background: #171B1F;
+  background: #171b1f;
 }
 
-
-
-.container form .user-details{
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
+.container form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-form .user-details .input-box{
-    margin: 20px 0 12px 0;
-    width: calc(100% /2 - 20px);
+form .user-details .input-box {
+  margin: 20px 0 12px 0;
+  width: calc(100% / 2 - 20px);
 }
 
-
-.user-details .input-box input{
-    height: 45px;
-    width: 100%;
-    outline: none;
-    border-radius:5px;
-    border: 1px solid #ccc;
-    padding-left: 15px;
-    font-size: 16px;
-    border-bottom-width: 2px;
-    transition: all 0.3s ease;
+.user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
 }
 
-.user-details .input-box .details{
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
+.user-details .input-box .details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
+
 .user-details .input-box input:focus,
-.user-details .input-box input:valid{
-    border-color:  #171B1F;
+.user-details .input-box input:valid {
+  border-color: #171b1f;
 }
 
-form .button{
-    height: 45px;
-    margin: 45px 0;
+form .button {
+  height: 45px;
+  margin: 45px 0;
 }
 
-form .button input{
-    height: 100%;
-    width: 100%;
-    outline: none;
-    color: #fff;
-    border: none;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 5px;
-    background: #171B1F;
+form .button input {
+  align-content: center;
+  height: 100%;
+  width: 103%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background: #171b1f;
 }
-
-form .button input:hover{
-    background: #282e35;
-}
-
-
-
-
-
-
-
-
-
 </style>
