@@ -10,7 +10,7 @@
         <div class="container">
           <form action="#">
             <a href="#fechar" title="Fechar" class="fechar">x</a>
-            <div class="title">REGISTRO DE GERENCIAMENTO CMS</div>
+            <div class="title">REGISTRO DE USUÁRIO</div>
             <div class="user-details">
               <div class="input-box">
                 <span class="details">Nome</span>
@@ -171,6 +171,7 @@ module.exports = {};
   border-radius: 50%;
   font-size: 30px;
   color: #171b1f;
+}
 
 .container {
   background: #fff;
