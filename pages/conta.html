@@ -17,168 +17,44 @@
 </head>
 
 <body>
-    <!-- Div Principal que engloba toda a tela -->
 
-    <!-- <div class="body"> -->
 
-    <!-- Div da aba principal contendo as opções -->
-    <!-- <div class="container">
-            <div class="sidebar">
 
-                <ul>
-                    <h2 class="header">Minha conta</h2>
-                    <a href="/index.html">
-                        <div class="setaMenu"><img src="/projeto-ecommerce/img/left-arrow.png" alt="">
-                            <h6> Voltar ao início</h6>
-                        </div>
-                    </a>
-                    <li><button class="btn" onclick="alterarInfo(event, 'infoConta')"><i class="fas fa-user"></i><p class="">Informações da conta</p></button></li>
-                    <li><button class="btn" onclick="alterarInfo(event, 'compras')"><i class="far fa-credit-card"></i> <p> realizadas</p></button></li>
-                    <li><button class="btn" onclick="alterarInfo(event, 'lista')"><i class="fas fa-heart"></i> <p>Lista de desejos</p></button></li>
-                    <li><button class="btn" onclick="alterarInfo(event, 'config')"><i class="fas fa-cog"></i> <p>Configurações</p></button></li>
-                    <li><button class="btn" onclick="alterarInfo(event, 'sair')"><i class="fas fa-sign-out-alt"></i> <p>Sair</p></button></li>
+    <nav class="nav-padrao flex">
+
+        <a class="sobre-logo btn btn-nav-padrao" href="#">Logo</a>
+
+        <ul class="flex">
+            <li> <a class="btn btn-nav-padrao" href="#">Início</a> </li>
+            <li>
+                <a class="btn btn-nav-padrao" href="">Produtos</a>
+                <ul style="display: none;">
+                    <li>Todos</li>
+                    <li>Masculinos</li>
+                    <li>Femininos</li>
+                    <li>Unissex</li>
                 </ul>
-            </div>
+            </li>
+            <li> <a class="btn btn-nav-padrao" href="#">Sobre</a> </li>
+            <li> <a class="btn btn-nav-padrao" href="./pages/faq.html">FAQ</a> </li>
+            <li> <a class="btn btn-nav-padrao" href="#">Contato</a> </li>
+        </ul>
 
-
-            <div class="area-conteudo"> -->
-    <!-- Div que mostra as informações da conta -->
-    <!-- <div id="infoConta" class="tabConfig card">
-                    <ul>
-                        <label class="header"><b>Informações da Conta</b></label>
-                        <label class="dadosConta">Nome: </label>
-                        <input type="text" name="" value="Fulano da Silva" id="conta-nome" class="informacoes-conta" disabled>
-                        <label class="dadosConta">CPF: </label>
-                        <input type="text" name="" value="999.999.999-99" id="conta-cpf" class="informacoes-conta" disabled>
-                        <label class="dadosConta">Telefone: </label>
-                        <input type="text" name="" value="(99) 99788-4809" id="conta-telefone" class="informacoes-conta" disabled>
-                        <label class="dadosConta">Gênero: </label>
-                        <input type="text" name="" value="Masculino" id="conta-genero" class="informacoes-conta" disabled>
-                        <label class="dadosConta">Data de nascimento: </label>
-                        <input type="text" name="" value="01/01/1901" id="conta-nascimento" class="informacoes-conta" disabled>
-                        <label class="dadosConta">E-mail: </label>
-                        <input type="text" name="" value="@souunisales.com.br" id="conta-email" class="informacoes-conta" disabled>
-                        <label id="endereco" class="dadosConta">Endereço: </label>
-                        <input type="text" name="" value="Rua X, 17, Aterro, Flamengo - RJ" id="conta-endereco" class="informacoes-conta" disabled>
-                    </ul>
-                </div> -->
-
-    <!-- Div que mostra as compras realizadas -->
-    <!-- <div id="compras" class="tabConfig card">
-
-                    <div class="grid-container">
-                        <div class="header"><b>Compras realizadas</b></div>
-                        <div class="numeroP"><b>Numero do Pedido</b></div>
-                        <div class="data"><b>Data</b></div>
-                        <div class="status"><b>Status</b></div>
-                        <div class="detalhes"><b>Detalhes</b></div>
-
-                        <div class="dados numeroP">55824156</div>
-                        <div class="dados data">13/04/2021</div>
-                        <div class="dados status amarelo">Em andamento</div>
-                        <div class="detalhes">
-                            <div class="divDetalhes"><a class="btn">Mais detalhes</a></div>
-                        </div>
-
-                        <div class="dados numeroP">55472637</div>
-                        <div class="dados data">24/02/2021</div>
-                        <div class="dados status verde">Concluído</div>
-                        <div class="detalhes">
-                            <div class="divDetalhes"><a class="btn">Mais detalhes</a></div>
-                        </div>
-                    </div>
-                </div> -->
-    <!-- Tabela de lista de desejos -->
-    <!-- <div id="lista" class="tabConfig card">
-                    <ul>
-                        <label class="header"><b>Lista de desejos</b></label>
-                        <label class="dadosConta">Nome: </label>
-                        <input type="text" name="" value="Fulano da Silva" id="conta-nome" class="informacoes-conta" disabled>
-                        <label class="dadosConta">CPF: </label>
-                        <input type="text" name="" value="999.999.999-99" id="conta-cpf" class="informacoes-conta" disabled>
-                        <label class="dadosConta">Telefone: </label>
-                        <input type="text" name="" value="(99) 99788-4809" id="conta-telefone" class="informacoes-conta" disabled>
-                        <label class="dadosConta">Gênero: </label>
-                        <input type="text" name="" value="Masculino" id="conta-genero" class="informacoes-conta" disabled>
-                        <label class="dadosConta">Data de nascimento: </label>
-                        <input type="text" name="" value="01/01/1901" id="conta-nascimento" class="informacoes-conta" disabled>
-                        <label class="dadosConta">E-mail: </label>
-                        <input type="text" name="" value="@souunisales.com.br" id="conta-email" class="informacoes-conta" disabled>
-                        <label id="endereco" class="dadosConta">Endereço: </label>
-                        <input type="text" name="" value="Rua X, 17, Aterro, Flamengo - RJ" id="conta-endereco" class="informacoes-conta" disabled>
-                    </ul>
-                </div>
-                <div id="config" class="tabConfig card">
-                    <ul>
-                        <label class="header"><b>Configurações</b></label>
-                        <label class="dadosConta">Nome: </label>
-                        <input type="text" name="" value="Fulano da Silva" id="conta-nome" class="informacoes-conta" disabled>
-                        <label class="dadosConta">CPF: </label>
-                        <input type="text" name="" value="999.999.999-99" id="conta-cpf" class="informacoes-conta" disabled>
-                        <label class="dadosConta">Telefone: </label>
-                        <input type="text" name="" value="(99) 99788-4809" id="conta-telefone" class="informacoes-conta" disabled>
-                        <label class="dadosConta">Gênero: </label>
-                        <input type="text" name="" value="Masculino" id="conta-genero" class="informacoes-conta" disabled>
-                        <label class="dadosConta">Data de nascimento: </label>
-                        <input type="text" name="" value="01/01/1901" id="conta-nascimento" class="informacoes-conta" disabled>
-                        <label class="dadosConta">E-mail: </label>
-                        <input type="text" name="" value="@souunisales.com.br" id="conta-email" class="informacoes-conta" disabled>
-                        <label id="endereco" class="dadosConta">Endereço: </label>
-                        <input type="text" name="" value="Rua X, 17, Aterro, Flamengo - RJ" id="conta-endereco" class="informacoes-conta" disabled>
-                    </ul>
-                </div>
-            </div>
+        <!--
+        <div id="divBusca">
+            <i class="glyphicon glyphicon-search" id="icon-pesquisa"></i>
+            <input type="text" id="txtBusca" placeholder="Buscar..." />
         </div>
-    </div> -->
+        -->
 
-
-    <nav class="nav-principal pre-load">
-        <div class="[ nav-principal__menu-topo flex ]  js-itensMenuTopo">
-            <a class="[ logo  btn btn-nav ]  js-itensMenuTopo" href="#">Logo</a>
-
-            <ul class="flex">
-                <li> <a class="[ btn btn-nav ]  js-itensMenuTopo" href="#">Início</a> </li>
-                <li class="dropdown">
-                    <a class="[ btn btn-nav dropdown-alternador ]  js-itensMenuTopo" href="javascript:void(0)">Produtos</a>
-                    <div class="[ dropdown-conteudo flex ]  js-itensMenuTopo">
-                        <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" href="#">Todos</a>
-                        <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" href="#">Masculinos</a>
-                        <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" href="#">Femininos</a>
-                        <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" href="#">Unissex</a>
-                    </div>
-                </li>
-                <li> <a class="[ btn btn-nav ]  js-itensMenuTopo" href="./pages/sobre.html">Sobre</a> </li>
-                <li> <a class="[ btn btn-nav ]  js-itensMenuTopo" href="./pages/faq.html">FAQ</a> </li>
-                <li> <a class="[ btn btn-nav ]  js-itensMenuTopo" href="./pages/contato.html">Contato</a> </li>
-            </ul>
-            <ul class="flex">
-                <li>
-                    <a class="[ icone icone-nav ]  js-itensMenuTopo" href="./pages/login.html">
-                        <i class="far fa-user"></i>
-                    </a>
-                </li>
-                <li>
-                    <a class="[ icone icone-nav btnCart ]  js-itensMenuTopo" href="javascript:void(0)">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- Menu Topo SM -->
-        <div class="[ nav-principal__menu-topo-sm ]   js-itensMenuTopo">
-            <ul class="flex">
-                <li>
-                    <a class="[ icone icone-nav ]  js-itensMenuTopo" href="./pages/login.html">
-                        <i class="far fa-user"></i>
-                    </a>
-                </li>
-                <li>
-                    <a class="[ icone icone-nav ]  js-itensMenuTopo" href="javascript:void(0)">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <ul class="carrinho-perfil flex">
+            <li>
+                <a class="glyphicon glyphicon-user" href="" id="icon-user"></a>
+            </li>
+            <li>
+                <a class="glyphicon glyphicon-shopping-cart" id="icon-carrinho" href=""></a>
+            </li>
+        </ul>
     </nav>
 
 
@@ -192,32 +68,32 @@
                 </div>
             </div>
             <ul class="sidebar-menu">
-                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-dashboard')">
+                <li class="sidebar-menu__item" onclick="alterarInfo('tabConta')">
                     <div class="sidebar-menu__item-container">
                         <i class="fas fa-user"></i>
                         <span class="sidebar-menu__span">Informações da conta</span>
                     </div>
                 </li>
-                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-produtos')">
+                <li class="sidebar-menu__item" onclick="alterarInfo('tabHistorico')">
                     <div class="sidebar-menu__item-container">
                         <i class="far fa-credit-card"></i>
                         <span class="sidebar-menu__span">Compras realizadas</span>
                     </div>
                 </li>
-                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-vendas')">
+                <li class="sidebar-menu__item" onclick="alterarInfo('tabListaDesejos')">
                     <div class="sidebar-menu__item-container">
                         <i class="fas fa-heart"></i>
                         <span class="sidebar-menu__span">Lista de desejos</span>
                     </div>
                 </li>
-                <li class="sidebar-menu__item">
+                <li class="sidebar-menu__item" onclick="alterarInfo('tabConfigurações')">
                     <div class="sidebar-menu__item-container">
                         <i class="fas fa-cog"></i>
                         <span class="sidebar-menu__span">Configurações</span>
                     </div>
                 </li>
                 <li class="sidebar-menu__item">
-                    <div class="sidebar-menu__item-container">
+                    <div class="sidebar-menu__item-container" onclick="alterarInfo('sair')">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="sidebar-menu__span">Sair</span>
                     </div>
@@ -226,9 +102,9 @@
 
         <main class="area-conteudo">
 
-            <div class="area-cabecalho"></div>
+            <div id="tabConta" class="tabConta tabConteudo">conta</div>
 
-            <div class="tab">
+            <div id="tabHistorico" class="tabHistorico tabConteudo">
                 <div class="produto">
                     <div class="prodImg">
                         <img src="../img/blackshirt.jpg"></img>
@@ -265,6 +141,13 @@
                 </div>
 
             </div>
+
+
+
+
+            <div id="tabListaDesejos" class="tabListaDesejos tabConteudo">lista de desejos</div>
+            <div id="tabConfigurações" class="tabConfigurações tabConteudo">configurações</div>
+            <div id="sair" class="tabConteudo">sair</div>
 
         </main>
 
@@ -306,24 +189,24 @@
         </div>
 
     </footer>
+
+
     <script>
-        infoConta = document.getElementById("infoConta"); //Pega o id da div infoConta e atribui a uma variável js
-        infoConta.style.display = "block"; // comando para ativar a div infoConta quando a pagina carregar
+        let tabConta = document.getElementById("tabConta"); //Pega o id da div infoConta e atribui a uma variável js
+        tabConta.classList.toggle("ativo"); // comando para ativar a div infoConta quando a pagina carregar
+        let tabAtual = tabConta;
 
 
         //Função responsável por mudar as divs quando clicar em uma das opções principais 
-        function alterarInfo(evt, item) {
+        function alterarInfo(item) {
             if (item != "sair") {
-                var i, tabconfig, tablinks;
-                tabconfig = document.getElementsByClassName("tabConfig");
-
-                for (i = 0; i < tabconfig.length; i++) {
-                    tabconfig[i].style.display = "none";
-                }
-                a = document.getElementById(item);
-                a.style.display = "block";
+                let tab = document.getElementById(item);;
+                console.log(tab, item);
+                tab.classList.toggle("ativo");
+                tabAtual.classList.toggle("ativo");
+                tabAtual = tab;
             } else {
-                var confirmar;
+                let confirmar;
                 confirmar = confirm("Tem certeza que deseja sair?");
 
                 if (confirmar == true) {

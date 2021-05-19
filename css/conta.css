@@ -4,6 +4,10 @@
     /* margin-bottom: 100px; */
 }
 
+.nav-padrao {
+    position: relative;
+}
+
 
 /* Sidebar */
 
@@ -96,18 +100,6 @@
     padding: 0 32px;
 }
 
-.btn {
-    display: flex;
-    background-color: #394450;
-    height: 50px;
-    width: 100%;
-    margin: 0px 0px;
-}
-
-.btn p {
-    font-size: 20px;
-}
-
 .area-conteudo {
     border: 1px solid red;
     flex-grow: 1;
@@ -168,6 +160,22 @@
     overflow-y: auto;
 }
 
+.tabConteudo {
+    display: none;
+}
+
+.tabConteudo.ativo {
+    display: block;
+}
+
+.tabConta {}
+
+.tabHistorico {}
+
+.tabListaDesejos {}
+
+.tabConfigurações {}
+
 .produto {
     display: flex;
     justify-content: flex-start;
@@ -177,6 +185,7 @@
 }
 
 .prodImg img {
+    margin-left: 5px;
     width: 120px;
     height: 120px;
 }
@@ -191,7 +200,7 @@
 }
 
 .produto:hover {
-    background-color: #f8f8f8;
+    background-color: #f5f5f5;
 }
 
 
