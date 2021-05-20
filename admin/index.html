@@ -9,6 +9,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.min.js'></script>
     <script src="https://unpkg.com/http-vue-loader"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+    <script src="../modules/api-config.js"></script>
 
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/reset.css">
@@ -79,7 +80,7 @@
         let vapp = new Vue({
             el: '#app',
             data: {
-                componenteAtual: 'app-dashboard'
+                componenteAtual: 'app-produtos'
             },
             components: {
                 'app-dashboard': httpVueLoader('../components/Dashboard.vue'),
