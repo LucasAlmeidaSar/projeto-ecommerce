@@ -18,28 +18,15 @@
           <th>Status</th>
           <th>Ações</th>
         </tr>
-        <tr>
-          <td>123</td>
-          <td>Camiseta Preta</td>
-          <td>R$ 10,00</td>
-          <td>5</td>
-          <td>Ativo</td>
-          <td class="td-acoes">
-            <button class="btn-acoes visualizar">
-              <i class="fas fa-eye"></i>
-            </button>
-            <button class="btn-acoes editar"><i class="fas fa-pen"></i></button>
-            <button class="btn-acoes remover">
-              <i class="fas fa-trash"></i>
-            </button>
+        <tr v-for="produto in produtos">
+          <td>{{produto.id}}</td>
+          <td>{{produto.descricao}}</td>
+          <td>R$ {{produto.preco}}</td>
+          <td>{{produto.quantidadeTotal}}</td>
+          <td>
+            <span v-if="produto.ativo">Ativo</span>
+            <span v-else>Desativado</span>
           </td>
-        </tr>
-        <tr>
-          <td>123</td>
-          <td>Camiseta Preta</td>
-          <td>R$ 10,00</td>
-          <td>5</td>
-          <td>Ativo</td>
           <td class="td-acoes">
             <button class="btn-acoes visualizar">
               <i class="fas fa-eye"></i>
@@ -53,7 +40,7 @@
 
         <tr>
           <td>123</td>
-          <td>Camiseta Preta</td>
+          <td>Camiseta Preta MOCKADO</td>
           <td>R$ 10,00</td>
           <td>5</td>
           <td>Ativo</td>
@@ -73,8 +60,43 @@
 </template>
 
 <script>
+
 //código JavaScript vem aqui, com a estrutura do Vue, não é necessário mexer
-module.exports = {};
+module.exports = {
+  data: function() {
+    return {
+      produtos: [],
+    }
+  },
+  methods: {
+    listarProdutos: function() {
+      let _this = this;
+
+      fetch(URLAPI_BASE + "/api/roupas/todos")
+        .then(res => res.json())
+        .then(res => {
+          _this.produtos = res.content;
+          console.log(_this.produtos);
+        });
+    },
+    carregarImagem(path) {
+      return URLAPI_BASE + path;
+    },
+    carregarImagens(modelos) {
+      let imagens = [];
+
+      modelos.forEach(x => {
+        x.imagens.forEach(imagem => {
+          imagens.push(imagem);
+        })
+      });
+      return imagens;
+    }
+  },
+  mounted: function() {
+    this.listarProdutos();
+  }
+}
 </script>
 
 <style scoped>
