@@ -71,7 +71,7 @@
                 <span>Admin Silveira</span>
                 <span>Logout</span>
             </div>
-            <component v-bind:is="componenteAtual"></component>
+            <component v-bind:is="componenteAtual" v-on:alterar-componente="alterarComponente"></component>
         </main>
 
     </div>
@@ -87,6 +87,7 @@
                 'app-produtos': httpVueLoader('../components/Produtos.vue'),
                 'app-vendas': httpVueLoader('../components/Vendas.vue'),
                 'app-usuarios': httpVueLoader('../components/Usuarios.vue'),
+                'app-cadastro-produto': httpVueLoader('../components/CadastroProduto.vue'),
             },
             methods: {
                 alterarComponente: function(componente) {
