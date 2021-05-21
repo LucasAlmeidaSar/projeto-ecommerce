@@ -2,7 +2,9 @@
   <!-- Estrutura da página aqui, é necessário manter essa div como pai dos outros elementos -->
   <div class="">
     <div class="toolbar">
-      <button class="btn-novo"><i class="fas fa-plus-circle"></i> Adicionar</button>
+      <button v-on:click="$emit('alterar-componente', 'app-cadastro-produto')" class="btn-novo">
+        <i class="fas fa-plus-circle"></i> Adicionar
+      </button>
       <div class="pesquisa">
         <input class="txt-pesquisa" type="text" placeholder="Buscar..." />
         <button class="btn-pesquisa"><i class="fas fa-search"></i></button>
@@ -72,11 +74,10 @@ module.exports = {
     listarProdutos: function() {
       let _this = this;
 
-      fetch(URLAPI_BASE + "/api/roupas/todos")
+      fetch(URLAPI_BASE + "/api/roupas")
         .then(res => res.json())
         .then(res => {
           _this.produtos = res.content;
-          console.log(_this.produtos);
         });
     },
     carregarImagem(path) {
