@@ -8,10 +8,13 @@
                 :type="type"
                 class="campo__input"
                 :value="value"
-                v-on:input="$emit('input', $event.target.value)"
+                @keyup="$emit('input', $event.target.value)"
                 :required="preencher"
                 :pattern="pattern"
                 ref="input"
+                :min="min"
+                :maxlength="maxlength"
+                :step="step"
             />
             <div class="campo__border"></div>
         </label>
@@ -37,22 +40,24 @@ module.exports = {
             required: false,
             default: false,
         },
-
         value: String,
-
         icone: String,
-
-        pattern: String
+        pattern: String,
+        min: String,
+        maxlength: String,
+        step: String,
     },
 
     data: function () {
         return {
             classeIcone: false,
+            input: null,
+            valorNumerico: null,
         };
     },
 
     mounted: function () {
-        const types = ['date'];
+        const types = ["date"];
 
         if (this.icone) {
             this.classeIcone = true;
@@ -60,21 +65,31 @@ module.exports = {
         let div = this.$refs.div;
         let input = this.$refs.input;
 
-        if (types.includes(input.type)) {
-            div.classList.add('campo--focus-2');
+        if (this.type === "moeda") {
+            this.$jq(input).maskMoney({
+                showSymbol: true,
+                symbol: "R$",
+                decimal: ",",
+                thousands: ".",
+            });
+        }
+
+        if (types.includes(this.type)) {
+            div.classList.add("campo--focus-2");
             return;
         }
 
-        input.addEventListener('focus', function () {
-            div.classList.add('campo--focus');
+        input.addEventListener("focus", function () {
+            div.classList.add("campo--focus");
         });
 
-        input.addEventListener('focusout', function () {
-            if (input.value != '') {
+        input.addEventListener("focusout", function () {
+            if (input.value != "") {
                 return;
             }
-            div.classList.remove('campo--focus');
+            div.classList.remove("campo--focus");
         });
+        this.input = input;
     },
 };
 </script>

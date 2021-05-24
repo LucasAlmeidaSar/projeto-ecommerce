@@ -11,48 +11,31 @@
             </span>
         </div>
 
-        <div class="secao-cadastro">
+        <div @click="teste" class="secao-cadastro">
             <h2 class="secao-cadastro__titulo">Informações base</h2>
             <div class="secao-cadastro__form">
-                <input-layout>Descrição</input-layout>
-                <input-layout>Preço</input-layout>
-                <select
-                    class="secao-cadastro__select"
-                    name="categoria"
-                    id="categoria"
-                >
-                    <option :value="null" disabled selected hidden>
-                        Categoria
-                    </option>
-                    <option
-                        v-if="categorias.length == 0"
-                        :value="null"
-                        disabled
-                    >
-                        Não há categorias...
-                    </option>
-                    <option
-                        v-for="categoria in categorias"
-                        :value="categoria.id"
-                    >
-                        {{ categoria.nome }}
-                    </option>
-                </select>
-                <select
-                    class="secao-cadastro__select"
-                    name="genero"
-                    id="genero"
-                >
-                    <option :value="null" disabled selected hidden>
-                        Gênero
-                    </option>
-                    <option value="MASCULINO">Masculino</option>
-                    <option value="FEMININO">Feminino</option>
-                    <option value="UNISSEX">Unissex</option>
-                </select>
+                <input-layout v-model="roupa.descricao">Descrição</input-layout>
+                <input-layout maxlength="15" type="moeda" v-model="precoDigitado">Preço (R$)</input-layout>
+                <select-layout
+                    title="Categoria"
+                    v-model="roupa.categoria"
+                    :options="categorias"
+                    campo="nome"
+                    placeholder="Categoria"
+                ></select-layout>
+                <select-layout
+                    title="Gênero"
+                    v-model="roupa.genero"
+                    :options="generos"
+                    placeholder="Gênero"
+                ></select-layout>
             </div>
             <hr class="final-secao" />
-            <button class="btn btn-continuar">
+            <button
+                @click="console.log(roupa)"
+                class="btn btn-continuar"
+                :disabled="!primeiroConcluido"
+            >
                 Continuar <i class="fas fa-arrow-right"></i>
             </button>
         </div>
@@ -64,6 +47,17 @@ module.exports = {
     data: function () {
         return {
             categorias: [],
+            generos: ["MASCULINO", "FEMININO", "UNISSEX"],
+            categoria: null,
+            precoDigitado: null,
+            roupa: {
+                descricao: null,
+                preco: null,
+                categoria: null,
+                ativo: false,
+                genero: null,
+                modelos: [],
+            },
         };
     },
 
@@ -71,20 +65,46 @@ module.exports = {
         listarCategorias: function () {
             let _this = this;
 
-            fetch(URLAPI_BASE + "/api/categorias")
+            fetch(this.$URLAPI_BASE + "/api/categorias")
                 .then((res) => res.json())
                 .then((res) => {
                     _this.categorias = res;
                 });
         },
+
+        teclaPressionada(evt) {
+            
+        },
+
+        teste() {
+            console.log();
+        }
     },
 
     mounted() {
         this.listarCategorias();
     },
 
+    computed: {
+        primeiroConcluido: function () {
+            return (
+                this.roupa.descricao &&
+                this.roupa.preco &&
+                this.roupa.categoria &&
+                this.roupa.genero
+            );
+        },
+    },
+
+    watch: {
+        precoDigitado(valor) {
+            this.roupa.preco = this.$moeda.paraFloat(valor);
+        }
+    },
+
     components: {
         "input-layout": httpVueLoader("../components/InputLayout.vue"),
+        "select-layout": httpVueLoader("../components/SelectLayout.vue"),
     },
 };
 </script>
