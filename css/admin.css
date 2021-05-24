@@ -27,6 +27,12 @@ hr {
     color: rgb(0, 0, 0);
 }
 
+.btn:disabled {
+    opacity: 0.6;
+    cursor: initial;
+    pointer-events: none;
+}
+
 .container {
     display: flex;
     height: 100%;

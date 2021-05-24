@@ -23,7 +23,7 @@
         <tr v-for="produto in produtos">
           <td>{{produto.id}}</td>
           <td>{{produto.descricao}}</td>
-          <td>R$ {{produto.preco}}</td>
+          <td>R$ {{produto.preco.toFixed(2).replace('.', ',')}}</td>
           <td>{{produto.quantidadeTotal}}</td>
           <td>
             <span v-if="produto.ativo">Ativo</span>
@@ -74,26 +74,14 @@ module.exports = {
     listarProdutos: function() {
       let _this = this;
 
-      fetch(URLAPI_BASE + "/api/roupas")
+      fetch(this.$URLAPI_BASE + "/api/roupas")
         .then(res => res.json())
         .then(res => {
           _this.produtos = res.content;
         });
     },
-    carregarImagem(path) {
-      return URLAPI_BASE + path;
-    },
-    carregarImagens(modelos) {
-      let imagens = [];
-
-      modelos.forEach(x => {
-        x.imagens.forEach(imagem => {
-          imagens.push(imagem);
-        })
-      });
-      return imagens;
-    }
   },
+  
   mounted: function() {
     this.listarProdutos();
   }
