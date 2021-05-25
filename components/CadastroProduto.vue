@@ -11,6 +11,7 @@
             </span>
         </div>
 
+        <!-- SEÇÃO BASE -->
         <div class="secao-cadastro">
             <h2 class="secao-cadastro__titulo">Informações base</h2>
             <div class="secao-cadastro__grid">
@@ -45,13 +46,17 @@
             </button>
         </div>
 
+        <!-- SEÇÃO DE CORES -->
         <div v-if="etapas.base" class="secao-cadastro">
             <h2 class="secao-cadastro__titulo">Cor</h2>
             <div id="cores" class="secao-cadastro__grid">
+
                 <div class="cor-selecionada" v-for="(cor, i) in coresSelecionadas" :key="i">
                     <div class="container-cor" :style="'background-color: ' + cor.valor"></div>
                     <span>{{cor.nome}}</span>
+                    <div class="btn-excluir-cor" @click="removerCor(i)"><i class="fas fa-times"></i></div>
                 </div>
+
                 <div class="adicionar-cor">
                     <button @click="teste" class="btn btn-adicionar">
                         <i class="fas fa-plus"></i> Adicionar cor
@@ -63,12 +68,14 @@
                         @fechar="modal.modalCor = false"
                     ></cor-modal>
                 </div>
+
             </div>
             <hr class="final-secao" />
             <button class="btn btn-continuar" :disabled="!segundoConcluido">
                 Continuar <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+
     </div>
 </template>
 
@@ -126,6 +133,10 @@ module.exports = {
             this.coresSelecionadas.push(cor);
             this.modal.modalCor = false;
         },
+
+        removerCor(index) {
+            this.coresSelecionadas.splice(index, 1);
+        }
     },
 
     mounted() {
@@ -235,6 +246,14 @@ hr.final-secao {
     align-items: center;
     box-sizing: border-box;
     padding: 6px;
+    position: relative;
+}
+
+.btn-excluir-cor {
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    cursor: pointer;
 }
 
 .container-cor {
