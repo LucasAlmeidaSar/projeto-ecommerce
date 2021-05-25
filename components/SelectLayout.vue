@@ -105,6 +105,7 @@ module.exports= {
   color: rgb(0, 0, 0);
   border-radius: 0px 0px 6px 6px;
   overflow: hidden;
+  overflow-y: auto;
   border-right: 1px solid #000000;
   border-left: 1px solid #000000;
   border-bottom: 1px solid #000000;
@@ -113,6 +114,10 @@ module.exports= {
   left: 0;
   right: 0;
   z-index: 1;
+  max-height: 220px;
+}
+.custom-select .items::-webkit-scrollbar {
+  display: none;
 }
 
 .custom-select .items div {
@@ -123,8 +128,7 @@ module.exports= {
 }
 
 .custom-select .items div:hover {
-  background-color: #20222e;
-  color: white;
+  background-color: #ced2d6;
 }
 
 .selectHide {
