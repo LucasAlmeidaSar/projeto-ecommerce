@@ -1,6 +1,7 @@
 <template>
-    <div class="modal" v-if="open" :tabindex="tabindex" @blur="$emit('fechar')">
+    <div class="modal" v-if="open" :tabindex="tabindex" @blur="fechar">
         <ul>
+            <li @click="novaCorAberta = true" class="btn-addcor"><i class="fas fa-plus"></i> Nova cor</li>
             <li v-for="(cor, i) in cores" :key="i" @click="$emit('selected', cor)">
                 <div
                     class="cor"
@@ -9,6 +10,7 @@
                 <span>{{ cor.nome }}</span>
             </li>
         </ul>
+        <nova-cor v-if="novaCorAberta" @fechar="fecharModal"></nova-cor>
     </div>
 </template>
 
@@ -29,11 +31,12 @@ module.exports = {
     data() {
         return {
             cores: [],
+            novaCorAberta: false,
         };
     },
 
     methods: {
-        listarCores: function () {
+        listarCores() {
             let _this = this;
 
             fetch(this.$URLAPI_BASE + "/api/cores")
@@ -41,6 +44,19 @@ module.exports = {
                 .then((res) => {
                     _this.cores = res;
                 });
+        },
+        fechar() {
+            if (!this.novaCorAberta) {
+                this.$emit('fechar');
+            } 
+        },
+
+        fecharModal(resultado) {
+            this.novaCorAberta = false;
+
+            if(resultado === true) {
+                this.listarCores();
+            }
         },
     },
 
@@ -56,6 +72,10 @@ module.exports = {
             }
         },
     },
+
+    components: {
+        'nova-cor': httpVueLoader('../components/NovaCor.vue'),
+    }
 };
 </script>
 
@@ -64,14 +84,23 @@ module.exports = {
     position: absolute;
     z-index: 100;
     width: 250px;
-    max-height: 400px;
+    max-height: 250px;
     overflow: hidden;
     overflow-y: auto;
     background-color: white;
-    top: 0;
+    top: -50px;
     left: 0;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     border-radius: 6px;
+}
+
+li i {
+    margin: 0 5px;
+    margin-right: 16px;
+}
+
+.btn-addcor {
+    color: rgb(0, 153, 255);
 }
 
 .modal li {
