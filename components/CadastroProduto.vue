@@ -11,11 +11,17 @@
             </span>
         </div>
 
-        <div @click="teste" class="secao-cadastro">
+        <!-- SEÇÃO BASE -->
+        <div class="secao-cadastro">
             <h2 class="secao-cadastro__titulo">Informações base</h2>
-            <div class="secao-cadastro__form">
+            <div class="secao-cadastro__grid">
                 <input-layout v-model="roupa.descricao">Descrição</input-layout>
-                <input-layout maxlength="15" type="moeda" v-model="precoDigitado">Preço (R$)</input-layout>
+                <input-layout
+                    maxlength="15"
+                    type="moeda"
+                    v-model="precoDigitado"
+                    >Preço (R$)</input-layout
+                >
                 <select-layout
                     title="Categoria"
                     v-model="roupa.categoria"
@@ -32,13 +38,44 @@
             </div>
             <hr class="final-secao" />
             <button
-                @click="console.log(roupa)"
-                class="btn btn-continuar"
+                @click="concluirEtapa('base')"
+                class="btn"
                 :disabled="!primeiroConcluido"
             >
                 Continuar <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+
+        <!-- SEÇÃO DE CORES -->
+        <div v-if="etapas.base" class="secao-cadastro">
+            <h2 class="secao-cadastro__titulo">Cor</h2>
+            <div id="cores" class="secao-cadastro__grid">
+
+                <div class="cor-selecionada" v-for="(cor, i) in coresSelecionadas" :key="i">
+                    <div class="container-cor" :style="'background-color: ' + cor.valor"></div>
+                    <span>{{cor.nome}}</span>
+                    <div class="btn-excluir-cor" @click="removerCor(i)"><i class="fas fa-times"></i></div>
+                </div>
+
+                <div class="adicionar-cor">
+                    <button @click="teste" class="btn btn-adicionar">
+                        <i class="fas fa-plus"></i> Adicionar cor
+                    </button>
+                    <cor-modal
+                        @selected="corSelecionada"
+                        :open="modal.modalCor"
+                        ref="modalCor"
+                        @fechar="modal.modalCor = false"
+                    ></cor-modal>
+                </div>
+
+            </div>
+            <hr class="final-secao" />
+            <button class="btn btn-continuar" :disabled="!segundoConcluido">
+                Continuar <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+
     </div>
 </template>
 
@@ -46,9 +83,16 @@
 module.exports = {
     data: function () {
         return {
+            modal: {
+                modalCor: false,
+            },
+            etapas: {
+                base: false,
+                cores: false,
+                tamanhos: false,
+            },
             categorias: [],
             generos: ["MASCULINO", "FEMININO", "UNISSEX"],
-            categoria: null,
             precoDigitado: null,
             roupa: {
                 descricao: null,
@@ -58,6 +102,7 @@ module.exports = {
                 genero: null,
                 modelos: [],
             },
+            coresSelecionadas: [],
         };
     },
 
@@ -72,12 +117,25 @@ module.exports = {
                 });
         },
 
-        teclaPressionada(evt) {
-            
+        teclaPressionada(evt) {},
+
+        concluirEtapa(nomeEtapa) {
+            this.etapas[nomeEtapa] = true;
         },
 
-        teste() {
-            console.log();
+        teste(e) {
+            console.log(this.modal.modalCor);
+            this.modal.modalCor = true;
+            console.log(this.$refs.modalCor.$el);
+        },
+
+        corSelecionada(cor) {
+            this.coresSelecionadas.push(cor);
+            this.modal.modalCor = false;
+        },
+
+        removerCor(index) {
+            this.coresSelecionadas.splice(index, 1);
         }
     },
 
@@ -94,17 +152,21 @@ module.exports = {
                 this.roupa.genero
             );
         },
+        segundoConcluido: function () {
+            return this.coresSelecionadas.length > 0;
+        }
     },
 
     watch: {
         precoDigitado(valor) {
             this.roupa.preco = this.$moeda.paraFloat(valor);
-        }
+        },
     },
 
     components: {
         "input-layout": httpVueLoader("../components/InputLayout.vue"),
         "select-layout": httpVueLoader("../components/SelectLayout.vue"),
+        "cor-modal": httpVueLoader("../components/Cores.vue"),
     },
 };
 </script>
@@ -151,17 +213,53 @@ hr.final-secao {
 
 .secao-cadastro__titulo {
     font-size: 1.4em;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
 }
 
-.secao-cadastro__form {
+.secao-cadastro__grid {
     display: grid;
-    grid-template-columns: auto auto;
     column-gap: 32px;
     row-gap: 32px;
+    grid-template-columns: auto auto;
 }
 
-.secao-cadastro__select {
+#cores.secao-cadastro__grid {
+    grid-template-columns: repeat(3, 220px);
+    row-gap: 16px;
+    column-gap: 26px;
+}
+
+.btn-adicionar {
+    border-radius: 20px;
+    width: 220px;
+}
+
+.adicionar-cor {
+    position: relative;
+}
+
+.cor-selecionada {
     height: 40px;
+    border-radius: 20px;
+    background-color: rgb(237, 238, 240);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 6px;
+    position: relative;
+}
+
+.btn-excluir-cor {
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.container-cor {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 16px;
 }
 </style>
