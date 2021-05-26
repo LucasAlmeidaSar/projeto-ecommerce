@@ -156,17 +156,18 @@
 .tab {
     border: 1px solid #dddddd;
     background-color: #fafafa;
-    width: 98%;
+    width: 100%;
     height: 400px;
     overflow-y: auto;
 }
 
 .tab_abas {
-    border: 1px solid #dddddd;
+    border: 1px solid #cacaca;
     border-bottom: none;
     background-color: #e9e9e9;
     border-radius: 10px 10px 0px 0px;
-    width: 98%;
+    overflow: hidden;
+    width: 100%;
     height: 40px;
 }
 
@@ -179,25 +180,37 @@
 }
 
 .aba_dados {
-    border: 1px solid black;
+    border-right: 1px solid #cacaca;
+    cursor: pointer;
     grid-column-start: 1;
     grid-column-end: 2;
 }
 
+.aba:hover {
+    background-color: #d3d3d3;
+    transition: 0.3s;
+}
+
+.aba.ativo {
+    background-color: #d3d3d3;
+}
+
 .aba_alterarSenha {
-    border: 1px solid black;
+    border-right: 1px solid #cacaca;
+    cursor: pointer;
     grid-column-start: 2;
     grid-column-end: 3;
 }
 
 .aba_alterarEmail {
-    border: 1px solid black;
+    border-right: 1px solid #cacaca;
+    cursor: pointer;
     grid-column-start: 3;
     grid-column-end: 4;
 }
 
 .aba_alterarEndereço {
-    border: 1px solid black;
+    cursor: pointer;
     grid-column-start: 4;
     grid-column-end: 5;
 }
@@ -210,11 +223,17 @@
     display: block;
 }
 
-.tabConta {}
+.tabConta {
+    width: 98%;
+}
 
-.tabHistorico {}
+.tabHistorico {
+    width: 98%;
+}
 
-.tabListaDesejos {}
+.tabListaDesejos {
+    width: 98%;
+}
 
 .tabConfigurações {}
 
