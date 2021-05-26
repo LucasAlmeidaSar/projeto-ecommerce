@@ -12,12 +12,12 @@
         </div>
 
         <!-- SEÇÃO BASE -->
-        <div class="secao-cadastro">
+        <div id="base" class="secao-cadastro" :class="{desativado: etapas.base}">
             <h2 class="secao-cadastro__titulo">Informações base</h2>
             <div class="secao-cadastro__grid">
-                <input-layout v-model="roupa.descricao">Descrição</input-layout>
+                <input-layout maxlength="60" v-model="roupa.descricao">Descrição</input-layout>
                 <input-layout
-                    maxlength="15"
+                    maxlength="8"
                     type="moeda"
                     v-model="precoDigitado"
                     >Preço (R$)</input-layout
@@ -38,7 +38,7 @@
             </div>
             <hr class="final-secao" />
             <button
-                @click="concluirEtapa('base')"
+                @click="concluirEtapa('base', 'cores')"
                 class="btn"
                 :disabled="!primeiroConcluido"
             >
@@ -71,9 +71,12 @@
 
             </div>
             <hr class="final-secao" />
-            <button class="btn btn-continuar" :disabled="!segundoConcluido">
-                Continuar <i class="fas fa-arrow-right"></i>
-            </button>
+            <div class="secao-cadastro__botoes">
+                <span @click="voltarEtapa('base')" class="btn-voltar btn-voltar--span">Voltar</span>
+                <button class="btn btn-continuar" :disabled="!segundoConcluido">
+                    Continuar <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
         </div>
 
     </div>
@@ -91,6 +94,7 @@ module.exports = {
                 cores: false,
                 tamanhos: false,
             },
+            etapaAtual: 'base',
             categorias: [],
             generos: ["MASCULINO", "FEMININO", "UNISSEX"],
             precoDigitado: null,
@@ -119,8 +123,19 @@ module.exports = {
 
         teclaPressionada(evt) {},
 
-        concluirEtapa(nomeEtapa) {
+        concluirEtapa(nomeEtapa, proxEtapa) {
             this.etapas[nomeEtapa] = true;
+
+            if(proxEtapa) {
+                setTimeout(function() {
+                    document.getElementById(proxEtapa).scrollIntoView({behavior: "smooth"});
+                }, 100);
+            }
+        },
+
+        voltarEtapa(nomeEtapa) {
+            this.etapas[nomeEtapa] = false;
+            document.getElementById(nomeEtapa).scrollIntoView({behavior: "smooth"});
         },
 
         teste(e) {
@@ -160,7 +175,7 @@ module.exports = {
     watch: {
         precoDigitado(valor) {
             this.roupa.preco = this.$moeda.paraFloat(valor);
-        },
+        }
     },
 
     components: {
@@ -183,6 +198,7 @@ hr.final-secao {
 .cadastro-produto {
     padding: 16px 26px;
     font-size: 18px;
+    scroll-behavior: smooth;
 }
 
 .cabecalho-cadastro {
@@ -201,6 +217,15 @@ hr.final-secao {
     cursor: pointer;
     margin-bottom: 6px;
     display: block;
+    font-weight: 600;
+}
+
+.btn-voltar:hover {
+    color: #353535;
+}
+
+.btn-voltar--span {
+    margin-right: 32px;
 }
 
 .secao-cadastro {
@@ -221,6 +246,17 @@ hr.final-secao {
     column-gap: 32px;
     row-gap: 32px;
     grid-template-columns: auto auto;
+}
+
+.secao-cadastro__botoes {
+    display: flex;
+    align-items: center;
+}
+
+.secao-cadastro.desativado {
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
 }
 
 #cores.secao-cadastro__grid {

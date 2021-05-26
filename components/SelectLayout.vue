@@ -8,6 +8,7 @@
       <span v-else>{{placeholder}}</span>
     </div>
     <div class="items" :class="{ selectHide: !open }">
+      <div class="vazio" v-if="options.length == 0">Não há opções cadastradas</div>
       <div
         v-for="(option, i) of options"
         :key="i"
@@ -129,6 +130,11 @@ module.exports= {
 
 .custom-select .items div:hover {
   background-color: #ced2d6;
+}
+
+.vazio {
+  pointer-events: none;
+  color: #929292 !important;
 }
 
 .selectHide {

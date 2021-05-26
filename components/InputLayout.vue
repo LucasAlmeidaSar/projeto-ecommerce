@@ -15,6 +15,8 @@
                 :min="min"
                 :maxlength="maxlength"
                 :step="step"
+                :name="name"
+                :id="id"
             />
             <div class="campo__border"></div>
         </label>
@@ -32,7 +34,7 @@ module.exports = {
 
         id: {
             type: String,
-            required: true,
+            required: false,
         },
 
         preencher: {
@@ -46,6 +48,7 @@ module.exports = {
         min: String,
         maxlength: String,
         step: String,
+        name: String,
     },
 
     data: function () {
