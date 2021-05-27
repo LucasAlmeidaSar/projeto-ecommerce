@@ -4,6 +4,11 @@
 ** Refatorar código
 */
 
+@import url(./normalize.css);
+@import url(./reset.css);
+@import url(./cores.css);
+@import url(./base.css);
+
 *{
     margin: 0;
     padding: 0;

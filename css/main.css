@@ -1,3 +1,12 @@
+@import url(./normalize.css);
+@import url(./reset.css);
+@import url(./cores.css);
+@import url(./base.css);
+@import url(./menu.css);
+@import url(./carrinho.css);
+@import url(./grid.css);
+
+
 /* Cabeçalho */
 .cabecalho-principal {
     width: 100%;
@@ -385,3 +394,4 @@
     text-decoration: none;
     padding: 10px;
 }
+
