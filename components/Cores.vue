@@ -53,6 +53,7 @@ module.exports = {
 
         fecharModal(resultado) {
             this.novaCorAberta = false;
+            this.$el.focus();
 
             if(resultado === true) {
                 this.listarCores();
@@ -60,15 +61,17 @@ module.exports = {
         },
     },
 
+    mounted() {
+        this.listarCores();
+    },
+
     watch: {
         open(newValue) {
             if (newValue) {
-                console.log("aberto: " + newValue);
-                this.listarCores();
                 let _this = this;
                 setTimeout(function() {
                     _this.$el.focus();
-                }, 150)
+                }, 200)
             }
         },
     },

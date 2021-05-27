@@ -9,6 +9,7 @@
                 class="campo__input"
                 :value="value"
                 @keyup="$emit('input', $event.target.value)"
+                @change="$emit('input', $event.target.value)"
                 :required="preencher"
                 :pattern="pattern"
                 ref="input"
@@ -82,6 +83,10 @@ module.exports = {
             return;
         }
 
+        if (input.value != "" && input.value != null) {
+            div.classList.add("campo--focus")
+        }
+
         input.addEventListener("focus", function () {
             div.classList.add("campo--focus");
         });
@@ -148,18 +153,14 @@ module.exports = {
     transform: scaleX(0);
 }
 
-.campo--focus .campo__span {
+.campo--focus .campo__span,
+.campo--focus-2 .campo__span {
     font-size: 0.7em;
     transform: translateY(-22px);
 }
 
 .campo--focus .campo__border::after {
     transform: scaleX(1);
-}
-
-.campo--focus-2 .campo__span {
-    font-size: 0.7em;
-    transform: translateY(-22px);
 }
 
 .campo__label:hover .campo__border::after {
