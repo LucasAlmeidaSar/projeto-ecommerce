@@ -106,7 +106,7 @@
         </div>
 
         <!-- SEÇÃO DE TAMANHOS -->
-        <div id="tamanhos" v-if="etapas.cores" class="secao-cadastro">
+        <div id="tamanhos" v-if="etapas.cores" class="secao-cadastro" :class="{ desativado: etapas.tamanhos }">
             <h2 class="secao-cadastro__titulo">Tamanhos</h2>
             <span style="margin-right: 12px"
                 >Escolha um tipo para os tamanhos:</span
@@ -134,7 +134,9 @@
                         <div
                             class="item-selecionado tamanho"
                             v-for="(tamanhoModelo, indexTamanho) in modelo.tamanhosModelo"
-                            :key="indexTamanho">
+                            :key="indexTamanho"
+                            :title="'Tamanho: ' + tamanhoModelo.tamanho + ' | Quantidade: ' + tamanhoModelo.quantidade"
+                            >
                             <span>{{ 'Tam.: ' + tamanhoModelo.tamanho + ' | Qnt.: ' + tamanhoModelo.quantidade}}</span>
                             <div class="btn-excluir" @click="removerTamanho(modelo.tamanhosModelo, indexTamanho)">
                                 <i class="fas fa-times"></i>
@@ -160,10 +162,28 @@
                     class="btn-voltar btn-voltar--span"
                     >Voltar</span
                 >
-                <button @click="console.log(roupa)" class="btn btn-continuar" :disabled="!terceiroConcluido">
+                <button @click="enviarProduto" class="btn btn-continuar" :disabled="!terceiroConcluido || enviando">
                     Continuar <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
+        </div>
+
+        <div
+            id="final"
+            class="secao-cadastro"
+            v-if="etapas.tamanhos"
+        >
+            <h2 class="secao-cadastro__titulo">Imagens</h2>
+            <div class="secao-cadastro__grid">
+                Imagens
+            </div>
+            <hr class="final-secao" />
+            <button
+                class="btn"
+                :disabled="!primeiroConcluido"
+            >
+                Continuar <i class="fas fa-arrow-right"></i>
+            </button>
         </div>
 
         <snack-bar ref="snackbar"></snack-bar>
@@ -183,6 +203,7 @@ module.exports = {
                 base: false,
                 cores: false,
                 tamanhos: false,
+                final: false,
             },
             categorias: [],
             tamanhos: [],
@@ -200,6 +221,8 @@ module.exports = {
             },
             coresSelecionadas: [],
             tamanhosSelecionados: [],
+            enviando: false,
+            
         };
     },
 
@@ -307,6 +330,37 @@ module.exports = {
 
         removerTamanho(lista, index) {
             lista.splice(index, 1);
+        },
+
+        async enviarProduto() {
+            this.enviando = true;
+            let path = '/api/roupas';
+            console.log('Enviando roupa');
+
+            let objJson = JSON.stringify(this.roupa);
+
+            let resposta = await fetch(this.$URLAPI_BASE + path, {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: objJson,
+            });
+
+            if (resposta.status === 201) {
+                let objResposta = await resposta.json();
+                console.log('Enviado com sucesso! Resposta: ', objResposta);
+
+                let respostaGet = await fetch(this.$URLAPI_BASE + objResposta.path);
+
+                let roupaResposta = await respostaGet.json();
+
+                this.roupa = roupaResposta;
+                console.log('Roupa retornada da API: ', this.roupa);
+                this.concluirEtapa('tamanhos', 'final');
+            }
+            
         }
     },
 
@@ -463,6 +517,13 @@ hr.final-secao {
     box-sizing: border-box;
     padding: 6px;
     position: relative;
+}
+
+.item-selecionado span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 20px;
 }
 
 .item-selecionado.tamanho {
