@@ -12,14 +12,17 @@
         </div>
 
         <!-- SEÇÃO BASE -->
-        <div id="base" class="secao-cadastro" :class="{desativado: etapas.base}">
+        <div
+            id="base"
+            class="secao-cadastro"
+            :class="{ desativado: etapas.base }"
+        >
             <h2 class="secao-cadastro__titulo">Informações base</h2>
             <div class="secao-cadastro__grid">
-                <input-layout maxlength="60" v-model="roupa.descricao">Descrição</input-layout>
-                <input-layout
-                    maxlength="8"
-                    type="moeda"
-                    v-model="precoDigitado"
+                <input-layout maxlength="60" v-model="roupa.descricao"
+                    >Descrição</input-layout
+                >
+                <input-layout maxlength="8" type="moeda" v-model="precoDigitado"
                     >Preço (R$)</input-layout
                 >
                 <select-layout
@@ -47,18 +50,34 @@
         </div>
 
         <!-- SEÇÃO DE CORES -->
-        <div v-if="etapas.base" class="secao-cadastro">
+        <div
+            id="cores"
+            v-if="etapas.base"
+            class="secao-cadastro"
+            :class="{ desativado: etapas.cores }"
+        >
             <h2 class="secao-cadastro__titulo">Cor</h2>
-            <div id="cores" class="secao-cadastro__grid">
-
-                <div class="cor-selecionada" v-for="(cor, i) in coresSelecionadas" :key="i">
-                    <div class="container-cor" :style="'background-color: ' + cor.valor"></div>
-                    <span>{{cor.nome}}</span>
-                    <div class="btn-excluir-cor" @click="removerCor(i)"><i class="fas fa-times"></i></div>
+            <div class="secao-cadastro__grid colunas-3">
+                <div
+                    class="item-selecionado"
+                    v-for="(cor, i) in coresSelecionadas"
+                    :key="i"
+                >
+                    <div
+                        class="container-cor"
+                        :style="'background-color: ' + cor.valor"
+                    ></div>
+                    <span>{{ cor.nome }}</span>
+                    <div class="btn-excluir" @click="removerCor(i)">
+                        <i class="fas fa-times"></i>
+                    </div>
                 </div>
 
-                <div class="adicionar-cor">
-                    <button @click="teste" class="btn btn-adicionar">
+                <div class="area-adicionar">
+                    <button
+                        @click="abrirModal('modalCor')"
+                        class="btn btn-adicionar"
+                    >
                         <i class="fas fa-plus"></i> Adicionar cor
                     </button>
                     <cor-modal
@@ -68,17 +87,87 @@
                         @fechar="modal.modalCor = false"
                     ></cor-modal>
                 </div>
-
             </div>
             <hr class="final-secao" />
             <div class="secao-cadastro__botoes">
-                <span @click="voltarEtapa('base')" class="btn-voltar btn-voltar--span">Voltar</span>
-                <button class="btn btn-continuar" :disabled="!segundoConcluido">
+                <span
+                    @click="voltarEtapa('base')"
+                    class="btn-voltar btn-voltar--span"
+                    >Voltar</span
+                >
+                <button
+                    @click="concluirEtapa('cores', 'tamanhos')"
+                    class="btn btn-continuar"
+                    :disabled="!segundoConcluido"
+                >
                     Continuar <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
         </div>
 
+        <!-- SEÇÃO DE TAMANHOS -->
+        <div id="tamanhos" v-if="etapas.cores" class="secao-cadastro">
+            <h2 class="secao-cadastro__titulo">Tamanhos</h2>
+            <span style="margin-right: 12px"
+                >Escolha um tipo para os tamanhos:</span
+            >
+
+            <input v-model="roupa.tipoTamanho" type="radio" name="tipoTamanho" id="letra" value="LETRA"/>
+            <label style="margin-right: 12px" for="letra">Letras</label>
+            <input v-model="roupa.tipoTamanho" type="radio" name="tipoTamanho" id="numero" value="NUMERO"/>
+            <label for="numero">Números</label>
+
+            <div v-if="roupa.tipoTamanho" class="area-modelos">
+                <div
+                    class="area-modelos__modelo"
+                    v-for="(modelo, indexModelo) in roupa.modelos"
+                    :key="indexModelo"
+                >
+                    <div class="area-modelos__cor flex">
+                        <div class="container-cor" :style="'background-color: ' + modelo.cor.valor"></div>
+                        <span>{{ modelo.cor.nome }}</span>
+                    </div>
+                    
+
+                    <div class="secao-cadastro__grid colunas-3">
+
+                        <div
+                            class="item-selecionado tamanho"
+                            v-for="(tamanhoModelo, indexTamanho) in modelo.tamanhosModelo"
+                            :key="indexTamanho">
+                            <span>{{ 'Tam.: ' + tamanhoModelo.tamanho + ' | Qnt.: ' + tamanhoModelo.quantidade}}</span>
+                            <div class="btn-excluir" @click="removerTamanho(modelo.tamanhosModelo, indexTamanho)">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+
+                        <div class="area-adicionar">
+                            <button
+                                @click="adicionarTamanho(modelo)"
+                                class="btn btn-adicionar"
+                            >
+                                <i class="fas fa-plus"></i> Adicionar tamanho
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="final-secao" />
+            <div class="secao-cadastro__botoes">
+                <span
+                    @click="voltarEtapa('cores')"
+                    class="btn-voltar btn-voltar--span"
+                    >Voltar</span
+                >
+                <button @click="console.log(roupa)" class="btn btn-continuar" :disabled="!terceiroConcluido">
+                    Continuar <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <snack-bar ref="snackbar"></snack-bar>
+        <tamanho-modal ref="tamanhoModal" @enviar="tamanhoSelecionado"></tamanho-modal>
     </div>
 </template>
 
@@ -88,30 +177,34 @@ module.exports = {
         return {
             modal: {
                 modalCor: false,
+                modalTamanho: false,
             },
             etapas: {
                 base: false,
                 cores: false,
                 tamanhos: false,
             },
-            etapaAtual: 'base',
             categorias: [],
+            tamanhos: [],
             generos: ["MASCULINO", "FEMININO", "UNISSEX"],
+            tiposTamanhos: ["LETRAS", "NÚMEROS"],
             precoDigitado: null,
             roupa: {
                 descricao: null,
                 preco: null,
                 categoria: null,
                 ativo: false,
+                tipoTamanho: null,
                 genero: null,
                 modelos: [],
             },
             coresSelecionadas: [],
+            tamanhosSelecionados: [],
         };
     },
 
     methods: {
-        listarCategorias: function () {
+        listarCategorias() {
             let _this = this;
 
             fetch(this.$URLAPI_BASE + "/api/categorias")
@@ -121,36 +214,99 @@ module.exports = {
                 });
         },
 
+        listarTamanhos() {
+            let _this = this;
+
+            fetch(this.$URLAPI_BASE + "/api/tamanhos/" + this.roupa.tipoTamanho)
+                .then((res) => res.json())
+                .then((res) => {
+                    _this.tamanhos = res;
+                });
+        },
+
         teclaPressionada(evt) {},
 
         concluirEtapa(nomeEtapa, proxEtapa) {
             this.etapas[nomeEtapa] = true;
 
-            if(proxEtapa) {
-                setTimeout(function() {
-                    document.getElementById(proxEtapa).scrollIntoView({behavior: "smooth"});
+            if (proxEtapa) {
+                setTimeout(function () {
+                    document
+                        .getElementById(proxEtapa)
+                        .scrollIntoView({ behavior: "smooth" });
                 }, 100);
             }
         },
 
         voltarEtapa(nomeEtapa) {
             this.etapas[nomeEtapa] = false;
-            document.getElementById(nomeEtapa).scrollIntoView({behavior: "smooth"});
+            document
+                .getElementById(nomeEtapa)
+                .scrollIntoView({ behavior: "smooth" });
         },
 
-        teste(e) {
-            console.log(this.modal.modalCor);
-            this.modal.modalCor = true;
-            console.log(this.$refs.modalCor.$el);
+        abrirModal(modal) {
+            this.modal[modal] = true;
+        },
+
+        abrirSnackbar(mensagem, timeout, botao, icone) {
+            this.$refs.snackbar.abrir(mensagem, timeout, botao, icone);
         },
 
         corSelecionada(cor) {
-            this.coresSelecionadas.push(cor);
+            let corAux = this.coresSelecionadas.find((el) => {
+                return el.id === cor.id;
+            });
+
+            if (corAux) {
+                this.abrirSnackbar(
+                    "Essa cor já foi selecionada",
+                    3000,
+                    "fechar",
+                    1
+                );
+                return;
+            }
             this.modal.modalCor = false;
+
+            this.coresSelecionadas.push(cor);
         },
 
         removerCor(index) {
             this.coresSelecionadas.splice(index, 1);
+        },
+
+        tipoTamanhoSelecionado(tipoTamanho) {
+            if (tipoTamanho == "LETRAS") {
+                this.roupa.tipoTamanho = "0";
+            }
+            if (tipoTamanho == "NÚMEROS") {
+                this.roupa.tipoTamanho = "1";
+            }
+            this.listarTamanhos();
+        },
+
+        coresParaModelos() {
+            let modelos = [];
+
+            this.coresSelecionadas.forEach((cor) => {
+                modelos.push({ cor, tamanhosModelo: [] });
+            });
+            this.roupa.modelos = modelos;
+        },
+
+        adicionarTamanho(modelo) {
+            this.$refs.tamanhoModal.abrir(this.roupa.tipoTamanho, modelo);
+        },
+
+        tamanhoSelecionado(evento) {
+            let modelo = evento.modelo;
+            modelo.tamanhosModelo.push(evento.conteudo);
+            this.$refs.tamanhoModal.fechar();
+        },
+
+        removerTamanho(lista, index) {
+            lista.splice(index, 1);
         }
     },
 
@@ -159,7 +315,7 @@ module.exports = {
     },
 
     computed: {
-        primeiroConcluido: function () {
+        primeiroConcluido() {
             return (
                 this.roupa.descricao &&
                 this.roupa.preco &&
@@ -167,14 +323,36 @@ module.exports = {
                 this.roupa.genero
             );
         },
-        segundoConcluido: function () {
+        segundoConcluido() {
             return this.coresSelecionadas.length > 0;
-        }
+        },
+        terceiroConcluido() {
+            if (this.roupa.modelos.length > 0) {
+                return !this.roupa.modelos.some(modelo => {
+                    return modelo.tamanhosModelo.length === 0;
+                })
+            }
+            return false;
+        },
+
+        tipoTamanho() {
+            return this.roupa.tipoTamanho;
+        },
     },
 
     watch: {
         precoDigitado(valor) {
             this.roupa.preco = this.$moeda.paraFloat(valor);
+        },
+
+        tipoTamanho(valor) {
+            this.coresParaModelos();
+        },
+
+        coresSelecionadas() {
+            if (this.roupa.tipoTamanho !== null) {
+                this.coresParaModelos();
+            }
         }
     },
 
@@ -182,6 +360,8 @@ module.exports = {
         "input-layout": httpVueLoader("../components/InputLayout.vue"),
         "select-layout": httpVueLoader("../components/SelectLayout.vue"),
         "cor-modal": httpVueLoader("../components/Cores.vue"),
+        "tamanho-modal": httpVueLoader("../components/Tamanhos.vue"),
+        "snack-bar": httpVueLoader("../components/Snackbar.vue"),
     },
 };
 </script>
@@ -259,7 +439,7 @@ hr.final-secao {
     user-select: none;
 }
 
-#cores.secao-cadastro__grid {
+.secao-cadastro__grid.colunas-3 {
     grid-template-columns: repeat(3, 220px);
     row-gap: 16px;
     column-gap: 26px;
@@ -270,11 +450,11 @@ hr.final-secao {
     width: 220px;
 }
 
-.adicionar-cor {
+.area-adicionar {
     position: relative;
 }
 
-.cor-selecionada {
+.item-selecionado {
     height: 40px;
     border-radius: 20px;
     background-color: rgb(237, 238, 240);
@@ -285,7 +465,11 @@ hr.final-secao {
     position: relative;
 }
 
-.btn-excluir-cor {
+.item-selecionado.tamanho {
+    padding-left: 16px;
+}
+
+.btn-excluir {
     position: absolute;
     right: 16px;
     top: 10px;
@@ -297,5 +481,18 @@ hr.final-secao {
     width: 30px;
     border-radius: 50%;
     margin-right: 16px;
+}
+
+.area-modelos {
+    margin: 32px 0;
+}
+
+.area-modelos__modelo {
+    padding: 16px 0;
+}
+
+.area-modelos__cor {
+    justify-content: flex-start;
+    margin-bottom: 16px;
 }
 </style>
