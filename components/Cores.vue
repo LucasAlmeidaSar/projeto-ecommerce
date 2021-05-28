@@ -128,5 +128,6 @@ li i {
     width: 25px;
     margin-right: 12px;
     border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.25);
 }
 </style>

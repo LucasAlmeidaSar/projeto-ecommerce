@@ -20,7 +20,7 @@
           <th>Status</th>
           <th>Ações</th>
         </tr>
-        <tr v-for="produto in produtos">
+        <tr v-for="(produto, i) in produtos" :key="i">
           <td>{{produto.id}}</td>
           <td>{{produto.descricao}}</td>
           <td>R$ {{produto.preco.toFixed(2).replace('.', ',')}}</td>
