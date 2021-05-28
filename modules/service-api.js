@@ -74,6 +74,12 @@ const service = {
             return true;
         }
         return false;
+    },
+
+    async removerProduto(id) {
+        let resposta = await fetch(URLAPI_BASE + PATH_ROUPA + id, {method: 'delete'});
+
+        return resposta.ok;
     }
 }
 

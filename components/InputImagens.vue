@@ -23,6 +23,7 @@ module.exports = {
 
     methods: {
         imagemSelecionada(evento) {
+            let _this = this;
             if (evento.target.files[0]) {
                 let imagem = evento.target.files[0];
                 this.imagens.push(imagem);
@@ -30,29 +31,65 @@ module.exports = {
                 evento.target.value = "";
 
                 let div = this.$refs.div;
-                div.innerHTML = "";
 
-                this.imagens.forEach((imagem) => {
-                    let img = document.createElement("img");
-                    img.classList.add("area-modelos__imagem");
+                let index = this.imagens.indexOf(imagem);
+                let divImg = document.createElement("div");
+                divImg.classList.add("container-img");
+                divImg.onclick = this.removerEvent(index, divImg);
 
-                    let reader = new FileReader();
+                let img = document.createElement("img");
+                img.classList.add("area-modelos__imagem");
 
-                    reader.onload = function () {
-                        img.src = reader.result;
-                    };
-                    reader.readAsDataURL(imagem);
+                let reader = new FileReader();
 
-                    div.append(img);
-                });
+                reader.onload = function () {
+                    img.src = reader.result;
+                    divImg.append(img);
+
+                    div.append(divImg);
+                };
+                reader.readAsDataURL(imagem);
+                
             }
         },
-    },
 
-    watch: {
-        imagens() {
-            console.log(this.imagens);
+        removerEvent(id, el) {
+            let _this = this;
+
+            return function() {
+
+                _this.imagens.splice(id, 1);
+                
+                _this.$emit("change", _this.imagens);
+                
+                _this.resetarElementos();
+            }
         },
+
+        resetarElementos() {
+            let div = this.$refs.div;
+
+            div.innerHTML = '';
+
+            this.imagens.forEach((imagem, index) => {
+                let divImg = document.createElement("div");
+                divImg.classList.add("container-img");
+                divImg.onclick = this.removerEvent(index, divImg);
+
+                let img = document.createElement("img");
+                img.classList.add("area-modelos__imagem");
+
+                let reader = new FileReader();
+
+                reader.onload = function () {
+                    img.src = reader.result;
+                    divImg.append(img);
+
+                    div.append(divImg);
+                };
+                reader.readAsDataURL(imagem);
+            });
+        }
     },
 };
 </script>
@@ -72,8 +109,6 @@ module.exports = {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    margin: 0 12px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 input[type="file"] {
@@ -93,5 +128,46 @@ label {
     justify-content: center;
     flex-direction: column;
     color: rgb(20, 126, 224);
+}
+
+.area-imagens {
+    display: flex;
+    align-items: center;
+}
+
+.container-img {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    margin: 0 12px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.container-img::after {
+    text-rendering: auto;
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    content: "\f2ed";
+    color: 	#aa0f35;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-img:hover::after {
+    opacity: 1;
+}
+
+.container-img:hover {
+    border: 1px solid 	#aa0f35;
 }
 </style>

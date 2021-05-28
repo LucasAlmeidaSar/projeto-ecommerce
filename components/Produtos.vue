@@ -34,7 +34,7 @@
               <i class="fas fa-eye"></i>
             </button>
             <button class="btn-acoes editar"><i class="fas fa-pen"></i></button>
-            <button class="btn-acoes remover">
+            <button title="Remover produto" class="btn-acoes remover" @click="removerProduto(produto.id)">
               <i class="fas fa-trash"></i>
             </button>
           </td>
@@ -71,7 +71,7 @@ module.exports = {
     }
   },
   methods: {
-    listarProdutos: function() {
+    listarProdutos() {
       let _this = this;
 
       fetch(this.$URLAPI_BASE + "/api/roupas")
@@ -80,6 +80,11 @@ module.exports = {
           _this.produtos = res.content;
         });
     },
+
+    async removerProduto(id) {
+      let resultado = await this.$api.removerProduto(id);
+      this.listarProdutos();
+    }
   },
   
   mounted: function() {
