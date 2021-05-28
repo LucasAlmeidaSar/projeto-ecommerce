@@ -138,7 +138,7 @@
                             :title="'Tamanho: ' + tamanhoModelo.tamanho + ' | Quantidade: ' + tamanhoModelo.quantidade"
                             >
                             <span>{{ 'Tam.: ' + tamanhoModelo.tamanho + ' | Qnt.: ' + tamanhoModelo.quantidade}}</span>
-                            <div class="btn-excluir" @click="removerTamanho(modelo.tamanhosModelo, indexTamanho)">
+                            <div class="btn-excluir" @click="removerDoArray(modelo.tamanhosModelo, indexTamanho)">
                                 <i class="fas fa-times"></i>
                             </div>
                         </div>
@@ -185,9 +185,7 @@
                         <span>{{ modelo.cor.nome }}</span>
                     </div>
                     
-                    <div>
-                        <input type="file" accept="image/png,image/jpeg" @change="imagensSelecionadas($event, modelo.id)" multiple>
-                    </div>
+                    <input-imagens @change="imagensAlteradas($event, modelo.id)"></input-imagens>
                 </div>
             </div>
             <hr class="final-secao" />
@@ -197,7 +195,7 @@
                     class="btn-voltar btn-voltar--span"
                     >Voltar</span
                 >
-                <button @click="salvarImagens" class="btn btn-continuar" :disabled="!finalConcluido || enviando">
+                <button @click="salvarImagens" class="btn btn-continuar" :disabled="!concluido || enviando">
                     Salvar
                 </button>
             </div>
@@ -239,7 +237,8 @@ module.exports = {
             coresSelecionadas: [],
             tamanhosSelecionados: [],
             enviando: false,
-            imagens: new Map(),
+            imagens: {},
+            concluido: false,
         };
     },
 
@@ -345,7 +344,7 @@ module.exports = {
             this.$refs.tamanhoModal.fechar();
         },
 
-        removerTamanho(lista, index) {
+        removerDoArray(lista, index) {
             lista.splice(index, 1);
         },
 
@@ -358,7 +357,6 @@ module.exports = {
                 if (resposta) {
                     this.roupa = resposta;
                     console.log('Roupa atualizada retornada: ', this.roupa);
-
                 }
             }
             else {
@@ -376,22 +374,29 @@ module.exports = {
             
             let _this = this;
             this.roupa.modelos.forEach(modelo => {
-                _this.imagens.set(modelo.id, null);
+                _this.imagens[modelo.id] = [];
             })
             this.concluirEtapa('tamanhos', 'final');
         },
 
-        imagensSelecionadas(event, modeloId) {
-            let files = event.target.files;
-            this.imagens.set(modeloId, files);
+        imagensAlteradas(event, modeloId) {
+            this.imagens[modeloId] = event;
+
+            for (const i in this.imagens) {
+                if (this.imagens[i].length < 1) {
+                    this.concluido = false;
+                    return;
+                }
+            }
+            this.concluido = true;
         },
 
         async salvarImagens() {
             let _this = this;
             console.log(this.imagens);
             this.enviando = true;
-            for (const imagem of this.imagens) {
-                let enviou = await _this.$api.enviarImagens(imagem[1], imagem[0]);
+            for (const i in this.imagens) {
+                let enviou = await _this.$api.enviarImagens(this.imagens[i], i);
 
                 console.log("Enviou? ", enviou);
             };
@@ -407,7 +412,9 @@ module.exports = {
             this.enviando = false;
 
             this.$emit('alterar-componente', 'app-produtos');
-        }
+        },
+
+        
     },
 
     mounted() {
@@ -436,8 +443,8 @@ module.exports = {
         },
 
         finalConcluido() {
-            for(let key in this.imagens.keys()) {
-                if(this.imagens.get(key) === null || this.imagens.get(key).length === 0) {
+            for(const i in this.imagens) {
+                if(this.imagens[i] === null || this.imagens[i].length === 0) {
                     return false;
                 }
             }
@@ -450,7 +457,7 @@ module.exports = {
 
         modelosRoupa() {
             return this.roupa.modelos;
-        }
+        },
     },
 
     watch: {
@@ -460,7 +467,7 @@ module.exports = {
 
         tipoTamanho() {
             this.modelosAtualizados();
-        }
+        },
     },
 
     components: {
@@ -469,6 +476,7 @@ module.exports = {
         "cor-modal": httpVueLoader("../components/Cores.vue"),
         "tamanho-modal": httpVueLoader("../components/Tamanhos.vue"),
         "snack-bar": httpVueLoader("../components/Snackbar.vue"),
+        "input-imagens": httpVueLoader("../components/InputImagens.vue")
     },
 };
 </script>
