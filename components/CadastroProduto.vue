@@ -442,15 +442,6 @@ module.exports = {
             return false;
         },
 
-        finalConcluido() {
-            for(const i in this.imagens) {
-                if(this.imagens[i] === null || this.imagens[i].length === 0) {
-                    return false;
-                }
-            }
-            return true;
-        },
-
         tipoTamanho() {
             return this.roupa.tipoTamanho;
         },
