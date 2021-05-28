@@ -57,17 +57,17 @@
             :class="{ desativado: etapas.cores }"
         >
             <h2 class="secao-cadastro__titulo">Cor</h2>
-            <div class="secao-cadastro__grid colunas-3">
+            <div class="secao-cadastro__grid selecao-itens">
                 <div
                     class="item-selecionado"
-                    v-for="(cor, i) in coresSelecionadas"
+                    v-for="(modelo, i) in modelosRoupa"
                     :key="i"
                 >
                     <div
                         class="container-cor"
-                        :style="'background-color: ' + cor.valor"
+                        :style="'background-color: ' + modelo.cor.valor"
                     ></div>
-                    <span>{{ cor.nome }}</span>
+                    <span>{{ modelo.cor.nome }}</span>
                     <div class="btn-excluir" @click="removerCor(i)">
                         <i class="fas fa-times"></i>
                     </div>
@@ -120,7 +120,7 @@
             <div v-if="roupa.tipoTamanho" class="area-modelos">
                 <div
                     class="area-modelos__modelo"
-                    v-for="(modelo, indexModelo) in roupa.modelos"
+                    v-for="(modelo, indexModelo) in modelosRoupa"
                     :key="indexModelo"
                 >
                     <div class="area-modelos__cor flex">
@@ -129,7 +129,7 @@
                     </div>
                     
 
-                    <div class="secao-cadastro__grid colunas-3">
+                    <div class="secao-cadastro__grid selecao-itens">
 
                         <div
                             class="item-selecionado tamanho"
@@ -145,7 +145,7 @@
 
                         <div class="area-adicionar">
                             <button
-                                @click="adicionarTamanho(modelo)"
+                                @click="adicionarTamanho(indexModelo)"
                                 class="btn btn-adicionar"
                             >
                                 <i class="fas fa-plus"></i> Adicionar tamanho
@@ -162,7 +162,7 @@
                     class="btn-voltar btn-voltar--span"
                     >Voltar</span
                 >
-                <button @click="enviarProduto" class="btn btn-continuar" :disabled="!terceiroConcluido || enviando">
+                <button @click="salvarProduto" class="btn btn-continuar" :disabled="!terceiroConcluido || enviando">
                     Continuar <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
@@ -174,16 +174,33 @@
             v-if="etapas.tamanhos"
         >
             <h2 class="secao-cadastro__titulo">Imagens</h2>
-            <div class="secao-cadastro__grid">
-                Imagens
+            <div class="area-modelos">
+                <div
+                    class="area-modelos__modelo"
+                    v-for="(modelo, indexModelo) in modelosRoupa"
+                    :key="indexModelo"
+                >
+                    <div class="area-modelos__cor flex">
+                        <div class="container-cor" :style="'background-color: ' + modelo.cor.valor"></div>
+                        <span>{{ modelo.cor.nome }}</span>
+                    </div>
+                    
+                    <div>
+                        <input type="file" accept="image/png,image/jpeg" @change="imagensSelecionadas($event, modelo.id)" multiple>
+                    </div>
+                </div>
             </div>
             <hr class="final-secao" />
-            <button
-                class="btn"
-                :disabled="!primeiroConcluido"
-            >
-                Continuar <i class="fas fa-arrow-right"></i>
-            </button>
+            <div class="secao-cadastro__botoes">
+                <span
+                    @click="voltarEtapa('tamanhos')"
+                    class="btn-voltar btn-voltar--span"
+                    >Voltar</span
+                >
+                <button @click="salvarImagens" class="btn btn-continuar" :disabled="!finalConcluido || enviando">
+                    Salvar
+                </button>
+            </div>
         </div>
 
         <snack-bar ref="snackbar"></snack-bar>
@@ -222,7 +239,7 @@ module.exports = {
             coresSelecionadas: [],
             tamanhosSelecionados: [],
             enviando: false,
-            
+            imagens: new Map(),
         };
     },
 
@@ -277,11 +294,14 @@ module.exports = {
         },
 
         corSelecionada(cor) {
-            let corAux = this.coresSelecionadas.find((el) => {
-                return el.id === cor.id;
+            let modeloAux = this.roupa.modelos.find((el) => {
+                if (el.cor) {
+                    return el.cor.id === cor.id;
+                }
+                return false;
             });
 
-            if (corAux) {
+            if (modeloAux) {
                 this.abrirSnackbar(
                     "Essa cor já foi selecionada",
                     3000,
@@ -292,11 +312,11 @@ module.exports = {
             }
             this.modal.modalCor = false;
 
-            this.coresSelecionadas.push(cor);
+            this.roupa.modelos.push({cor, tamanhosModelo: []});
         },
 
         removerCor(index) {
-            this.coresSelecionadas.splice(index, 1);
+            this.roupa.modelos.splice(index, 1);
         },
 
         tipoTamanhoSelecionado(tipoTamanho) {
@@ -309,13 +329,10 @@ module.exports = {
             this.listarTamanhos();
         },
 
-        coresParaModelos() {
-            let modelos = [];
-
-            this.coresSelecionadas.forEach((cor) => {
-                modelos.push({ cor, tamanhosModelo: [] });
-            });
-            this.roupa.modelos = modelos;
+        modelosAtualizados() {
+            this.roupa.modelos.forEach(modelo => {
+                modelo.tamanhosModelo = [];
+            })
         },
 
         adicionarTamanho(modelo) {
@@ -323,8 +340,8 @@ module.exports = {
         },
 
         tamanhoSelecionado(evento) {
-            let modelo = evento.modelo;
-            modelo.tamanhosModelo.push(evento.conteudo);
+            let modeloIndex = evento.modelo;
+            this.roupa.modelos[modeloIndex].tamanhosModelo.push(evento.conteudo);
             this.$refs.tamanhoModal.fechar();
         },
 
@@ -332,35 +349,64 @@ module.exports = {
             lista.splice(index, 1);
         },
 
-        async enviarProduto() {
+        async salvarProduto() {
             this.enviando = true;
-            let path = '/api/roupas';
-            console.log('Enviando roupa');
+            
+            if (this.roupa.id) {
+                let resposta = await this.$api.atualizarProduto(this.roupa);
 
-            let objJson = JSON.stringify(this.roupa);
+                if (resposta) {
+                    this.roupa = resposta;
+                    console.log('Roupa atualizada retornada: ', this.roupa);
 
-            let resposta = await fetch(this.$URLAPI_BASE + path, {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                },
-                body: objJson,
+                }
+            }
+            else {
+                let resposta = await this.$api.enviarProduto(this.roupa);
+
+                if (resposta) {
+                    let respostaGet = await fetch(this.$URLAPI_BASE + resposta.path);
+
+                    this.roupa = await respostaGet.json();
+                    console.log('Roupa retornada: ', this.roupa);
+                }
+            }
+
+            this.enviando = false;
+            
+            let _this = this;
+            this.roupa.modelos.forEach(modelo => {
+                _this.imagens.set(modelo.id, null);
+            })
+            this.concluirEtapa('tamanhos', 'final');
+        },
+
+        imagensSelecionadas(event, modeloId) {
+            let files = event.target.files;
+            this.imagens.set(modeloId, files);
+        },
+
+        async salvarImagens() {
+            let _this = this;
+            console.log(this.imagens);
+            this.enviando = true;
+            for (const imagem of this.imagens) {
+                let enviou = await _this.$api.enviarImagens(imagem[1], imagem[0]);
+
+                console.log("Enviou? ", enviou);
+            };
+
+            let roupaFinal = await fetch(this.$URLAPI_BASE + '/api/roupas/alternarAtivo/' + this.roupa.id, {
+                method: 'post'
             });
 
-            if (resposta.status === 201) {
-                let objResposta = await resposta.json();
-                console.log('Enviado com sucesso! Resposta: ', objResposta);
+            let resposta = await roupaFinal.json();
 
-                let respostaGet = await fetch(this.$URLAPI_BASE + objResposta.path);
+            console.log(resposta);
 
-                let roupaResposta = await respostaGet.json();
+            this.enviando = false;
 
-                this.roupa = roupaResposta;
-                console.log('Roupa retornada da API: ', this.roupa);
-                this.concluirEtapa('tamanhos', 'final');
-            }
-            
+            this.$emit('alterar-componente', 'app-produtos');
         }
     },
 
@@ -378,7 +424,7 @@ module.exports = {
             );
         },
         segundoConcluido() {
-            return this.coresSelecionadas.length > 0;
+            return this.modelosRoupa.length > 0;
         },
         terceiroConcluido() {
             if (this.roupa.modelos.length > 0) {
@@ -389,9 +435,22 @@ module.exports = {
             return false;
         },
 
+        finalConcluido() {
+            for(let key in this.imagens.keys()) {
+                if(this.imagens.get(key) === null || this.imagens.get(key).length === 0) {
+                    return false;
+                }
+            }
+            return true;
+        },
+
         tipoTamanho() {
             return this.roupa.tipoTamanho;
         },
+
+        modelosRoupa() {
+            return this.roupa.modelos;
+        }
     },
 
     watch: {
@@ -399,14 +458,8 @@ module.exports = {
             this.roupa.preco = this.$moeda.paraFloat(valor);
         },
 
-        tipoTamanho(valor) {
-            this.coresParaModelos();
-        },
-
-        coresSelecionadas() {
-            if (this.roupa.tipoTamanho !== null) {
-                this.coresParaModelos();
-            }
+        tipoTamanho() {
+            this.modelosAtualizados();
         }
     },
 
@@ -493,7 +546,7 @@ hr.final-secao {
     user-select: none;
 }
 
-.secao-cadastro__grid.colunas-3 {
+.secao-cadastro__grid.selecao-itens {
     grid-template-columns: repeat(3, 220px);
     row-gap: 16px;
     column-gap: 26px;
@@ -542,6 +595,7 @@ hr.final-secao {
     width: 30px;
     border-radius: 50%;
     margin-right: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .area-modelos {
@@ -555,5 +609,9 @@ hr.final-secao {
 .area-modelos__cor {
     justify-content: flex-start;
     margin-bottom: 16px;
+}
+
+input[type="radio"], label {
+    cursor: pointer;
 }
 </style>

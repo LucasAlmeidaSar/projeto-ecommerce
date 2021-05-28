@@ -78,11 +78,13 @@
     </div>
 
     <script type="module">
-        import URLAPI_BASE from '../modules/api-config.js';
+        import {URLAPI_BASE} from '../modules/service-api.js';
+        import service from '../modules/service-api.js';
         import {moeda} from '../modules/util.js';
 
         Object.defineProperty(Vue.prototype, '$URLAPI_BASE', { value: URLAPI_BASE});
         Object.defineProperty(Vue.prototype, '$jq', {value: $});
+        Object.defineProperty(Vue.prototype, '$api', {value: service});
         Object.defineProperty(Vue.prototype, '$moeda', {value: moeda});
 
         let vapp = new Vue({
