@@ -10,15 +10,17 @@ const App = {
      iniciar() {
 
         onload = () => {
-            ativarEfeitosAoCarregar()
+          ativarEfeitosAoCarregar()
 
-            ativarEfeitosDoMenuCelular();
+          ativarEfeitosDoMenuCelular();
 
-            ativarCarrossel();
+          ativarCarrossel();
 
-            ativarCarrinho();
+          ativarCarrinho();
 
-            ativarLupa();    
+          ativarLupa();   
+                      
+          window.scrollTo(top)
         }
         
         onscroll = () => ativarEfeitosDeScroll();        
