@@ -40,15 +40,11 @@ module.exports = {
                 let img = document.createElement("img");
                 img.classList.add("area-modelos__imagem");
 
-                let reader = new FileReader();
 
-                reader.onload = function () {
-                    img.src = reader.result;
-                    divImg.append(img);
+                img.src = URL.createObjectURL(imagem);
+                divImg.append(img);
 
-                    div.append(divImg);
-                };
-                reader.readAsDataURL(imagem);
+                div.append(divImg);
                 
             }
         },
@@ -79,15 +75,10 @@ module.exports = {
                 let img = document.createElement("img");
                 img.classList.add("area-modelos__imagem");
 
-                let reader = new FileReader();
+                img.src = URL.createObjectURL(imagem);
+                divImg.append(img);
 
-                reader.onload = function () {
-                    img.src = reader.result;
-                    divImg.append(img);
-
-                    div.append(divImg);
-                };
-                reader.readAsDataURL(imagem);
+                div.append(divImg);
             });
         }
     },
@@ -109,6 +100,7 @@ module.exports = {
     width: 100px;
     height: 100px;
     object-fit: cover;
+    display: block;
 }
 
 input[type="file"] {
@@ -128,6 +120,7 @@ label {
     justify-content: center;
     flex-direction: column;
     color: rgb(20, 126, 224);
+    margin-right: 16px;
 }
 
 .area-imagens {
