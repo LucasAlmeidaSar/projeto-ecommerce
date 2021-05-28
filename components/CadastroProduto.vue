@@ -381,7 +381,6 @@ module.exports = {
 
         imagensAlteradas(event, modeloId) {
             this.imagens[modeloId] = event;
-            console.log(this.imagens);
 
             for (const i in this.imagens) {
                 if (this.imagens[i].length < 1) {
