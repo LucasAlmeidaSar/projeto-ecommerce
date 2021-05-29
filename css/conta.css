@@ -186,6 +186,29 @@
     grid-column-end: 2;
 }
 
+.tabDiv {
+    display: none;
+}
+
+.tabDiv.ativo {
+    display: block;
+}
+
+.tabDados {
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 50px;
+    flex-direction: column;
+    width: 75%;
+    height: 300px;
+}
+
+.tabSenha {}
+
+.tabEmail {}
+
+.tabEndereço {}
+
 .aba:hover {
     background-color: #d3d3d3;
     transition: 0.3s;
