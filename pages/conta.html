@@ -105,13 +105,28 @@
             <!-- INFORMAÇÕES DA CONTA -->
             <div id="tabConta" class="tabConta tabConteudo">
                 <div class="tab_abas grid_abas">
-                    <div class="aba aba_dados flex">Informações da Conta</div>
-                    <div class="aba aba_alterarSenha flex">Alterar Senha</div>
-                    <div class="aba aba_alterarEmail flex">Alterar E-mail</div>
-                    <div class="aba aba_alterarEndereço flex">Alterar Endereço</div>
+                    <div id="abaDados" class="aba aba_dados flex" onclick="ativarAba('abaDados','tabDados')">Informações da Conta</div>
+                    <div id="abaSenha" class="aba aba_alterarSenha flex" onclick="ativarAba('abaSenha','tabSenha')">Alterar Senha</div>
+                    <div id="abaEmail" class="aba aba_alterarEmail flex" onclick="ativarAba('abaEmail','tabEmail')">Alterar E-mail</div>
+                    <div id="abaEndereço" class="aba aba_alterarEndereço flex" onclick="ativarAba('abaEndereço','tabEndereço')">Alterar Endereço</div>
+
                 </div>
 
-                <div class="tab"></div>
+                <div class="tab">
+                    <div id="tabDados" class="tabDiv">
+                        <div class="tabDados flex">
+                            <span>Nome</span>
+                            <span>Login</span>
+                            <span>Cpf</span>
+                            <span>Telefone</span>
+                            <span>Gênero</span>
+                        </div>
+                    </div>
+                    <div id="tabSenha" class="tabSenha tabDiv">abaSenha</div>
+                    <div id="tabEmail" class="tabEmail tabDiv">abaEmail</div>
+                    <div id="tabEndereço" class="tabEndereço tabDiv">abaEndereço</div>
+
+                </div>
             </div>
             <!-- HISTÓRICO DE COMPRAS -->
             <div id="tabHistorico" class="tab tabHistorico tabConteudo">
@@ -245,6 +260,26 @@
         tabConta.classList.toggle("ativo"); // comando para ativar a div infoConta quando a pagina carregar
         let tabAtual = tabConta;
 
+        let abaDados = document.getElementById("abaDados");
+        abaDados.classList.toggle("ativo");
+        let abaAtual = abaDados;
+
+        let tabDados = document.getElementById("tabDados");
+        tabDados.classList.toggle("ativo");
+        let divAtual = tabDados;
+
+        function ativarAba(item, tabDiv) {
+
+            let aba = document.getElementById(item);
+            aba.classList.toggle("ativo");
+            abaAtual.classList.toggle("ativo");
+            abaAtual = aba;
+
+            let div = document.getElementById(tabDiv);
+            div.classList.toggle("ativo");
+            divAtual.classList.toggle("ativo");
+            divAtual = div;
+        }
 
         //Função responsável por mudar as divs quando clicar em uma das opções principais 
         function alterarInfo(item) {
