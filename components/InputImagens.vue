@@ -6,7 +6,7 @@
             <span>Adicionar</span>
             <input
                 type="file"
-                accept="image/png,image/jpeg"
+                accept="image/png,image/jpeg,image/webp"
                 @change="imagemSelecionada($event)"
             />
         </label>
