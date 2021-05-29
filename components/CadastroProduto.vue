@@ -25,13 +25,15 @@
                 <input-layout maxlength="8" type="moeda" v-model="precoDigitado"
                     >Preço (R$)</input-layout
                 >
-                <select-layout
-                    title="Categoria"
-                    v-model="roupa.categoria"
-                    :options="categorias"
-                    campo="nome"
-                    placeholder="Categoria"
-                ></select-layout>
+                <div>
+                    <select-layout
+                        title="Categoria"
+                        v-model="roupa.categoria"
+                        :options="categorias"
+                        campo="nome"
+                        placeholder="Categoria"
+                    ></select-layout>
+                </div>
                 <select-layout
                     title="Gênero"
                     v-model="roupa.genero"

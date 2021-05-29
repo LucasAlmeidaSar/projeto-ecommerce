@@ -1,7 +1,7 @@
 <template>
     <div class="modal" v-if="open" :tabindex="tabindex" @blur="fechar">
         <ul>
-            <li @click="novaCorAberta = true" class="btn-addcor"><i class="fas fa-plus"></i> Nova cor</li>
+            <li @click="abrirModalCor" class="btn-addcor"><i class="fas fa-plus"></i> Nova cor</li>
             <li v-for="(cor, i) in cores" :key="i" @click="$emit('selected', cor)">
                 <div
                     class="cor"
@@ -10,7 +10,7 @@
                 <span>{{ cor.nome }}</span>
             </li>
         </ul>
-        <nova-cor v-if="novaCorAberta" @fechar="fecharModal"></nova-cor>
+        <nova-cor ref="modalCor" @fechar="fecharModal"></nova-cor>
     </div>
 </template>
 
@@ -52,13 +52,18 @@ module.exports = {
         },
 
         fecharModal(resultado) {
-            this.novaCorAberta = false;
             this.$el.focus();
+            this.novaCorAberta = false;
 
             if(resultado === true) {
                 this.listarCores();
             }
         },
+
+        abrirModalCor() {
+            this.$refs.modalCor.abrir();
+            this.novaCorAberta = true;
+        }
     },
 
     mounted() {
@@ -124,10 +129,6 @@ li i {
 }
 
 .cor {
-    height: 25px;
-    width: 25px;
     margin-right: 12px;
-    border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.25);
 }
 </style>
