@@ -141,6 +141,7 @@
   border-radius: 100%;
   box-shadow: 0 0 0 2px #efefef;
   transition: box-shadow .5s;
+  background-color: none;
 }
 
 .cores .nome-filtro.ativo{
@@ -161,9 +162,10 @@
   top: 0;
   left: 0;
   opacity: 1;
+  background-color: inherit;
 }
 
-.nome-filtro.preto::before{  background-color: black;  }
+/* .nome-filtro.preto::before{  background-color: black;  } */
 .nome-filtro.azul::before{  background-color: blue;  }
 .nome-filtro.vermelho::before{  background-color: red;  }
 .nome-filtro.cinza::before{  background-color: gray;  }
