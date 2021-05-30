@@ -33,7 +33,6 @@ module.exports = {
             this.icone = icone;
 
             if (this.open === false) {
-                console.log("chamou");
                 _this = this;
                 this.open = true;
                 this.mensagem = mensagem;

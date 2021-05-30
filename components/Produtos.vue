@@ -1,6 +1,6 @@
 <template>
   <!-- Estrutura da página aqui, é necessário manter essa div como pai dos outros elementos -->
-  <div class="">
+  <div>
     <div class="toolbar">
       <button v-on:click="$emit('alterar-componente', 'app-cadastro-produto')" class="btn-novo">
         <i class="fas fa-plus-circle"></i> Adicionar
