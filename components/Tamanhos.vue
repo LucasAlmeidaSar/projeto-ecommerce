@@ -43,8 +43,10 @@ module.exports = {
 
     methods: {
         fechar() {
-            this.conteudo.tamanho = null;
-            this.conteudo.quantidade = 1;
+            this.conteudo = {
+                tamanho: null,
+                quantidade: 1,
+            }
             this.modelo = null;
             this.open = false;
         },
@@ -54,6 +56,7 @@ module.exports = {
             this.modelo = modelo;
 
             this.listarTamanhos(tipoTamanho);
+
         },
 
         listarTamanhos(tipoTamanho) {
@@ -83,7 +86,7 @@ module.exports = {
 
         quantidade() {
             return this.conteudo.quantidade;
-        }
+        },
     },
 
     watch: {

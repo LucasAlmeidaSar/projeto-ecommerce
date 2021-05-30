@@ -342,6 +342,15 @@ module.exports = {
 
         tamanhoSelecionado(evento) {
             let modeloIndex = evento.modelo;
+
+            let jaExiste = this.roupa.modelos[modeloIndex].tamanhosModelo.some(tamModelo => {
+                return tamModelo.tamanho === evento.conteudo.tamanho;
+            });
+
+            if(jaExiste) {
+                this.abrirSnackbar('Esse tamanho já foi selecionado', 3000, 'fechar', 1);
+                return;
+            }
             this.roupa.modelos[modeloIndex].tamanhosModelo.push(evento.conteudo);
             this.$refs.tamanhoModal.fechar();
         },
