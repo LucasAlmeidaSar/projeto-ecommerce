@@ -38,8 +38,12 @@
 
   <main class="container-principal grid">
 
-    <aside class="filtros">      
-      <div class="secao-filtro cores">
+    <aside class="filtros">   
+      <div class="flex" style="justify-content: space-between;">
+        <p style="margin: 10px; font-size: .7rem; color: #666;">Filtros <i class="fas fa-filter"></i></p> 
+        <button class="btn-limpa-filtros" data-js="btnLimpaFiltros">Limpar filtros <b>X</b></button>  
+      </div>
+      <div class="secao-filtro cores">       
         <button class="btn-colapsado">Cor</button>
 
         <div class="conteudo-colapsado">
@@ -65,20 +69,29 @@
 
 
       <div class="secao-filtro">
-        <button class="btn-colapsado">Gênero</button>
+        <button class="btn-colapsado" >Gênero</button>
         <div class="conteudo-colapsado">
           <ul class="lista-filtros">
 
             <li class="filtro-container">
-              <button class="nome-filtro">Masculino</button>
+              <button class="nome-filtro" 
+              data-js="filtroGenero" 
+              data-name="MASCULINO"
+              onclick="filtrarPorGenero('MASCULINO')">Masculino</button>
             </li>
 
             <li class="filtro-container">
-              <button class="nome-filtro">Feminino</button>
+              <button class="nome-filtro" 
+              data-js="filtroGenero" 
+              data-name="FEMININO"
+              onclick="filtrarPorGenero('FEMININO')">Feminino</button>
             </li>
 
             <li class="filtro-container">
-              <button class="nome-filtro">Unissex</button>
+              <button class="nome-filtro" 
+              data-js="filtroGenero" 
+              data-name="UNISSEX"
+              onclick="filtrarPorGenero('UNISSEX')">Unissex</button>
             </li>
 
           </ul>
@@ -112,105 +125,13 @@
 
 
     <div class="grid-produtos grid" data-js="gridProdutos">
-      <div class="card">
+      <!-- <div class="card">
         <img src="../img/camisaMasculina.jpg" alt="" class="imagem card__imagem">
         <div class="card__descricao">
           <h3 class="card__titulo">Legenda</h3>
           <p class="card__subtitulo">R$ 129,90</p>          
         </div>
-      </div>
-
-      <div class="card">
-        <img src="../img/camisaMasculina2.jpg" alt="" class="imagem card__imagem">
-        <div class="card__descricao">
-          <h3 class="card__titulo">Legenda</h3>
-          <p class="card__subtitulo">R$ 129,90</p>
-          <!-- <ul class="flex">
-            <li class="card_cor">1</li>
-            <li class="card_cor">2</li>
-            <li class="card_cor">3</li>
-          </ul> -->
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../img/blusaFeminina.jpg" alt="" class="imagem card__imagem">
-        <div class="card__descricao">
-          <h3 class="card__titulo">Legenda</h3>
-          <p class="card__subtitulo">R$ 129,90</p>
-          <!-- <ul class="flex">
-            <li class="card_cor">1</li>
-            <li class="card_cor">2</li>
-            <li class="card_cor">3</li>
-          </ul> -->
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../img/blusaFeminina2.png" alt="" class="imagem card__imagem">
-        <div class="card__descricao">
-          <h3 class="card__titulo">Legenda</h3>
-          <p class="card__subtitulo">R$ 129,90</p>
-          <!-- <ul class="flex">
-            <li class="card_cor">1</li>
-            <li class="card_cor">2</li>
-            <li class="card_cor">3</li>
-          </ul> -->
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../img/camisaMasculina3.jpg" alt="" class="imagem card__imagem">
-        <div class="card__descricao">
-          <h3 class="card__titulo">Legenda</h3>
-          <p class="card__subtitulo">R$ 129,90</p>
-          <!-- <ul class="flex">
-            <li class="card_cor">1</li>
-            <li class="card_cor">2</li>
-            <li class="card_cor">3</li>
-          </ul> -->
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../img/blusaFeminina3.png" alt="" class="imagem card__imagem">
-        <div class="card__descricao">
-          <h3 class="card__titulo">Legenda</h3>
-          <p class="card__subtitulo">R$ 129,90</p>
-          <!-- <ul class="flex">
-            <li class="card_cor">1</li>
-            <li class="card_cor">2</li>
-            <li class="card_cor">3</li>
-          </ul> -->
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../img/foto1-catalogolist.jpg" alt="" class="imagem card__imagem">
-        <div class="card__descricao">
-          <h3 class="card__titulo">Legenda</h3>
-          <p class="card__subtitulo">R$ 129,90</p>
-          <!-- <ul class="flex">
-            <li class="card_cor">1</li>
-            <li class="card_cor">2</li>
-            <li class="card_cor">3</li>
-          </ul> -->
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../img/redshirt.jpg" alt="" class="imagem card__imagem">
-        <div class="card__descricao">
-          <h3 class="card__titulo">Legenda</h3>
-          <p class="card__subtitulo">R$ 129,90</p>
-          <!-- <ul class="flex">
-            <li class="card_cor">1</li>
-            <li class="card_cor">2</li>
-            <li class="card_cor">3</li>
-          </ul> -->
-        </div>
-      </div>
-
+      </div>      -->
     </div>
   </main>
 
@@ -243,5 +164,6 @@
   </script>
 
   <script src="../modules/produtos.js"></script>
+  <script src="../modules/filtrosProdutos.js"></script>
 </body>
 </html>

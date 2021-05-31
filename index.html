@@ -36,12 +36,22 @@
             <ul class="flex">
                 <li> <a class="[ btn btn-nav ]  js-itensMenuTopo" href="#">Início</a> </li>
                 <li class="dropdown">
-                    <a class="[ btn btn-nav dropdown-alternador ]  js-itensMenuTopo" href="./pages/produtos.html">Produtos</a>
+                    <a class="[ btn btn-nav dropdown-alternador ]  js-itensMenuTopo"
+                       onclick="guardarGenero('todos')" 
+                       href="./pages/produtos.html">Produtos</a>
                     <div class="[ dropdown-conteudo flex ]  js-itensMenuTopo">
-                        <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" href="./pages/produtos.html">Todos</a>
-                        <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" href="#">Masculinos</a>
-                        <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" href="#">Femininos</a>
-                        <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" href="#">Unissex</a>
+                        <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" 
+                           onclick="guardarGenero('todos')"
+                           href="./pages/produtos.html">Todos</a>
+                        <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" 
+                           onclick="guardarGenero('MASCULINO')"
+                           href="./pages/produtos.html">Masculinos</a>
+                        <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" 
+                           onclick="guardarGenero('FEMININO')"
+                           href="./pages/produtos.html">Femininos</a>
+                        <a class="[ btn btn-nav dropdown-btn ]  js-itensMenuTopo" 
+                           onclick="guardarGenero('UNISSEX')"
+                           href="./pages/produtos.html">Unissex</a>
                     </div>
                 </li>
                 <li> <a class="[ btn btn-nav ]  js-itensMenuTopo" href="./pages/sobre.html">Sobre</a> </li>
@@ -103,10 +113,18 @@
                     <a class="conteudo__btn conteudo__btn-colapsado btn" href="javascript:void(0)">Produtos</a>
 
                     <div class="container-colapsado flex">
-                        <a class="container-colapsado__btn btn" href="#">Todos</a>
-                        <a class="container-colapsado__btn btn" href="#">Masculino</a>
-                        <a class="container-colapsado__btn btn" href="#">Feminino</a>
-                        <a class="container-colapsado__btn btn" href="#">Unissex</a>
+                        <a class="container-colapsado__btn btn" 
+                           onclick="guardarGenero('todos')"
+                           href="./pages/produtos.html">Todos</a>
+                        <a class="container-colapsado__btn btn" 
+                           onclick="guardarGenero('MASCULINO')"
+                           href="./pages/produtos.html">Masculino</a>
+                        <a class="container-colapsado__btn btn" 
+                           onclick="guardarGenero('FEMININO')"
+                           href="./pages/produtos.html">Feminino</a>
+                        <a class="container-colapsado__btn btn" 
+                           onclick="guardarGenero('UNISSEX')"
+                           href="./pages/produtos.html">Unissex</a>
                     </div>
 
                 </li>
@@ -135,7 +153,9 @@
         <div class="cabecalho-principal__conteudo  center  flex">
             <h1 class="cabecalho-principal__titulo  pre-load   js-itensCabecalho">Título Principal</h1>
             <p class="cabecalho-principal__subtitulo  pre-load   js-itensCabecalho">Frase qualquer, imagens meramente ilustrativas. Bla bla bla bla.</p>
-            <a class="cabecalho-principal__btn btn  pre-load   js-itensCabecalho" href="#">Comprar</a>
+            <a class="cabecalho-principal__btn btn  pre-load   js-itensCabecalho" 
+               onclick="guardarGenero('todos')"
+               href="./pages/produtos.html">Comprar</a>
         </div>
 
     </header>
@@ -244,7 +264,7 @@
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
-                        <ul class="card__lista flex">
+                        <ul class="flex">
                             <li> <a class="card__cor cor-1" href="#"></a> </li>
                             <li> <a class="card__cor cor-2" href="#"></a> </li>
                             <li> <a class="card__cor cor-3" href="#"></a> </li>
@@ -257,7 +277,7 @@
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
-                        <ul class="card__lista flex">
+                        <ul class="flex">
                             <li> <a class="card__cor cor-1" href="#"></a> </li>
                             <li> <a class="card__cor cor-2" href="#"></a> </li>
                             <li> <a class="card__cor cor-3" href="#"></a> </li>
@@ -270,7 +290,7 @@
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
-                        <ul class="card__lista flex">
+                        <ul class="flex">
                             <li> <a class="card__cor cor-1" href="#"></a> </li>
                             <li> <a class="card__cor cor-2" href="#"></a> </li>
                             <li> <a class="card__cor cor-3" href="#"></a> </li>
@@ -283,7 +303,7 @@
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
-                        <ul class="card__lista flex">
+                        <ul class="flex">
                             <li> <a class="card__cor cor-1" href="#"></a> </li>
                             <li> <a class="card__cor cor-2" href="#"></a> </li>
                             <li> <a class="card__cor cor-3" href="#"></a> </li>
@@ -296,7 +316,7 @@
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
-                        <ul class="card__lista flex">
+                        <ul class="flex">
                             <li> <a class="card__cor cor-1" href="#"></a> </li>
                             <li> <a class="card__cor cor-2" href="#"></a> </li>
                             <li> <a class="card__cor cor-3" href="#"></a> </li>
@@ -309,7 +329,7 @@
                     <div class="card__descricao">
                         <h3 class="card__titulo">Legenda</h3>
                         <p class="card__subtitulo">R$ 129,90</p>
-                        <ul class="card__lista flex">
+                        <ul class="flex">
                             <li> <a class="card__cor cor-1" href="#"></a> </li>
                             <li> <a class="card__cor cor-2" href="#"></a> </li>
                             <li> <a class="card__cor cor-3" href="#"></a> </li>
@@ -349,19 +369,34 @@
                 <div class="card">
                     <img class="card__imagem imagem" src="./img/categoriaMasculina.jpg" alt="">
                     <h3 class="card__titulo">Masculino</h3>
-                    <a class="categorias__btn btn center" href="javascript:void(0)">Explorar</a>
+                    <a class="categorias__btn btn center" 
+                       href="./pages/produtos.html" 
+                       onclick="guardarGenero('MASCULINO')"
+                       data-js="botaoGenero">
+                      Explorar
+                    </a>
                 </div>
 
                 <div class="card">
                     <img class="card__imagem imagem" src="./img/categoriaFeminina.jpg" alt="">
                     <h3 class="card__titulo">Feminino</h3>
-                    <a class="categorias__btn btn center" href="javascript:void(0)">Explorar</a>
+                    <a class="categorias__btn btn center"
+                       href="./pages/produtos.html"
+                       onclick="guardarGenero('FEMININO')"
+                       data-js="botaoGenero">
+                      Explorar
+                    </a>
                 </div>
 
                 <div class="card">
                     <img class="card__imagem imagem" src="./img/categoriaUnissex.jpeg" alt="">
                     <h3 class="card__titulo ">Unissex</h3>
-                    <a class="categorias__btn btn center" href="javascript:void(0)">Explorar</a>
+                    <a class="categorias__btn btn center" 
+                       href="./pages/produtos.html" 
+                       onclick="guardarGenero('UNISSEX')"
+                       data-js="botaoGenero">
+                      Explorar
+                    </a>
                 </div>
             </div>
 
@@ -436,7 +471,9 @@
         App.iniciar()
 
     </script>
-  <script src="../modules/carrossel.js"></script>
+  <!-- <script src="../modules/produtos.js"></script> -->
+  <script src="../modules/lancamentos.js"></script>
+  <script src="../modules/generos.js"></script>
 
 </body>
 
