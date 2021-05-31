@@ -12,6 +12,8 @@
     <script src="https://unpkg.com/http-vue-loader"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
 
+    <link rel="shortcut icon" href="../img/cabide.ico">
+
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/base.css">
@@ -52,10 +54,10 @@
                         <span class="sidebar-menu__span">Ofertas</span>
                     </div>
                 </li>
-                <li class="sidebar-menu__item">
+                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-geral')">
                     <div class="sidebar-menu__item-container">
                         <i class="fas fa-list"></i>
-                        <span class="sidebar-menu__span">Categorias</span>
+                        <span class="sidebar-menu__span">Listas Gerais</span>
                     </div>
                 </li>
                 <li class="sidebar-menu__item" v-on:click="alterarComponente('app-usuarios')">
@@ -98,6 +100,7 @@
                 'app-vendas': httpVueLoader('../components/Vendas.vue'),
                 'app-usuarios': httpVueLoader('../components/Usuarios.vue'),
                 'app-cadastro-produto': httpVueLoader('../components/CadastroProduto.vue'),
+                'app-geral': httpVueLoader('../components/Geral.vue')
             },
             methods: {
                 alterarComponente: function(componente) {

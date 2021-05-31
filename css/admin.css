@@ -121,6 +121,8 @@ hr {
 .area-conteudo {
     flex-grow: 1;
     overflow-y: scroll;
+    position: relative;
+    padding-top: 46px;
 }
 
 .topbar {
@@ -128,6 +130,11 @@ hr {
     height: 46px;
     box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
     padding: 0 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 .toolbar {
@@ -173,6 +180,7 @@ hr {
 .tabela {
     width: 100%;
     border-collapse: collapse;
+    min-width: 700px;
 }
 
 .tabela th {
@@ -186,6 +194,7 @@ hr {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    vertical-align: middle;
 }
 
 .tabela tr:nth-child(even) {
@@ -193,7 +202,7 @@ hr {
 }
 
 .tabela tr:hover {
-    background-color: #c4c4c4;
+    background-color: rgb(217, 217, 223);
 }
 
 .td-acoes {
@@ -216,4 +225,12 @@ hr {
 
 .remover {
     color: #e72828;
+}
+
+.cor {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    display: inline-block;
 }

@@ -2,24 +2,16 @@
     <div v-if="open" class="modal-tamanho">
         <div class="modal-tamanho__container">
             <div class="modal-tamanho__header">
-                <h2 class="modal-tamanho__titulo">Adicionar Tamanho</h2>
-                <div class="modal-tamanho__fechar" @click="fechar">
+                <h2 class="modal-tamanho__titulo">Categoria</h2>
+                <div class="modal-tamanho__fechar" @click="fechar(false)">
                     <i class="fas fa-times"></i>
                 </div>
             </div>
             <div class="modal-tamanho__form">
-                <select-layout
-                    title="Tamanho"
-                    :options="tamanhos"
-                    placeholder="Tamanho"
-                    v-model="conteudo.tamanho"
-                ></select-layout>
-                <input-layout v-model="conteudo.quantidade" type="number" min="1"
-                    >Quantidade</input-layout
-                >
+                <input-layout v-model="categoria.nome">Nome da Categoria</input-layout>
             </div>
             <div class="modal-tamanho__footer">
-                <button :disabled="!preenchido" @click="enviar" class="btn">
+                <button :disabled="!preenchido" @click="salvar" class="btn">
                     Confirmar
                 </button>
             </div>
@@ -31,75 +23,71 @@
 module.exports = {
     data: function () {
         return {
-            conteudo: {
-                tamanho: null,
-                quantidade: 1,
+            categoria: {
+                id: null,
+                nome: null,
             },
-            tamanhos: [],
             open: false,
-            modelo: null,
         };
     },
 
     methods: {
-        fechar() {
-            this.conteudo = {
-                tamanho: null,
-                quantidade: 1,
+        fechar(resultado) {
+            this.categoria = {
+                id: null,
+                nome: null,
             }
-            this.modelo = null;
             this.open = false;
+
+            this.$emit('fechar', resultado);
         },
 
-        abrir(tipoTamanho, modelo) {
+        abrir(categoria) {
             this.open = true;
-            this.modelo = modelo;
-
-            this.listarTamanhos(tipoTamanho);
-
+            if(categoria) {
+                this.categoria = categoria;
+            }
         },
 
-        listarTamanhos(tipoTamanho) {
-            let _this = this;
+        async salvar() {
+            let obj = JSON.stringify(this.categoria);
+            let resposta;
+            let headers = {
+                'Content-Type': 'application/json'
+            }
 
-            fetch(this.$URLAPI_BASE + "/api/tamanhos/" + tipoTamanho)
-                .then((res) => res.json())
-                .then((res) => {
-                    _this.tamanhos = res;
+            if (this.categoria.id === null) {
+                resposta = await fetch(this.$URLAPI_BASE + '/api/categorias', {
+                    body: obj,
+                    method: 'post',
+                    headers
                 });
-        },
+            }
+            else {
+                resposta = await fetch(this.$URLAPI_BASE + '/api/categorias/' + this.categoria.id, {
+                    body: obj,
+                    method: 'put',
+                    headers
+                });
+            }
 
-        enviar() {
-            this.$emit("enviar", {
-                conteudo: {...this.conteudo},
-                modelo: this.modelo,
-            });
+            if(resposta.ok) {
+                this.fechar(true);
+                return;
+            }
+            
+            alert('Não foi possível salvar');
         },
     },
 
     computed: {
         preenchido() {
-            return (
-                this.conteudo.tamanho != null
-            );
+            return this.categoria.nome !== null && this.categoria.nome !== '';
         },
-
-        quantidade() {
-            return this.conteudo.quantidade;
-        },
-    },
-
-    watch: {
-        quantidade(newVal) {
-            if(newVal < 0) {
-                this.conteudo.quantidade = 0;
-            }
-        }
     },
 
     components: {
         "input-layout": httpVueLoader("../components/InputLayout.vue"),
-        "select-layout": httpVueLoader("../components/SelectLayout.vue"),
     },
 };
 </script>

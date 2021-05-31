@@ -1,9 +1,9 @@
 <template>
-    <div class="modal-cor">
+    <div v-if="open" class="modal-cor">
         <div class="modal-cor__container">
             <div class="modal-cor__header">
-                <h2 class="modal-cor__titulo">Nova cor</h2>
-                <div class="modal-cor__fechar" @click="fechar">
+                <h2 class="modal-cor__titulo">Cor</h2>
+                <div class="modal-cor__fechar" @click="fechar(false)">
                     <i class="fas fa-times"></i>
                 </div>
             </div>
@@ -28,7 +28,11 @@
                 </label>
             </div>
             <div class="modal-cor__footer">
-                <button :disabled="!preenchido || enviando" @click="enviarCor" class="btn">
+                <button
+                    :disabled="!preenchido || enviando"
+                    @click="enviarCor"
+                    class="btn"
+                >
                     Confirmar
                 </button>
             </div>
@@ -41,46 +45,73 @@ module.exports = {
     data: function () {
         return {
             cor: {
+                id: null,
                 nome: null,
                 valor: "#16162f",
             },
             enviando: false,
+            open: false,
         };
     },
 
     methods: {
-        fechar() {
-            this.cor.nome = null;
-            this.cor.valor = "#16162f";
-            this.$emit("fechar", false);
+        fechar(resultado) {
+            this.cor = {
+                id: null,
+                nome: null,
+                valor: "#16162f",
+            };
+            this.open = false;
+            this.$emit("fechar", resultado);
         },
 
         async enviarCor() {
             let jsonObj = JSON.stringify(this.cor);
+            let resposta;
 
             this.enviando = true;
-            let resposta = await fetch(this.$URLAPI_BASE + "/api/cores", {
-                method: "post",
-                body: jsonObj,
-                headers: {
-                    'Accept': "application/json",
-                    'Content-Type': "application/json",
-                },
-            });
 
-            console.log('Resposta da API:', resposta);
-            if (resposta.status == 201) {
-                let conteudo = await resposta.json();
+            if (this.cor.id === null) {
+                resposta = await fetch(this.$URLAPI_BASE + "/api/cores", {
+                    method: "post",
+                    body: jsonObj,
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                    },
+                });
+            }
+            else {
+                console.log('atualizar')
+                resposta = await fetch(this.$URLAPI_BASE + "/api/cores/" + this.cor.id, {
+                    method: "put",
+                    body: jsonObj,
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                    },
+                });
+            }
+
+            if (resposta.ok) {
 
                 this.enviando = false;
 
-                console.log('Objeto retornado da API:', conteudo);
-
-                this.$emit('fechar', true);
+                this.fechar(true);
                 return;
             }
             this.enviando = false;
-            alert('Ocorreu um erro ao enviar a cor. Status: ' + resposta.status);
+            alert(
+                "Ocorreu um erro ao salvar a cor. Status: " + resposta.status
+            );
+        },
+
+        abrir(cor) {
+            this.open = true;
+            if(cor) {
+                console.log('na')
+                this.cor = cor;
+            }
         },
     },
 
