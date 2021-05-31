@@ -112,11 +112,6 @@ body {
 .card__titulo {
     text-align: center;
     margin: 0 auto 5px auto;
-    max-width: 293px;
-    white-space: nowrap;                  
-    overflow: hidden; 
-    text-overflow: ellipsis;
-
 }
 
 .card__subtitulo {  text-align: center;  }

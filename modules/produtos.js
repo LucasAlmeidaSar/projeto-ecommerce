@@ -35,7 +35,7 @@ const inserirProdutos = async () => {
         <ul class="flex">
          ${listaInputCores}
         </ul>  
-        <h3 class="card__titulo">${descricao}</h3>
+        <h3 class="card__titulo">${descricao.substr(0,35)}</h3>
         <p class="card__subtitulo">R$${preco}</p>                
       </div>
     </div>
@@ -55,7 +55,7 @@ function resgatarGenero() {
   return localStorage.getItem('genero')
 }
 
-  let inputGenero = genero => document.querySelector(`[data-name="${genero}"]`)
+  let inputGenero = genero => document.querySelector(`[data-id="${genero}"]`)
 
   const genero = resgatarGenero()
   onload = () => {
@@ -79,11 +79,15 @@ function resgatarGenero() {
 
 const inserirCores = async () => {
   const cores = await getCores()
+  const coresAtivas = cores.filter(cor => cor.temRegistros)
   
-  const html = cores.reduce((html, {nome, valor}) => {
+  const html = coresAtivas.reduce((html, {id, nome, valor}) => {
     html += `
     <li class="item-lista-cor">
-      <button class="nome-filtro" title="${nome}" style="background-color:${valor}"></button>
+      <button class="nome-filtro" 
+        title="${nome}" 
+        data-id="${id}"
+        style="background-color:${valor}"></button>
     </li>
     `
     return html
@@ -102,11 +106,16 @@ const getCategorias = async () => await (await fetch(`${url}/api/categorias`)).j
 
 const inserirCategorias = async () => {
   const categorias = await getCategorias()
+  const categoriasAtivas = categorias.filter(categoria => categoria.temRegistros)
 
-  const html = categorias.reduce((html, {nome}) => {
+  const html = categoriasAtivas.reduce((html, {id, nome}) => {
     html += `
     <li class="filtro-container">
-      <button class="nome-filtro">${nome}</button>
+      <button 
+        class="nome-filtro"
+        data-id="${id}">
+          ${nome}
+        </button>
     </li>
     `
     return html
@@ -122,6 +131,8 @@ inserirCategorias()
 
 
 const filtrosGenero = document.querySelectorAll('[data-js="filtroGenero"]')
+const filtrosCor = document.querySelectorAll('[data-js="filtroGenero"]')
+const filtrosCategoria = document.querySelectorAll('[data-js="filtroGenero"]')
 const btnLimpaFiltros = document.querySelector('[data-js="btnLimpaFiltros"]')
 
 btnLimpaFiltros.addEventListener('click', () => {
@@ -181,7 +192,7 @@ function filtrarPorGenero(genero) {
           <ul class="flex">
            ${listaInputCores}
           </ul>  
-          <h3 class="card__titulo">${descricao}</h3>
+          <h3 class="card__titulo">${descricao.substr(0,35)}</h3>
           <p class="card__subtitulo">R$${preco}</p>                
         </div>
       </div>
@@ -220,3 +231,100 @@ gridProdutos.addEventListener('click', event => {
   }
 
 })
+
+
+
+
+const inputsDeCor = document.querySelectorAll('.cores button')
+var corAtiva = ''
+
+const inputsDeCategoria = document.querySelectorAll('.categorias button')
+var categoriaAtiva = ''
+
+const inputsDeGeneros = document.querySelectorAll('.generos button')
+var generoAtivo = ''
+
+
+
+
+// Funcionamento dos filtros em geral
+function filtrarProdutos() {
+  
+  inputsDeCor.forEach(btn => {
+    if(btn.classList.contains('ativo')){
+      corAtiva = `&filtro_cor=${btn.dataset.id}` 
+    }
+  })
+  console.log('filtro de cor: ', corAtiva);
+
+  inputsDeCategoria.forEach(btn => {
+    if(btn.classList.contains('ativo')){
+      categoriaAtiva = `&filtro_categoria=${btn.dataset.id}` 
+    }
+  })
+  console.log('filtro de categ: ', categoriaAtiva);
+
+  inputsDeGeneros.forEach(btn => {
+    if(btn.classList.contains('ativo')){
+      generoAtivo = `&filtro_genero=${btn.dataset.id}` 
+    }
+  })
+  console.log('filtro de gener: ', generoAtivo);
+    
+
+  const urlFiltro = `/api/roupas/filtrar?ativo=true${categoriaAtiva}${generoAtivo}${corAtiva}`
+  const getProdutosFiltrados = async () => 
+    await (await fetch(`${url}${urlFiltro}`)).json()
+
+  const inserirProdutos = async () => {
+    const resposta = await getProdutosFiltrados()
+    console.log(urlFiltro);
+    const arrayProdutos = resposta.content  
+
+    const html = arrayProdutos.reduce((html, {modelos, descricao, preco}) => {
+      const listaInputCores = modelos.reduce((lista, {cor, imagens}) => {
+        lista += `
+        <li> 
+          <a class="card__cor" 
+            style="background-color: ${cor.valor};" 
+            title="${cor.nome}"
+            data-imagem="${imagens[0].path}"
+            href="javascript:void(0)">
+          </a> 
+        </li>
+        `
+        
+        return lista
+      }, '')
+  
+      html += `
+      <div class="card">
+        <img src=${url}${modelos[0].imagens[0].path} alt="${descricao}" class="imagem card__imagem">
+        <div class="card__descricao">
+          <ul class="flex">
+           ${listaInputCores}
+          </ul>  
+          <h3 class="card__titulo">${descricao.substr(0,35)}</h3>
+          <p class="card__subtitulo">R$${preco}</p>                
+        </div>
+      </div>
+      `
+      return html
+    } , '')
+  
+    gridProdutos.innerHTML = html
+  }
+
+  inserirProdutos()
+}
+
+// const secoesDeFiltro =  document.querySelectorAll('.conteudo-colapsado')
+
+// secoesDeFiltro.forEach(secao => secao.addEventListener('click', event => {
+//   const botaoClicado = event.target
+
+//   if (botaoClicado.tagName === 'BUTTON') {
+//     filtrarProdutos()
+//   }
+
+// }))
