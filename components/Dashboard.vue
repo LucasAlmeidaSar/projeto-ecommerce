@@ -38,7 +38,7 @@
             </div>
           </div>
         </div>
-        <div class="card-footer bg-blue flex">
+        <div class="card-footer bg-blue">
           <div class="footer-info flex">
             <div>
               <p class="change f-w-300">
@@ -62,7 +62,7 @@
             </div>
           </div>
         </div>
-        <div class="card-footer bg-green flex">
+        <div class="card-footer bg-green">
           <div class="footer-info flex">
             <div>
               <p class="change f-w-300">
@@ -85,7 +85,7 @@
             </div>
           </div>
         </div>
-        <div class="card-footer bg-pink flex">
+        <div class="card-footer bg-pink">
           <div class="footer-info flex">
             <div>
               <p class="change f-w-300">
@@ -97,13 +97,13 @@
         </div>
       </div>
     </div>
-    <div class="container-chart flex">
+    <div class="container-chart">
       <div class="container-canvas"><canvas id="myChart"></canvas></div>
       <div class="container-canvas"><canvas id="myChart2"></canvas></div>
     </div>
-    <div class="dash-bottom-info-container flex">
-            <div class="dash-bottom-card flex">
-        <div class="dash-bottom-card-content flex">
+    <div class="dash-bottom-info-container">
+      <div class="dash-bottom-card novos">
+        <div class="dash-bottom-card-content">
           <div class="table-title bg-orange">
             <span class="title f-w-300 text-white">Novos pedidos</span>
           </div>
@@ -118,7 +118,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="">
+              <tr>
                 <td>
                   <span class="f-w-300">11234</span>
                 </td>
@@ -129,11 +129,11 @@
                   <span class="f-w-300">R$ 167,32</span>
                 </td>
                 <td>
-                  <span class="product-stock-span f-w-300 badge badge-pink"> NFe pendente </span>
+                  <span class="product-stock-span f-w-300 badge badge-pink">Aguardando Pag.</span>
                 </td>
                 <td>
                   <span class="f-w-300">
-                    <a href="/detalhes">ver detalhes</a></span>
+                    <a href="#">ver detalhes</a></span>
                 </td>
               </tr>
               <tr class="">
@@ -179,10 +179,10 @@
           </table>
         </div>
       </div>
-      <div class="dash-bottom-card flex">
-        <div class="dash-bottom-card-content flex">
+      <div class="dash-bottom-card mais-vendidos">
+        <div class="dash-bottom-card-content">
           <div class="table-title bg-blue">
-            <span class="title f-w-300 text-white">Produtos mais vendidos</span>
+            <span class="f-w-300 text-white">Produtos mais vendidos</span>
           </div>
           <table class="table-products">
             <thead class="table-header-head">
@@ -194,7 +194,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="">
+              <tr>
                 <td>
                   <span class="f-w-300">Vestido Zara Branco</span>
                 </td>
@@ -205,10 +205,10 @@
                   <span class="f-w-300">R$ 229,99</span>
                 </td>
                 <td>
-                  <span class="product-stock-span f-w-300"> 43 </span>
+                  <span class="product-stock-span f-w-300">43</span>
                 </td>
               </tr>
-              <tr class="">
+              <tr>
                 <td>
                   <span class="f-w-300">Camisa Manga Longa Gucci</span>
                 </td>
@@ -219,10 +219,10 @@
                   <span class="f-w-300">R$ 339,99</span>
                 </td>
                 <td>
-                  <span class="product-stock-span f-w-300"> 21 </span>
+                  <span class="product-stock-span f-w-300">21</span>
                 </td>
               </tr>
-              <tr class="">
+              <tr>
                 <td>
                   <span class="f-w-300">Calça Legging CK</span>
                 </td>
@@ -240,8 +240,8 @@
           </table>
         </div>
       </div>
-      <div class="dash-bottom-card flex">
-        <div class="dash-bottom-card-content flex">
+      <div class="dash-bottom-card">
+        <div class="dash-bottom-card-content">
           <div class="table-title bg-pink">
             <span class="title f-w-300 text-white">Principais acessos</span>
           </div>
@@ -366,12 +366,8 @@ module.exports = {
 
 .dash-wrapper {
   width: 100%;
-  min-height: 1px;
-  flex-wrap: wrap;
   text-align: left;
-  padding: 50px 32px;
-  display: grid;
-  grid-template-rows: 10vh 50vh 30vh;
+  padding: 32px 32px;
 }
 
 .dash-wrapper a{
@@ -380,42 +376,56 @@ module.exports = {
 .dash-wrapper a:hover{
   color:#7b7d81;
 }
+
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
   justify-content: space-between;
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 .stats-container {
   justify-content: space-between;
-  grid-row-start: 1;
-  grid-row-end: 2;
 }
 
 .container-canvas {
   box-sizing: border-box;
   padding: 10px;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px);
+  border-radius: 6px;
   margin-right: 35px;
   border: none;
   height: 450px;
-  grid-row-start: 2;
-  grid-row-end: 3;
 }
 .container-canvas:last-child {
   margin-right: 0px;
 }
 
 .dash-bottom-info-container {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 2px));
   justify-content: space-between;
-  grid-row-start: 3;
+  column-gap: 16px;
+  margin-top: 16px;
+  width: 100%;
 }
+
 .dash-bottom-card{
-  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px);
+  border-radius: 6px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.novos {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 100%;
+}
+
+.mais-vendidos {
+  width: fit-content;
 }
 
 .dash-card {
@@ -425,7 +435,7 @@ module.exports = {
   background-color: #fff;
   background-clip: border-box;
   border-radius: 5px;
-  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+  box-shadow: 0 1px 4px rgba(69, 90, 100, 0.3);
   border: none;
   margin-bottom: 30px;
   margin-right: 25px;
@@ -442,16 +452,16 @@ module.exports = {
 }
 
 .container-chart {
-  padding-top: 50px;
+  margin-top: 16px;
   display: grid;
-  grid-template-columns: 68% 32%;
+  grid-template-columns: 65% 35%;
 }
 
 .badge {
     display: inline-block;
     min-width: 0px; /* pixel unit */
     padding: 5px 7px; /* pixel unit */
-    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px);
+    border-radius: 4px;
     text-align: center;
     color: #fefefe;
 }
@@ -478,7 +488,7 @@ module.exports = {
 }
 
 .card-footer:last-child {
-  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+  border-radius: 0 0 6px 6px;
 }
 
 .footer-info {
@@ -513,25 +523,20 @@ td {
 table,
 th,
 td {
-  padding: 12px;
+  padding: 0.6rem;
   text-align: center;
 }
 
+
 .dash-bottom-card-content {
-  flex-direction: column;
   width: 100%;
-  min-height: 1px;
-  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-  margin-top: 50px;
-  margin-bottom: 30px;
 }
 
 .table-title {
   padding: 10px;
   font-size: 22px;
-  width: 100%;
   text-align: center;
-  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  border-radius: 6px 6px 0 0;
 }
 
 .table-products {
@@ -597,5 +602,9 @@ i {
 
 .text-blue {
   color: #01a9ac;
+}
+
+tbody, thead, table {
+  width: 100%;
 }
 </style>
