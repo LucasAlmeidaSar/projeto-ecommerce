@@ -46,7 +46,7 @@
       <div class="secao-filtro cores">       
         <button class="btn-colapsado">Cor</button>
 
-        <div class="conteudo-colapsado">
+        <div class="conteudo-colapsado cores">
 
           <ul class="lista-cores flex" data-js="filtroCores">
             <li class="item-lista-cor">
@@ -59,7 +59,7 @@
 
       <div class="secao-filtro">
         <button class="btn-colapsado">Categoria</button>
-        <div class="conteudo-colapsado">
+        <div class="conteudo-colapsado categorias">
 
           <ul class="lista-filtros" data-js="listaCategorias">
 
@@ -70,27 +70,27 @@
 
       <div class="secao-filtro">
         <button class="btn-colapsado" >Gênero</button>
-        <div class="conteudo-colapsado">
+        <div class="conteudo-colapsado generos">
           <ul class="lista-filtros">
 
             <li class="filtro-container">
               <button class="nome-filtro" 
               data-js="filtroGenero" 
-              data-name="MASCULINO"
+              data-id="MASCULINO"
               onclick="filtrarPorGenero('MASCULINO')">Masculino</button>
             </li>
 
             <li class="filtro-container">
               <button class="nome-filtro" 
               data-js="filtroGenero" 
-              data-name="FEMININO"
+              data-id="FEMININO"
               onclick="filtrarPorGenero('FEMININO')">Feminino</button>
             </li>
 
             <li class="filtro-container">
               <button class="nome-filtro" 
               data-js="filtroGenero" 
-              data-name="UNISSEX"
+              data-id="UNISSEX"
               onclick="filtrarPorGenero('UNISSEX')">Unissex</button>
             </li>
 
@@ -99,7 +99,7 @@
       </div>
       <div class="secao-filtro">
         <button class="btn-colapsado">Ordenar</button>
-        <div class="conteudo-colapsado">
+        <div class="conteudo-colapsado ordenar">
           <ul class="lista-filtros">
 
             <li class="filtro-container">
@@ -164,6 +164,5 @@
   </script>
 
   <script src="../modules/produtos.js"></script>
-  <script src="../modules/filtrosProdutos.js"></script>
 </body>
 </html>
