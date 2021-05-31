@@ -1,0 +1,91 @@
+@media only screen and (max-width: 1341px) {
+    #vitrine {
+        width: 500px;
+        height: 700px;
+    }
+}
+
+@media only screen and (max-width: 1248px) {
+    #vitrine {
+        width: 500px;
+        height: 806px;
+    }
+}
+
+@media only screen and (max-width: 1060px) {
+    #vitrine {
+        width: 400px;
+        height: 550px;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    #vitrine {
+        width: 350px;
+        height: 515px;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    #vitrine {
+        width: 450px;
+        height: 515px;
+    }
+    .container {
+        display: grid;
+    }
+    .catalogolist {
+        display: flex;
+        position: absolute;
+        top: 550px;
+        margin-left: 45px;
+    }
+    .botao {
+        margin-right: 10px;
+    }
+    .vitrinelist {
+        position: relative;
+    }
+    .infoproduto {
+        margin-top: 150px;
+        text-align: center;
+        margin-left: 45px;
+        margin-bottom: 20px;
+    }
+    #preco {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 445px) {
+    #vitrine {
+        padding-left: 50px;
+    }
+    .catalogolist {
+        padding-left: 24px;
+    }
+    .infoproduto {
+        padding-left: 35px;
+    }
+    .rodape-padrao {
+        width: 480px;
+    }
+    .catalogo {
+        width: 445px;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 445px;
+        margin: 0;
+        padding: 0;
+    }
+    .reduzir-um {
+        display: none;
+    }
+    .rodape-padrao__direitos {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 370px) {}

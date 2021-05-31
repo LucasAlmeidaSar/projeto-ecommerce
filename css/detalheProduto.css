@@ -19,8 +19,8 @@
 
 .foto {
     margin: 0 0 15px 0px;
-    width: 70px;
-    height: 90px;
+    width: 5%;
+    height: 10%;
     padding: 0;
     box-shadow: 0 0 0 3px var(--cor-clara), 0 0 0 3.5px rgb(105, 105, 105);
 }
@@ -35,12 +35,12 @@
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 2rem;
 }
 
 .fa-bookmark {
     margin: 0px 0px 0px 10px;
-    font-size: 24px;
+    font-size: 1.8rem;
 }
 
 .btn-favorito {
@@ -49,12 +49,12 @@ h1 {
     background-color: white;
 }
 
-.preco {
+#preco {
     margin: 20px 0 20px 0;
 }
 
 .conteudo {
-    font-size: 14px;
+    font-size: 1rem;
     margin-right: 7px;
 }
 
@@ -201,7 +201,7 @@ hr {
     border-left: none;
     border-right: none;
     text-align: left;
-    font-size: 15px;
+    font-size: 1rem;
     transition: 0.4s;
 }
 
@@ -257,12 +257,12 @@ hr {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 100000000000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: none;
     background-color: rgba(0, 0, 0, 0.822);
 }
 
@@ -273,7 +273,7 @@ hr {
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
 
 @-webkit-keyframes animatetop {
@@ -301,10 +301,9 @@ hr {
 .close {
     color: white;
     float: right;
-    font-size: 50px;
+    font-size: 3rem;
     font-weight: bold;
     margin-right: 1%;
-    margin-top: 5%;
 }
 
 .close:hover,
@@ -320,10 +319,13 @@ hr {
 }
 
 #vitrineModal {
-    width: 40%;
-    height: 700px;
-    padding-top: 5%;
-    padding-bottom: 1%;
+    max-width: 60%;
+    max-height: 100%;
+    padding: 5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .busca {
@@ -335,9 +337,4 @@ hr {
 #lupa {
     float: left;
     margin: 5px 0px 0px -20px;
-}
-
-.teste {
-    width: 100%;
-    height: 100%;
 }
