@@ -8,7 +8,7 @@
     z-index: 9999;
     width: 100%;
     opacity: 1;
-    transition: background .5s ease, height .5s ease, opacity 2s 1.2s ease;
+    transition: background .2s ease, height .2s ease, opacity .5s 1.2s ease;
 }
 
 .nav-principal.pre-load{  opacity: 0;  }

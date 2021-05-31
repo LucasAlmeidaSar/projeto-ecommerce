@@ -32,12 +32,12 @@
     letter-spacing: 5px;
     margin-bottom: 15px;
     opacity: 1;
-    transition: opacity 2s .5s ease;
+    transition: opacity 1s .5s ease;
 }
 
 .cabecalho-principal__subtitulo {
     font-size: 1.2rem;
-    transition: opacity 2s .5s ease;
+    transition: opacity 1s .5s ease;
 }
 
 .cabecalho-principal__btn {
@@ -46,7 +46,7 @@
     background: var(--cor-btn-cabecalho-principal);
     padding: 15px 30px;
     border-radius: 5px;    
-    transition: opacity 2s .5s ease;
+    transition: opacity 1s .5s ease;
 }
 
 .cabecalho-principal__btn:hover {  background: var(--cor-btn-cabecalho-principal-hover);  }

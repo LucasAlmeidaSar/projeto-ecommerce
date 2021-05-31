@@ -15,7 +15,9 @@
 
 .grid-produtos{  gap: 20px;  }
 
-.card{  height: 380px;  }
+.card{  height: 435px;  }
+
+.card__cor {  margin: 0 7px 15px 7px;  }
 
 .card__imagem{  height: 80%;  }
 
@@ -23,6 +25,23 @@
   margin: 0 auto;
   width: 90%;
 }
+
+.btn-limpa-filtros{
+  font-size: .75rem;
+  background-color: #777;
+  color: #f1f1f1;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all .3s ease;
+  display: none;
+}
+
+.btn-limpa-filtros.ativo{  display: block;  }
+
+.btn-limpa-filtros:hover{  background-color: #666;}
 
 .secao-filtro{
   box-sizing: border-box;
@@ -55,7 +74,7 @@
   float: right;
 }
 
-.ativo:after {
+.btn-colapsado.ativo:after {
   content: "\2212";
 }
 
