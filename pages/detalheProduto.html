@@ -53,8 +53,8 @@
             </div>
 
         </div>
-        <div class="vitrinelist">
-            <a href="#" id="myBtn"><img id="vitrine" src=''></a>
+        <div class="vitrinelist" data-js="vitrinelist">
+            <a href="#" id="myBtn"><img id="vitrine" class="imagem" data-js="vitrine" src=''></a>
         </div>
         <div id="myModal" class="modal">
 
@@ -157,8 +157,8 @@
     </footer>
 
     <script>
-        var primeiraimg = '../img/vestidoproduto.jpg';
-        document.getElementById("vitrine").src = primeiraimg;
+        // var primeiraimg = '../img/vestidoproduto.jpg';
+        // document.getElementById("vitrine").src = primeiraimg;
 
         function alterarImagem(vitrine, caminhoNovaImagem) {
             document.getElementById(vitrine).src = caminhoNovaImagem;
@@ -166,7 +166,7 @@
     </script>
 
     <script>
-        document.getElementById("vitrineModal").src = primeiraimg;
+        // document.getElementById("vitrineModal").src = primeiraimg;
 
         function alterarImagemModal(vitrineModal, caminhoNovaImagemModal) {
             document.getElementById(vitrineModal).src = caminhoNovaImagemModal;
@@ -296,6 +296,8 @@
             }
         }
     </script>
+
+    <script src="../modules/detalheProduto.js"></script>
 
 </body>
 
