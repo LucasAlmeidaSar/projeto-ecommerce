@@ -156,18 +156,22 @@
 .tab {
     border: 1px solid #dddddd;
     background-color: #fafafa;
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 90%;
     height: 400px;
     overflow-y: auto;
 }
 
 .tab_abas {
     border: 1px solid #cacaca;
+    margin: auto;
     border-bottom: none;
     background-color: #e9e9e9;
     border-radius: 10px 10px 0px 0px;
     overflow: hidden;
-    width: 100%;
+    width: 90%;
     height: 40px;
 }
 
@@ -196,11 +200,18 @@
 
 .tabDados {
     border: 1px solid black;
-    margin: auto;
+    display: flex;
+    justify-content: space-around;
     margin-top: 50px;
-    flex-direction: column;
-    width: 75%;
+    width: 40%;
     height: 300px;
+}
+
+.coluna {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .tabSenha {}
