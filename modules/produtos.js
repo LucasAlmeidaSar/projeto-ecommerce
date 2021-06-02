@@ -2,17 +2,18 @@ const gridProdutos = document.querySelector('[data-js="gridProdutos"]')
 const listaCores = document.querySelector('[data-js="filtroCores"]')
 const listaCategorias = document.querySelector('[data-js="listaCategorias"]')
 
-const url = "http://coldythegreat.ddns.net:8080"
+const url = "http://localhost:8080"
 
+
+
+// Carregar todos produtos cadastrados
 const getProdutos = async () => await (await fetch(`${url}/api/roupas/?ativo=true`)).json()
 
 const inserirProdutos = async () => {
   const resposta = await getProdutos()
   const arrayProdutos = resposta.content  
-
-  console.log('Filtro Camisa:',arrayProdutos.filter(({categoria}) => categoria.nome === 'Camisa'))
   
-  const html = arrayProdutos.reduce((html, {modelos, descricao, preco}) => {
+  const html = arrayProdutos.reduce((html, {id, modelos, descricao, preco}) => {
     const listaInputCores = modelos.reduce((lista, {cor, imagens}) => {
       lista += `
       <li> 
@@ -30,12 +31,15 @@ const inserirProdutos = async () => {
 
     html += `
     <div class="card">
-      <img src=${url}${modelos[0].imagens[0].path} alt="${descricao}" class="imagem card__imagem">
+      <a href="../pages/detalheProduto.html"          
+         onclick="guardarProduto(${id})">
+        <img src=${url}${modelos[0].imagens[0].path} alt="${descricao}" class="imagem card__imagem">
+      </a>
       <div class="card__descricao">
         <ul class="flex">
          ${listaInputCores}
         </ul>  
-        <h3 class="card__titulo">${descricao.substr(0,35)}</h3>
+        <h3 class="card__titulo">${descricao.substr(0,25)}</h3>
         <p class="card__subtitulo">R$${preco}</p>                
       </div>
     </div>
@@ -63,10 +67,11 @@ function resgatarGenero() {
       inserirProdutos()
     }else{      
       let input = inputGenero(genero)
-      console.log(genero)
-      filtrarPorGenero(genero)
-      btnLimpaFiltros.classList.add('ativo')
+      // filtrarPorGenero(genero)
       input.classList.add('ativo')
+      generoAtivo = `&filtro_genero=${input.getAttribute('data-id')}`  
+      filtrarProdutos()    
+      btnLimpaFiltros.classList.add('ativo')      
       localStorage.setItem('genero', 'todos')
     }
   }
@@ -75,7 +80,9 @@ function resgatarGenero() {
 
 
 
- const getCores = async () => await (await fetch(`${url}/api/cores`)).json()
+
+// Carregar Cores na seção de filtro de cores
+const getCores = async () => await (await fetch(`${url}/api/cores`)).json()
 
 const inserirCores = async () => {
   const cores = await getCores()
@@ -102,6 +109,7 @@ inserirCores()
 
 
 
+// Carregar categorias na seção de filtro de categorias
 const getCategorias = async () => await (await fetch(`${url}/api/categorias`)).json()
 
 const inserirCategorias = async () => {
@@ -129,82 +137,157 @@ inserirCategorias()
 
 
 
-
+// Ativação dos botões de filtro
 const filtrosGenero = document.querySelectorAll('[data-js="filtroGenero"]')
-const filtrosCor = document.querySelectorAll('[data-js="filtroGenero"]')
-const filtrosCategoria = document.querySelectorAll('[data-js="filtroGenero"]')
+const filtroCor = document.querySelector('.conteudo-colapsado.cores')
+const filtroCategoria = document.querySelector('.conteudo-colapsado.categorias')
+const filtroGenero = document.querySelector('.conteudo-colapsado.generos')
 const btnLimpaFiltros = document.querySelector('[data-js="btnLimpaFiltros"]')
 
+var generoAtivo = ''
+var categoriaAtiva = ''
+var corAtiva = ''
+
 btnLimpaFiltros.addEventListener('click', () => {
-  resetarTodos()
-  btnLimpaFiltros.classList.remove('ativo')
+  resetarTodosGeneros()
+  resetarTodasCategorias()
+  resetarTodasCores()
+  btnLimpaFiltros.classList.remove('ativo') 
   inserirProdutos()
+  generoAtivo = ''
+  categoriaAtiva = ''
+  corAtiva = ''
 })
 
 ativarGeneroSelecionado()
+ativarCategoriaSelecionada()
+ativarCorSelecionada()
 
-function ativarGeneroSelecionado(){
-  filtrosGenero.forEach(btn => btn.addEventListener("click", () => ativar(btn)))
+function ativarGeneroSelecionado(){ 
+  filtroGenero.addEventListener('click', event => {
+    const btnClicado = event.target   
+    if(btnClicado.tagName === 'BUTTON'){
+      ativarGenero(btnClicado)
+      generoAtivo = `&filtro_genero=${btnClicado.getAttribute('data-id')}`  
+      filtrarProdutos()     
+    }
+  })
+
+  // filtrosGenero.forEach(btn => btn.addEventListener("click", () => {   
+  //   ativarGenero(btn)       
+  //   generoAtivo = `&filtro_genero=${btn.getAttribute('data-id')}`          
+   
+  //   filtrarProdutos() 
+  // }))
 }
 
-function ativar(btn) {
-  resetarTodos()
+function ativarCategoriaSelecionada(){ 
+  filtroCategoria.addEventListener('click', event => {
+    const btnClicado = event.target   
+    if(btnClicado.tagName === 'BUTTON'){
+      ativarCategoria(btnClicado)
+      categoriaAtiva = `&filtro_categoria=${btnClicado.getAttribute('data-id')}`  
+      filtrarProdutos()     
+    }
+  })
+}
+
+function ativarCorSelecionada(){ 
+  filtroCor.addEventListener('click', event => {
+    const btnClicado = event.target   
+    if(btnClicado.tagName === 'BUTTON'){
+      ativarCor(btnClicado)
+      corAtiva = `&filtro_cor=${btnClicado.getAttribute('data-id')}`  
+      filtrarProdutos()     
+    }
+  })
+}
+
+function ativarGenero(btn) {
+  resetarTodosGeneros()
   btn.classList.add('ativo')
   btnLimpaFiltros.classList.add('ativo')
 }
 
-function resetarTodos () {
-  filtrosGenero.forEach(btn => btn.classList.remove('ativo'))
+function ativarCategoria(btn) {
+  resetarTodasCategorias()
+  btn.classList.toggle('ativo')
+  btnLimpaFiltros.classList.add('ativo')
+}
+
+function ativarCor(btn) {
+  resetarTodasCores()
+  btn.classList.add('ativo')
+  btnLimpaFiltros.classList.add('ativo')
+}
+
+function resetarTodosGeneros () {
+  const lis = filtroGenero.children[0].children
+  Array.from(lis).forEach(li => li.children[0].classList.remove('ativo'))
+  // filtrosGenero.forEach(btn => btn.classList.remove('ativo'))
+}
+
+function resetarTodasCores () {
+  const lis = filtroCor.children[0].children
+  Array.from(lis).forEach(li => li.children[0].classList.remove('ativo'))
+}
+
+function resetarTodasCategorias () {
+  const lis = filtroCategoria.children[0].children
+  Array.from(lis).forEach(li => li.children[0].classList.remove('ativo'))
 }
 
 
 
 
 
-function filtrarPorGenero(genero) {
+
+
+
+// function filtrarPorGenero(genero) {
     
-  const getCategoriaUnica = async () => await (await fetch(`${url}/api/roupas/filtrar?ativo=true&filtro_genero=${genero}`)).json()
+//   const getCategoriaUnica = async () => await (await fetch(`${url}/api/roupas/filtrar?ativo=true&filtro_genero=${genero}`)).json()
 
-  const inserirProdutos = async () => {
-    const resposta = await getCategoriaUnica()
-    const arrayProdutos = resposta.content  
+//   const inserirProdutos = async () => {
+//     const resposta = await getCategoriaUnica()
+//     const arrayProdutos = resposta.content  
 
-    const html = arrayProdutos.reduce((html, {modelos, descricao, preco}) => {
-      const listaInputCores = modelos.reduce((lista, {cor, imagens}) => {
-        lista += `
-        <li> 
-          <a class="card__cor" 
-            style="background-color: ${cor.valor};" 
-            title="${cor.nome}"
-            data-imagem="${imagens[0].path}"
-            href="javascript:void(0)">
-          </a> 
-        </li>
-        `
+//     const html = arrayProdutos.reduce((html, {modelos, descricao, preco}) => {
+//       const listaInputCores = modelos.reduce((lista, {cor, imagens}) => {
+//         lista += `
+//         <li> 
+//           <a class="card__cor" 
+//             style="background-color: ${cor.valor};" 
+//             title="${cor.nome}"
+//             data-imagem="${imagens[0].path}"
+//             href="javascript:void(0)">
+//           </a> 
+//         </li>
+//         `
         
-        return lista
-      }, '')
+//         return lista
+//       }, '')
   
-      html += `
-      <div class="card">
-        <img src=${url}${modelos[0].imagens[0].path} alt="${descricao}" class="imagem card__imagem">
-        <div class="card__descricao">
-          <ul class="flex">
-           ${listaInputCores}
-          </ul>  
-          <h3 class="card__titulo">${descricao.substr(0,35)}</h3>
-          <p class="card__subtitulo">R$${preco}</p>                
-        </div>
-      </div>
-      `
-      return html
-    } , '')
+//       html += `
+//       <div class="card">
+//         <img src=${url}${modelos[0].imagens[0].path} alt="${descricao}" class="imagem card__imagem">
+//         <div class="card__descricao">
+//           <ul class="flex">
+//            ${listaInputCores}
+//           </ul>  
+//           <h3 class="card__titulo">${descricao.substr(0,35)}</h3>
+//           <p class="card__subtitulo">R$${preco}</p>                
+//         </div>
+//       </div>
+//       `
+//       return html
+//     } , '')
   
-    gridProdutos.innerHTML = html
-  }
+//     gridProdutos.innerHTML = html
+//   }
 
-  inserirProdutos()
-}
+//   inserirProdutos()
+// }
 
 
 
@@ -215,19 +298,18 @@ function filtrarPorGenero(genero) {
 
 // Alterar Imagem de acordo com input de cor - Input de cor
 gridProdutos.addEventListener('click', event => {
-  let btnClicado = event.target
-  console.log(btnClicado.className) 
+  let btnClicado = event.target 
 
   if (btnClicado.className === 'card__cor') {
-    const path = `${url}${btnClicado.dataset.imagem}`
+    const path = `${url}${btnClicado.getAttribute('data-imagem')}`
     const li = btnClicado.parentElement
     const ul = li.parentElement
     const descricao = ul.parentElement
     const card = descricao.parentElement
-    card.children[0].setAttribute("src", `${path}`)
-    console.log('cliucou no inpt');
-    console.log(path);
-    console.log(card);
+    const link = card.children[0]
+    const imagem = link.children[0]
+    imagem.setAttribute("src", `${path}`)
+    console.log('cliucou no input de cor');
   }
 
 })
@@ -235,42 +317,34 @@ gridProdutos.addEventListener('click', event => {
 
 
 
-const inputsDeCor = document.querySelectorAll('.cores button')
-var corAtiva = ''
-
-const inputsDeCategoria = document.querySelectorAll('.categorias button')
-var categoriaAtiva = ''
-
-const inputsDeGeneros = document.querySelectorAll('.generos button')
-var generoAtivo = ''
 
 
 
 
 // Funcionamento dos filtros em geral
 function filtrarProdutos() {
-  
-  inputsDeCor.forEach(btn => {
-    if(btn.classList.contains('ativo')){
-      corAtiva = `&filtro_cor=${btn.dataset.id}` 
-    }
-  })
-  console.log('filtro de cor: ', corAtiva);
 
-  inputsDeCategoria.forEach(btn => {
-    if(btn.classList.contains('ativo')){
-      categoriaAtiva = `&filtro_categoria=${btn.dataset.id}` 
+  filtroCategoria.addEventListener('click', event => {
+    const btnClicado = event.target   
+    if(btnClicado.tagName === 'BUTTON'){
+      categoriaAtiva = `&filtro_categoria=${btnClicado.getAttribute('data-id')}` 
     }
   })
-  console.log('filtro de categ: ', categoriaAtiva);
 
-  inputsDeGeneros.forEach(btn => {
-    if(btn.classList.contains('ativo')){
-      generoAtivo = `&filtro_genero=${btn.dataset.id}` 
+  filtroCor.addEventListener('click', event => {
+    const btnClicado = event.target   
+    if(btnClicado.tagName === 'BUTTON'){
+      corAtiva = `&filtro_cor=${btnClicado.getAttribute('data-id')}`
     }
   })
-  console.log('filtro de gener: ', generoAtivo);
-    
+
+  filtroGenero.addEventListener('click', event => {
+    const btnClicado = event.target   
+    if(btnClicado.tagName === 'BUTTON'){
+      generoAtivo = `&filtro_genero=${btnClicado.getAttribute('data-id')}`       
+    }
+  })
+
 
   const urlFiltro = `/api/roupas/filtrar?ativo=true${categoriaAtiva}${generoAtivo}${corAtiva}`
   const getProdutosFiltrados = async () => 
@@ -281,7 +355,7 @@ function filtrarProdutos() {
     console.log(urlFiltro);
     const arrayProdutos = resposta.content  
 
-    const html = arrayProdutos.reduce((html, {modelos, descricao, preco}) => {
+    const html = arrayProdutos.reduce((html, {id, modelos, descricao, preco}) => {
       const listaInputCores = modelos.reduce((lista, {cor, imagens}) => {
         lista += `
         <li> 
@@ -299,12 +373,15 @@ function filtrarProdutos() {
   
       html += `
       <div class="card">
-        <img src=${url}${modelos[0].imagens[0].path} alt="${descricao}" class="imagem card__imagem">
+        <a href="../pages/detalheProduto.html"          
+           onclick="guardarProduto(${id})">
+          <img src=${url}${modelos[0].imagens[0].path} alt="${descricao}" class="imagem card__imagem">
+        </a>
         <div class="card__descricao">
           <ul class="flex">
            ${listaInputCores}
           </ul>  
-          <h3 class="card__titulo">${descricao.substr(0,35)}</h3>
+          <h3 class="card__titulo">${descricao.substr(0,25)}</h3>
           <p class="card__subtitulo">R$${preco}</p>                
         </div>
       </div>
@@ -328,3 +405,20 @@ function filtrarProdutos() {
 //   }
 
 // }))
+
+// secoesDeFiltro.addEventListener('click' , event => {
+//   var elementoClicado = event.target
+
+//   const liClicado = () => {
+//       while (!elementoClicado.dataset.js) {
+//           elementoClicado = elementoClicado.parentElement
+//       }
+//       return elementoClicado
+//   }
+//   const li = liClicado()
+  
+//   if (li.dataset.js === 'card') {
+//     filtrarProdutos()
+//   }
+
+// })

@@ -1,4 +1,4 @@
-const urlServer = "http://coldythegreat.ddns.net:8080/"
+const urlServer = "http://localhost:8080/"
 const limiteDeProdutos = 9
 const cardsCarrossel = document.querySelector('[data-js="cardsCarrossel"]')
 
@@ -10,7 +10,7 @@ const inserirCards = async () => {
   const html = arrayProdutos.reduce((html, produto) => {
     html += `
     <div class="card">
-      <a href="javascript:void(0)">
+      <a href="../pages/detalheProduto.html" onclick="guardarProduto(${produto.id})">
           <img class="imagem card__imagem" src=${urlServer}${produto.modelos[0].imagens[0].path} alt=${produto.descricao}>
       </a>
       <h3 class="card__titulo">${produto.descricao}</h3>
