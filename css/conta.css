@@ -195,31 +195,25 @@
 }
 
 .tabDiv.ativo {
-  display: flex;
-  width: 100%;
+    display: flex;
+    width: 100%;
 }
-
 
 .tabDados {
-  /* border-top: 1px solid lightgray; */
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap ;
-  margin-top: 10px;
-  width: 100%;
-  height: 300px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 300px;
 }
 
-
-.coluna {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  /* border: 1px solid black; */
-  width: 100%;  
-}
-.coluna input{
-  margin: 0 5px;
+.tabDados input {
+    margin: 25px 5px;
 }
 
 .tabSenha {}
