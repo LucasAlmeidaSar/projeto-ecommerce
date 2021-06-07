@@ -200,11 +200,12 @@
 }
 
 .tabDados {
-    border: 1px solid lightgray;
-    padding: 10px;
+    /* border: 1px solid lightgray; */
+    padding-top: 15px;
+    padding-left: 100px;
     margin-top: 10px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     flex-direction: column;
     flex-wrap: wrap;
@@ -214,6 +215,12 @@
 
 .tabDados input {
     margin: 25px 5px;
+    width: 250px;
+}
+
+.tabDados select {
+    margin: 25px 5px;
+    width: 260px;
 }
 
 .tabSenha {}
