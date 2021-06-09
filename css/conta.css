@@ -199,7 +199,7 @@
     width: 100%;
 }
 
-.tabDados {
+.dadosConta {
     /* border: 1px solid lightgray; */
     padding-top: 15px;
     padding-left: 100px;
@@ -213,15 +213,12 @@
     height: 300px;
 }
 
-.tabDados input {
+.dadosConta input {
     margin: 25px 5px;
     width: 250px;
 }
 
-.tabDados select {
-    margin: 25px 5px;
-    width: 260px;
-}
+.tabAlterar {}
 
 .tabSenha {}
 
