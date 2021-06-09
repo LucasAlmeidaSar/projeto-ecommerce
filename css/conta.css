@@ -200,9 +200,9 @@
 }
 
 .dadosConta {
-    border: 1px solid lightgray;
+    /* border: 1px solid lightgray; */
     padding-top: 20px;
-    padding-left: 70px;
+    padding-left: 140px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -218,6 +218,11 @@
     outline: none;
 }
 
+.dadosConta button {
+    align-self: center;
+    margin-right: 125px;
+}
+
 #alterarEndereço .dadosConta {
     width: 100%;
     height: 100%;
@@ -225,6 +230,12 @@
 
 #alterarEndereço input {
     margin-bottom: 27px;
+    margin-right: 30px;
+}
+
+#alterarEndereço button {
+    align-self: center;
+    justify-self: center;
 }
 
 .novoDado {
@@ -238,7 +249,8 @@
 }
 
 .novoDado input {
-    padding-left: 5px;
+    margin-right: 50px;
+    width: 285px;
 }
 
 #senhaAtual {
