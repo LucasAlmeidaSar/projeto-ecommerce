@@ -106,125 +106,166 @@
             <div id="tabConta" class="tabConta tabConteudo">
                 <div class="tab_abas grid_abas">
                     <div id="abaDados" class="aba aba_dados flex" onclick="ativarAba('abaDados','tabDados')">Informações da Conta</div>
-                    <div id="abaSenha" class="aba aba_alterarSenha flex" onclick="ativarAba('abaSenha','tabSenha')">Alterar Senha</div>
-                    <div id="abaEmail" class="aba aba_alterarEmail flex" onclick="ativarAba('abaEmail','tabEmail')">Alterar E-mail</div>
-                    <div id="abaEndereço" class="aba aba_alterarEndereço flex" onclick="ativarAba('abaEndereço','tabEndereço')">Alterar Endereço</div>
+                    <div id="abaSenha" class="aba aba_alterarSenha flex" onclick="ativarAba('abaSenha','alterarSenha')">Alterar Senha</div>
+                    <div id="abaEmail" class="aba aba_alterarEmail flex" onclick="ativarAba('abaEmail','alterarEmail')">Alterar E-mail</div>
+                    <div id="abaEndereço" class="aba aba_alterarEndereço flex" onclick="ativarAba('abaEndereço','alterarEndereço')">Alterar Endereço</div>
 
                 </div>
 
                 <div class="tab">
-                    <div id="tabDados" class="tabDiv">
-                        <div class="tabDados">
-                            <div class="coluna">
-                                <p>Nome</p>
-                                <input type="text" name="nome" id="nome">
-                                <p>CPF</p>
-                                <input type="text" name="cpf" id="cpf">
-                                <p>E-mail</p>
-                                <input type="text" name="email" id="email">
-                            </div>
-                            
+                    <div id="tabDados" class="tabDiv flex">
+
+                        <div class="dadosConta">
+                            <p>Nome</p>
+                            <input type="text" placeholder="Marcos Daniel Mateus e Coelho" name="nome" id="nome" readonly="true">
+                            <p>CPF</p>
+                            <input type="text" placeholder="777.777.777-77" name="cpf" id="cpf" readonly="true">
+                            <p>E-mail</p>
+                            <input type="text" placeholder="marcos@gmail.com" name="email" id="email" readonly="true">
+                            <p>Telefone</p>
+                            <input type="text" placeholder="99 9999-9999" name="telefone" id="telefone" readonly="true">
+                            <p>Sexo</p>
+                            <input type="text" placeholder="Masculino" name="sexo" id="sexo" readonly="true">
+
                         </div>
-                        <!-- <div class="tabDados">
-                            <div class="coluna">
-                              <span>Telefone</span>
-                              <span>Gênero</span>
+
+                    </div>
+                    <div id="alterarSenha" class="tabDiv flex">
+                        <form class="dadosConta inputAlterar">
+                            <p>Senha Atual</p>
+                            <input id="senhaAtual" type="text" required>
+                            <div class="novoDado">
+                                <p>Nova Senha</p>
+                                <input type="text" required>
+                                <p>Confirmar Nova Senha</p>
+                                <input type="text" required>
                             </div>
-                        </div> -->
-
+                            <button class="flex">Confirmar</button>
+                        </form>
                     </div>
-                    <div id="tabSenha" class="tabSenha tabDiv">abaSenha</div>
-                    <div id="tabEmail" class="tabEmail tabDiv">abaEmail</div>
-                    <div id="tabEndereço" class="tabEndereço tabDiv">abaEndereço</div>
-
-                </div>
-            </div>
-            <!-- HISTÓRICO DE COMPRAS -->
-            <div id="tabHistorico" class="tab tabHistorico tabConteudo">
-                <div class="produto">
-                    <div class="prodImg">
-                        <img src="../img/blackshirt.jpg"></img>
+                    <div id="alterarEmail" class="tabDiv flex">
+                        <form class="dadosConta inputAlterar">
+                            <p>Email Atual</p>
+                            <input id="senhaAtual" type="text" required>
+                            <div class="novoDado">
+                                <p>Novo Email</p>
+                                <input type="text" required>
+                                <p>Confirmar Novo Email</p>
+                                <input type="text" required>
+                            </div>
+                            <button class="flex">Confirmar</button>
+                        </form>
                     </div>
-                    <div class="prodConteudo flex">
+                    <div id="alterarEndereço" class="tabDiv flex">
+                        <form class="dadosConta inputAlterar" action="">
+                            <p>CEP</p>
+                            <input id="cep" type="text" required>
+                            <p>Endereço</p>
+                            <input type="text" required>
+                            <p>Número</p>
+                            <input type="text" required>
+                            <p>Complemento</p>
+                            <input type="text" required>
+                            <p>Bairro</p>
+                            <input type="text" required>
+                            <p>Cidade</p>
+                            <input type="text" required>
+                            <p>Estado</p>
+                            <input type="text" required>
+                            <button class="flex">Confirmar</button>
+                        </form>
 
-                        <h2>Camisa Masculina</h2>
-                        <h6>Cor: Preta</h6>
-                        <h6>Tamanho: G</h6>
-                    </div>
-                </div>
-
-                <div class="produto">
-                    <div class="prodImg">
-                        <img src="../img/blackshirt.jpg"></img>
-                    </div>
-                    <div class="prodConteudo flex">
-
-                        <h2>Camisa Masculina</h2>
-                        <h6>Cor: Preta</h6>
-                        <h6>Tamanho: G</h6>
-                    </div>
-                </div>
-                <div class="produto">
-                    <div class="prodImg">
-                        <img src="../img/blackshirt.jpg"></img>
-                    </div>
-                    <div class="prodConteudo flex">
-
-                        <h2>Camisa Masculina</h2>
-                        <h6>Cor: Preta</h6>
-                        <h6>Tamanho: G</h6>
                     </div>
                 </div>
 
             </div>
-
-            <!-- LISTA DE DESEJOS -->
-            <div id="tabListaDesejos" class="tab tabListaDesejos tabConteudo">
-                <div class="produto">
-                    <div class="prodImg">
-                        <img src="../img/blackshirt.jpg"></img>
-                    </div>
-                    <div class="prodConteudo flex">
-
-                        <h2>Camisa Masculina</h2>
-                        <h6>Cor: Preta</h6>
-                        <h6>Tamanho: G</h6>
-                    </div>
-                </div>
-
-                <div class="produto">
-                    <div class="prodImg">
-                        <img src="../img/blackshirt.jpg"></img>
-                    </div>
-                    <div class="prodConteudo flex">
-
-                        <h2>Camisa Masculina</h2>
-                        <h6>Cor: Preta</h6>
-                        <h6>Tamanho: G</h6>
-                    </div>
-                </div>
-                <div class="produto">
-                    <div class="prodImg">
-                        <img src="../img/blackshirt.jpg"></img>
-                    </div>
-                    <div class="prodConteudo flex">
-
-                        <h2>Camisa Masculina</h2>
-                        <h6>Cor: Preta</h6>
-                        <h6>Tamanho: G</h6>
-                    </div>
-                </div>
-
+    </div>
+    <!-- HISTÓRICO DE COMPRAS -->
+    <div id="tabHistorico" class="tab tabHistorico tabConteudo">
+        <div class="produto">
+            <div class="prodImg">
+                <img src="../img/blackshirt.jpg"></img>
             </div>
+            <div class="prodConteudo flex">
+
+                <h2>Camisa Masculina</h2>
+                <h6>Cor: Preta</h6>
+                <h6>Tamanho: G</h6>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="prodImg">
+                <img src="../img/blackshirt.jpg"></img>
+            </div>
+            <div class="prodConteudo flex">
+
+                <h2>Camisa Masculina</h2>
+                <h6>Cor: Preta</h6>
+                <h6>Tamanho: G</h6>
+            </div>
+        </div>
+        <div class="produto">
+            <div class="prodImg">
+                <img src="../img/blackshirt.jpg"></img>
+            </div>
+            <div class="prodConteudo flex">
+
+                <h2>Camisa Masculina</h2>
+                <h6>Cor: Preta</h6>
+                <h6>Tamanho: G</h6>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- LISTA DE DESEJOS -->
+    <div id="tabListaDesejos" class="tab tabListaDesejos tabConteudo">
+        <div class="produto">
+            <div class="prodImg">
+                <img src="../img/blackshirt.jpg"></img>
+            </div>
+            <div class="prodConteudo flex">
+
+                <h2>Camisa Masculina</h2>
+                <h6>Cor: Preta</h6>
+                <h6>Tamanho: G</h6>
+            </div>
+        </div>
+
+        <div class="produto">
+            <div class="prodImg">
+                <img src="../img/blackshirt.jpg"></img>
+            </div>
+            <div class="prodConteudo flex">
+
+                <h2>Camisa Masculina</h2>
+                <h6>Cor: Preta</h6>
+                <h6>Tamanho: G</h6>
+            </div>
+        </div>
+        <div class="produto">
+            <div class="prodImg">
+                <img src="../img/blackshirt.jpg"></img>
+            </div>
+            <div class="prodConteudo flex">
+
+                <h2>Camisa Masculina</h2>
+                <h6>Cor: Preta</h6>
+                <h6>Tamanho: G</h6>
+            </div>
+        </div>
+
+    </div>
 
 
-            <!-- CONFIGURAÇÕES -->
-            <div id="tabConfigurações" class="tabConfigurações tabConteudo">configurações</div>
+    <!-- CONFIGURAÇÕES -->
+    <div id="tabConfigurações" class="tabConfigurações tabConteudo">configurações</div>
 
-            <!-- SAIR -->
-            <div id="sair" class="tabConteudo">sair</div>
+    <!-- SAIR -->
+    <div id="sair" class="tabConteudo">sair</div>
 
-        </main>
+    </main>
 
     </div>
 
