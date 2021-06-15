@@ -50,25 +50,13 @@ module.exports = {
         },
 
         async salvar() {
-            let obj = JSON.stringify(this.categoria);
             let resposta;
-            let headers = {
-                'Content-Type': 'application/json'
-            }
 
             if (this.categoria.id === null) {
-                resposta = await fetch(this.$URLAPI_BASE + '/api/categorias', {
-                    body: obj,
-                    method: 'post',
-                    headers
-                });
+                resposta = await this.$api.salvarCategoria(this.categoria);
             }
             else {
-                resposta = await fetch(this.$URLAPI_BASE + '/api/categorias/' + this.categoria.id, {
-                    body: obj,
-                    method: 'put',
-                    headers
-                });
+                resposta = await this.$api.atualizarCategoria(this.categoria);
             }
 
             if(resposta.ok) {

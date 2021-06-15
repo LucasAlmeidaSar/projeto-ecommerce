@@ -45,7 +45,10 @@
                     <tr v-for="(categoria, index) in categorias" :key="index">
                         <td>{{ categoria.id }}</td>
                         <td>{{ categoria.nome }}</td>
-                        <td>Sim</td>
+                        <td>
+                            <template v-if="categoria.temRegistros">Sim</template>
+                            <template v-else>Não</template>
+                        </td>
                         <td class="td-acoes">
                             <button
                                 @click="abrirModalCategoria(categoria)"
@@ -262,5 +265,4 @@ module.exports = {
 .abas__btn.ativo {
     background-color: rgb(209, 209, 209);
 }
-
 </style>
