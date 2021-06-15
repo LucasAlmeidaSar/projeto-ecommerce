@@ -66,35 +66,19 @@ module.exports = {
         },
 
         async enviarCor() {
-            let jsonObj = JSON.stringify(this.cor);
             let resposta;
 
             this.enviando = true;
 
             if (this.cor.id === null) {
-                resposta = await fetch(this.$URLAPI_BASE + "/api/cores", {
-                    method: "post",
-                    body: jsonObj,
-                    headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json",
-                    },
-                });
+                resposta = await this.$api.enviarCor(this.cor);
             }
             else {
                 console.log('atualizar')
-                resposta = await fetch(this.$URLAPI_BASE + "/api/cores/" + this.cor.id, {
-                    method: "put",
-                    body: jsonObj,
-                    headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json",
-                    },
-                });
+                resposta = await this.$api.atualizarCor(this.cor);
             }
 
-            if (resposta.ok) {
-
+            if (resposta) {
                 this.enviando = false;
 
                 this.fechar(true);

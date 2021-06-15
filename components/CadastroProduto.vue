@@ -412,11 +412,7 @@ module.exports = {
                 console.log("Enviou? ", enviou);
             };
 
-            let roupaFinal = await fetch(this.$URLAPI_BASE + '/api/roupas/alternarAtivo/' + this.roupa.id, {
-                method: 'post'
-            });
-
-            let resposta = await roupaFinal.json();
+            let resposta = await this.$api.alternarAtivo(this.roupa.id);
 
             console.log(resposta);
 

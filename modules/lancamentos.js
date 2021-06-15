@@ -1,8 +1,8 @@
-const urlServer = "http://localhost:8080/"
+const urlServer = "http://localhost:8080"
 const limiteDeProdutos = 9
 const cardsCarrossel = document.querySelector('[data-js="cardsCarrossel"]')
 
-const getRoupas = async () => await (await fetch(`${urlServer}api/roupas/recentes?limite=${limiteDeProdutos}`)).json()
+const getRoupas = async () => await (await fetch(`${urlServer}/api/roupas/recentes?limite=${limiteDeProdutos}`)).json()
 
 const inserirCards = async () => {
   const arrayProdutos = await getRoupas()
