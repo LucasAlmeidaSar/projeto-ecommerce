@@ -114,7 +114,9 @@ const service = {
 
     async realizarLogin(usuario, senha) {
         localStorage.removeItem('token');
-        let resposta = await fetch(URLAPI_BASE + '/api/auth/signin', {
+        let resposta;
+
+        resposta = await fetch(URLAPI_BASE + '/api/auth/signin', {
             method: 'post',
             body: JSON.stringify({email: usuario, senha: senha}),
             headers: {
@@ -133,7 +135,7 @@ const service = {
         if (resposta.status === 401) {
             return false;
         }
-        throw new ServiceException("Não foi possível realizar login");
+        
     },
 
     async enviarCor(cor) {
