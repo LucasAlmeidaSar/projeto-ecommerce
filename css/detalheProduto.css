@@ -14,7 +14,11 @@
 }
 
 .catalogolist {
-    margin-top: 105px;
+  margin-top: 105px;
+  overflow: auto;
+  min-width: 130px;
+  max-width: 400px;
+  max-height: 500px;
 }
 
 .foto {
@@ -77,7 +81,7 @@ hr {
 .botao__tamanho {
     display: block;
     margin: 15px;
-    width: 24px;
+    width: 30px;
     height: 24px;
     background-color: white;
     position: relative;
@@ -87,15 +91,7 @@ hr {
 }
 
 .borda {
-    display: block;
-    margin: 15px;
-    width: 24px;
-    height: 24px;
-    background-color: white;
-    position: relative;
     box-shadow: 0 0 0 3px var(--cor-clara), 0 0 0 5.5px rgb(0, 0, 0);
-    text-align: center;
-    padding-top: 5px;
 }
 
 
@@ -175,7 +171,7 @@ hr {
 .btnadd {
     display: block;
     padding: 10px 20px;
-    width: auto;
+    width: 100%;
     text-align: center;
     border-radius: 5px;
     color: var(--cor-clara);
@@ -183,6 +179,16 @@ hr {
     background-color: var(--cor-escura);
     user-select: none;
     margin-top: 30px;
+    cursor: pointer;
+}
+
+.btnadd:disabled{
+  cursor: default;
+  background-color: #666;
+}
+
+.btnComprar{
+  margin-top: 5px;
 }
 
 .btnadd:hover {
@@ -337,4 +343,17 @@ hr {
 #lupa {
     float: left;
     margin: 5px 0px 0px -20px;
+}
+
+.btn-desabilitado{
+  padding: 0;
+  background-color: white ;
+  color: none;
+  border: none;
+  outline: none;
+}
+
+.disponiveis{
+  margin-left: 10px;
+  color: #666;
 }

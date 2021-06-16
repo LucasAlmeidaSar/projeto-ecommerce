@@ -13,38 +13,43 @@ const inserirProdutos = async () => {
   const resposta = await getProdutos()
   const arrayProdutos = resposta.content  
   
-  const html = arrayProdutos.reduce((html, {id, modelos, descricao, preco}) => {
-    const listaInputCores = modelos.reduce((lista, {cor, imagens}) => {
-      lista += `
-      <li> 
-        <a class="card__cor" 
-           style="background-color: ${cor.valor};" 
-           title="${cor.nome}"
-           data-imagem="${imagens[0].path}"
-           href="javascript:void(0)">
-        </a> 
-      </li>
-      `
-      
-      return lista
-    }, '')
-
-    html += `
-    <div class="card">
-      <a href="../pages/detalheProduto.html"          
-         onclick="guardarProduto(${id})">
-        <img src=${url}${modelos[0].imagens[0].path} alt="${descricao}" class="imagem card__imagem">
-      </a>
-      <div class="card__descricao">
-        <ul class="flex">
-         ${listaInputCores}
-        </ul>  
-        <h3 class="card__titulo">${descricao.substr(0,25)}</h3>
-        <p class="card__subtitulo">R$${preco}</p>                
+  const html = arrayProdutos.reduce((html, {id, modelos, descricao, preco, quantidadeTotal}) => {
+    
+    if (quantidadeTotal > 0) {
+      const listaInputCores = modelos.reduce((lista, {cor, imagens}) => {
+        lista += `
+        <li> 
+          <a class="card__cor" 
+             style="background-color: ${cor.valor};" 
+             title="${cor.nome}"
+             data-imagem="${imagens[0].path}"
+             href="javascript:void(0)">
+          </a> 
+        </li>
+        `
+        
+        return lista
+      }, '')
+  
+      html += `
+      <div class="card">      
+        <a href="../pages/detalheProduto.html?idProduto=${id}">
+          <img src=${url}${modelos[0].imagens[0].path} alt="${descricao}" class="imagem card__imagem">     
+        </a>
+        <div class="card__descricao">
+          <ul class="flex">
+           ${listaInputCores}
+          </ul>  
+          <h3 class="card__titulo">${descricao.substr(0,25)}</h3>
+          <p class="card__subtitulo">R$${preco}</p>
+                       
+        </div>
       </div>
-    </div>
-    `
+      `
+     
+    }
     return html
+    
   } , '')
 
   gridProdutos.innerHTML = html
@@ -173,12 +178,6 @@ function ativarGeneroSelecionado(){
     }
   })
 
-  // filtrosGenero.forEach(btn => btn.addEventListener("click", () => {   
-  //   ativarGenero(btn)       
-  //   generoAtivo = `&filtro_genero=${btn.getAttribute('data-id')}`          
-   
-  //   filtrarProdutos() 
-  // }))
 }
 
 function ativarCategoriaSelecionada(){ 
@@ -236,58 +235,6 @@ function resetarTodasCategorias () {
   const lis = filtroCategoria.children[0].children
   Array.from(lis).forEach(li => li.children[0].classList.remove('ativo'))
 }
-
-
-
-
-
-
-
-
-// function filtrarPorGenero(genero) {
-    
-//   const getCategoriaUnica = async () => await (await fetch(`${url}/api/roupas/filtrar?ativo=true&filtro_genero=${genero}`)).json()
-
-//   const inserirProdutos = async () => {
-//     const resposta = await getCategoriaUnica()
-//     const arrayProdutos = resposta.content  
-
-//     const html = arrayProdutos.reduce((html, {modelos, descricao, preco}) => {
-//       const listaInputCores = modelos.reduce((lista, {cor, imagens}) => {
-//         lista += `
-//         <li> 
-//           <a class="card__cor" 
-//             style="background-color: ${cor.valor};" 
-//             title="${cor.nome}"
-//             data-imagem="${imagens[0].path}"
-//             href="javascript:void(0)">
-//           </a> 
-//         </li>
-//         `
-        
-//         return lista
-//       }, '')
-  
-//       html += `
-//       <div class="card">
-//         <img src=${url}${modelos[0].imagens[0].path} alt="${descricao}" class="imagem card__imagem">
-//         <div class="card__descricao">
-//           <ul class="flex">
-//            ${listaInputCores}
-//           </ul>  
-//           <h3 class="card__titulo">${descricao.substr(0,35)}</h3>
-//           <p class="card__subtitulo">R$${preco}</p>                
-//         </div>
-//       </div>
-//       `
-//       return html
-//     } , '')
-  
-//     gridProdutos.innerHTML = html
-//   }
-
-//   inserirProdutos()
-// }
 
 
 
@@ -355,38 +302,42 @@ function filtrarProdutos() {
     console.log(urlFiltro);
     const arrayProdutos = resposta.content  
 
-    const html = arrayProdutos.reduce((html, {id, modelos, descricao, preco}) => {
-      const listaInputCores = modelos.reduce((lista, {cor, imagens}) => {
-        lista += `
-        <li> 
-          <a class="card__cor" 
-            style="background-color: ${cor.valor};" 
-            title="${cor.nome}"
-            data-imagem="${imagens[0].path}"
-            href="javascript:void(0)">
-          </a> 
-        </li>
-        `
-        
-        return lista
-      }, '')
-  
-      html += `
-      <div class="card">
-        <a href="../pages/detalheProduto.html"          
-           onclick="guardarProduto(${id})">
-          <img src=${url}${modelos[0].imagens[0].path} alt="${descricao}" class="imagem card__imagem">
-        </a>
-        <div class="card__descricao">
-          <ul class="flex">
-           ${listaInputCores}
-          </ul>  
-          <h3 class="card__titulo">${descricao.substr(0,25)}</h3>
-          <p class="card__subtitulo">R$${preco}</p>                
+    const html = arrayProdutos.reduce((html, {id, modelos, descricao, preco, quantidadeTotal}) => {
+      if (quantidadeTotal > 0) {
+        const listaInputCores = modelos.reduce((lista, {cor, imagens}) => {
+          lista += `
+          <li> 
+            <a class="card__cor" 
+               style="background-color: ${cor.valor};" 
+               title="${cor.nome}"
+               data-imagem="${imagens[0].path}"
+               href="javascript:void(0)">
+            </a> 
+          </li>
+          `
+          
+          return lista
+        }, '')
+    
+        html += `
+        <div class="card">      
+          <a href="../pages/detalheProduto.html?idProduto=${id}">
+            <img src=${url}${modelos[0].imagens[0].path} alt="${descricao}" class="imagem card__imagem">     
+          </a>
+          <div class="card__descricao">
+            <ul class="flex">
+             ${listaInputCores}
+            </ul>  
+            <h3 class="card__titulo">${descricao.substr(0,25)}</h3>
+            <p class="card__subtitulo">R$${preco}</p>   
+            
+          </div>
         </div>
-      </div>
-      `
+        `
+       
+      }
       return html
+      
     } , '')
   
     gridProdutos.innerHTML = html
@@ -395,30 +346,11 @@ function filtrarProdutos() {
   inserirProdutos()
 }
 
-// const secoesDeFiltro =  document.querySelectorAll('.conteudo-colapsado')
+gridProdutos.addEventListener('click', event => {
+  let btnClicado = event.target 
 
-// secoesDeFiltro.forEach(secao => secao.addEventListener('click', event => {
-//   const botaoClicado = event.target
+  if (btnClicado.getAttribute('data-js') === 'btnAdd') {
+    guardarNoCarrinho(`${btnClicado.getAttribute('data-id')}`)
+  }
 
-//   if (botaoClicado.tagName === 'BUTTON') {
-//     filtrarProdutos()
-//   }
-
-// }))
-
-// secoesDeFiltro.addEventListener('click' , event => {
-//   var elementoClicado = event.target
-
-//   const liClicado = () => {
-//       while (!elementoClicado.dataset.js) {
-//           elementoClicado = elementoClicado.parentElement
-//       }
-//       return elementoClicado
-//   }
-//   const li = liClicado()
-  
-//   if (li.dataset.js === 'card') {
-//     filtrarProdutos()
-//   }
-
-// })
+})

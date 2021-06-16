@@ -26,10 +26,34 @@
 </head>
 
 <body>
+
+  <nav class="nav-padrao flex">
+    <a class="btn btn-nav-padrao" href="../index.html">Logo</a>
+
+    <ul class="flex">
+        <li><a class="btn btn-nav-padrao" href="../index.html">Início</a></li>
+        <li class="reduzir-um"><a class="btn btn-nav-padrao" href="../pages/contato.html">Contato</a></li>
+        <li class="reduzir-um"><a class="btn btn-nav-padrao" href="../pages/sobre.html">Sobre</a></li>
+    </ul>
+
+    <ul class="flex">
+        <li>
+            <a class="icone icone-nav-padrao" href="./login.html">
+                <i class="far fa-user"></i>
+            </a>
+        </li>
+        <li>
+            <a class="icone icone-nav-padrao" href="../pages/carrinho.html">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
         <div class="carrinho-externo__Main flex">
             <div class="carrinho-externo__wrapper">
                 <!--início da lista-->
-                <div class="carrinho-externo__lista flex">
+                <div class="carrinho-externo__lista flex" data-js="listaProdutos">
                     <!--início do container-->
                     <div class="carrinho-externo__container flex">
                             <div class="carrinho-externo__img flex"> 
@@ -104,15 +128,15 @@
         <div class="carrinho-externo__summaryWrapper flex">
             <h3 class="carrinho-externo__resumo">Resumo do pedido</h3>
             <div class="carrinho-externo__summaryDetails">
-                    <span class="prod">3 produtos
-                    </span><span class="preco">R$ 390,00
+                    <span class="prod" data-js="qtdProdutos">3 produtos
+                    </span><span class="preco" data-js="valorSubtotal">R$ 390,00
                     </span> 
                     <span class="frete">Frete</span><span class="freteValor">Grátis</span>
             </div>
             <div class="carrinho-externo__totalWrapper flex">
                     <div class="carrinho-externo_totalDetails flex">
                         <span class="total">Total</span>
-                        <span class="carrinho-externo__total"> R$ 390,00</span>
+                        <span class="carrinho-externo__total" data-js="valorTotal"> R$ 390,00</span>
                     </div>
                     <span class="parcelamento"> em até 6x no cartão</span>                
             </div>
@@ -153,6 +177,8 @@
        
     
         <!-- Script -->
+        <script src="../modules/carrinho.js"></script>
+
         <script type="module">
             import { App } from './src/main.js'
             
