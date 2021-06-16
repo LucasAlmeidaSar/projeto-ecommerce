@@ -19,11 +19,12 @@
 </head>
 
 <body>
-    <div id="login" class="form-container">
+    <div id="login" class="form-container" @submit.prevent="confirmarLogin">
         <form id="form-login" class="form">
             <img class="logo center-x" src="../img/logo.png" alt="Logo">
             <h2 class="form-titulo">Entre na sua conta</h2>
             <div class="form-campos">
+                <span v-if="dadosIncorretos" class="form-campos__erro">Email ou senha incorretos</span>
                 <input-layout v-model="email" type="email" icone="fas fa-envelope" preencher>Email</input-layout>
                 <input-layout v-model="senha" type="password" icone="fas fa-lock" preencher>Senha</input-layout>
                 <div id="recuperar-senha" class="form-campos__recuperar-senha"><a href="#">Esqueci minha senha</a></div>
@@ -40,12 +41,32 @@
     </footer>
 
     <script type="module">
+        import service from '../modules/service-api.js'
+
         let vapp = new Vue({
             el: '#login',
             data: {
                 email: '',
-                senha: ''
+                senha: '',
+                dadosIncorretos: false,
             },
+
+            methods: {
+                async confirmarLogin() {
+                    this.dadosIncorretos = false;
+
+                    let email = this.email;
+                    let senha = this.senha;
+
+                    let resposta = await service.realizarLogin(email, senha);
+                    if (resposta) {
+                        location.replace('/');
+                        return;
+                    }
+                    this.dadosIncorretos = true;
+                },
+            },
+
             components: {
                 'input-layout': httpVueLoader('../components/InputLayout.vue')
             }

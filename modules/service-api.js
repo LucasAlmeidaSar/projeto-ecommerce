@@ -113,6 +113,7 @@ const service = {
     },
 
     async realizarLogin(usuario, senha) {
+        localStorage.removeItem('token');
         let resposta = await fetch(URLAPI_BASE + '/api/auth/signin', {
             method: 'post',
             body: JSON.stringify({email: usuario, senha: senha}),
@@ -126,9 +127,13 @@ const service = {
             let token = await resposta.text();
 
             localStorage.setItem('token', token);
-            return;
+            return true;
         }
-        localStorage.removeItem('token');
+        
+        if (resposta.status === 401) {
+            return false;
+        }
+        throw new ServiceException("Não foi possível realizar login");
     },
 
     async enviarCor(cor) {
@@ -220,7 +225,7 @@ const service = {
     },
 
     async getUsuario() {
-        let resposta = await fetch(URLAPI_BASE + '/api/usuario/me', {
+        let resposta = await fetch(URLAPI_BASE + '/api/usuarios/me', {
             headers: {
                 Authorization: 'Bearer ' + getToken(),
             }
