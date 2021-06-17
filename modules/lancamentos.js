@@ -1,4 +1,4 @@
-const urlServer = "http://localhost:8080"
+const urlServer = "http://coldythegreat.ddns.net:8080"
 const limiteDeProdutos = 9
 const cardsCarrossel = document.querySelector('[data-js="cardsCarrossel"]')
 

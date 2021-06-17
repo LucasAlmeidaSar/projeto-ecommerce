@@ -10,9 +10,12 @@ const adicionarProduto = document.querySelector('[data-js="adicionarProduto"]')
 const btnComprar = document.querySelector('[data-js="comprar"]')
 const qtdDisponivel = document.querySelector('[data-js="qtdDisponivel"]')
 const quantidadeInput = document.querySelector('#quantidade')
+const addQtd = document.querySelector('[data-js="addQtd"]')
+const modalAddProduto = document.querySelector('[data-js="modalAddProduto"]')
+const btnFecharModal = document.querySelector('[data-js="btnFecharModal"]')
+var produtosLocalStorage = []
 
-
-const api = "http://localhost:8080"
+const api = "http://coldythegreat.ddns.net:8080"
 
 // Carregar com filtro de genero aplicado - Filtro Genero
 function resgatarProduto() {
@@ -130,43 +133,46 @@ onload = () => {
       function filtrarTamanhos(id){
         const modelo = produto.modelos.filter(modelo => modelo.id == id)
 
-        // if (modelo[0].quantidadeTotal > 0) {
+        if (modelo[0].quantidadeTotal > 0) {
 
-        //   const tamanhos = modelo[0].tamanhosModelo 
+          const tamanhos = modelo[0].tamanhosModelo 
 
-        //   var listaTamanho = tamanhos.reduce((lista, {tamanho, quantidade}) => {
-        //     if (quantidade > 0) {
-        //       lista +=  `
-        //         <li> 
-        //           <a class="botao__tamanho" href="javascript:void(0)">${tamanho}</a> 
-        //         </li> `            
-        //     }
+          var listaTamanho = tamanhos.reduce((lista, {tamanho, quantidade}) => {
+            if (quantidade > 0) {
+              lista +=  `
+                <li> 
+                  <a class="botao__tamanho" href="javascript:void(0)">${tamanho}</a> 
+                </li> `            
+            }
             
-        //     return lista
-        //   } ,'')
+            return lista
+          } ,'')
 
-        //   listaTamanhos.innerHTML = listaTamanho
-        // }else{
-        //   var listaTamanho = `
-        //     <p style="background: lightgray; margin:10px; padding:10px; border-radius:10px;">Nenhum modelo cadastrado.</p>
-        //   `
-        //   listaTamanhos.innerHTML = listaTamanho
-        // }  
+          listaTamanhos.innerHTML = listaTamanho
+          vitrine.setAttribute('src', `${api}${modelo[0].imagens[0].path}`)
 
-        const tamanhos = modelo[0].tamanhosModelo 
+        }else{
+          var listaTamanho = `
+            <p style="background: lightgray; margin:10px; padding:10px; border-radius:10px;">Nenhum modelo cadastrado.</p>
+          `
+          listaTamanhos.innerHTML = listaTamanho
+        }  
 
-        var listaTamanho = tamanhos.reduce((lista, {tamanho, quantidade}) => {
-          if (quantidade > 0) {
-            lista +=  `
-              <li> 
-                <a class="botao__tamanho" href="javascript:void(0)">${tamanho}</a> 
-              </li> `            
-          }
+        // const tamanhos = modelo[0].tamanhosModelo 
+
+        // var listaTamanho = tamanhos.reduce((lista, {tamanho, quantidade}) => {
+        //   if (quantidade > 0) {
+        //     lista +=  `
+        //       <li> 
+        //         <a class="botao__tamanho" href="javascript:void(0)">${tamanho}</a> 
+        //       </li> `            
+        //   }
           
-          return lista
-        } ,'')
+        //   return lista
+        // } ,'')
 
-        listaTamanhos.innerHTML = listaTamanho
+        // listaTamanhos.innerHTML = listaTamanho
+
       }
 
       function exibirQuantidadeDisponivelPorCor(id){
@@ -206,15 +212,79 @@ onload = () => {
           const idCor = listaCores.querySelector('.borda').dataset.modelo
           const nomeTamanho = listaTamanhos.querySelector('.borda').innerHTML
           const qtd = quantidadeInput.value
-          guardarNoCarrinho(idProduto, idCor, nomeTamanho, qtd)
+          const preco = produto.preco
+
+          if (localStorage.hasOwnProperty("produtos")) {
+            produtosLocalStorage = JSON.parse(localStorage.getItem("produtos"))  
+          }                  
+
+          if (produtosLocalStorage.length == 0) {
+            guardarNoCarrinho(idProduto, idCor, nomeTamanho, qtd, preco)
+            alternarModalAddProduto()
+          }
+          else{
+            const produtoAtual = produtosLocalStorage.filter(produtoLS => produtoLS.idCor == idCor)
+            
+            if (produtoAtual.length == 0) {
+              guardarNoCarrinho(idProduto, idCor, nomeTamanho, qtd, preco)
+              alternarModalAddProduto()
+            }else{
+              produtoAtual.qtd += qtd            
+              produtosLocalStorage.splice(produtosLocalStorage.indexOf(produtoAtual[0]), 1)
+              localStorage.setItem('produtos', JSON.stringify(produtosLocalStorage))   
+              alternarModalAddProduto()         
+            }
+          }
+          
+          
+
+          // guardarNoCarrinho(idProduto, idCor, nomeTamanho, qtd, preco)
+          // alternarModalAddProduto()
         } else {
           console.log('Qtd disponível menor doque solicitado.', quantidadeInput.value, qtdDisponivel.innerText);
         }
       })
 
-      quantidadeInput.addEventListener("change", () => liberarBotoes())
+      btnComprar.addEventListener('click', () => {
+        
+        if ( (quantidadeInput.value > 0) && (quantidadeInput.value <= parseInt(qtdDisponivel.innerText)) ) {
+          let produtosLocalStorage = JSON.parse(localStorage.getItem("produtos"))  
+          
+          
 
-      
+          const idProduto = produto.id
+          const idCor = listaCores.querySelector('.borda').dataset.modelo
+          const nomeTamanho = listaTamanhos.querySelector('.borda').innerHTML
+          const qtd = quantidadeInput.value
+          const preco = produto.preco
+
+          const produtoAtual = produtosLocalStorage.filter(produtoLS => produtoLS.idCor == idCor)
+
+          if (produtosLocalStorage.length == 0) {
+            guardarNoCarrinho(idProduto, idCor, nomeTamanho, qtd, preco)
+          }
+          
+          if (produtoAtual.length == 0) {
+            guardarNoCarrinho(idProduto, idCor, nomeTamanho, qtd, preco)
+          }else{
+            console.log('já tem');            
+          }
+
+         
+        } else {
+          console.log('Qtd disponível menor doque solicitado.', quantidadeInput.value, qtdDisponivel.innerText);
+        }
+      })
+
+      // quantidadeInput.addEventListener("change", () => {
+      //   liberarBotoes()
+      //   precoProduto.innerHTML = `R$ ${(produto.preco * quantidadeInput.value).toFixed(2)}`
+      // })
+
+      addQtd.addEventListener('click', () => {
+        precoProduto.innerHTML = `R$ ${(produto.preco * quantidadeInput.value).toFixed(2)}`
+        liberarBotoes()
+      })
       
     }
     inserirProdutoUnico()       
@@ -229,7 +299,7 @@ onload = () => {
 // Adicionar ao Carrinho
 let produtosCarrinho = []
 
-function guardarNoCarrinho(idProduto, idCor, idTamanho, qtd){ 
+function guardarNoCarrinho(idProduto, idCor, idTamanho, qtd, preco){ 
 
   if (localStorage.hasOwnProperty("produtos")) {
     produtosCarrinho = JSON.parse(localStorage.getItem("produtos"))
@@ -240,7 +310,8 @@ function guardarNoCarrinho(idProduto, idCor, idTamanho, qtd){
       id: idProduto,
       idCor: idCor,
       idTamanho: idTamanho,
-      qtd: qtd
+      qtd: qtd,
+      preco: preco
     }
     )
 
@@ -249,11 +320,19 @@ function guardarNoCarrinho(idProduto, idCor, idTamanho, qtd){
 }
 
 function liberarBotoes(){
-  if (listaCores.querySelector('.borda') && listaTamanhos.querySelector('.borda') && quantidadeInput.value != 0) {
+  
+  if (listaCores.querySelector('.borda') && listaTamanhos.querySelector('.borda') && quantidadeInput.value != 0 && quantidadeInput.value <= parseInt(qtdDisponivel.innerHTML)) {
     adicionarProduto.disabled = false
     btnComprar.disabled = false
   }else{
     adicionarProduto.disabled = true
     btnComprar.disabled = true
   }
+  
 }
+
+function alternarModalAddProduto() {
+  modalAddProduto.classList.toggle('ativo')
+}
+
+btnFecharModal.addEventListener('click', alternarModalAddProduto)

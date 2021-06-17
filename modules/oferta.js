@@ -1,4 +1,4 @@
-const urlOferta = "http://localhost:8080"
+const urlOferta = "http://coldythegreat.ddns.net:8080"
 const qtdProdutos = 6
 const gridProdutosOferta = document.querySelector('[data-js="produtosOferta"]')
 

@@ -16,7 +16,7 @@ const App = {
 
           ativarCarrossel();
 
-          ativarCarrinho();
+          // ativarCarrinho();
 
           ativarLupa();   
                       

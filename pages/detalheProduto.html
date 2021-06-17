@@ -41,6 +41,11 @@
         </ul>
     </nav>
 
+    <div class="modal-add" data-js="modalAddProduto">
+      <h2 class="modal-msg">Produto adicionado ao carrinho!</h2>
+      <button class="modal-x" data-js="btnFecharModal">&times;</button>
+    </div>
+
     <div class="container">
         <div class="catalogo">
             <div>
@@ -94,7 +99,8 @@
             <div class="flex" style="justify-content: flex-start;" data-js="quantidadeDisponivel">
               <form action="javascript:void(0)">
                 <label for="quantidade">Quantidade:</label>
-                <input type="number" id="quantidade" name="quantidade" min="1" max="9">               
+                <input type="number" id="quantidade" name="quantidade" min="1" max="9">    
+                <button data-js="addQtd">ok</button>           
               </form>
               <div class="flex disponiveis">
                 <p>Disponíveis: </p>
@@ -128,6 +134,8 @@
                     </table>
                 </div>
             </div>
+
+            
 
             <a href="javascript:void(0)"><button class="btnadd" disabled data-js="adicionarProduto">Adicionar ao carrinho</button></a>
             <a href="./checkout.html"><button disabled class="btnadd btnComprar"  data-js="comprar">Comprar</button></a>
@@ -167,6 +175,9 @@
         </ul>
 
     </footer>
+
+
+    
 
     <!-- <script>
         // var primeiraimg = '../img/vestidoproduto.jpg';

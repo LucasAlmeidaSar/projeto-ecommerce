@@ -55,6 +55,7 @@ h1 {
 
 #preco {
     margin: 20px 0 20px 0;
+    font-size: 1.5rem;
 }
 
 .conteudo {
@@ -356,4 +357,35 @@ hr {
 .disponiveis{
   margin-left: 10px;
   color: #666;
+}
+
+.modal-add{
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  z-index: 999;
+  background-color: rgb(22, 160, 133);
+  display: none;
+}
+
+.modal-msg{
+  text-align: center;
+  height: 40px;
+  line-height: 2.2;
+}
+
+.modal-x{
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: #222;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.modal-add.ativo{
+  display: block;
 }

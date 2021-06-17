@@ -1,10 +1,11 @@
-const urlCheckout = "http://localhost:8080"
+const urlCheckout = "http://coldythegreat.ddns.net:8080"
 const listaProdutos = document.querySelectorAll('[data-js="listaProdutos"]')
 var produtosLocalStorage = []
 const valorTotal = document.querySelectorAll('[data-js="valorTotal"]')
 const valorSubtotal = document.querySelectorAll('[data-js="subTotal"]')
 const qtdProdutos = document.querySelector('[data-js="qtdProdutos"]')
 const frete = document.querySelectorAll('[data-js="frete"]')
+const parcelasCartao = document.querySelector('#parcelas')
 
 onload = () => {
   if (localStorage.hasOwnProperty("produtos")) {
@@ -43,14 +44,54 @@ onload = () => {
           listaProdutos.forEach( lista => lista.innerHTML = html)
           valorFinal += produtoCheckout.preco*produto.qtd
           valorTotal.forEach(total => total.innerHTML = (valorFinal + parseFloat(frete[0].innerHTML)).toFixed(2))
-          valorSubtotal.forEach(subtotal => subtotal.innerHTML = valorFinal.toFixed(2))
-        }          
+          valorSubtotal.forEach(subtotal => subtotal.innerHTML = valorFinal.toFixed(2))         
+          
+        }                     
         
         inserirProdutosCheckout()
       })
-    
-    
-    
+
+      const valorTotalDosProdutos = produtosLocalStorage.reduce((acumulador, produto) => {
+        let valorProduto = produto.preco * produto.qtd
+        acumulador += valorProduto
+        return acumulador
+      }, 0)
+
+      const valorFinalDaVenda = (valorTotalDosProdutos + parseFloat(frete[0].innerHTML)).toFixed(2)
+      
+      const op1 = document.createElement('option')
+      op1.value = valorFinalDaVenda
+      op1.innerText = `1x de ${op1.value}`
+
+      const op2 = document.createElement('option')
+      op2.value = (valorFinalDaVenda/2).toFixed(2)
+      op2.innerText = `2x de ${op2.value}`
+
+      const op3 = document.createElement('option')
+      op3.value = (valorFinalDaVenda/3).toFixed(2)
+      op3.innerText = `3x de ${op3.value}`
+
+      const op4 = document.createElement('option')
+      op4.value = (valorFinalDaVenda/4).toFixed(2)
+      op4.innerText = `4x de ${op4.value}`
+
+      const op5 = document.createElement('option')
+      op5.value = (valorFinalDaVenda/5).toFixed(2)
+      op5.innerText = `5x de ${op5.value}`
+
+      const op6 = document.createElement('option')
+      op6.value = (valorFinalDaVenda/6).toFixed(2)
+      op6.innerText = `6x de ${op6.value}`
+      
+      parcelasCartao.appendChild(op1)
+      parcelasCartao.appendChild(op2)
+      parcelasCartao.appendChild(op3)
+      parcelasCartao.appendChild(op4)
+      parcelasCartao.appendChild(op5)
+      parcelasCartao.appendChild(op6)
+      
+      
+      
 
     // const html = produtosCarrinho.reduce((html, produto) => {
     //   const getProdutosCarrinho = async () => await (await fetch(`${urlCarrinho}/api/roupas/${produto.id}`)).json()
