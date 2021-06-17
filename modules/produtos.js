@@ -2,7 +2,7 @@ const gridProdutos = document.querySelector('[data-js="gridProdutos"]')
 const listaCores = document.querySelector('[data-js="filtroCores"]')
 const listaCategorias = document.querySelector('[data-js="listaCategorias"]')
 
-const url = "http://localhost:8080"
+const url = "http://coldythegreat.ddns.net:8080"
 
 
 

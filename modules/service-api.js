@@ -1,4 +1,4 @@
-export const URLAPI_BASE = 'http://localhost:8080';
+export const URLAPI_BASE = 'http://coldythegreat.ddns.net:8080';
 
 const PATH_ROUPA = '/api/roupas/';
 const PATH_IMAGEM = PATH_ROUPA + 'enviarImagens/';

@@ -1,4 +1,4 @@
-const urlCarrinho = "http://localhost:8080"
+const urlCarrinho = "http://coldythegreat.ddns.net:8080"
 const divProdutos = document.querySelector('[data-js="listaProdutos"]')
 var produtosCarrinho = []
 const valorTotal = document.querySelector('[data-js="valorTotal"]')
