@@ -234,13 +234,12 @@ const service = {
         });
 
         if (resposta.status === 401) {
-            service.realizarLogin('admin@admin.com', '12345');
-            return;
+            return false;
         }
 
         resposta = await resposta.json();
 
-        console.log(resposta);
+        return resposta;
     }
 }
 

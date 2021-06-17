@@ -9,36 +9,42 @@
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.min.js'></script>
     <script src="https://unpkg.com/http-vue-loader"></script>
-    
+
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' integrity='sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==' crossorigin='anonymous'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'
+        integrity='sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=='
+        crossorigin='anonymous' />
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/cores.css">
     <link rel="stylesheet" href="../css/login_cadastro.css">
 </head>
 
 <body>
-    <div id="login" class="form-container" @submit.prevent="confirmarLogin">
-        <form id="form-login" class="form">
-            <img class="logo center-x" src="../img/logo.png" alt="Logo">
-            <h2 class="form-titulo">Entre na sua conta</h2>
-            <div class="form-campos">
-                <span v-if="dadosIncorretos" class="form-campos__erro">Email ou senha incorretos</span>
-                <input-layout v-model="email" type="email" icone="fas fa-envelope" preencher>Email</input-layout>
-                <input-layout v-model="senha" type="password" icone="fas fa-lock" preencher>Senha</input-layout>
-                <div id="recuperar-senha" class="form-campos__recuperar-senha"><a href="#">Esqueci minha senha</a></div>
-            </div>
-            <div class="form-control__buttons">
-                <input type="submit" class="form-btn__entrar" value="ENTRAR">
-                <span class="form-btn__cadastro"><span class="opacidade">Não possui uma conta? </span><a href="cadastro.html">Crie uma agora</a></span>
-            </div>
-        </form>
+    <div class="hide">
+        <div id="login" class="form-container" @submit.prevent="confirmarLogin">
+            <form id="form-login" class="form">
+                <img class="logo center-x" src="../img/logo.png" alt="Logo">
+                <h2 class="form-titulo">Entre na sua conta</h2>
+                <div class="form-campos">
+                    <span v-if="dadosIncorretos" class="form-campos__erro">Email ou senha incorretos</span>
+                    <input-layout v-model="email" type="email" icone="fas fa-envelope" preencher>Email</input-layout>
+                    <input-layout v-model="senha" type="password" icone="fas fa-lock" preencher>Senha</input-layout>
+                    <div id="recuperar-senha" class="form-campos__recuperar-senha"><a href="#">Esqueci minha senha</a></div>
+                </div>
+                <div class="form-control__buttons">
+                    <input type="submit" class="form-btn__entrar" value="ENTRAR">
+                    <span class="form-btn__cadastro"><span class="opacidade">Não possui uma conta? </span><a
+                            href="cadastro.html">Crie uma agora</a></span>
+                </div>
+            </form>
+        </div>
+        <footer class="rodape">
+            <h2 class="rodape__direitos">Todos os direitos reservados LOJA QUE NAO TEM NOME</h2>
+        </footer>
     </div>
 
-    <footer class="rodape">
-        <h2 class="rodape__direitos">Todos os direitos reservados LOJA QUE NAO TEM NOME</h2>
-    </footer>
+    <script type="module" src="../modules/usuario-logado.js"></script>
 
     <script type="module">
         import service from '../modules/service-api.js'
@@ -60,6 +66,12 @@
 
                     let resposta = await service.realizarLogin(email, senha);
                     if (resposta) {
+                        let proxPagina = localStorage.getItem('next');
+                        if (proxPagina) {
+                            localStorage.removeItem('next');
+                            location.replace(proxPagina);
+                            return;
+                        }
                         location.replace('/');
                         return;
                     }
