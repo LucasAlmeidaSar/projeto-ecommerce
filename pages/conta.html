@@ -39,14 +39,6 @@
             <li> <a class="btn btn-nav-padrao" href="./pages/faq.html">FAQ</a> </li>
             <li> <a class="btn btn-nav-padrao" href="#">Contato</a> </li>
         </ul>
-
-        <!--
-        <div id="divBusca">
-            <i class="glyphicon glyphicon-search" id="icon-pesquisa"></i>
-            <input type="text" id="txtBusca" placeholder="Buscar..." />
-        </div>
-        -->
-
         <ul class="carrinho-perfil flex">
             <li>
                 <a class="glyphicon glyphicon-user" href="" id="icon-user"></a>
@@ -63,9 +55,7 @@
         <div class="sidebar">
             <div class="sidebar__cabecalho flex">
                 <h1 class="sidebar__titulo">Minha Conta</h1>
-                <div class="sidebar__btn" v-on:click="fecharAbrirMenu()">
-                    <i class="fas fa-bars"></i>
-                </div>
+
             </div>
             <ul class="sidebar-menu">
                 <li class="sidebar-menu__item" onclick="alterarInfo('tabConta')">
@@ -84,12 +74,6 @@
                     <div class="sidebar-menu__item-container">
                         <i class="fas fa-heart"></i>
                         <span class="sidebar-menu__span">Lista de desejos</span>
-                    </div>
-                </li>
-                <li class="sidebar-menu__item" onclick="alterarInfo('tabConfigurações')">
-                    <div class="sidebar-menu__item-container">
-                        <i class="fas fa-cog"></i>
-                        <span class="sidebar-menu__span">Configurações</span>
                     </div>
                 </li>
                 <li class="sidebar-menu__item">
@@ -179,88 +163,137 @@
                 </div>
 
             </div>
+            <!-- HISTÓRICO DE COMPRAS -->
+            <div id="tabHistorico" class="tab tabHistorico tabConteudo">
+
+                <div class="produto">
+                    <a href="">
+                        <div class="prodImg">
+                            <img src="../img/blackshirt.jpg"></img>
+                        </div>
+                    </a>
+                    <div class="prodConteudo flex">
+
+                        <h2>Camisa Masculina</h2>
+                        <h6>Cor: Preta</h6>
+                        <h6>Tamanho: G</h6>
+                    </div>
+                    <div class="detalhes">
+                        <a href="">
+                            <span>Mais Detalhes</span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="produto">
+                    <a href="">
+                        <div class="prodImg">
+                            <img src="../img/camisa_lucao.jpg"></img>
+                        </div>
+                    </a>
+                    <div class="prodConteudo flex">
+
+                        <h2>Camisa Elastano</h2>
+                        <h6>Cor: Vermelha e Azul</h6>
+                        <h6>Tamanho: G</h6>
+                    </div>
+                    <div class="detalhes">
+                        <a href="">
+                            <span>Mais Detalhes</span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="produto">
+                    <a href="">
+                        <div class="prodImg">
+                            <img src="../img/camisa_branca_florida.jpg"></img>
+                        </div>
+                    </a>
+                    <div class="prodConteudo flex">
+
+                        <h2>Camisa Florida</h2>
+                        <h6>Cor: Branca</h6>
+                        <h6>Tamanho: G</h6>
+                    </div>
+                    <div class="detalhes">
+                        <a href="">
+                            <span>Mais Detalhes</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- LISTA DE DESEJOS -->
+            <div id="tabListaDesejos" class="tab tabListaDesejos tabConteudo">
+
+                <div class="produto">
+                    <a href="">
+                        <div class="prodImg">
+                            <img src="../img/camisaMasculina.jpg"></img>
+                        </div>
+                    </a>
+                    <div class="prodConteudo flex">
+
+                        <h2>Camisa Masculina</h2>
+                        <h6>Cor: Branca</h6>
+                        <h6>Tamanho: G</h6>
+                    </div>
+                    <a class="detalhes" href="">
+                        <span>Mais Detalhes</span>
+                    </a>
+                    <a href="">
+                        <i class="far fa-trash-alt"></i>
+                    </a>
+                </div>
+
+
+                <div class="produto">
+                    <a href="">
+                        <div class="prodImg">
+                            <img src="../img/camisaMasculina2.jpg"></img>
+                        </div>
+                    </a>
+                    <div class="prodConteudo flex">
+
+                        <h2>Camisa Masculina</h2>
+                        <h6>Cor: Bege</h6>
+                        <h6>Tamanho: G</h6>
+                    </div>
+                    <a class="detalhes" href="">
+                        <span>Mais Detalhes</span>
+                    </a>
+                    <a href="">
+                        <i class="far fa-trash-alt"></i>
+                    </a>
+                </div>
+
+
+                <div class="produto">
+                    <a href="">
+                        <div class="prodImg">
+                            <img src="../img/camisaMasculina3.jpg"></img>
+                        </div>
+                    </a>
+                    <div class="prodConteudo flex">
+
+                        <h2>Camisa Masculina</h2>
+                        <h6>Cor: Cinza</h6>
+                        <h6>Tamanho: G</h6>
+                    </div>
+                    <a class="detalhes" href="">
+                        <span>Mais Detalhes</span>
+                    </a>
+                    <a href="">
+                        <i class="far fa-trash-alt"></i>
+                    </a>
+                </div>
+
+            </div>
     </div>
-    <!-- HISTÓRICO DE COMPRAS -->
-    <div id="tabHistorico" class="tab tabHistorico tabConteudo">
-        <div class="produto">
-            <div class="prodImg">
-                <img src="../img/blackshirt.jpg"></img>
-            </div>
-            <div class="prodConteudo flex">
-
-                <h2>Camisa Masculina</h2>
-                <h6>Cor: Preta</h6>
-                <h6>Tamanho: G</h6>
-            </div>
-        </div>
-
-        <div class="produto">
-            <div class="prodImg">
-                <img src="../img/blackshirt.jpg"></img>
-            </div>
-            <div class="prodConteudo flex">
-
-                <h2>Camisa Masculina</h2>
-                <h6>Cor: Preta</h6>
-                <h6>Tamanho: G</h6>
-            </div>
-        </div>
-        <div class="produto">
-            <div class="prodImg">
-                <img src="../img/blackshirt.jpg"></img>
-            </div>
-            <div class="prodConteudo flex">
-
-                <h2>Camisa Masculina</h2>
-                <h6>Cor: Preta</h6>
-                <h6>Tamanho: G</h6>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- LISTA DE DESEJOS -->
-    <div id="tabListaDesejos" class="tab tabListaDesejos tabConteudo">
-        <div class="produto">
-            <div class="prodImg">
-                <img src="../img/blackshirt.jpg"></img>
-            </div>
-            <div class="prodConteudo flex">
-
-                <h2>Camisa Masculina</h2>
-                <h6>Cor: Preta</h6>
-                <h6>Tamanho: G</h6>
-            </div>
-        </div>
-
-        <div class="produto">
-            <div class="prodImg">
-                <img src="../img/blackshirt.jpg"></img>
-            </div>
-            <div class="prodConteudo flex">
-
-                <h2>Camisa Masculina</h2>
-                <h6>Cor: Preta</h6>
-                <h6>Tamanho: G</h6>
-            </div>
-        </div>
-        <div class="produto">
-            <div class="prodImg">
-                <img src="../img/blackshirt.jpg"></img>
-            </div>
-            <div class="prodConteudo flex">
-
-                <h2>Camisa Masculina</h2>
-                <h6>Cor: Preta</h6>
-                <h6>Tamanho: G</h6>
-            </div>
-        </div>
-
-    </div>
-
-
-    <!-- CONFIGURAÇÕES -->
-    <div id="tabConfigurações" class="tabConfigurações tabConteudo">configurações</div>
 
     <!-- SAIR -->
     <div id="sair" class="tabConteudo">sair</div>
