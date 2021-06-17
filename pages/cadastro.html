@@ -9,48 +9,54 @@
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.min.js'></script>
     <script src="https://unpkg.com/http-vue-loader"></script>
-    
+
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css//reset.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' integrity='sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==' crossorigin='anonymous'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'
+        integrity='sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=='
+        crossorigin='anonymous' />
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/cores.css">
     <link rel="stylesheet" href="../css/login_cadastro.css">
 </head>
 
 <body>
-    <div id="cadastro" class="form-container">
-        <form id="form-cadastro" class="form">
-            <img class="logo center-x" src="../img/logo.png" alt="Logo">
-            <h2 class="form-titulo">Crie sua conta</h2>
-            <div class="form-campos">
-                <input-layout type="text" preencher>Nome completo</input-layout>
-                <input-layout type="text" preencher>CPF</input-layout>
-                <input-layout type="tel" pattern="[0-9]{11}" preencher>Telefone (DDD + número)</input-layout>
-                <select id="genero" class="form-campos__genero" required>
-                    <option value="" selected disabled hidden>Selecione o gênero</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="feminino">Feminino</option>
-                    <option value="outro">Outro</option>
-                </select>
-                <input-layout type="date" preencher>Data de nascimento</input-layout>
-                <input-layout type="email" icone="fas fa-envelope" preencher>Email</input-layout>
-                <input-layout type="password" icone="fas fa-lock" preencher>Senha</input-layout>
-                <input-layout type="password" icone="fas fa-lock" preencher>Confirme sua senha</input-layout>
-            </div>
-            <div class="form-campos__termos">
-                <input type="checkbox" id="termos" required> <span>Li e aceito as Politicas de Privacidade e Termos de Uso.</span>
-            </div>
-            <div class="form-control__buttons">
-                <input type="submit" class="form-btn__entrar" value="CONFIRMAR">
-            </div>
-        </form>
+    <div class="hide">
+        <div id="cadastro" class="form-container">
+            <form id="form-cadastro" class="form">
+                <img class="logo center-x" src="../img/logo.png" alt="Logo">
+                <h2 class="form-titulo">Crie sua conta</h2>
+                <div class="form-campos">
+                    <input-layout type="text" preencher>Nome completo</input-layout>
+                    <input-layout type="text" preencher>CPF</input-layout>
+                    <input-layout type="tel" pattern="[0-9]{11}" preencher>Telefone (DDD + número)</input-layout>
+                    <select id="genero" class="form-campos__genero" required>
+                        <option value="" selected disabled hidden>Selecione o gênero</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                    <input-layout type="date" preencher>Data de nascimento</input-layout>
+                    <input-layout type="email" icone="fas fa-envelope" preencher>Email</input-layout>
+                    <input-layout type="password" icone="fas fa-lock" preencher>Senha</input-layout>
+                    <input-layout type="password" icone="fas fa-lock" preencher>Confirme sua senha</input-layout>
+                </div>
+                <div class="form-campos__termos">
+                    <input type="checkbox" id="termos" required> <span>Li e aceito as Politicas de Privacidade e Termos
+                        de Uso.</span>
+                </div>
+                <div class="form-control__buttons">
+                    <input type="submit" class="form-btn__entrar" value="CONFIRMAR">
+                </div>
+            </form>
+        </div>
+
+        <footer class="rodape">
+            <h2 class="rodape__direitos">Todos os direitos reservados LOJA QUE NAO TEM NOME</h2>
+        </footer>
     </div>
 
-    <footer class="rodape">
-        <h2 class="rodape__direitos">Todos os direitos reservados LOJA QUE NAO TEM NOME</h2>
-    </footer>
-
+    <script type="module" src="../modules/usuario-logado.js"></script>
     <script type="module">
         let vapp = new Vue({
             el: '#cadastro',

@@ -19,7 +19,9 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-
+.hide {
+    display: none !important;
+}
 
 /* Flex para reuso */
 .flex {
