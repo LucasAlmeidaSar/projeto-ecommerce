@@ -40,7 +40,7 @@
 
 
       <div class="conteudo-resumo-pedido inativo">
-        <ul class="lista-produto"> 
+        <ul class="lista-produto" data-js="listaProdutos"> 
           <li class="item-produto flex">                   
             <div class="flex">
               <img class="imagem-produto" src="/img/camisaMasculina.jpg">
@@ -81,15 +81,18 @@
         <ul class="valores-produto-container">
           <li class="valores-item flex">
             <p>Subtotal</p>
-            <p>R$ 289,60</p>
+            <p data-js="subTotal">R$ 0,00</p>
           </li>
           <li class="valores-item flex">
             <p>Custo de frete</p>
-            <p>R$ 19,45</p>
+            <div class="flex">
+              <p>R$ </p>
+              <p data-js="frete">19,45</p>
+            </div>
           </li>        
           <li class="valores-item total-container flex">
             <p>Total</p>
-            <p class="valor-total">R$ 309,05</p>
+            <p class="valor-total" data-js="valorTotal">R$ 0,00</p>
             </li>
         </ul>
 
@@ -302,7 +305,7 @@
         <!-- Seção Produtos -->
         <div class="container-produtos">
 
-           <ul class="lista-produto"> 
+           <ul class="lista-produto" data-js="listaProdutos"> 
                <li class="item-produto flex">                   
                    <div class="flex">
                         <img class="imagem-produto" src="/img/camisaMasculina.jpg">
@@ -341,17 +344,20 @@
            <ul class="valores-produto-container">
                <li class="valores-item flex">
                    <p>Subtotal</p>
-                   <p>R$ 289,60</p>
+                   <p data-js="subTotal">R$ 0,00</p>
                </li>
 
                <li class="valores-item flex">
                    <p>Custo de frete</p>
-                   <p>R$ 19,45</p>
+                   <div class="flex">
+                    <p>R$ </p>
+                    <p data-js="frete">19,45</p>
+                   </div>
                </li>
 
                <li class="valores-item total-container flex">
                     <p>Total</p>
-                    <p class="valor-total">R$ 309,05</p>
+                    <p class="valor-total" data-js="valorTotal">R$ 0,00</p>
                 </li>
            </ul>
 
@@ -393,6 +399,7 @@
         });
         </script> 
     <script src="../modules/checkout.js"></script>
+    <script src="../modules/checkoutApi.js"></script>
     
 </body>
 </html>

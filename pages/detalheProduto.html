@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li>
-                <a class="icone icone-nav-padrao" href="javascript:void(0)">
+                <a class="icone icone-nav-padrao" href="../pages/carrinho.html">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
             </li>
@@ -44,11 +44,8 @@
     <div class="container">
         <div class="catalogo">
             <div>
-                <ul class="catalogolist">
-                    <li> <button class="botao" onclick="alterarImagem('vitrine', '../img/vestidoproduto.jpg'); alterarImagemModal('vitrineModal', '../img/vestidoproduto.jpg');"><div class="zoom"><img class="foto"  src="../img/vestidoproduto.jpg"></div></button>                        </li>
-                    <li> <button class="botao" onclick="alterarImagem('vitrine', '../img/foto1-catalogolist.jpg'); alterarImagemModal('vitrineModal', '../img/foto1-catalogolist.jpg');"><div class="zoom"><img class="foto" src="../img/foto1-catalogolist.jpg"></div></button>                        </li>
-                    <li> <button class="botao" onclick="alterarImagem('vitrine', '../img/foto2-catalogolist.jpg'); alterarImagemModal('vitrineModal', '../img/foto2-catalogolist.jpg');"><div class="zoom"><img class="foto" src="../img/foto2-catalogolist.jpg"></div></button>                        </li>
-                    <li> <button class="botao" onclick="alterarImagem('vitrine', '../img/foto3-catalogolist.jpg'); alterarImagemModal('vitrineModal', '../img/foto3-catalogolist.jpg');"><div class="zoom"><img class="foto" src="../img/foto3-catalogolist.jpg"></div></button>                        </li>
+                <ul class="catalogolist" data-js="catalogoLista">
+                    
                 </ul>
             </div>
 
@@ -66,13 +63,13 @@
 
 
         <div class="infoproduto">
-            <h1>VESTIDO MIDI
+            <h1 data-js="nomeProduto">VESTIDO MIDI
                 <a href="#">
                     <button class="btn-favorito" onclick="alterarIcon()"> <i id="favorito" class="far fa-bookmark" title="Salvar"></i></a></button> </h1>
-            <h2 id="preco">R$ 89,99</h2>
+            <h2 id="preco" data-js="precoProduto">R$ 89,99</h2>
             <hr>
             <p class="conteudo">Escolha a cor</p>
-            <ul class="flex">
+            <ul class="flex" data-js="listaCores">
                 <li class="cor">
                     <a class="botao__cor cor-1" href="#"></a>
                 </li>
@@ -85,13 +82,26 @@
             </ul>
             <hr>
             <p class="conteudo">Escolha o tamanho</p>
-            <ul class="flex">
+            <ul class="flex" data-js="listaTamanhos">
                 <li> <a class="botao__tamanho " href="#">PP</a> </li>
                 <li> <a class="botao__tamanho" href="#">P</a> </li>
                 <li> <a class="botao__tamanho" href="#">M</a> </li>
                 <li> <a class="botao__tamanho" href="#">G</a> </li>
                 <li> <a class="botao__tamanho" href="#">GG</a> </li>
             </ul>
+            <hr>
+
+            <div class="flex" style="justify-content: flex-start;" data-js="quantidadeDisponivel">
+              <form action="javascript:void(0)">
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" name="quantidade" min="1" max="9">               
+              </form>
+              <div class="flex disponiveis">
+                <p>Disponíveis: </p>
+                <p class="disponiveis" data-js="qtdDisponivel">0</p>
+              </div>
+            </div>
+              
             <hr>
 
             <p class="conteudo">Calcule o frete</p>
@@ -119,8 +129,10 @@
                 </div>
             </div>
 
-
-            <a class="btnadd" href="#">Adicionar ao carrinho</a>
+            <a href="javascript:void(0)"><button class="btnadd" disabled data-js="adicionarProduto">Adicionar ao carrinho</button></a>
+            <a href="./checkout.html"><button disabled class="btnadd btnComprar"  data-js="comprar">Comprar</button></a>
+            <!-- <a class="btnadd inativo" href="javascript:void(0)" data-js="adicionarProduto">Adicionar ao carrinho</a> -->
+            <!-- <a class="btnadd btnComprar inativo" href="./checkout.html" data-js="comprar">Comprar</a> -->
 
             <button class="accordion">Detalhes</button>
             <div class="panel">
@@ -156,7 +168,7 @@
 
     </footer>
 
-    <script>
+    <!-- <script>
         // var primeiraimg = '../img/vestidoproduto.jpg';
         // document.getElementById("vitrine").src = primeiraimg;
 
@@ -217,22 +229,8 @@
             }
         });
     </script>
-
-    <script>
-        function alterarIcon() {
-
-            var x = document.getElementById("favorito");
-
-            if (x.classList.contains("far")) {
-                x.classList.remove("far");
-                x.classList.add("fas");
-            } else {
-                x.classList.remove("fas");
-                x.classList.add("far");
-            }
-        }
-    </script>
-    <script>
+   -->
+    <!-- <script>
         var visibilidade = true;
 
         function calcFrete() {
@@ -246,9 +244,9 @@
             }
 
         }
-    </script>
+    </script> -->
 
-    <script>
+    <!-- <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
 
@@ -263,11 +261,11 @@
                 }
             });
         }
-    </script>
+    </script> -->
 
 
 
-
+<!-- 
 
     <script>
         // Get the modal
@@ -295,8 +293,22 @@
                 modal.style.display = "none";
             }
         }
-    </script>
+    </script> -->
 
+    <script>
+      function alterarIcon() {
+
+          var x = document.getElementById("favorito");
+
+          if (x.classList.contains("far")) {
+              x.classList.remove("far");
+              x.classList.add("fas");
+          } else {
+              x.classList.remove("fas");
+              x.classList.add("far");
+          }
+      }
+  </script> 
     <script src="../modules/detalheProduto.js"></script>
 
 </body>

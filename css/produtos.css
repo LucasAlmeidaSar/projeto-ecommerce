@@ -15,7 +15,7 @@
 
 .grid-produtos{  gap: 20px;  }
 
-.card{  height: 435px;  }
+.card{  height: 430px;  }
 
 .card__cor {  margin: 0 7px 15px 7px;  }
 
@@ -25,6 +25,23 @@
   margin: 0 auto;
   width: 90%;
 }
+
+.btn-comprar {
+  display: block;
+  padding: 8px 5px;
+  width: 100px;
+  text-align: center;
+  border-radius: 5px;
+  color: #666;
+  font-weight: bold;
+  margin: 10px 5px;
+  border: 1px solid lightgray;
+  transition: all .3s ease;
+  background-color: var(--cor-clara);
+  user-select: none;
+}
+
+.btn-comprar:hover {  background-color: lightgray;  }
 
 .btn-limpa-filtros{
   font-size: .75rem;
@@ -183,13 +200,3 @@
   opacity: 1;
   background-color: inherit;
 }
-
-/* .nome-filtro.preto::before{  background-color: black;  } */
-.nome-filtro.azul::before{  background-color: blue;  }
-.nome-filtro.vermelho::before{  background-color: red;  }
-.nome-filtro.cinza::before{  background-color: gray;  }
-.nome-filtro.amarelo::before{  background-color: yellow;  }
-.nome-filtro.rosa::before{  background-color: pink;  }
-.nome-filtro.verde::before{  background-color: green;  }
-.nome-filtro.laranja::before{  background-color: orange;  }
-.nome-filtro.violeta::before{  background-color: violet;  }

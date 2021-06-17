@@ -1,7 +1,10 @@
+body {
+    background-color: #a3a3a3af;
+}
+
 .container {
     display: flex;
     height: 100%;
-    /* margin-bottom: 100px; */
 }
 
 .nav-padrao {
@@ -101,7 +104,7 @@
 }
 
 .area-conteudo {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,8 +157,8 @@
 }
 
 .tab {
-    border: 1px solid #dddddd;
-    background-color: #fafafa;
+    /* border: 1px solid #dddddd; */
+    background-color: #ffffff94;
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -258,12 +261,12 @@
 }
 
 .aba:hover {
-    background-color: #d3d3d3;
+    background-color: #7173779f;
     transition: 0.3s;
 }
 
 .aba.ativo {
-    background-color: #d3d3d3;
+    background-color: #7173779f;
 }
 
 .aba_alterarSenha {
@@ -306,8 +309,6 @@
     width: 98%;
 }
 
-.tabConfigurações {}
-
 .produto {
     display: flex;
     justify-content: flex-start;
@@ -333,7 +334,19 @@
 }
 
 .produto:hover {
-    background-color: #f0f0f0;
+    background-color: #8b8f9425;
+    transition: background 0.1s ease-in;
+}
+
+.detalhes {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+.detalhes span {
+    color: #4190d1;
+    text-decoration: underline;
 }
 
 .rodape {
@@ -347,6 +360,11 @@
 .far {
     margin-top: 5px;
     margin-right: 10px;
+}
+
+.fa-trash-alt {
+    background-color: #4645450c;
+    font-size: 25px;
 }
 
 
