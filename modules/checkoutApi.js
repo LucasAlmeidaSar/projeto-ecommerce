@@ -175,6 +175,8 @@ finalizarCompra.addEventListener('click', () => {
 
   console.log(pedido);
 
-  service.enviarPedido(pedido)''
+  service.enviarPedido(pedido)
+
+  localStorage.setItem('produtos', '[]')
 })
 
