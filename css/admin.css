@@ -133,10 +133,6 @@ hr {
     transition: opacity 0.4s ease-out;
 }
 
-.sidebar-menu__item:hover {
-    background-color: #a1a6af1c;
-}
-
 .sidebar-menu__item:hover .sidebar-menu__item-container {
     opacity: 1;
 }
