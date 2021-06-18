@@ -30,37 +30,37 @@
                 </div>
             </div>
             <ul class="sidebar-menu">
-                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-dashboard')">
+                <li id="dashboard" class="sidebar-menu__item ativo">
                     <div class="sidebar-menu__item-container">
                         <i class="fas fa-chart-bar"></i>
                         <span class="sidebar-menu__span">Dashboard</span>
                     </div>
                 </li>
-                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-produtos')">
+                <li id="produtos" class="sidebar-menu__item">
                     <div class="sidebar-menu__item-container">
                         <i class="fas fa-tags"></i>
                         <span class="sidebar-menu__span">Produtos</span>
                     </div>
                 </li>
-                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-vendas')">
+                <li id="vendas" class="sidebar-menu__item">
                     <div class="sidebar-menu__item-container">
                         <i class="fas fa-dollar-sign"></i>
                         <span class="sidebar-menu__span">Vendas</span>
                     </div>
                 </li>
-                <li class="sidebar-menu__item">
+                <li id="ofertas" class="sidebar-menu__item">
                     <div class="sidebar-menu__item-container">
                         <i class="fas fa-percent"></i>
                         <span class="sidebar-menu__span">Ofertas</span>
                     </div>
                 </li>
-                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-geral')">
+                <li id="geral" class="sidebar-menu__item">
                     <div class="sidebar-menu__item-container">
                         <i class="fas fa-list"></i>
                         <span class="sidebar-menu__span">Listas Gerais</span>
                     </div>
                 </li>
-                <li class="sidebar-menu__item" v-on:click="alterarComponente('app-usuarios')">
+                <li id="usuarios" class="sidebar-menu__item">
                     <div class="sidebar-menu__item-container">
                         <i class="fas fa-users"></i>
                         <span class="sidebar-menu__span">Usuários</span>
@@ -71,10 +71,13 @@
 
         <main class="area-conteudo">
             <div class="topbar flex">
-                <span>Admin Silveira</span>
-                <span>Logout</span>
+                <span class="topbar__titulo">{{titulo}}</span>
+                <div class="flex">
+                    <img class="topbar__foto" src="../img/admin.png" alt="Foto perfil" width="36px" height="36px">
+                    <span class="topbar__nome">Admin</span>
+                </div>
             </div>
-            <component v-bind:is="componenteAtual" v-on:alterar-componente="alterarComponente"></component>
+            <component @alterar-titulo="alterarTitulo" v-bind:is="componenteAtual" @alterar-componente="alterarComponente"></component>
         </main>
 
     </div>
@@ -92,7 +95,8 @@
         let vapp = new Vue({
             el: '#app',
             data: {
-                componenteAtual: 'app-dashboard'
+                componenteAtual: 'app-dashboard',
+                titulo: 'Dashboard',
             },
             components: {
                 'app-dashboard': httpVueLoader('../components/Dashboard.vue'),
@@ -103,15 +107,88 @@
                 'app-geral': httpVueLoader('../components/Geral.vue')
             },
             methods: {
-                alterarComponente: function(componente) {
+                alterarComponente(componente, titulo) {
                     this.componenteAtual = componente;
+                    
+                    this.titulo = titulo;
                 },
-                fecharAbrirMenu: function() {
+                fecharAbrirMenu() {
                     let menu = document.getElementById('menu');
 
                     menu.classList.toggle('colapsado');
 
                     console.log(menu);
+                },
+                alterarTitulo(valor) {
+                    this.titulo = valor;
+                }
+            },
+            mounted() {
+                let _this = this;
+
+                let dash = document.getElementById('dashboard');
+                let produtos = document.getElementById('produtos');
+                let vendas = document.getElementById('vendas');
+                let geral = document.getElementById('geral');
+                let usuarios = document.getElementById('usuarios');
+
+                dash.onclick = () => {
+                    _this.alterarComponente('app-dashboard', 'Dashboard');
+
+                    let atual = document.querySelector('.sidebar-menu__item.ativo');
+
+                    if(atual) {
+                        atual.classList.remove('ativo');
+                    }
+
+                    dash.classList.add('ativo');
+                }
+
+                produtos.onclick = () => {
+                    _this.alterarComponente('app-produtos', 'Produtos');
+
+                    let atual = document.querySelector('.sidebar-menu__item.ativo');
+
+                    if(atual) {
+                        atual.classList.remove('ativo');
+                    }
+
+                    produtos.classList.add('ativo');
+                }
+                
+                vendas.onclick = () => {
+                    _this.alterarComponente('app-vendas', 'Vendas');
+
+                    let atual = document.querySelector('.sidebar-menu__item.ativo');
+
+                    if(atual) {
+                        atual.classList.remove('ativo');
+                    }
+
+                    vendas.classList.add('ativo');
+                }
+                geral.onclick = () => {
+                    _this.alterarComponente('app-geral', 'Listas Gerais');
+
+                    let atual = document.querySelector('.sidebar-menu__item.ativo');
+
+                    if(atual) {
+                        atual.classList.remove('ativo');
+                    }
+
+                    geral.classList.add('ativo');
+                }
+
+                usuarios.onclick = () => {
+                    _this.alterarComponente('app-usuarios', 'Usuários');
+
+                    let atual = document.querySelector('.sidebar-menu__item.ativo');
+
+                    if(atual) {
+                        atual.classList.remove('ativo');
+                    }
+
+                    usuarios.classList.add('ativo');
                 }
             }
         });

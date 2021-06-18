@@ -53,6 +53,7 @@ module.exports = {
   },
   
   mounted: function() {
+    document.title = "Vendas";
     this.listarPedidos();
   }
 }
