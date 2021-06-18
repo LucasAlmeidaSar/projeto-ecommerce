@@ -286,6 +286,18 @@ const service = {
         }
 
         return false;
+    },
+
+    async getListaPedidos() {
+        let resposta = await fetch(URLAPI_BASE + "/api/pedidos");
+
+        if (resposta.ok) {
+            let lista = await resposta.json();
+
+            return lista;
+        }
+
+        return false;
     }
 }
 
