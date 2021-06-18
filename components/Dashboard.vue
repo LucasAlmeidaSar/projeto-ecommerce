@@ -300,6 +300,8 @@
 //código JavaScript vem aqui, com a estrutura do Vue, não é necessário mexer
 module.exports = {
   mounted: () => {
+    document.title = "Dashboard";
+
     let myChart = document.getElementById("myChart").getContext("2d");
 
     let massPopChart = new Chart(myChart, {

@@ -3,7 +3,7 @@
     <div class="">
         <div class="toolbar">
             <a href="#abrirModal" class="btn-novo">
-              <i class="fas fa-plus-circle"></i> Adicionar
+                <i class="fas fa-plus-circle"></i> Adicionar
             </a>
 
             <div id="abrirModal" class="modal">
@@ -155,7 +155,11 @@
 </template>
 
 <script>
-module.exports = {};
+module.exports = {
+    mounted() {
+        document.title = "Usuários";
+    },
+};
 </script>
 
 <style scoped>

@@ -220,6 +220,7 @@ module.exports = {
     },
 
     mounted() {
+        document.title = 'Geral';
         this.listarCategorias();
         this.listarCores();
     },

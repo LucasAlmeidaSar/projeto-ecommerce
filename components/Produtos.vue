@@ -88,6 +88,7 @@ module.exports = {
   },
   
   mounted: function() {
+    document.title = "Produtos";
     this.listarProdutos();
   }
 }
