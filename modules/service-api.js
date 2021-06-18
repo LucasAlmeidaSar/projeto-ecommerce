@@ -240,6 +240,29 @@ const service = {
         resposta = await resposta.json();
 
         return resposta;
+    },
+
+    async enviarPedido(pedido) {
+        let jsonObj = JSON.stringify(pedido);
+
+        let resposta = await fetch(URLAPI_BASE + '/api/pedidos', {
+            method: 'post',
+            body: jsonObj,
+            headers: {
+                'Authorization': 'Bearer ' + getToken(),
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+        });
+
+        if (resposta.status === 201) {
+            resposta = await resposta.json();
+            console.log('Enviado com sucesso! Resposta: ', objResposta);
+
+            return resposta;
+        }
+
+        return false;
     }
 }
 
