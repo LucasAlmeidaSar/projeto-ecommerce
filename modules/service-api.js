@@ -138,6 +138,29 @@ const service = {
         
     },
 
+    async realizarCadastro(usuario) {
+        localStorage.removeItem('token');
+        let resposta;
+        resposta = await fetch(URLAPI_BASE + '/api/auth/signup', {
+            method: 'post',
+            body: JSON.stringify(usuario),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        if(resposta.ok) {
+            let res = await resposta.text();
+
+            return true;
+        }
+        
+        if (resposta.status === 401) {
+            return false;
+        }
+        
+    },
+
     async enviarCor(cor) {
         let resposta = await fetch(URLAPI_BASE + "/api/cores", {
             method: "post",

@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../css/login_cadastro.css">
 </head>
 
-<body>
+<body onunload="localStorage.removeItem('next')">
     <div class="hide">
         <div id="login" class="form-container" @submit.prevent="confirmarLogin">
             <form id="form-login" class="form">
@@ -68,9 +68,16 @@
                     if (resposta) {
                         let proxPagina = localStorage.getItem('next');
                         if (proxPagina) {
+                            let obj = JSON.parse(proxPagina);
+                            let agora = new Date();
+                            let dataExpiration = new Date(obj.expiration);
+
                             localStorage.removeItem('next');
-                            location.replace(proxPagina);
-                            return;
+
+                            if (agora <= dataExpiration) {
+                                location.replace(obj.location);
+                                return;
+                            }
                         }
                         location.replace('/');
                         return;
