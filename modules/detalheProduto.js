@@ -211,7 +211,7 @@ onload = () => {
           const idProduto = produto.id
           const idCor = listaCores.querySelector('.borda').dataset.modelo
           const nomeTamanho = listaTamanhos.querySelector('.borda').innerHTML
-          const qtd = quantidadeInput.value
+          const qtd = parseInt(quantidadeInput.value)
           const preco = produto.preco
 
           if (localStorage.hasOwnProperty("produtos")) {
@@ -232,7 +232,7 @@ onload = () => {
               guardarNoCarrinho(idProduto, idCor, nomeTamanho, qtd, preco)
               alternarModalAddProduto()
             }else{                
-              let novaQtd = parseInt(produtoAtual.qtd) + parseInt(qtd)
+              let novaQtd = parseInt(produtoAtual[0].qtd) + parseInt(qtd)
               console.log('Já tem produto:' ,produtoAtual);
               produtosLocalStorage.splice(produtosLocalStorage.indexOf(produtoAtual[0]), 1)                       
               localStorage.setItem('produtos', JSON.stringify(produtosLocalStorage))
@@ -280,11 +280,6 @@ onload = () => {
           console.log('Qtd disponível menor doque solicitado.', quantidadeInput.value, qtdDisponivel.innerText);
         }
       })
-
-      // quantidadeInput.addEventListener("change", () => {
-      //   liberarBotoes()
-      //   precoProduto.innerHTML = `R$ ${(produto.preco * quantidadeInput.value).toFixed(2)}`
-      // })
 
       addQtd.addEventListener('click', () => {
         precoProduto.innerHTML = `R$ ${(produto.preco * quantidadeInput.value).toFixed(2)}`
@@ -343,3 +338,5 @@ function alternarModalAddProduto() {
 btnFecharModal.addEventListener('click', () => {
   modalAddProduto.classList.remove('ativo')
 })
+
+
