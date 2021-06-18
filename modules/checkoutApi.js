@@ -155,7 +155,7 @@ finalizarCompra.addEventListener('click', () => {
 
   let itens = produtosLS.map(produto => {
     let obj = {
-      "modelo" : produto.idCor,
+      "modelo" : parseInt(produto.idCor),
       "preco": produto.preco,
       "tamanho": produto.idTamanho,
       "quantidade": produto.qtd
@@ -167,7 +167,7 @@ finalizarCompra.addEventListener('click', () => {
     "pedido": {
         "status": 1,
         "pagamento": {
-            "metodoPagamento": idPag
+            "metodoPagamento": parseInt(idPag)
         }
     },
     "itens": itens
@@ -175,6 +175,6 @@ finalizarCompra.addEventListener('click', () => {
 
   console.log(pedido);
 
-  // service.enviarPedido()
+  service.enviarPedido(pedido)
 })
 
