@@ -7,7 +7,7 @@ async function redirecionarNaoAutenticado() {
         let locAtual = location.href;
         let expiration = new Date();
 
-        expiration.setMinutes(expiration.getMinutes() + 2);
+        expiration.setMinutes(expiration.getMinutes() + 5);
 
         let next = {
             location: locAtual,
