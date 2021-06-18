@@ -23,23 +23,23 @@
 <body>
     <div class="hide">
         <div id="cadastro" class="form-container">
-            <form id="form-cadastro" class="form">
+            <form id="form-cadastro" class="form" @submit.prevent="realizarCadastro">
                 <img class="logo center-x" src="../img/logo.png" alt="Logo">
                 <h2 class="form-titulo">Crie sua conta</h2>
                 <div class="form-campos">
-                    <input-layout type="text" preencher>Nome completo</input-layout>
-                    <input-layout type="text" preencher>CPF</input-layout>
-                    <input-layout type="tel" pattern="[0-9]{11}" preencher>Telefone (DDD + número)</input-layout>
-                    <select id="genero" class="form-campos__genero" required>
-                        <option value="" selected disabled hidden>Selecione o gênero</option>
+                    <input-layout v-model="usuario.nome" type="text" preencher>Nome completo</input-layout>
+                    <input-layout v-model="usuario.cpf" type="text" maxlength="11" preencher>CPF</input-layout>
+                    <input-layout v-model="usuario.telefone" type="tel" pattern="[0-9]{11}" preencher>Telefone (DDD + número)</input-layout>
+                    <select v-model="usuario.genero" id="genero" class="form-campos__genero" required>
+                        <option :value="null" selected disabled hidden>Selecione o gênero</option>
                         <option value="M">Masculino</option>
                         <option value="F">Feminino</option>
                         <option value="O">Outro</option>
                     </select>
-                    <input-layout type="date" preencher>Data de nascimento</input-layout>
-                    <input-layout type="email" icone="fas fa-envelope" preencher>Email</input-layout>
-                    <input-layout type="password" icone="fas fa-lock" preencher>Senha</input-layout>
-                    <input-layout type="password" icone="fas fa-lock" preencher>Confirme sua senha</input-layout>
+                    <input-layout v-model="usuario.dataNascimento" type="date" preencher>Data de nascimento</input-layout>
+                    <input-layout v-model="usuario.email" type="email" icone="fas fa-envelope" preencher>Email</input-layout>
+                    <input-layout v-model="usuario.senha" type="password" icone="fas fa-lock" preencher>Senha</input-layout>
+                    <input-layout v-model="confirmarSenha" type="password" icone="fas fa-lock" preencher>Confirme sua senha</input-layout>
                 </div>
                 <div class="form-campos__termos">
                     <input type="checkbox" id="termos" required> <span>Li e aceito as Politicas de Privacidade e Termos
@@ -58,8 +58,42 @@
 
     <script type="module" src="../modules/usuario-logado.js"></script>
     <script type="module">
+        import service from '../modules/service-api.js';
+
         let vapp = new Vue({
             el: '#cadastro',
+
+            data: {
+                usuario: {
+                    nome: null,
+                    email: null,
+                    senha: null,
+                    dataNascimento: null,
+                    genero: null,
+                    telefone: null,
+                    cpf: null,
+                },
+                confirmarSenha: null,
+            },
+
+            methods: {
+                async realizarCadastro() {
+                    //this.dadosIncorretos = false;
+                    if (this.usuario.senha !== this.confirmarSenha) {
+                        alert('As senhas não coincidem');
+                        return;
+                    }
+
+                    let resposta = await service.realizarCadastro(this.usuario);
+                    if (resposta) {
+                        
+                        location.replace('/pages/login.html');
+                        return;
+                    }
+                    //this.dadosIncorretos = true;
+                },
+            },
+
             components: {
                 'input-layout': httpVueLoader('../components/InputLayout.vue')
             }

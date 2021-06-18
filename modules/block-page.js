@@ -5,8 +5,16 @@ async function redirecionarNaoAutenticado() {
 
     if (usuario === false) {
         let locAtual = location.href;
+        let expiration = new Date();
 
-        localStorage.setItem('next', locAtual)
+        expiration.setMinutes(expiration.getMinutes() + 2);
+
+        let next = {
+            location: locAtual,
+            expiration
+        }
+
+        localStorage.setItem('next', JSON.stringify(next));
         
         location.replace('/pages/login.html');
         return;
