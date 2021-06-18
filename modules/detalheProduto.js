@@ -250,6 +250,8 @@ onload = () => {
         }
       })
 
+
+
       btnComprar.addEventListener('click', () => {
         
         if ( (quantidadeInput.value > 0) && (quantidadeInput.value <= parseInt(qtdDisponivel.innerText)) ) {
@@ -272,7 +274,11 @@ onload = () => {
           if (produtoAtual.length == 0) {
             guardarNoCarrinho(idProduto, idCor, nomeTamanho, qtd, preco)
           }else{
-            console.log('já tem');            
+            let novaQtd = parseInt(produtoAtual[0].qtd) + parseInt(qtd)
+            console.log('Já tem produto:' ,produtoAtual);
+            produtosLocalStorage.splice(produtosLocalStorage.indexOf(produtoAtual[0]), 1)                       
+            localStorage.setItem('produtos', JSON.stringify(produtosLocalStorage))
+            guardarNoCarrinho(idProduto, idCor, nomeTamanho, novaQtd , preco)       
           }
 
          
