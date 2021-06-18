@@ -216,22 +216,27 @@ onload = () => {
 
           if (localStorage.hasOwnProperty("produtos")) {
             produtosLocalStorage = JSON.parse(localStorage.getItem("produtos"))  
+            console.log('Já tem base.',produtosLocalStorage);
           }                  
 
           if (produtosLocalStorage.length == 0) {
             guardarNoCarrinho(idProduto, idCor, nomeTamanho, qtd, preco)
+            console.log('Tem base mas estava zerada.',produtosLocalStorage);
             alternarModalAddProduto()
           }
           else{
             const produtoAtual = produtosLocalStorage.filter(produtoLS => produtoLS.idCor == idCor)
-            
+            console.log('Produto atual: ',produtoAtual);
+
             if (produtoAtual.length == 0) {
               guardarNoCarrinho(idProduto, idCor, nomeTamanho, qtd, preco)
               alternarModalAddProduto()
-            }else{
-              produtoAtual.qtd += qtd            
-              produtosLocalStorage.splice(produtosLocalStorage.indexOf(produtoAtual[0]), 1)
-              localStorage.setItem('produtos', JSON.stringify(produtosLocalStorage))   
+            }else{                
+              let novaQtd = parseInt(produtoAtual.qtd) + parseInt(qtd)
+              console.log('Já tem produto:' ,produtoAtual);
+              produtosLocalStorage.splice(produtosLocalStorage.indexOf(produtoAtual[0]), 1)                       
+              localStorage.setItem('produtos', JSON.stringify(produtosLocalStorage))
+              guardarNoCarrinho(idProduto, idCor, nomeTamanho, novaQtd , preco)
               alternarModalAddProduto()         
             }
           }
@@ -332,7 +337,9 @@ function liberarBotoes(){
 }
 
 function alternarModalAddProduto() {
-  modalAddProduto.classList.toggle('ativo')
+  modalAddProduto.classList.add('ativo')
 }
 
-btnFecharModal.addEventListener('click', alternarModalAddProduto)
+btnFecharModal.addEventListener('click', () => {
+  modalAddProduto.classList.remove('ativo')
+})
