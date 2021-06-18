@@ -30,6 +30,11 @@ input{
 input:focus,
 input:hover{  border: 1.5px solid rgb(114, 114, 114);  }    
 
+/*oculta a pagina antes de verificar o login*/
+.hide {
+    display: none !important;
+}
+
 .img-nav{
     width: 40px;
     height: 30px;

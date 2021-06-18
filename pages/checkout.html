@@ -9,369 +9,371 @@
     <title>Checkout | My E-commerce! </title>
 </head>
 <body> 
-
-    <nav class="nav-padrao flex">
-        <a class="btn btn-nav-padrao" href="../index.html">Logo</a>
-        <div class="flex">
-            <img class="img-nav" src="/img/safe-shopping.svg" alt="Compra Segura">
-            <div>
-                <p class="compra-segura-titulo">Compra Segura</p>
-                <p class="compra-segura-subtitulo">100% Protegido</p>
-            </div>
-        </div>
-    </nav>
-
-
-
-
-    <div class="resumo-pedido">
-
-      <a class="resumo-pedido-btn" href="javascript:void(0)">
-        <div class="barra-resumo-pedido flex">
-          <div class="flex">
-            <i class="icone-resumo-pedido fas fa-arrow-circle-down"></i>
-            <p class="titulo-modo-fechado titulos-resumo ">Ver detalhes do pedido</p>
-            <p class="titulo-modo-aberto  titulos-resumo inativo">Ocultar detalhes do pedido</p>
-          </div>
-          <p class="valor-pedido-resumo">R$309,05</p>        
-        </div>
-      </a>
-  
-
-
-      <div class="conteudo-resumo-pedido inativo">
-        <ul class="lista-produto" data-js="listaProdutos"> 
-          <li class="item-produto flex">                   
+    <div class="hide">
+        <nav class="nav-padrao flex">
+            <a class="btn btn-nav-padrao" href="../index.html">Logo</a>
             <div class="flex">
-              <img class="imagem-produto" src="/img/camisaMasculina.jpg">
-              <div class="info-produto-container">
-                <p class="info-produto">Camisa Masculina</p>
-                <p class="info-produto">Bege | M</p>
-                <p class="quantidade-produto">Qtd: 1</p>
+                <img class="img-nav" src="/img/safe-shopping.svg" alt="Compra Segura">
+                <div>
+                    <p class="compra-segura-titulo">Compra Segura</p>
+                    <p class="compra-segura-subtitulo">100% Protegido</p>
+                </div>
+            </div>
+        </nav>
+    
+    
+    
+    
+        <div class="resumo-pedido">
+    
+          <a class="resumo-pedido-btn" href="javascript:void(0)">
+            <div class="barra-resumo-pedido flex">
+              <div class="flex">
+                <i class="icone-resumo-pedido fas fa-arrow-circle-down"></i>
+                <p class="titulo-modo-fechado titulos-resumo ">Ver detalhes do pedido</p>
+                <p class="titulo-modo-aberto  titulos-resumo inativo">Ocultar detalhes do pedido</p>
               </div>
+              <p class="valor-pedido-resumo">R$309,05</p>        
             </div>
-            <p class="valor-produto">R$99,90</p>
-          </li>
-          <li class="item-produto flex">                   
-            <div class="flex">
-              <img class="imagem-produto" src="/img/blusaFeminina2.png">
-              <div class="info-produto-container">
-                <p class="info-produto">Camisa Feminina</p>
-                <p class="info-produto">Verde | P</p>
-                <p class="quantidade-produto">Qtd: 2</p>
-              </div>
-            </div>
-            <p class="valor-produto">R$119,80</p>
-          </li>
-          <li class="item-produto flex">                   
-            <div class="flex">
-              <img class="imagem-produto" src="/img/camisaMasculina2.jpg">
-              <div class="info-produto-container">
-                <p class="info-produto">Camisa Masculina</p>
-                <p class="info-produto">Mostarda | G</p>
-                <p class="quantidade-produto">Qtd: 1</p>
-              </div>
-            </div>
-            <p class="valor-produto">R$69,90</p>
-          </li>         
-        </ul>  
-
-
-
-        <ul class="valores-produto-container">
-          <li class="valores-item flex">
-            <p>Subtotal</p>
-            <p data-js="subTotal">R$ 0,00</p>
-          </li>
-          <li class="valores-item flex">
-            <p>Custo de frete</p>
-            <div class="flex">
-              <p>R$ </p>
-              <p data-js="frete">19,45</p>
-            </div>
-          </li>        
-          <li class="valores-item total-container flex">
-            <p>Total</p>
-            <p class="valor-total" data-js="valorTotal">R$ 0,00</p>
-            </li>
-        </ul>
-
-
-
-        <div class="cupom-container">
-          <a class="pergunta-cupom" data-js="pergunta-cupom-sm" href="javascript:void(0)"><i class="fas fa-tag"></i> Possui cupom de desconto?</a>
-          <input id="cupom-input" class="inativo" data-js="cupom-input-sm" type="text" placeholder="Insira o cupom de desconto">
-          <button class="aplicar-cupom inativo" data-js="aplicar-cupom-sm"><i class="fas fa-play-circle"></i></button>
-        </div>
-         
-      </div>
-    </div>
+          </a>
+      
     
     
-
-    <main class="conteudo-principal">     
-
-        <div class="container-formulario">
-
-            <header class="container-formulario__cabecalho">
-                <div class="barra-progresso flex">                   
-    
-                    <div class="passos atual">                        
-                        <h2 class="passos__titulo">Contato</h2>
-                        <div class="numerador">
-                            <span class="numero">1</span>
-                        </div>
-                        <div class="check fas fa-check"></div>
-                    </div>
-
-                    <div class="passos">                        
-                        <h2 class="passos__titulo">Entrega</h2>
-                        <div class="numerador">
-                            <span class="numero">2</span>
-                        </div>
-                        <div class="check fas fa-check"></div>
-                    </div>
-    
-                    <div class="passos">                        
-                        <h2 class="passos__titulo">Destinatário</h2>
-                        <div class="numerador">
-                            <span class="numero">3</span>
-                        </div>
-                        <div class="check fas fa-check"></div>
-                    </div>                     
-                    
-                    <div class="passos">                        
-                        <h2 class="passos__titulo">Pagamento</h2>
-                        <div class="numerador">
-                            <span class="numero ">4</span>
-                        </div>
-                        <div class="check fas fa-check"></div>
-                    </div>                      
-                </div>                
-            </header>
-
-
-
-
-            <div class="formulario">
-                <form action="#" class="form-geral flex">
-
-                    <div class="pagina contato">                
-                        <h2 class="pagina__titulo ">Dados de Contato</h2>
-
-                        <input type="text" name="nome" id="nome" placeholder="Nome completo">
-
-                        <input type="email" name="email" id="email" placeholder="E-mail">
-
-                        <input type="tel" name="telefone" id="telefone" placeholder="Tel (DDD + Número)">
-
-                        <a class="btn btn-avancar">Avançar</a>
-                    
-                    </div>
-
-
-                    <div class="pagina entrega">                
-                        <h2 class="pagina__titulo">Dados da Entrega</h2>                       
-                        <input type="text" name="cep" id="cep" placeholder="CEP">
-
-                        <select name="entregas" id="entregas" class="select-entrega">
-                            <option value="0">Escolha o tipo de entrega</option>
-                            <option value="1">Correios - PAC</option>
-                            <option value="2">Correios - SEDEX</option>
-                            <option value="3">JADLOG</option>
-                        </select>    
-                        
-                        <ul class="lista-botoes flex">
-                            <li> <a class="btn btn-voltar">Voltar</a>   </li>
-                            <li> <a class="btn btn-avancar">Avançar</a> </li>
-                        </ul>                   
-                    </div>
-
-
-                    <div class="pagina destinatario">                
-                        <h2 class="pagina__titulo   pagina__titulo-destinatario">Dados do Destinatário</h2>
-                        <div class="destinatario-dados">                        
-                            <input type="text" name="nomeDestinatario" id="nomeDestinatario" placeholder="Nome completo">                        
-                            <input type="tel" name="telDestinatario" id="telDestinatario" placeholder="Tel (DDD + Número)">
-                        </div>
-
-
-                        <h2 class="pagina__titulo  pagina__titulo-destinatario">End. do Destinatário</h2>
-                        <div class="destinatario-endereco">                      
-                            <input type="text" name="logradouro" id="logradouro" placeholder="Logradouro">
-                            <input type="number" name="numero" id="numero" placeholder="Número">
-                            <input type="text" name="complemento" id="complemento" placeholder="Complemento">
-                            <input type="text" name="bairro" id="bairro" placeholder="Bairro">
-                            <input type="text" name="cidade" id="cidade" placeholder="Cidade">
-                            <input type="text" name="cepDestinatário" id="cepDestinatário" placeholder="CEP">
-                            <input type="text" name="estado" id="estado" placeholder="Estado">
-                        </div>  
-
-
-                        <h2 class="pagina__titulo  pagina__titulo-destinatario dados__cobranca">Dados do Cobrança</h2>   
-                        
-                        <label for="">
-                            <input type="checkbox" name="cobranca" id="cobranca">
-                            Minhas info de entrega e cobrança são as mesmas                             
-                        </label>
-
-                        <h2 class="pagina__titulo  pagina__titulo-destinatario  termo__compra">Termo de compra</h2>
-                        <label for="termo">
-                            <input type="checkbox" name="termo" id="termo">
-                            Li e aceito os termos e informações                             
-                        </label>
-
-                        <ul class="lista-botoes flex">
-                            <li>  <a class="btn btn-voltar">Voltar</a> </li>
-                            <li>  <a class="btn btn-avancar">Avançar</a> </li>
-                        </ul>           
-                    </div>
-
-
-                    <div class="pagina pagamento">                
-                        <h2 class="pagina__titulo">Forma de pagamento</h2>
-
-                        <div class="containerCartao">                         
-                            <a class="btn__cartao">Cartão de crédito</a>
-                            <div class="pagamento__cartao">
-
-                                <input type="text" name="pagamento__cpf" id="pagamento__cpf" placeholder="CPF">
-                                
-                                <select name="parcelas" id="parcelas" class="select-pagamento">
-                                    <option value="0">Parcelas</option>                                    
-                                </select>
-
-                                <div class="card-form">
-                                    <input type="text" name="number" placeholder="Número do Cartão">
-                                    <input type="text" name="full-name" placeholder="Nome impresso no cartão"/>
-                                    <input type="text" name="expiry" placeholder="Data de validade (MM/AA)"/>
-                                    <input type="text" name="cvc" placeholder="CVV"/>
-                                </div>
-                                <div class='card-wrapper'></div>
-                            </div>
-
-                            <div class="pagamento__cartao-celular">
-
-                              <input type="text" name="pagamento__cpf" id="pagamento__cpf" placeholder="CPF">
-                              
-                              <select name="parcelas" id="parcelas" class="select-pagamento">
-                                  <option value="0">Parcelas</option>
-                                  <option value="1x">1x de ..</option>
-                                  <option value="2x">2x de ..</option>
-                                  <option value="3x">3x de ..</option>
-                                  <option value="4x">4x de ..</option>
-                              </select>                             
-                              <input type="text" name="numeroCartao" id="numCartao" placeholder="Número do Cartão">
-                              <input type="text" name="nomeCartao" placeholder="Nome impresso no cartão"/>
-                              <input type="text" name="validadeCartao" placeholder="Data de validade (MM/AA)"/>
-                              <input type="text" name="cvvCartao" placeholder="CVV"/>                            
-                             
-                          </div>
-                        </div>
-
-                        <div class="containerBoleto">
-                            <!-- <input type="radio" id="rdBoleto" name="entrega">                             -->
-                            
-                            <a class="btn__boleto">Boleto bancário</a>
-                            <div class="pagamento__boleto">
-                                <input type="text" name="pagamento__nome" id="pagamento__nome" placeholder="Nome completo">
-                                <input type="text" name="pagamento__cpf-boleto" id="pagamento__cpf-boleto" placeholder="CPF">
-                            </div>
-                        </div>
-
-                        <ul class="lista-botoes flex">
-                            <li> <a class="btn btn-voltar">Voltar</a> </li>
-                            <li> <a class="btn btn-finalizar-compra btn-avancar" href="#">Finalizar compra</a> </li>
-                        </ul>
-                    </div>
-
-
-                    <div class="pagina final">
-                        <h2 class="pagina__titulo">Obrigado por comprar conosco, volte sempre!</h2>
-                        <a class="btn btn-home btn-avancar" href="../index.html">Voltar para a Home</a>
-                    </div>                    
-
-                </form>
-            </div>
-        </div>
-
-
-
-
-        <!-- Seção Produtos -->
-        <div class="container-produtos">
-
-           <ul class="lista-produto" data-js="listaProdutos"> 
-               <li class="item-produto flex">                   
-                   <div class="flex">
-                        <img class="imagem-produto" src="/img/camisaMasculina.jpg">
-                        <div class="info-produto-container">
-                            <p class="info-produto">Camisa Masculina</p>
-                            <p class="info-produto">Bege | M</p>
-                            <p class="quantidade-produto">Qtd: 1</p>
-                        </div>
-                   </div>
-                   <p class="valor-produto">R$99,90</p>
-               </li>
-               <li class="item-produto flex">                   
+          <div class="conteudo-resumo-pedido inativo">
+            <ul class="lista-produto" data-js="listaProdutos"> 
+              <li class="item-produto flex">                   
                 <div class="flex">
-                     <img class="imagem-produto" src="/img/blusaFeminina2.png">
-                     <div class="info-produto-container">
-                        <p class="info-produto">Camisa Feminina</p>
-                        <p class="info-produto">Verde | P</p>
-                        <p class="quantidade-produto">Qtd: 2</p>
-                     </div>
+                  <img class="imagem-produto" src="/img/camisaMasculina.jpg">
+                  <div class="info-produto-container">
+                    <p class="info-produto">Camisa Masculina</p>
+                    <p class="info-produto">Bege | M</p>
+                    <p class="quantidade-produto">Qtd: 1</p>
+                  </div>
+                </div>
+                <p class="valor-produto">R$99,90</p>
+              </li>
+              <li class="item-produto flex">                   
+                <div class="flex">
+                  <img class="imagem-produto" src="/img/blusaFeminina2.png">
+                  <div class="info-produto-container">
+                    <p class="info-produto">Camisa Feminina</p>
+                    <p class="info-produto">Verde | P</p>
+                    <p class="quantidade-produto">Qtd: 2</p>
+                  </div>
                 </div>
                 <p class="valor-produto">R$119,80</p>
-            </li>
-            <li class="item-produto flex">                   
+              </li>
+              <li class="item-produto flex">                   
                 <div class="flex">
-                     <img class="imagem-produto" src="/img/camisaMasculina2.jpg">
-                     <div class="info-produto-container">
-                        <p class="info-produto">Camisa Masculina</p>
-                        <p class="info-produto">Mostarda | G</p>
-                        <p class="quantidade-produto">Qtd: 1</p>
-                     </div>
+                  <img class="imagem-produto" src="/img/camisaMasculina2.jpg">
+                  <div class="info-produto-container">
+                    <p class="info-produto">Camisa Masculina</p>
+                    <p class="info-produto">Mostarda | G</p>
+                    <p class="quantidade-produto">Qtd: 1</p>
+                  </div>
                 </div>
                 <p class="valor-produto">R$69,90</p>
-            </li>
-           </ul>
-
-           <ul class="valores-produto-container">
-               <li class="valores-item flex">
-                   <p>Subtotal</p>
-                   <p data-js="subTotal">R$ 0,00</p>
-               </li>
-
-               <li class="valores-item flex">
-                   <p>Custo de frete</p>
-                   <div class="flex">
-                    <p>R$ </p>
-                    <p data-js="frete">19,45</p>
-                   </div>
-               </li>
-
-               <li class="valores-item total-container flex">
-                    <p>Total</p>
-                    <p class="valor-total" data-js="valorTotal">R$ 0,00</p>
+              </li>         
+            </ul>  
+    
+    
+    
+            <ul class="valores-produto-container">
+              <li class="valores-item flex">
+                <p>Subtotal</p>
+                <p data-js="subTotal">R$ 0,00</p>
+              </li>
+              <li class="valores-item flex">
+                <p>Custo de frete</p>
+                <div class="flex">
+                  <p>R$ </p>
+                  <p data-js="frete">19,45</p>
+                </div>
+              </li>        
+              <li class="valores-item total-container flex">
+                <p>Total</p>
+                <p class="valor-total" data-js="valorTotal">R$ 0,00</p>
                 </li>
-           </ul>
-
-           <div class="cupom-container">
-                <a class="pergunta-cupom" data-js="pergunta-cupom-lg" href="javascript:void(0)"><i class="fas fa-tag"></i> Possui cupom de desconto?</a>
-                <input id="cupom-input" class="inativo" data-js="cupom-input-lg" type="text" placeholder="Insira o cupom de desconto">
-                <button class="aplicar-cupom inativo" data-js="aplicar-cupom-lg"><i class="fas fa-play-circle"></i></button>
-            </div>        
-
+            </ul>
+    
+    
+    
+            <div class="cupom-container">
+              <a class="pergunta-cupom" data-js="pergunta-cupom-sm" href="javascript:void(0)"><i class="fas fa-tag"></i> Possui cupom de desconto?</a>
+              <input id="cupom-input" class="inativo" data-js="cupom-input-sm" type="text" placeholder="Insira o cupom de desconto">
+              <button class="aplicar-cupom inativo" data-js="aplicar-cupom-sm"><i class="fas fa-play-circle"></i></button>
+            </div>
+             
+          </div>
         </div>
         
-    </main>
-
-
-    <footer class="rodape-padrao">
-        <h2 class="rodape-padrao__direitos">Todos os direitos reservados a My E-commerce !</h2>
-    </footer>
-
+        
+    
+        <main class="conteudo-principal">     
+    
+            <div class="container-formulario">
+    
+                <header class="container-formulario__cabecalho">
+                    <div class="barra-progresso flex">                   
+        
+                        <div class="passos atual">                        
+                            <h2 class="passos__titulo">Contato</h2>
+                            <div class="numerador">
+                                <span class="numero">1</span>
+                            </div>
+                            <div class="check fas fa-check"></div>
+                        </div>
+    
+                        <div class="passos">                        
+                            <h2 class="passos__titulo">Entrega</h2>
+                            <div class="numerador">
+                                <span class="numero">2</span>
+                            </div>
+                            <div class="check fas fa-check"></div>
+                        </div>
+        
+                        <div class="passos">                        
+                            <h2 class="passos__titulo">Destinatário</h2>
+                            <div class="numerador">
+                                <span class="numero">3</span>
+                            </div>
+                            <div class="check fas fa-check"></div>
+                        </div>                     
+                        
+                        <div class="passos">                        
+                            <h2 class="passos__titulo">Pagamento</h2>
+                            <div class="numerador">
+                                <span class="numero ">4</span>
+                            </div>
+                            <div class="check fas fa-check"></div>
+                        </div>                      
+                    </div>                
+                </header>
+    
+    
+    
+    
+                <div class="formulario">
+                    <form action="#" class="form-geral flex">
+    
+                        <div class="pagina contato">                
+                            <h2 class="pagina__titulo ">Dados de Contato</h2>
+    
+                            <input type="text" name="nome" id="nome" placeholder="Nome completo">
+    
+                            <input type="email" name="email" id="email" placeholder="E-mail">
+    
+                            <input type="tel" name="telefone" id="telefone" placeholder="Tel (DDD + Número)">
+    
+                            <a class="btn btn-avancar">Avançar</a>
+                        
+                        </div>
+    
+    
+                        <div class="pagina entrega">                
+                            <h2 class="pagina__titulo">Dados da Entrega</h2>                       
+                            <input type="text" name="cep" id="cep" placeholder="CEP">
+    
+                            <select name="entregas" id="entregas" class="select-entrega">
+                                <option value="0">Escolha o tipo de entrega</option>
+                                <option value="1">Correios - PAC</option>
+                                <option value="2">Correios - SEDEX</option>
+                                <option value="3">JADLOG</option>
+                            </select>    
+                            
+                            <ul class="lista-botoes flex">
+                                <li> <a class="btn btn-voltar">Voltar</a>   </li>
+                                <li> <a class="btn btn-avancar">Avançar</a> </li>
+                            </ul>                   
+                        </div>
+    
+    
+                        <div class="pagina destinatario">                
+                            <h2 class="pagina__titulo   pagina__titulo-destinatario">Dados do Destinatário</h2>
+                            <div class="destinatario-dados">                        
+                                <input type="text" name="nomeDestinatario" id="nomeDestinatario" placeholder="Nome completo">                        
+                                <input type="tel" name="telDestinatario" id="telDestinatario" placeholder="Tel (DDD + Número)">
+                            </div>
+    
+    
+                            <h2 class="pagina__titulo  pagina__titulo-destinatario">End. do Destinatário</h2>
+                            <div class="destinatario-endereco">                      
+                                <input type="text" name="logradouro" id="logradouro" placeholder="Logradouro">
+                                <input type="number" name="numero" id="numero" placeholder="Número">
+                                <input type="text" name="complemento" id="complemento" placeholder="Complemento">
+                                <input type="text" name="bairro" id="bairro" placeholder="Bairro">
+                                <input type="text" name="cidade" id="cidade" placeholder="Cidade">
+                                <input type="text" name="cepDestinatário" id="cepDestinatário" placeholder="CEP">
+                                <input type="text" name="estado" id="estado" placeholder="Estado">
+                            </div>  
+    
+    
+                            <h2 class="pagina__titulo  pagina__titulo-destinatario dados__cobranca">Dados do Cobrança</h2>   
+                            
+                            <label for="">
+                                <input type="checkbox" name="cobranca" id="cobranca">
+                                Minhas info de entrega e cobrança são as mesmas                             
+                            </label>
+    
+                            <h2 class="pagina__titulo  pagina__titulo-destinatario  termo__compra">Termo de compra</h2>
+                            <label for="termo">
+                                <input type="checkbox" name="termo" id="termo">
+                                Li e aceito os termos e informações                             
+                            </label>
+    
+                            <ul class="lista-botoes flex">
+                                <li>  <a class="btn btn-voltar">Voltar</a> </li>
+                                <li>  <a class="btn btn-avancar">Avançar</a> </li>
+                            </ul>           
+                        </div>
+    
+    
+                        <div class="pagina pagamento">                
+                            <h2 class="pagina__titulo">Forma de pagamento</h2>
+    
+                            <div class="containerCartao">                         
+                                <a class="btn__cartao">Cartão de crédito</a>
+                                <div class="pagamento__cartao">
+    
+                                    <input type="text" name="pagamento__cpf" id="pagamento__cpf" placeholder="CPF">
+                                    
+                                    <select name="parcelas" id="parcelas" class="select-pagamento">
+                                        <option value="0">Parcelas</option>                                    
+                                    </select>
+    
+                                    <div class="card-form">
+                                        <input type="text" name="number" placeholder="Número do Cartão">
+                                        <input type="text" name="full-name" placeholder="Nome impresso no cartão"/>
+                                        <input type="text" name="expiry" placeholder="Data de validade (MM/AA)"/>
+                                        <input type="text" name="cvc" placeholder="CVV"/>
+                                    </div>
+                                    <div class='card-wrapper'></div>
+                                </div>
+    
+                                <div class="pagamento__cartao-celular">
+    
+                                  <input type="text" name="pagamento__cpf" id="pagamento__cpf" placeholder="CPF">
+                                  
+                                  <select name="parcelas" id="parcelas" class="select-pagamento">
+                                      <option value="0">Parcelas</option>
+                                      <option value="1x">1x de ..</option>
+                                      <option value="2x">2x de ..</option>
+                                      <option value="3x">3x de ..</option>
+                                      <option value="4x">4x de ..</option>
+                                  </select>                             
+                                  <input type="text" name="numeroCartao" id="numCartao" placeholder="Número do Cartão">
+                                  <input type="text" name="nomeCartao" placeholder="Nome impresso no cartão"/>
+                                  <input type="text" name="validadeCartao" placeholder="Data de validade (MM/AA)"/>
+                                  <input type="text" name="cvvCartao" placeholder="CVV"/>                            
+                                 
+                              </div>
+                            </div>
+    
+                            <div class="containerBoleto">
+                                <!-- <input type="radio" id="rdBoleto" name="entrega">                             -->
+                                
+                                <a class="btn__boleto">Boleto bancário</a>
+                                <div class="pagamento__boleto">
+                                    <input type="text" name="pagamento__nome" id="pagamento__nome" placeholder="Nome completo">
+                                    <input type="text" name="pagamento__cpf-boleto" id="pagamento__cpf-boleto" placeholder="CPF">
+                                </div>
+                            </div>
+    
+                            <ul class="lista-botoes flex">
+                                <li> <a class="btn btn-voltar">Voltar</a> </li>
+                                <li> <a class="btn btn-finalizar-compra btn-avancar" href="#">Finalizar compra</a> </li>
+                            </ul>
+                        </div>
+    
+    
+                        <div class="pagina final">
+                            <h2 class="pagina__titulo">Obrigado por comprar conosco, volte sempre!</h2>
+                            <a class="btn btn-home btn-avancar" href="../index.html">Voltar para a Home</a>
+                        </div>                    
+    
+                    </form>
+                </div>
+            </div>
+    
+    
+    
+    
+            <!-- Seção Produtos -->
+            <div class="container-produtos">
+    
+               <ul class="lista-produto" data-js="listaProdutos"> 
+                   <li class="item-produto flex">                   
+                       <div class="flex">
+                            <img class="imagem-produto" src="/img/camisaMasculina.jpg">
+                            <div class="info-produto-container">
+                                <p class="info-produto">Camisa Masculina</p>
+                                <p class="info-produto">Bege | M</p>
+                                <p class="quantidade-produto">Qtd: 1</p>
+                            </div>
+                       </div>
+                       <p class="valor-produto">R$99,90</p>
+                   </li>
+                   <li class="item-produto flex">                   
+                    <div class="flex">
+                         <img class="imagem-produto" src="/img/blusaFeminina2.png">
+                         <div class="info-produto-container">
+                            <p class="info-produto">Camisa Feminina</p>
+                            <p class="info-produto">Verde | P</p>
+                            <p class="quantidade-produto">Qtd: 2</p>
+                         </div>
+                    </div>
+                    <p class="valor-produto">R$119,80</p>
+                </li>
+                <li class="item-produto flex">                   
+                    <div class="flex">
+                         <img class="imagem-produto" src="/img/camisaMasculina2.jpg">
+                         <div class="info-produto-container">
+                            <p class="info-produto">Camisa Masculina</p>
+                            <p class="info-produto">Mostarda | G</p>
+                            <p class="quantidade-produto">Qtd: 1</p>
+                         </div>
+                    </div>
+                    <p class="valor-produto">R$69,90</p>
+                </li>
+               </ul>
+    
+               <ul class="valores-produto-container">
+                   <li class="valores-item flex">
+                       <p>Subtotal</p>
+                       <p data-js="subTotal">R$ 0,00</p>
+                   </li>
+    
+                   <li class="valores-item flex">
+                       <p>Custo de frete</p>
+                       <div class="flex">
+                        <p>R$ </p>
+                        <p data-js="frete">19,45</p>
+                       </div>
+                   </li>
+    
+                   <li class="valores-item total-container flex">
+                        <p>Total</p>
+                        <p class="valor-total" data-js="valorTotal">R$ 0,00</p>
+                    </li>
+               </ul>
+    
+               <div class="cupom-container">
+                    <a class="pergunta-cupom" data-js="pergunta-cupom-lg" href="javascript:void(0)"><i class="fas fa-tag"></i> Possui cupom de desconto?</a>
+                    <input id="cupom-input" class="inativo" data-js="cupom-input-lg" type="text" placeholder="Insira o cupom de desconto">
+                    <button class="aplicar-cupom inativo" data-js="aplicar-cupom-lg"><i class="fas fa-play-circle"></i></button>
+                </div>        
+    
+            </div>
+            
+        </main>
+    
+    
+        <footer class="rodape-padrao">
+            <h2 class="rodape-padrao__direitos">Todos os direitos reservados a My E-commerce !</h2>
+        </footer>
+    </div>
+    
+    <script type="module" src="../modules/block-page.js"></script>
     <script src="../modules/card.js"></script>
     <script>
         var card = new Card({
