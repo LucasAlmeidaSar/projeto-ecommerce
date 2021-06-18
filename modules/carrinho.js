@@ -41,9 +41,9 @@ onload = () => {
           </div>
           <div class="carrinho-externo__prodInput flex">                        
             <div class="input-group-ext">
-              <input type="button" value="-" class="button-minus" data-field="quantity" data-id="${produto.id}">
+              <input type="button" value="-" class="button-minus" data-field="quantity" data-id="${produto.idCor}">
               <input type="number" step="1" max="" value="${produto.qtd}" name="quantity" class="quantity-field-ext">
-              <input type="button" value="+" class="button-plus" data-field="quantity" data-id="${produto.id}">
+              <input type="button" value="+" class="button-plus" data-field="quantity" data-id="${produto.idCor}">
             </div>              
             <span class="carrinho-externo__prodPreco">${(produtoCarrinho.preco*produto.qtd).toFixed(2)}</span>
           </div>
@@ -124,11 +124,11 @@ divProdutos.addEventListener('click', event => {
     if (valorInput === 1) {
       console.log('produto zerado');
       const divProduto = btnClicado.parentElement.parentElement.parentElement
-      qtdProdutos.innerHTML -= 1
+      // qtdProdutos.innerHTML -= 1
       divProduto.remove()
 
       const produtos = JSON.parse(localStorage.getItem("produtos"))      
-      const produtoClicado = produtos.filter(produto => produto.id == btnClicado.dataset.id)
+      const produtoClicado = produtos.filter(produto => produto.idCor == btnClicado.dataset.id)
       produtos.splice(produtos.indexOf(produtoClicado[0]), 1)
       localStorage.setItem('produtos', JSON.stringify(produtos))
     }
@@ -142,10 +142,9 @@ divProdutos.addEventListener('click', event => {
     if (localStorage.hasOwnProperty("produtos")) {
       const produtos = JSON.parse(localStorage.getItem("produtos"))
       
-      const produtoClicado = produtos.filter(produto => produto.id == btnClicado.dataset.id)
+      const produtoClicado = produtos.filter(produto => produto.idCor == btnClicado.dataset.id)
       console.log(produtoClicado[0].qtd);
-      produtoClicado[0].qtd = produtoClicado[0].qtd - 1
-      console.log(produtoClicado[0].qtd);
+      produtoClicado[0].qtd = parseInt(produtoClicado[0].qtd - 1)
       localStorage.setItem('produtos', JSON.stringify(produtos))
     }
     
@@ -170,9 +169,9 @@ divProdutos.addEventListener('click', event => {
         if (localStorage.hasOwnProperty("produtos")) {
           const produtos = JSON.parse(localStorage.getItem("produtos"))
           
-          const produtoClicado = produtos.filter(produto => produto.id == btnClicado.dataset.id)
+          const produtoClicado = produtos.filter(produto => produto.idCor == btnClicado.dataset.id)
           console.log(produtoClicado[0].qtd);
-          produtoClicado[0].qtd = produtoClicado[0].qtd + 1
+          produtoClicado[0].qtd = parseInt(produtoClicado[0].qtd + 1)
           console.log(produtoClicado[0].qtd);
           localStorage.setItem('produtos', JSON.stringify(produtos))
         }
