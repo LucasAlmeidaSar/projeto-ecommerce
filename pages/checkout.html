@@ -33,7 +33,7 @@
                 <p class="titulo-modo-fechado titulos-resumo ">Ver detalhes do pedido</p>
                 <p class="titulo-modo-aberto  titulos-resumo inativo">Ocultar detalhes do pedido</p>
               </div>
-              <p class="valor-pedido-resumo">R$309,05</p>        
+              <p class="valor-pedido-resumo" data-js="valorTotal">R$309,05</p>        
             </div>
           </a>
       
@@ -228,11 +228,11 @@
                         </div>
     
     
-                        <div class="pagina pagamento">                
+                        <div class="pagina pagamento" data-js="divPagamento">                
                             <h2 class="pagina__titulo">Forma de pagamento</h2>
     
-                            <div class="containerCartao">                         
-                                <a class="btn__cartao">Cartão de crédito</a>
+                            <div class="containerCartao" data-id="1">                         
+                                <a class="btn__cartao" >Cartão de crédito</a>
                                 <div class="pagamento__cartao">
     
                                     <input type="text" name="pagamento__cpf" id="pagamento__cpf" placeholder="CPF">
@@ -269,7 +269,7 @@
                               </div>
                             </div>
     
-                            <div class="containerBoleto">
+                            <div class="containerBoleto"  data-id="0">
                                 <!-- <input type="radio" id="rdBoleto" name="entrega">                             -->
                                 
                                 <a class="btn__boleto">Boleto bancário</a>
@@ -281,7 +281,7 @@
     
                             <ul class="lista-botoes flex">
                                 <li> <a class="btn btn-voltar">Voltar</a> </li>
-                                <li> <a class="btn btn-finalizar-compra btn-avancar" href="#">Finalizar compra</a> </li>
+                                <li> <a class="btn btn-finalizar-compra btn-avancar" data-js="finalizarCompra" href="#">Finalizar compra</a> </li>
                             </ul>
                         </div>
     
@@ -397,7 +397,7 @@
         });
         </script> 
     <script src="../modules/checkout.js"></script>
-    <script src="../modules/checkoutApi.js"></script>
+    <script type="module" src="../modules/checkoutApi.js"></script>
     
 </body>
 </html>

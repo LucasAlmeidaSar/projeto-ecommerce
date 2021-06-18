@@ -8,6 +8,9 @@ const btnVoltar = document.querySelectorAll('.btn-voltar')
 const btnComprar = document.querySelector('.btn-finalizar-compra')
 const passo = document.querySelectorAll('.passos')
 const formulario = document.querySelector('.form-geral')
+const containerCartao = document.querySelector('.containerCartao')
+const containerBoleto = document.querySelector('.containerBoleto')
+
 
 // Botões Pagamento
 const pagamentoCartao = document.querySelector('.pagamento__cartao')
@@ -94,17 +97,22 @@ btnComprar.addEventListener('click', () => {
 
 
 btnCartao.addEventListener('click' , () => {
+  resetAll()
   const larguraTela = window.innerWidth
-
+  
   larguraTela < 1024 ? pagamentoCartaoCelular.classList.toggle('ativo') : pagamentoCartao.classList.toggle('ativo')
-    
+  
+  containerCartao.classList.toggle('ativo')
   btnCartao.classList.toggle('ativo')
   var altura = pagamentoCartao.style.height
   altura === '480px' ? altura = '0px' : altura = '480px'
   pagamentoCartao.style.height = altura 
 })
 
+
 btnBoleto.addEventListener('click' , () => {
+  resetAll()
+    containerBoleto.classList.toggle('ativo')
     pagamentoBoleto.classList.toggle('ativo')
     btnBoleto.classList.toggle('ativo')
 
@@ -113,6 +121,18 @@ btnBoleto.addEventListener('click' , () => {
     pagamentoBoleto.style.height = altura 
 })
 
+function resetAll() {
+  containerCartao.classList.remove('ativo')
+  btnCartao.classList.remove('ativo')
+  pagamentoCartaoCelular.classList.remove('ativo')
+  pagamentoCartao.classList.remove('ativo')
+  pagamentoCartao.style.height = '0px'
+
+  containerBoleto.classList.remove('ativo')
+  pagamentoBoleto.classList.remove('ativo')
+  btnBoleto.classList.remove('ativo')
+  pagamentoBoleto.style.height = '0px' 
+}
 
 // CUPOM
 const aplicarCupomLG = document.querySelector('[data-js="aplicar-cupom-lg"]')

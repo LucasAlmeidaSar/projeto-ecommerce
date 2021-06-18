@@ -1,3 +1,6 @@
+import service from "./service-api.js"
+
+
 const urlCheckout = "http://coldythegreat.ddns.net:8080"
 const listaProdutos = document.querySelectorAll('[data-js="listaProdutos"]')
 var produtosLocalStorage = []
@@ -6,6 +9,8 @@ const valorSubtotal = document.querySelectorAll('[data-js="subTotal"]')
 const qtdProdutos = document.querySelector('[data-js="qtdProdutos"]')
 const frete = document.querySelectorAll('[data-js="frete"]')
 const parcelasCartao = document.querySelector('#parcelas')
+const finalizarCompra = document.querySelector('[data-js="finalizarCompra"]')
+const divPagamento = document.querySelector('[data-js="divPagamento"]')
 
 onload = () => {
   if (localStorage.hasOwnProperty("produtos")) {
@@ -139,4 +144,37 @@ onload = () => {
     listaProdutos.innerHTML = `<h2>Não há produtos em seu carrinho!</h2>`
   }
 }
+
+// Finalizar Compra
+finalizarCompra.addEventListener('click', () => {
+  const pagamento = Array.from(divPagamento.children).filter(div => div.classList[1] == 'ativo')
+  const idPag = pagamento[0].dataset.id
+
+
+  let produtosLS = JSON.parse(localStorage.getItem("produtos"))
+
+  let itens = produtosLS.map(produto => {
+    let obj = {
+      "modelo" : produto.idCor,
+      "preco": produto.preco,
+      "tamanho": produto.idTamanho,
+      "quantidade": produto.qtd
+    }
+    return obj
+  })  
+
+  const pedido = {
+    "pedido": {
+        "status": 1,
+        "pagamento": {
+            "metodoPagamento": idPag
+        }
+    },
+    "itens": itens
+  } 
+
+  console.log(pedido);
+
+  // service.enviarPedido()
+})
 
