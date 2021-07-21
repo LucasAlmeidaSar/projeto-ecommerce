@@ -11,11 +11,11 @@ Somos alunos do terceiro período no curso de Tecnologia em Análise e Desenvolv
 - [Sthefano Garcia Pícoli](https://github.com/steuf0);
 - [Vinícius Ferreira de Souza](https://github.com/vfdesouza).
 
-### [Vídeo do projeto](https://www.youtube.com/watch?v=yZJtcW_jquw) 
+### Assista o vídeo do projeto no Youtube: [Vídeo](https://www.youtube.com/watch?v=yZJtcW_jquw) 
 
 
 
-**Abaixo alguns prints do site:**
+## Telas:
 
 ### Login:
 ![login](https://user-images.githubusercontent.com/62060142/126493682-e2f055be-0302-4189-82a5-ef7d393a291c.png)
