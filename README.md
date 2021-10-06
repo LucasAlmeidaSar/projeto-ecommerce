@@ -4,7 +4,7 @@ Somos alunos do terceiro período no curso de Tecnologia em Análise e Desenvolv
 
 ## Grupo:
 - [João Vitor Caetano Rosa Borges](https://github.com/joaorosa1);
-- [Lucas de Almeida Sarmento](https://github.com/Lucas-Almeida-Sar);
+- [Lucas de Almeida Sarmento](https://github.com/LucasAlmeidaSar);
 - [Marcos Daniel Mateus e Coelho](https://github.com/barvous);
 - [Mariana Guimarães Jardim](https://github.com/MarianaGJ);
 - [Silas Fernandes da Cunha](https://github.com/silascunha);
