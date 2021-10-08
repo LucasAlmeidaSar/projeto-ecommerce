@@ -1,5 +1,5 @@
 # Projeto Ecommerce
-Somos alunos do terceiro período no curso de Tecnologia em Análise e Desenvolvimento de Sistemas na UniSales de Vitória - ES.
+Somos alunos do curso de Tecnologia em Análise e Desenvolvimento de Sistemas na UniSales de Vitória - ES.
 
 
 ## Grupo:
